@@ -9,6 +9,7 @@ import { SearchModal } from './components/SearchModal';
 import { GoogleAuthModal } from './components/GoogleAuthModal';
 import { ShareReelModal } from './components/ShareReelModal';
 import { FocusMusicSelector } from './components/FocusMusicSelector';
+import { DesktopCompanionDeck } from './components/DesktopCompanionDeck';
 import { useSpeech } from './utils/useSpeech';
 import { focusMusic } from './utils/focusMusicEngine';
 import { ChevronUp, ChevronDown, Sparkles } from 'lucide-react';
@@ -95,6 +96,42 @@ export default function App() {
   // Auto-play state
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [autoPlayProgress, setAutoPlayProgress] = useState(0);
+
+  // Desktop Studio Companion Mode (Split view on large screens)
+  const [isDesktopStudioMode, setIsDesktopStudioMode] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth >= 1024;
+    }
+    return false;
+  });
+
+  // Touch swipe support for mobile devices
+  const touchStartYRef = useRef<number | null>(null);
+  const touchStartXRef = useRef<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartYRef.current = e.touches[0].clientY;
+    touchStartXRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartYRef.current === null) return;
+    const deltaY = touchStartYRef.current - e.changedTouches[0].clientY;
+    const deltaX = (touchStartXRef.current || 0) - e.changedTouches[0].clientX;
+
+    // Minimum swipe threshold of 45px, prioritizing vertical swipe
+    if (Math.abs(deltaY) > 45 && Math.abs(deltaY) > Math.abs(deltaX) * 1.2) {
+      if (deltaY > 0) {
+        // Swiped UP -> Next reel
+        handleNext();
+      } else {
+        // Swiped DOWN -> Previous reel
+        handlePrev();
+      }
+    }
+    touchStartYRef.current = null;
+    touchStartXRef.current = null;
+  };
 
   // Speech narration
   const speech = useSpeech();
@@ -240,6 +277,14 @@ export default function App() {
       } else if (e.key === 'r' || e.key === 'R') {
         e.preventDefault();
         handleShuffleMusic();
+      } else if (e.key === 'd' || e.key === 'D') {
+        e.preventDefault();
+        setIsDesktopStudioMode((prev) => !prev);
+      } else if (e.key === 'l' || e.key === 'L') {
+        if (currentReel) {
+          e.preventDefault();
+          handleToggleLike(currentReel.id);
+        }
       } else if (e.key === 's' || e.key === 'S') {
         if (currentReel) {
           e.preventDefault();
@@ -348,7 +393,7 @@ export default function App() {
     <div
       id="fehem-app-root"
       onWheel={handleWheel}
-      className="w-full h-screen bg-[#07070b] text-neutral-100 flex flex-col justify-between overflow-hidden relative selection:bg-rose-500/30"
+      className="w-full h-[100dvh] max-h-[100dvh] bg-[#07070b] text-neutral-100 flex flex-col justify-between overflow-hidden relative selection:bg-rose-500/30 safe-top safe-bottom"
     >
       {/* Atmospheric lighting mesh in background (Instagram aura + glass gradient) */}
       <div className="fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[550px] bg-gradient-to-tr from-purple-700/15 via-rose-600/15 to-amber-500/10 rounded-full blur-[120px] pointer-events-none" />
@@ -373,11 +418,17 @@ export default function App() {
         currentTrackName={musicTrackName}
         userProfile={userProfile}
         onOpenAuthModal={() => setIsAuthModalOpen(true)}
+        isDesktopStudioMode={isDesktopStudioMode}
+        onToggleDesktopStudioMode={() => setIsDesktopStudioMode((prev) => !prev)}
       />
 
-      {/* Center Reel Canvas (Centered 9:16 Instagram Reel) */}
-      <main className="flex-1 w-full max-w-4xl mx-auto flex items-center justify-center px-3 py-1 sm:py-2 overflow-hidden relative">
-        <div className="w-full flex items-center justify-center h-full relative">
+      {/* Center Reel Canvas & Desktop Studio Deck */}
+      <main className="flex-1 w-full max-w-6xl mx-auto flex items-center justify-center px-2 sm:px-4 py-1 sm:py-2 overflow-hidden relative">
+        <div
+          className="w-full flex items-center justify-center h-full relative"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           {filteredReels.length === 0 ? (
             <div className="p-8 rounded-3xl glass-panel text-center max-w-sm space-y-3">
               <Sparkles className="w-8 h-8 text-rose-400 mx-auto" />
@@ -391,7 +442,7 @@ export default function App() {
             </div>
           ) : (
             currentReel && (
-              <div className="relative flex items-center">
+              <div className="relative flex items-center justify-center w-full max-w-full">
                 {/* Center Instagram Reel Card */}
                 <ReelCard
                   reel={currentReel}
@@ -428,18 +479,18 @@ export default function App() {
                 />
 
                 {/* Minimal desktop navigation buttons on right */}
-                <div className="hidden md:flex flex-col items-center space-y-2 ml-4">
+                <div className="hidden md:flex flex-col items-center space-y-2 ml-3 xl:ml-4 shrink-0">
                   <button
                     id="btn-desktop-prev"
                     disabled={currentIndex === 0}
                     onClick={handlePrev}
                     className="w-10 h-10 rounded-full glass-pill flex items-center justify-center text-white/80 hover:text-white disabled:opacity-20 disabled:pointer-events-none transition-all active:scale-90 shadow-md"
-                    title="Previous Reel (Up Arrow)"
+                    title="Previous Reel (Up Arrow / k)"
                   >
                     <ChevronUp className="w-5 h-5" />
                   </button>
 
-                  <div className="text-[10px] font-mono text-white/40 font-bold py-1">
+                  <div className="text-[10px] font-mono text-white/50 font-bold py-1">
                     {currentIndex + 1}/{filteredReels.length}
                   </div>
 
@@ -448,16 +499,70 @@ export default function App() {
                     disabled={currentIndex === filteredReels.length - 1}
                     onClick={handleNext}
                     className="w-10 h-10 rounded-full glass-pill flex items-center justify-center text-white/80 hover:text-white disabled:opacity-20 disabled:pointer-events-none transition-all active:scale-90 shadow-md"
-                    title="Next Reel (Down Arrow)"
+                    title="Next Reel (Down Arrow / j)"
                   >
                     <ChevronDown className="w-5 h-5" />
                   </button>
                 </div>
+
+                {/* Desktop Studio Companion Deck (Split View for large screens) */}
+                {isDesktopStudioMode && currentReel && (
+                  <div className="hidden lg:block ml-4 xl:ml-6 shrink-0 animate-in fade-in slide-in-from-right-4 duration-300">
+                    <DesktopCompanionDeck
+                      reel={currentReel}
+                      isLiked={userData.likedIds.includes(currentReel.id)}
+                      isBookmarked={userData.bookmarkedIds.includes(currentReel.id)}
+                      completedActionKeys={userData.completedActionIds}
+                      quizState={userData.completedQuizzes[currentReel.id]}
+                      onToggleLike={handleToggleLike}
+                      onToggleBookmark={handleToggleBookmark}
+                      onToggleActionItem={handleToggleActionItem}
+                      onAnswerQuiz={handleAnswerQuiz}
+                      onOpenShareModal={(reel) => setSharingReel(reel)}
+                      isSpeechPlaying={speech.isPlaying}
+                      onToggleSpeech={(text) => {
+                        if (speech.isPlaying) {
+                          speech.stop();
+                        } else {
+                          speech.speak(text);
+                        }
+                      }}
+                      isMusicPlaying={isMusicPlaying}
+                      onToggleMusic={handleToggleMusic}
+                      musicTrackName={musicTrackName}
+                      onCloseCompanionDeck={() => setIsDesktopStudioMode(false)}
+                    />
+                  </div>
+                )}
               </div>
             )
           )}
         </div>
       </main>
+
+      {/* Desktop Keyboard Shortcuts Helper Footer */}
+      <footer className="hidden md:flex items-center justify-center space-x-3 text-[10px] font-mono text-white/40 pb-1.5 shrink-0 z-10 select-none">
+        <span><kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/70">↑</kbd> <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/70">↓</kbd> Scroll</span>
+        <span>•</span>
+        <span><kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/70">Space</kbd> {isAutoPlay ? 'Pause' : 'Play'}</span>
+        <span>•</span>
+        <span><kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/70">L</kbd> Like</span>
+        <span>•</span>
+        <span><kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/70">B</kbd> Vault</span>
+        <span>•</span>
+        <span><kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/70">M</kbd> Audio</span>
+        <span>•</span>
+        <span><kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/70">S</kbd> Share</span>
+        <span>•</span>
+        <span><kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/70">D</kbd> Studio</span>
+      </footer>
+
+      {/* Mobile Swipe / Index Indicator */}
+      <div className="sm:hidden fixed bottom-1 left-1/2 -translate-x-1/2 z-30 pointer-events-none px-2.5 py-0.5 rounded-full glass-pill bg-neutral-950/80 border border-white/15 text-[9px] font-mono text-white/60 flex items-center space-x-1.5 shadow-lg">
+        <span>Reel {currentIndex + 1}/{filteredReels.length}</span>
+        <span className="text-white/30">•</span>
+        <span>Swipe ↑ / ↓</span>
+      </div>
 
       {/* Focus Music Soundscape Selector Drawer Modal */}
       <FocusMusicSelector

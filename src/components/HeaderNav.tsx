@@ -13,6 +13,8 @@ import {
   Sliders,
   UserCheck,
   Layers,
+  Columns2,
+  Smartphone,
 } from 'lucide-react';
 import { Category, UserProfile } from '../types';
 
@@ -29,6 +31,8 @@ interface HeaderNavProps {
   currentTrackName: string;
   userProfile: UserProfile | null;
   onOpenAuthModal: () => void;
+  isDesktopStudioMode?: boolean;
+  onToggleDesktopStudioMode?: () => void;
 }
 
 export const HeaderNav: React.FC<HeaderNavProps> = ({
@@ -44,6 +48,8 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
   currentTrackName,
   userProfile,
   onOpenAuthModal,
+  isDesktopStudioMode = false,
+  onToggleDesktopStudioMode,
 }) => {
   const categories: Array<{ id: Category; label: string; icon: React.ComponentType<{ className?: string }> }> = [
     { id: 'all', label: 'All', icon: Sparkles },
@@ -56,21 +62,49 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
   ];
 
   return (
-    <header className="w-full z-40 px-3 sm:px-6 py-2.5 transition-all">
-      <div className="max-w-4xl mx-auto glass-panel rounded-2xl px-3.5 sm:px-5 py-2 flex items-center justify-between gap-2 shadow-xl border border-white/10">
-        {/* Left: Minimal Instagram-style Logo */}
-        <div className="flex items-center space-x-2">
-          <div className="w-7 h-7 rounded-xl bg-gradient-to-tr from-rose-500 via-purple-500 to-cyan-500 flex items-center justify-center shadow-md">
-            <Sparkles className="w-3.5 h-3.5 text-white" />
+    <header className="w-full z-40 px-2 sm:px-4 md:px-6 pt-2 pb-1.5 transition-all">
+      <div className="max-w-6xl mx-auto glass-panel rounded-2xl px-3 sm:px-4 py-2 flex flex-col sm:flex-row items-center justify-between gap-2 shadow-xl border border-white/10">
+        {/* Top / Main Navigation Row */}
+        <div className="w-full sm:w-auto flex items-center justify-between sm:justify-start gap-3">
+          {/* Brand Logo */}
+          <div className="flex items-center space-x-2 shrink-0">
+            <div className="w-7 h-7 rounded-xl bg-gradient-to-tr from-rose-500 via-purple-500 to-cyan-500 flex items-center justify-center shadow-md">
+              <Sparkles className="w-3.5 h-3.5 text-white" />
+            </div>
+            <span className="font-extrabold text-sm tracking-tight text-white flex items-center">
+              Fehem
+              <span className="ml-1 w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+            </span>
           </div>
-          <span className="font-extrabold text-sm tracking-tight text-white flex items-center">
-            Fehem
-            <span className="ml-1 w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
-          </span>
+
+          {/* Quick Audio Pill on mobile */}
+          <button
+            id="btn-nav-focus-sound-mobile"
+            onClick={onOpenMusicSelector}
+            className={`sm:hidden px-2.5 py-1 rounded-full glass-pill transition-all text-xs flex items-center space-x-1.5 border ${
+              isMusicPlaying
+                ? 'text-rose-400 bg-rose-500/20 border-rose-500/40 shadow-sm shadow-rose-500/20'
+                : 'text-white/70 hover:text-white border-white/15'
+            }`}
+            title="Focus Soundscapes"
+          >
+            {isMusicPlaying ? (
+              <div className="flex items-end space-x-0.5 h-2.5 w-2.5">
+                <span className="w-0.5 bg-rose-400 animate-eq-1 rounded-full" />
+                <span className="w-0.5 bg-rose-400 animate-eq-2 rounded-full" />
+                <span className="w-0.5 bg-rose-400 animate-eq-3 rounded-full" />
+              </div>
+            ) : (
+              <Music className="w-3 h-3" />
+            )}
+            <span className="text-[10px] font-medium max-w-[70px] truncate">
+              {currentTrackName}
+            </span>
+          </button>
         </div>
 
-        {/* Center: Clean Category Glass Pills (Minimal & Simple) */}
-        <div className="flex items-center space-x-1 overflow-x-auto no-scrollbar py-0.5">
+        {/* Center Category Glass Pills - Horizontally scrollable with smooth touch scrolling */}
+        <div className="w-full sm:w-auto flex-1 max-w-2xl flex items-center space-x-1 overflow-x-auto no-scrollbar py-0.5 px-0.5">
           {categories.map((cat) => {
             const isSelected = currentCategory === cat.id;
 
@@ -91,13 +125,36 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
           })}
         </div>
 
-        {/* Right: Clean Actions (Focus Music, Search, AI, Vault, Google Auth) */}
-        <div className="flex items-center space-x-1 sm:space-x-1.5">
-          {/* Focus Soundscapes Button */}
+        {/* Right: Actions (Desktop Studio Toggle, Focus Sound, Search, AI, Vault, Google Auth) */}
+        <div className="w-full sm:w-auto flex items-center justify-end space-x-1 sm:space-x-1.5 shrink-0">
+          {/* Desktop Studio Split View Toggle (Visible on lg: screens) */}
+          {onToggleDesktopStudioMode && (
+            <button
+              id="btn-nav-desktop-studio-toggle"
+              onClick={onToggleDesktopStudioMode}
+              className={`hidden lg:flex items-center space-x-1.5 px-2.5 py-1 rounded-full glass-pill transition-all text-xs border ${
+                isDesktopStudioMode
+                  ? 'bg-rose-500/20 text-rose-300 border-rose-500/40 shadow-sm'
+                  : 'text-white/70 hover:text-white border-white/15'
+              }`}
+              title="Toggle Desktop Split Companion Mode (D key)"
+            >
+              {isDesktopStudioMode ? (
+                <Columns2 className="w-3.5 h-3.5 text-rose-400" />
+              ) : (
+                <Smartphone className="w-3.5 h-3.5" />
+              )}
+              <span className="text-[11px] font-semibold">
+                {isDesktopStudioMode ? 'Studio Mode' : 'Focus Mode'}
+              </span>
+            </button>
+          )}
+
+          {/* Focus Soundscapes Button (Visible on sm: and up) */}
           <button
             id="btn-nav-focus-sound"
             onClick={onOpenMusicSelector}
-            className={`px-2.5 py-1 rounded-full glass-pill transition-all text-xs flex items-center space-x-1.5 border ${
+            className={`hidden sm:flex px-2.5 py-1 rounded-full glass-pill transition-all text-xs items-center space-x-1.5 border ${
               isMusicPlaying
                 ? 'text-rose-400 bg-rose-500/20 border-rose-500/40 shadow-sm shadow-rose-500/20'
                 : 'text-white/70 hover:text-white border-white/15'
@@ -113,7 +170,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
             ) : (
               <Music className="w-3.5 h-3.5" />
             )}
-            <span className="hidden md:inline text-[11px] font-medium max-w-[85px] truncate">
+            <span className="text-[11px] font-medium max-w-[85px] truncate">
               {currentTrackName}
             </span>
           </button>
@@ -123,7 +180,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
             id="btn-nav-search"
             onClick={onOpenSearch}
             className="p-2 rounded-full glass-pill text-white/70 hover:text-white transition-all"
-            title="Search reels"
+            title="Search reels (Ctrl+K)"
           >
             <Search className="w-3.5 h-3.5" />
           </button>
@@ -204,3 +261,4 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
     </header>
   );
 };
+

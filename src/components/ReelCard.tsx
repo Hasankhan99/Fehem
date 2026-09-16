@@ -241,7 +241,7 @@ export const ReelCard: React.FC<ReelCardProps> = ({
     <div
       id={`reel-card-${reel.id}`}
       onClick={handleCardTap}
-      className="relative w-full max-w-[420px] h-[91vh] max-h-[820px] glass-panel rounded-[32px] sm:rounded-[36px] overflow-hidden flex flex-col justify-between select-none shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85)] border border-white/15 transition-all"
+      className="relative w-full max-w-full sm:max-w-[420px] md:max-w-[440px] h-[calc(100dvh-5.5rem)] max-h-[820px] min-h-[500px] glass-panel rounded-2xl sm:rounded-[36px] overflow-hidden flex flex-col justify-between select-none shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85)] border border-white/15 transition-all"
     >
       {/* Dynamic atmospheric background glow */}
       <div
@@ -354,7 +354,7 @@ export const ReelCard: React.FC<ReelCardProps> = ({
       </div>
 
       {/* CENTER: Main Instagram Visual Reel Content with Safe Margins from Floating Action Column */}
-      <div className="relative z-10 flex-1 pl-4 sm:pl-5 pr-14 sm:pr-16 flex flex-col justify-center items-center text-center my-auto w-full">
+      <div className="relative z-10 flex-1 pl-3 sm:pl-5 pr-13 sm:pr-16 flex flex-col justify-center items-center text-center my-auto w-full py-1 overflow-hidden">
         {/* View Mode Toggle Switch (When Animation is Available) OR Pure Quote Reflection Badge */}
         {hasAnimation ? (
           <div className="flex items-center space-x-1.5 p-1 rounded-full glass-pill border border-white/15 mb-2 shadow-sm">
@@ -478,7 +478,7 @@ export const ReelCard: React.FC<ReelCardProps> = ({
       </div>
 
       {/* RIGHT: Floating Instagram Action Column */}
-      <div className="absolute right-3 bottom-20 z-20 flex flex-col items-center space-y-3.5">
+      <div className="absolute right-2 sm:right-3 bottom-14 sm:bottom-18 z-20 flex flex-col items-center space-y-2 sm:space-y-3">
         {/* Like Button */}
         <button
           id={`btn-like-${reel.id}`}
@@ -486,17 +486,17 @@ export const ReelCard: React.FC<ReelCardProps> = ({
             e.stopPropagation();
             onToggleLike(reel.id);
           }}
-          className="flex flex-col items-center group"
-          title="Like"
+          className="flex flex-col items-center group touch-manipulation"
+          title="Like (L)"
         >
           <div
-            className={`w-10 h-10 rounded-full glass-pill flex items-center justify-center transition-transform active:scale-125 ${
+            className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full glass-pill flex items-center justify-center transition-transform active:scale-125 ${
               isLiked ? 'text-rose-500 bg-rose-500/20 border-rose-500/40' : 'text-white hover:text-rose-400'
             }`}
           >
             <Heart className={`w-5 h-5 transition-all ${isLiked ? 'fill-rose-500 text-rose-500' : ''}`} />
           </div>
-          <span className="text-[10px] font-bold text-white/80 mt-1 font-mono">{simulatedLikes}</span>
+          <span className="text-[10px] font-bold text-white/80 mt-0.5 font-mono">{simulatedLikes}</span>
         </button>
 
         {/* Deep Dive / Details Button */}
@@ -506,13 +506,13 @@ export const ReelCard: React.FC<ReelCardProps> = ({
             e.stopPropagation();
             setShowDeepDive(true);
           }}
-          className="flex flex-col items-center group"
+          className="flex flex-col items-center group touch-manipulation"
           title="View Takeaways & Code"
         >
-          <div className="w-10 h-10 rounded-full glass-pill flex items-center justify-center text-white hover:text-cyan-400 transition-transform active:scale-110">
+          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full glass-pill flex items-center justify-center text-white hover:text-cyan-400 transition-transform active:scale-110">
             <MessageCircle className="w-5 h-5" />
           </div>
-          <span className="text-[10px] font-bold text-white/80 mt-1 font-mono">{simulatedComments}</span>
+          <span className="text-[10px] font-bold text-white/80 mt-0.5 font-mono">{simulatedComments}</span>
         </button>
 
         {/* Bookmark Button */}
@@ -522,17 +522,17 @@ export const ReelCard: React.FC<ReelCardProps> = ({
             e.stopPropagation();
             onToggleBookmark(reel.id);
           }}
-          className="flex flex-col items-center group"
-          title="Save to Vault"
+          className="flex flex-col items-center group touch-manipulation"
+          title="Save to Vault (B)"
         >
           <div
-            className={`w-10 h-10 rounded-full glass-pill flex items-center justify-center transition-transform active:scale-110 ${
+            className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full glass-pill flex items-center justify-center transition-transform active:scale-110 ${
               isBookmarked ? 'text-amber-400 bg-amber-500/20 border-amber-500/40' : 'text-white hover:text-amber-300'
             }`}
           >
             <Bookmark className={`w-5 h-5 ${isBookmarked ? 'fill-amber-400' : ''}`} />
           </div>
-          <span className="text-[10px] font-bold text-white/80 mt-1 font-mono">Save</span>
+          <span className="text-[10px] font-bold text-white/80 mt-0.5 font-mono">Save</span>
         </button>
 
         {/* Share Button (Opens Instagram-Style Share Sheet Modal) */}
@@ -542,13 +542,13 @@ export const ReelCard: React.FC<ReelCardProps> = ({
             e.stopPropagation();
             onOpenShareModal(reel);
           }}
-          className="flex flex-col items-center group"
-          title="Share Reel"
+          className="flex flex-col items-center group touch-manipulation"
+          title="Share Reel (S)"
         >
-          <div className="w-10 h-10 rounded-full glass-pill flex items-center justify-center text-white hover:text-emerald-400 transition-transform active:scale-110">
+          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full glass-pill flex items-center justify-center text-white hover:text-emerald-400 transition-transform active:scale-110">
             <Share2 className="w-5 h-5" />
           </div>
-          <span className="text-[10px] font-bold text-white/80 mt-1 font-mono">Share</span>
+          <span className="text-[10px] font-bold text-white/80 mt-0.5 font-mono">Share</span>
         </button>
 
         {/* Spinning Vinyl Record Disc (Click opens Soundscapes / Shuffle) */}
@@ -562,7 +562,7 @@ export const ReelCard: React.FC<ReelCardProps> = ({
               onToggleMusic();
             }
           }}
-          className="relative mt-1 flex flex-col items-center"
+          className="relative mt-0.5 flex flex-col items-center touch-manipulation"
           title="Focus Soundscapes & Music (Click to Open/Shuffle)"
         >
           {isMusicPlaying && (
@@ -572,7 +572,7 @@ export const ReelCard: React.FC<ReelCardProps> = ({
           )}
 
           <div
-            className={`w-9 h-9 rounded-full bg-neutral-950 border-2 border-neutral-700 p-1 flex items-center justify-center shadow-lg transition-transform ${
+            className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-neutral-950 border-2 border-neutral-700 p-1 flex items-center justify-center shadow-lg transition-transform ${
               isMusicPlaying ? 'animate-spin-slow border-rose-500/60' : 'opacity-80'
             }`}
           >

@@ -103,8 +103,8 @@ export const ConceptVisualizer: React.FC<ConceptVisualizerProps> = ({
     return (
       <div
         id="quote-presentation-card"
-        className={`relative w-full rounded-2xl overflow-hidden glass-pill border border-white/20 p-4 flex flex-col justify-between transition-all duration-300 shadow-xl backdrop-blur-xl ${
-          isExpanded ? 'h-[330px]' : 'h-[250px]'
+        className={`relative w-full rounded-2xl overflow-hidden glass-pill border border-white/20 p-3 sm:p-4 flex flex-col justify-between transition-all duration-300 shadow-xl backdrop-blur-xl h-[210px] sm:h-[240px] md:h-[250px] ${
+          isExpanded ? '!h-[300px] sm:!h-[330px]' : ''
         }`}
         style={{
           background:
@@ -200,8 +200,8 @@ export const ConceptVisualizer: React.FC<ConceptVisualizerProps> = ({
   return (
     <div
       id={`concept-visualizer-${resolvedType}`}
-      className={`relative w-full rounded-2xl overflow-hidden glass-pill border border-white/20 p-3 sm:p-3.5 flex flex-col justify-between transition-all duration-300 shadow-xl backdrop-blur-xl ${
-        isExpanded ? 'h-[330px]' : 'h-[250px]'
+      className={`relative w-full rounded-2xl overflow-hidden glass-pill border border-white/20 p-3 sm:p-3.5 flex flex-col justify-between transition-all duration-300 shadow-xl backdrop-blur-xl h-[210px] sm:h-[240px] md:h-[250px] ${
+        isExpanded ? '!h-[300px] sm:!h-[330px]' : ''
       }`}
     >
       {/* Visual Header */}

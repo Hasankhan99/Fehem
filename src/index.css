@@ -91,3 +91,15 @@
 .animate-eq-4 {
   animation: eqBar 1.2s ease-in-out infinite 0.1s;
 }
+
+/* Mobile Safe Area Handling */
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.h-dynamic-screen {
+  height: 100vh;
+  height: 100dvh;
+}
