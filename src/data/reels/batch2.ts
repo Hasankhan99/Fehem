@@ -1,0 +1,1223 @@
+import { MicroReel } from '../../types';
+
+export const BATCH_2_REELS: MicroReel[] = [
+  // 21. ROBERT CIALDINI — Influence (Reciprocity)
+  {
+    id: 'reel-cialdini-reciprocity',
+    title: 'The Law of Reciprocity: Give First',
+    subtitle: 'Influence: The Psychology of Persuasion by Robert B. Cialdini',
+    category: 'communication',
+    source: {
+      name: 'Influence',
+      authorOrTopic: 'Robert B. Cialdini',
+      tag: 'Psychology of Persuasion',
+    },
+    coreIdea: 'Human societies are built on an ingrained debt obligation. When someone does an unexpected favor or gift for you, you feel an irresistible psychological compulsion to return it.',
+    quoteAuthor: 'Robert B. Cialdini',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Unsolicited Gift', text: 'Give meaningful value first...', emphasis: 'with zero strings attached.' },
+      { phase: 1, stepLabel: 'Psychological Debt', text: 'An ancient social reflex triggers...', emphasis: 'the subconscious need to reciprocate.' },
+      { phase: 2, stepLabel: 'Mutual Loyalty', text: 'The bond transforms from transaction...', emphasis: 'into genuine cooperation.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#ec4899',
+    visualConceptType: 'tactical-empathy',
+    conceptAnimationLabel: 'Subconscious Reciprocity Energy Loop',
+    takeaways: [
+      {
+        point: 'Be the First to Give',
+        detail: 'Do not wait for others to help you. Offer a high-value resource, introduction, or compliment upfront with zero expectation.',
+        isActionable: true,
+      },
+      {
+        point: 'Personalize the Value',
+        detail: 'Reciprocity is 3x more potent when the gift feels tailor-made and unexpected rather than generic spam.',
+        isActionable: true,
+      },
+      {
+        point: 'Spot Exploitative Reciprocity',
+        detail: 'Beware of salespeople who hand you free mints or drinks specifically designed to make saying "no" socially uncomfortable.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Reciprocity Principle',
+      description: 'The deeply ingrained evolutionary rule obligating people to repay favors, gifts, and concessions.',
+      formulaOrRule: 'Unconditional High Value Delivered First = Deep Psychological Goodwill',
+    },
+    immediateActionChallenge: 'Send an unexpected, thoughtful message of praise or a helpful resource to a colleague today without asking for anything.',
+    quiz: {
+      question: 'Why is the reciprocity principle so powerful across all human cultures?',
+      options: [
+        'It is enforced by international legal treaties',
+        'Human social evolution rewarded groups that honored future reciprocal obligations, allowing mutual division of labor and survival',
+        'People are naturally fearful of financial penalties',
+        'It only works on people with agreeable personalities',
+      ],
+      correctIndex: 1,
+      explanation: 'Anthropologists demonstrate that the obligation to repay allowed primitive humans to share food and skills safely, forming the bedrock of modern society.',
+    },
+    tags: ['Influence', 'Psychology', 'Communication', 'Persuasion'],
+    likesCount: 3820,
+    audioScript: "The rule of reciprocity says we should try to repay, in kind, what another person has provided us. If a colleague brings you coffee unexpectedly, you feel a visceral need to balance the ledger. Want more influence and cooperation? Stop asking for favors. Start being the first person in the room to provide genuine, personalized value.",
+  },
+
+  // 22. ROBERT CIALDINI — Influence (Commitment & Consistency)
+  {
+    id: 'reel-cialdini-commitment-consistency',
+    title: 'Foot-in-the-Door: Commitment & Consistency',
+    subtitle: 'Influence: The Psychology of Persuasion by Robert B. Cialdini',
+    category: 'psychology',
+    source: {
+      name: 'Influence',
+      authorOrTopic: 'Robert B. Cialdini',
+      tag: 'Behavioral Psychology',
+    },
+    coreIdea: 'Once we make a choice or take a stand, we face interpersonal and internal pressures to behave consistently with that commitment.',
+    quoteAuthor: 'Robert B. Cialdini',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Tiny Micro-Yes', text: 'Get a small, painless agreement first...', emphasis: 'a single signature or nod.' },
+      { phase: 1, stepLabel: 'Identity Alignment', text: 'The subconscious shifts its self-concept...', emphasis: 'I am someone who supports this.' },
+      { phase: 2, stepLabel: 'Massive Action', text: 'Consistency pressure drives them to...', emphasis: 'honor the larger request.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#3b82f6',
+    visualConceptType: 'compounding-curve',
+    conceptAnimationLabel: 'Micro-Commitment to Macro-Action Escalation',
+    takeaways: [
+      {
+        point: 'Ask for the Small Yes First',
+        detail: 'Ask someone to read a single headline before asking them to review a 40-page contract. Micro-agreements pave the path.',
+        isActionable: true,
+      },
+      {
+        point: 'Write Commitments Down',
+        detail: 'Written public commitments trigger far higher personal adherence than spoken promises because the ego defends its written words.',
+        isActionable: true,
+      },
+      {
+        point: 'Beware Sunk Cost Consistency',
+        detail: 'Notice when you are defending a terrible project merely because you publicly backed it in the past. Free your ego to change.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'Cognitive Consistency Bias',
+      description: 'The psychological drive to align current actions with previously stated public positions to avoid hypocrisy.',
+      formulaOrRule: 'Micro-Commitment + Public Expression = Inflexible Behavioral Follow-Through',
+    },
+    immediateActionChallenge: 'Write down your #1 personal goal on a sticky note and stick it on your monitor where your eyes will see it constantly.',
+    quiz: {
+      question: 'In Cialdini’s experiments, why did homeowners agree to place a huge ugly billboard on their lawn?',
+      options: [
+        'They were paid thousands of dollars',
+        'They had previously agreed two weeks prior to display a tiny 3-inch window sticker supporting safe driving',
+        'They were legally mandated by city ordinance',
+        'They didn’t care about their home property values',
+      ],
+      correctIndex: 1,
+      explanation: 'By signing the tiny sticker, they reframed their self-identity into "citizens who prioritize road safety," causing 76% to accept the massive billboard later.',
+    },
+    tags: ['Psychology', 'Influence', 'Habits', 'Behavior Design'],
+    likesCount: 3490,
+    audioScript: "It is easier to resist at the beginning than at the end. Once human beings make a small commitment, our brain scrambles to justify it by acting consistently. If you want to change someone's mind or your own habits, start with a microscopic, friction-free step. The ego will do the heavy lifting of following through.",
+  },
+
+  // 23. ROBERT CIALDINI — Influence (Social Proof)
+  {
+    id: 'reel-cialdini-social-proof',
+    title: 'The Pluralistic Ignorance of Social Proof',
+    subtitle: 'Influence: The Psychology of Persuasion by Robert B. Cialdini',
+    category: 'psychology',
+    source: {
+      name: 'Influence',
+      authorOrTopic: 'Robert B. Cialdini',
+      tag: 'Social Psychology',
+    },
+    coreIdea: 'When people are uncertain, they look outside to see what others are doing. If everyone is looking around calmly, everyone falsely concludes that no emergency exists.',
+    quoteAuthor: 'Robert B. Cialdini',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Uncertain Ambiguity', text: 'When danger or uncertainty strikes...', emphasis: 'we scan the crowd for cues.' },
+      { phase: 1, stepLabel: 'The Bystander Freeze', text: 'Seeing everyone frozen in place...', emphasis: 'we assume everything is fine.' },
+      { phase: 2, stepLabel: 'Shattering The Trance', text: 'Point directly at one person...', emphasis: 'Assign explicit individual responsibility!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'stimulus-response-gap',
+    conceptAnimationLabel: 'Pluralistic Bystander Paralysis vs Direct Directive',
+    takeaways: [
+      {
+        point: 'Single Out One Person in a Crisis',
+        detail: 'In an emergency, never yell "Someone call 911!" Point directly at one individual in blue jeans: "You, call 911 right now."',
+        isActionable: true,
+      },
+      {
+        point: 'Question the Consensus Herd',
+        detail: 'When 95% of people are chasing a crypto coin or panic-selling a stock, recognize that collective consensus often reflects shared blindness.',
+        isActionable: false,
+      },
+      {
+        point: 'Display Peer Evidence',
+        detail: 'People are persuaded by peers who resemble them far more than by distant authorities or celebrity endorsements.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Pluralistic Ignorance',
+      description: 'A psychological state where a crowd of bystanders collectively misinterpret a crisis because each member hides their alarm.',
+      formulaOrRule: 'Crowd + Ambiguity = Zero Action. Direct Individual Assignment = Instant Action.',
+    },
+    immediateActionChallenge: 'In your next group chat or meeting, never leave a request open-ended to the group. Tag one person with a specific deadline.',
+    quiz: {
+      question: 'What is the most effective way to receive help during a medical emergency in a crowded public street?',
+      options: [
+        'Scream as loudly as you can into the air',
+        'Look at your phone to check your vital signs',
+        'Isolate one individual, make eye contact, point, and give an explicit command like "You in the jacket, call an ambulance"',
+        'Wait until a trained medical doctor notices you',
+      ],
+      correctIndex: 2,
+      explanation: 'Singling out a specific bystander strips away pluralistic ignorance and the diffusion of responsibility, eliminating ambiguity and prompting instant action.',
+    },
+    tags: ['Psychology', 'Social Dynamics', 'Decision Making', 'Communication'],
+    likesCount: 3670,
+    audioScript: "Since 95% of the people are imitators and only 5% initiators, people are persuaded more by the actions of others than by any proof we can offer. In an emergency, a crowd will often do nothing because everyone is looking at each other for permission. If you ever need help, don't yell to the crowd. Look one person in the eye, point, and tell them what to do.",
+  },
+
+  // 24. ROBERT CIALDINI — Influence (Scarcity)
+  {
+    id: 'reel-cialdini-scarcity-fomo',
+    title: 'The Scarcity Principle & Psychological Reactance',
+    subtitle: 'Influence: The Psychology of Persuasion by Robert B. Cialdini',
+    category: 'psychology',
+    source: {
+      name: 'Influence',
+      authorOrTopic: 'Robert B. Cialdini',
+      tag: 'Behavioral Economics',
+    },
+    coreIdea: 'Opportunities seem more valuable to us when their availability is limited. When our freedom to choose is threatened by scarcity, we experience psychological reactance and desire it fiercely.',
+    quoteAuthor: 'Robert B. Cialdini',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Abundance Baseline', text: 'When something is freely available...', emphasis: 'we take it for granted.' },
+      { phase: 1, stepLabel: 'The Threat of Loss', text: 'Tell the brain it cannot have it...', emphasis: 'Psychological reactance ignites!' },
+      { phase: 2, stepLabel: 'Hyper-Valuation', text: 'The brain inflates its perceived value...', emphasis: 'purely due to dwindling supply.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f43f5e',
+    visualConceptType: 'system1-system2',
+    conceptAnimationLabel: 'Scarcity Emotional Surge vs Rational Utility',
+    takeaways: [
+      {
+        point: 'Frame What People Stand to Lose',
+        detail: 'People are twice as motivated by the fear of losing something as by the prospect of gaining something of equal value.',
+        isActionable: true,
+      },
+      {
+        point: 'The "Fresh Scarcity" Rule',
+        detail: 'Something that was recently abundant and suddenly restricted becomes far more fiercely desired than something that was always scarce.',
+        isActionable: false,
+      },
+      {
+        point: 'Separate Scarcity from Real Utility',
+        detail: 'Ask: "Do I actually want this item for its inherent usefulness, or do I just want the thrill of possessing something limited?"',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Psychological Reactance',
+      description: 'An emotional reaction to offers, persons, rules, or regulations that threaten or eliminate specific behavioral freedoms.',
+      formulaOrRule: 'Threatened Freedom + Finite Clock = Irrational Emotional Urgency',
+    },
+    immediateActionChallenge: 'Before buying anything labeled "Limited Time Only" this week, wait 48 hours to let emotional reactance settle down.',
+    quiz: {
+      question: 'What is psychological reactance according to Robert Cialdini?',
+      options: [
+        'A chemical imbalance in the adrenal glands',
+        'The rebellious psychological response triggered whenever our choices or access are restricted, making us crave what was forbidden',
+        'The ability to memorize numbers backward',
+        'A cognitive bias that makes people allergic to certain foods',
+      ],
+      correctIndex: 1,
+      explanation: 'When our freedom to obtain something is threatened, our desire to maintain that freedom makes us value the restricted item significantly more.',
+    },
+    tags: ['Psychology', 'Influence', 'Biases', 'Consumer Behavior'],
+    likesCount: 3210,
+    audioScript: "The way to love anything is to realize that it might be lost. When something becomes scarce, we don't crave it for its actual quality—we crave it because our freedom to choose is slipping away. Retailers exploit this with countdown timers and limited stock banners. Always pause and ask: Do I actually need this, or is my fear of missing out doing the talking?",
+  },
+
+  // 25. OLIVER BURKEMAN — Four Thousand Weeks (Finitude)
+  {
+    id: 'reel-burkeman-4000-weeks-finitude',
+    title: 'The Shock of 4,000 Weeks: Radical Finitude',
+    subtitle: 'Four Thousand Weeks: Time Management for Mortals by Oliver Burkeman',
+    category: 'mindset',
+    source: {
+      name: 'Four Thousand Weeks',
+      authorOrTopic: 'Oliver Burkeman',
+      tag: 'Time & Existential Philosophy',
+    },
+    coreIdea: 'The average human lifespan is shockingly brief: roughly 4,000 weeks. Time management isn’t about clearing your inbox; it’s choosing which meaningful things you will willingly fail to do.',
+    quoteAuthor: 'Oliver Burkeman',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The 4,000 Week Reality', text: 'You have roughly four thousand weeks...', emphasis: 'Life is not a rehearsal.' },
+      { phase: 1, stepLabel: 'The Clearing Myth', text: 'You will never finish everything...', emphasis: 'The inbox will never reach zero.' },
+      { phase: 2, stepLabel: 'Joys of Missing Out', text: 'Choose consciously what to neglect...', emphasis: 'Freedom is in radical limitation.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'power-of-now',
+    conceptAnimationLabel: 'Finite Lifespan Hourglass vs Endless To-Do Stream',
+    takeaways: [
+      {
+        point: 'Embrace Good-Enough Neglect',
+        detail: 'You cannot read all books, visit all countries, or master all crafts. True peace comes from willingly choosing what to let go.',
+        isActionable: true,
+      },
+      {
+        point: 'Stop Treating Life as a Milestone Queue',
+        detail: 'If you only live for future retirement or weekend leisure, you are deferring life itself until you are nearly dead.',
+        isActionable: false,
+      },
+      {
+        point: 'Limit Work-in-Progress to Three',
+        detail: 'Never keep 10 active major projects running at once. Fix your maximum concurrent WIP limit to 3.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Radical Finitude',
+      description: 'The psychological relief of accepting that human capacity is hopelessly finite, liberating you from impossible productivity standards.',
+      formulaOrRule: 'Total Weeks = 4,000. Accept Impossibility of Doing Everything = Peace of Choosing the Few.',
+    },
+    immediateActionChallenge: 'Identify one project or obligation that has been lingering for months. Give yourself permission to permanently abandon it right now.',
+    quiz: {
+      question: 'According to Oliver Burkeman, what is the fatal trap of modern time management?',
+      options: [
+        'People don’t wake up early enough at 5 AM',
+        'Believing that if you get fast and efficient enough, you will eventually reach a state of calm where you have time for everything',
+        'Using paper planners instead of digital apps',
+        'Failing to delegate household chores to software algorithms',
+      ],
+      correctIndex: 1,
+      explanation: 'Burkeman calls this the Efficiency Trap: becoming more productive simply generates more demands and expectations, feeding an infinite loop of overwhelm.',
+    },
+    tags: ['Mindset', 'Time Management', 'Philosophy', 'Productivity'],
+    likesCount: 4520,
+    audioScript: "Assuming you live to be eighty, you have just four thousand weeks on this planet. Stop believing that one day you will finally conquer your to-do list and have time to live. The list is infinite; your time is finite. Once you accept that you cannot do it all, the pressure evaporates. The real question is: What small, beautiful few things will you choose to care about today?",
+  },
+
+  // 26. OLIVER BURKEMAN — Four Thousand Weeks (Efficiency Trap)
+  {
+    id: 'reel-burkeman-efficiency-trap',
+    title: 'The Efficiency Trap: The More You Do, The More You Get',
+    subtitle: 'Four Thousand Weeks by Oliver Burkeman',
+    category: 'productivity',
+    source: {
+      name: 'Four Thousand Weeks',
+      authorOrTopic: 'Oliver Burkeman',
+      tag: 'Time Philosophy',
+    },
+    coreIdea: 'Efficiency doesn’t free up time; it fills time with more demands. Like widening a freeway to cure traffic, clearing emails simply attracts more emails.',
+    quoteAuthor: 'Oliver Burkeman',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Speed Trap', text: 'You answer emails at double speed...', emphasis: 'expecting peace at the end.' },
+      { phase: 1, stepLabel: 'Induced Demand', text: 'Your speed creates expectations...', emphasis: 'spawning twice as many replies.' },
+      { phase: 2, stepLabel: 'Strategic Slowness', text: 'Decide what to be bad at...', emphasis: 'Guard your core focus unapologetically.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#8b5cf6',
+    visualConceptType: 'deep-work-funnel',
+    conceptAnimationLabel: 'Induced Demand Traffic Jam in Task Management',
+    takeaways: [
+      {
+        point: 'Email is Induced Demand',
+        detail: 'Replying promptly to messages signals to the world that you are always available, directly creating a heavier flood of replies.',
+        isActionable: true,
+      },
+      {
+        point: 'Decide in Advance What to Fail At',
+        detail: 'Top performers don’t do everything well; they consciously decide which unimportant domains they will intentionally do poorly in.',
+        isActionable: true,
+      },
+      {
+        point: 'Treat Time as a Shared River',
+        detail: 'Extreme individual calendar autonomy isolates you. True satisfaction comes from synchronizing time with family and community.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Efficiency Trap (Induced Demand)',
+      description: 'Increasing efficiency does not create leisure; it simply increases the volume of trivial work flowing into the newly cleared space.',
+      formulaOrRule: 'Increased Speed of Task Clearance = Increased Inflow of New Tasks',
+    },
+    immediateActionChallenge: 'Delay replying to your next non-urgent email by 24 hours. Notice how the world does not end.',
+    quiz: {
+      question: 'How does Burkeman compare answering emails to widening highways?',
+      options: [
+        'Both cost millions of government dollars',
+        'Just as widening a freeway induces more drivers to take the road (creating worse gridlock), clearing messages rapidly induces more people to send you messages',
+        'Both should only be done during daylight hours',
+        'Both cause cognitive decline in elderly populations',
+      ],
+      correctIndex: 1,
+      explanation: 'Urban planners know expanding roads induces more traffic. Similarly, the more efficiently you process communications, the more communications you attract.',
+    },
+    tags: ['Productivity', 'Email', 'Focus', 'Time Management'],
+    likesCount: 3910,
+    audioScript: "You never get ahead of an infinite river of obligations by paddling faster. When you become super-efficient at clearing your inbox, what happens? People realize you reply instantly, and they send you more messages. The answer isn't greater speed. The answer is consciously deciding what you are willing to let fall through the cracks.",
+  },
+
+  // 27. MATTHEW WALKER — Why We Sleep (Emotional Amygdala)
+  {
+    id: 'reel-walker-why-we-sleep-amygdala',
+    title: 'The Sleep-Deprived Amygdala: Emotional Whiplash',
+    subtitle: 'Why We Sleep: Unlocking the Power of Sleep and Dreams by Matthew Walker',
+    category: 'psychology',
+    source: {
+      name: 'Why We Sleep',
+      authorOrTopic: 'Matthew Walker, PhD',
+      tag: 'Neuroscience & Sleep',
+    },
+    coreIdea: 'Without adequate sleep, the prefrontal cortex loses its regulatory brake on the emotional amygdala. Your brain reverts to an ancient, hyper-reactive state of emotional whiplash.',
+    quoteAuthor: 'Matthew Walker',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Prefrontal Disconnection', text: 'One night of sleep deprivation...', emphasis: 'severs the rational prefrontal brake.' },
+      { phase: 1, stepLabel: 'Amygdala Overdrive', text: 'The emotional threat center surges by 60%...', emphasis: 'everything feels like an attack.' },
+      { phase: 2, stepLabel: 'REM Restoration', text: 'Deep REM sleep acts as overnight therapy...', emphasis: 'smoothing emotional trauma.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#06b6d4',
+    visualConceptType: 'system1-system2',
+    conceptAnimationLabel: 'Prefrontal Cortical Brake vs Amygdala Flare-up',
+    takeaways: [
+      {
+        point: 'Never Have Crucial Conversations Tired',
+        detail: 'When sleep-deprived, neutral facial expressions appear hostile and small remarks feel like mortal insults. Postpone disputes until morning.',
+        isActionable: true,
+      },
+      {
+        point: 'REM Sleep is Overnight Therapy',
+        detail: 'During dream sleep, the brain strips away bitter emotional distress from memory, leaving only the factual wisdom behind.',
+        isActionable: false,
+      },
+      {
+        point: 'Protect an 8-Hour Sleep Opportunity',
+        detail: 'Being in bed for 8 hours is non-negotiable cognitive hygiene. Sleep is the single most effective performance-enhancing tool known to biology.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Corticolimbic Regulatory Circuit',
+      description: 'The neural connection between the rational prefrontal cortex and emotional amygdala that requires sleep to maintain equilibrium.',
+      formulaOrRule: 'Sleep Loss = 60% Amygdala Hyperactivity + Prefrontal Disconnection',
+    },
+    immediateActionChallenge: 'Set a non-negotiable bedtime alarm for tonight to ensure you get a full 8-hour sleep opportunity.',
+    quiz: {
+      question: 'What happens to the human amygdala after a single night of sleep deprivation according to brain scans in Why We Sleep?',
+      options: [
+        'It shrinks in physical size by 20%',
+        'It exhibits an astonishing 60% surge in emotional hyperactivity due to lost prefrontal connection',
+        'It produces excess dopamine that induces euphoria',
+        'It remains completely unaffected because sleep only affects physical muscles',
+      ],
+      correctIndex: 1,
+      explanation: 'fMRI scans by Dr. Walker proved that without sleep, the rational executive brain loses top-down control over the emotional centers, triggering intense irrational swings.',
+    },
+    tags: ['Neuroscience', 'Sleep', 'Psychology', 'Emotional Health'],
+    likesCount: 4780,
+    audioScript: "Sleep is not an optional luxury; it is your brain's overnight biochemical reset. When you cut your sleep short, your prefrontal cortex—the logical CEO of your brain—shuts down. Your amygdala becomes 60% more reactive. You become irritable, anxious, and impulsive. If you want better emotional resilience tomorrow, go to bed on time tonight.",
+  },
+
+  // 28. MATTHEW WALKER — Why We Sleep (Memory Consolidation)
+  {
+    id: 'reel-walker-sleep-memory',
+    title: 'Sleep to Save: Memory Consolidation Engine',
+    subtitle: 'Why We Sleep by Matthew Walker, PhD',
+    category: 'habits',
+    source: {
+      name: 'Why We Sleep',
+      authorOrTopic: 'Matthew Walker, PhD',
+      tag: 'Cognitive Science',
+    },
+    coreIdea: 'Pulling an all-nighter reduces learning capacity by 40%. Sleep before learning prepares the brain to soak up new information; sleep after learning cements it into permanent memory.',
+    quoteAuthor: 'Matthew Walker',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Hippocampal Cache', text: 'New facts fill the temporary hippocampus...', emphasis: 'like a temporary memory stick.' },
+      { phase: 1, stepLabel: 'Slow-Wave Transfer', text: 'During deep non-REM sleep...', emphasis: 'slow brainwaves transfer data to the cortex.' },
+      { phase: 2, stepLabel: 'Permanent Hard Drive', text: 'Memories are locked into permanent storage...', emphasis: 'ready for lifelong recall.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'compounding-curve',
+    conceptAnimationLabel: 'Hippocampus to Neocortex Memory Transfer',
+    takeaways: [
+      {
+        point: 'Never Pull an All-Nighter to Study',
+        detail: 'Students who study and sleep remember 40% more than those who cram through the night. Sleep is when studying actually sticks.',
+        isActionable: true,
+      },
+      {
+        point: 'Motor Skills Require Sleep Spindles',
+        detail: 'Whether learning piano, tennis, or coding keystrokes, your brain repeats the motor sequence 20 times faster during Stage 2 NREM sleep.',
+        isActionable: false,
+      },
+      {
+        point: 'Keep Regular Sleep Timings',
+        detail: 'Going to bed and waking up at the exact same hour anchors your circadian rhythm and optimizes deep sleep quality.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Two-Stage Memory Consolidation',
+      description: 'The biological process of moving newly acquired information from the volatile hippocampus to the durable neocortex during deep sleep.',
+      formulaOrRule: 'Study Input + Deep Non-REM Sleep = Permanent Neural Wiring',
+    },
+    immediateActionChallenge: 'If you are learning a difficult topic today, review your summary notes for 5 minutes immediately before turning out the lights tonight.',
+    quiz: {
+      question: 'Why is an all-nighter before an exam scientifically self-defeating?',
+      options: [
+        'It causes physical headaches that distract you from writing',
+        'Without sleep, the brain cannot transfer memories from the volatile hippocampus into the long-term neocortex, reducing recall by up to 40%',
+        'It empties your body of water',
+        'It makes exam pens harder to grip',
+      ],
+      correctIndex: 1,
+      explanation: 'Sleep is not the absence of learning; it is the active phase where the brain writes and organizes new knowledge into permanent neural architecture.',
+    },
+    tags: ['Learning', 'Memory', 'Sleep', 'Cognitive Science'],
+    likesCount: 3340,
+    audioScript: "Sleep after learning is essential to click the save button on newly acquired memories. But sleep before learning is just as critical to prepare your brain like a dry sponge ready to absorb information. When you sacrifice sleep to study more, you are literally leaking the very knowledge you worked so hard to acquire. Sleep is studying.",
+  },
+
+  // 29. MIHALY CSIKSZENTMIHALYI — Flow (The Challenge-Skill Balance)
+  {
+    id: 'reel-flow-challenge-skill',
+    title: 'The Flow Channel: Challenge vs. Skill Balance',
+    subtitle: 'Flow: The Psychology of Optimal Experience by Mihaly Csikszentmihalyi',
+    category: 'productivity',
+    source: {
+      name: 'Flow',
+      authorOrTopic: 'Mihaly Csikszentmihalyi',
+      tag: 'Optimal Experience',
+    },
+    coreIdea: 'Flow appears in the sweet spot where the difficulty of a challenge slightly exceeds your current skills. If the challenge is too high, you suffer anxiety. If too low, you drown in boredom.',
+    quoteAuthor: 'Mihaly Csikszentmihalyi',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Anxiety Zone', text: 'Challenge far exceeds capability...', emphasis: 'paralyzing fear and overwhelm.' },
+      { phase: 1, stepLabel: 'Boredom Zone', text: 'Capability far exceeds difficulty...', emphasis: 'apathy and wandering mind.' },
+      { phase: 2, stepLabel: 'The Flow Channel', text: 'Challenge sits 4% beyond your current skill...', emphasis: 'Effortless immersion and peak output!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#06b6d4',
+    visualConceptType: 'deep-work-funnel',
+    conceptAnimationLabel: 'The 4% Challenge-Skill Flow Channel Corridor',
+    takeaways: [
+      {
+        point: 'The 4% Challenge Rule',
+        detail: 'Calibrate your tasks so they are roughly 4% harder than your current comfort level. This forces full focus without triggering panic.',
+        isActionable: true,
+      },
+      {
+        point: 'Clear Immediate Feedback',
+        detail: 'Flow cannot exist without instant feedback. Whether it is code compiling, a tennis ball trajectory, or piano chords, feedback keeps focus locked.',
+        isActionable: true,
+      },
+      {
+        point: 'Dissolve the Ego',
+        detail: 'In true flow, self-consciousness vanishes. You stop worrying about what others think because 100% of bandwidth is consumed by the task.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Flow Channel Heuristic',
+      description: 'Achieving deep cognitive absorption by continually adjusting challenge level to match personal competence growth.',
+      formulaOrRule: 'High Challenge + High Skill + Immediate Feedback = Flow State',
+    },
+    immediateActionChallenge: 'Take a routine boring task today and gamify it: set a countdown timer to see if you can complete it with flawless quality 5 minutes faster.',
+    quiz: {
+      question: 'What psychological state occurs when an individual faces high challenge with low personal skill?',
+      options: [
+        'Boredom and apathy',
+        'Flow and transcendence',
+        'Acute anxiety and frustration',
+        'Extreme relaxation',
+      ],
+      correctIndex: 2,
+      explanation: 'Csikszentmihalyi mapped human experience into an 8-quadrant model: high challenge paired with inadequate skill triggers anxiety; flow occurs when high challenge meets high skill.',
+    },
+    tags: ['Flow', 'Focus', 'Productivity', 'Psychology'],
+    likesCount: 4290,
+    audioScript: "The best moments in our lives are not passive, receptive, or relaxing. They usually occur when a person's body or mind is stretched to its limits in a voluntary effort to accomplish something difficult and worthwhile. This is Flow. Balance the challenge just slightly beyond your comfort zone, eliminate all distractions, and let yourself disappear into the craft.",
+  },
+
+  // 30. MIHALY CSIKSZENTMIHALYI — Flow (Autotelic Personality)
+  {
+    id: 'reel-flow-autotelic',
+    title: 'The Autotelic Life: Finding Joy in the Doing',
+    subtitle: 'Flow by Mihaly Csikszentmihalyi',
+    category: 'mindset',
+    source: {
+      name: 'Flow',
+      authorOrTopic: 'Mihaly Csikszentmihalyi',
+      tag: 'Happiness & Fulfillment',
+    },
+    coreIdea: 'An "autotelic" person needs few material possessions and little praise because whatever they do is already rewarding in itself. They enjoy the journey rather than fixating on the destination.',
+    quoteAuthor: 'Mihaly Csikszentmihalyi',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Extrinsic Trap', text: 'Working purely for money or vanity...', emphasis: 'leaves the soul perpetual empty.' },
+      { phase: 1, stepLabel: 'The Autotelic Shift', text: 'Doing the activity for its own sake...', emphasis: 'the process is the true reward.' },
+      { phase: 2, stepLabel: 'Sovereign Joy', text: 'External circumstances lose their power...', emphasis: 'You become invincible to boredom.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#ec4899',
+    visualConceptType: 'ikigai',
+    conceptAnimationLabel: 'Extrinsic Validation vs Autotelic Intrinsic Radiance',
+    takeaways: [
+      {
+        point: 'Fall in Love with the Process',
+        detail: 'If you only love the trophy, training is misery. If you love the sweat and the repetition, victory is an inevitable side effect.',
+        isActionable: true,
+      },
+      {
+        point: 'Transform Routine Tasks into Art',
+        detail: 'Even washing dishes or walking to the store can become an autotelic practice when performed with full sensory awareness and craft.',
+        isActionable: true,
+      },
+      {
+        point: 'Immunity to Outside Opinion',
+        detail: 'When the activity is its own reward, neither cruel criticism nor extravagant praise can derail your inner equilibrium.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Autotelic Mindset',
+      description: 'Deriving fulfillment internally from the execution of an activity rather than requiring external reward or applause.',
+      formulaOrRule: 'Autos (Self) + Telos (Goal) = The Activity Is Its Own Purpose',
+    },
+    immediateActionChallenge: 'Perform one chore or work task today with total craftsmanship, taking pride in every micro-detail as if nobody will ever inspect it.',
+    quiz: {
+      question: 'What does the term "autotelic" literally mean from its Greek roots?',
+      options: [
+        'Automatic electrical wiring',
+        'Having an end or purpose in itself',
+        'Desiring public applause and recognition',
+        'Avoiding all competitive games',
+      ],
+      correctIndex: 1,
+      explanation: 'From the Greek auto (self) and telos (goal), an autotelic activity is one done not in anticipation of some future benefit, but simply because the doing itself is the reward.',
+    },
+    tags: ['Mindset', 'Flow', 'Happiness', 'Philosophy'],
+    likesCount: 3510,
+    audioScript: "Most people spend their lives living conditionally: I will be happy when I get the promotion, when I buy the house, when I hit retirement. An autotelic person flips the equation: The writing of the sentence is the reward. The running of the mile is the reward. When the doing itself is your prize, you can never be defeated.",
+  },
+
+  // 31. SUSAN CAIN — Quiet (The Power of Solitude)
+  {
+    id: 'reel-cain-quiet-solitude',
+    title: 'The Power of Solitude in Deep Innovation',
+    subtitle: 'Quiet: The Power of Introverts in a World That Can’t Stop Talking by Susan Cain',
+    category: 'mindset',
+    source: {
+      name: 'Quiet',
+      authorOrTopic: 'Susan Cain',
+      tag: 'Personality & Creativity',
+    },
+    coreIdea: 'Solitude is often the essential ingredient of innovation. Studies show that group brainstorming produces fewer and poorer quality ideas than individuals working independently in quiet focus.',
+    quoteAuthor: 'Susan Cain',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Groupthink Noise', text: 'Open offices and endless brainstorms...', emphasis: 'favor the loudest, not the smartest.' },
+      { phase: 1, stepLabel: 'Sacred Solitude', text: 'Original thoughts require quiet room...', emphasis: 'free from social conformity pressure.' },
+      { phase: 2, stepLabel: 'Collaborative Synthesis', text: 'Think deeply alone first...', emphasis: 'then bring refined ideas together.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#8b5cf6',
+    visualConceptType: 'deep-work-funnel',
+    conceptAnimationLabel: 'Solitary Idea Incubation vs Groupthink Pressure',
+    takeaways: [
+      {
+        point: 'Brainstorm Alone Before Meeting',
+        detail: 'Have team members write their ideas down silently before speaking. Group discussions prematurely anchor to the first loud speaker.',
+        isActionable: true,
+      },
+      {
+        point: 'Carve Out Deep Solitude Blocks',
+        detail: 'Steve Wozniak created the first Apple computer working alone nights and weekends at HP. Groundbreaking synthesis demands solitude.',
+        isActionable: true,
+      },
+      {
+        point: 'Soft Power is Real Power',
+        detail: 'Quiet, listening leaders often deliver better results with proactive employees because they empower others instead of demanding the spotlight.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Solitary Incubation Principle',
+      description: 'The creative necessity of independent reflection to avoid group conformity bias and develop original ideas.',
+      formulaOrRule: 'Solitary Deep Incubation > High-Decibel Group Brainstorming',
+    },
+    immediateActionChallenge: 'Take 20 minutes of complete silence today—no phone, no music, no coworkers—with just a pen and paper to explore one problem.',
+    quiz: {
+      question: 'What do decades of research on group brainstorming demonstrate according to Susan Cain?',
+      options: [
+        'Groups consistently produce 10x more unique ideas than individuals',
+        'Individuals working alone almost always produce a higher quantity and quality of original ideas than groups',
+        'Brainstorming only works when people yell their thoughts',
+        'Brainstorming eliminates all biases permanently',
+      ],
+      correctIndex: 1,
+      explanation: 'Organizational research shows that group brainstorming suffers from production blocking, evaluation apprehension, and social loafing, making solitary thinking superior.',
+    },
+    tags: ['Creativity', 'Introversion', 'Leadership', 'Focus'],
+    likesCount: 4190,
+    audioScript: "Our culture made a virtue of living only as an extrovert. We embraced the open office and the endless committee brainstorm. But history reveals that our greatest scientists, artists, and creators did their most groundbreaking work in deep, undisturbed solitude. Stop apologizing for needing quiet. Solitude is the laboratory of the soul.",
+  },
+
+  // 32. KELLY MCGONIGAL — The Willpower Instinct (What-the-Hell Effect)
+  {
+    id: 'reel-mcgonigal-what-the-hell',
+    title: 'The "What-the-Hell" Effect: Why Guilt Breeds Relapse',
+    subtitle: 'The Willpower Instinct by Kelly McGonigal, PhD',
+    category: 'habits',
+    source: {
+      name: 'The Willpower Instinct',
+      authorOrTopic: 'Kelly McGonigal, PhD',
+      tag: 'Psychology of Self-Control',
+    },
+    coreIdea: 'When you break a diet or habit, feeling intense guilt doesn’t motivate you—it triggers a massive relapse known as the "What-the-Hell" effect. Self-compassion, not self-criticism, restores willpower.',
+    quoteAuthor: 'Kelly McGonigal, PhD',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Minor Slip', text: 'You eat one cookie or miss one workout...', emphasis: 'a microscopic stumble.' },
+      { phase: 1, stepLabel: 'The Guilt Spiral', text: 'Self-blame and shame trigger stress...', emphasis: '"I already failed, so what the hell!"' },
+      { phase: 2, stepLabel: 'Radical Self-Forgiveness', text: 'Forgiving yourself restores prefrontal control...', emphasis: 'Bounce back on the very next decision!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f43f5e',
+    visualConceptType: 'habit-loop',
+    conceptAnimationLabel: 'Shame Spiral vs Compassionate Willpower Reset',
+    takeaways: [
+      {
+        point: 'Self-Criticism Weakens Willpower',
+        detail: 'Guilt and shame trigger emotional stress, sending the brain straight to dopamine-inducing comfort habits for relief.',
+        isActionable: false,
+      },
+      {
+        point: 'Practice Immediate Self-Forgiveness',
+        detail: 'Studies show dieters who are taught to forgive themselves for eating a donut eat dramatically less candy afterward than those who feel guilty.',
+        isActionable: true,
+      },
+      {
+        point: 'Never Miss Twice',
+        detail: 'A slip is just a slip. Missing one day is an accident; missing two days in a row is the start of a new, destructive habit.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The What-The-Hell Effect',
+      description: 'A cognitive distortion where minor lapses cause acute self-condemnation, triggering full-scale habit abandonment.',
+      formulaOrRule: 'Minor Lapse + Shame = Massive Relapse. Minor Lapse + Self-Compassion = Instant Reset.',
+    },
+    immediateActionChallenge: 'If you slipped on your diet, workout, or screen time today, say out loud: "I made a mistake, I am human, and I choose my next action with care."',
+    quiz: {
+      question: 'What is the scientifically proven antidote to the "What-the-Hell" effect according to Dr. McGonigal?',
+      options: [
+        'Strict self-punishment and fasting for 24 hours',
+        'Self-compassion and immediate forgiveness, which eliminates stress-induced craving spirals',
+        'Hiring a drill sergeant to yell at you',
+        'Pretending that goals don’t matter anyway',
+      ],
+      correctIndex: 1,
+      explanation: 'Research demonstrates that self-criticism consistently depletes willpower, whereas self-compassion lowers cortisol and restores prefrontal self-regulation.',
+    },
+    tags: ['Willpower', 'Habits', 'Self-Compassion', 'Psychology'],
+    likesCount: 3940,
+    audioScript: "Have you ever eaten one cookie on your diet and said: Well, I already blew it, so what the hell, I might as well eat the entire box? Psychologists call this the What-the-Hell Effect. Beating yourself up doesn't build willpower; it triggers stress, and stress drives you right back to comfort. Forgive your slip immediately. The next choice is brand new.",
+  },
+
+  // 33. KELLY MCGONIGAL — The Upside of Stress
+  {
+    id: 'reel-mcgonigal-stress-mindset',
+    title: 'Rethink Stress: The Challenge Response',
+    subtitle: 'The Upside of Stress by Kelly McGonigal, PhD',
+    category: 'mindset',
+    source: {
+      name: 'The Upside of Stress',
+      authorOrTopic: 'Kelly McGonigal, PhD',
+      tag: 'Neurobiology of Resilience',
+    },
+    coreIdea: 'Stress is only harmful if you believe it is harmful. Viewing your pounding heart not as anxiety, but as your body preparing you with oxygen and energy, transforms panic into peak performance.',
+    quoteAuthor: 'Kelly McGonigal, PhD',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Threat Response', text: 'Viewing stress as dangerous toxin...', emphasis: 'blood vessels constrict in panic.' },
+      { phase: 1, stepLabel: 'Mindset Shift', text: 'This pounding heart is my body preparing...', emphasis: 'mobilizing oxygen for peak strength!' },
+      { phase: 2, stepLabel: 'Challenge Response', text: 'Vessels remain open and relaxed...', emphasis: 'Courage, vitality, and sharp clarity.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'stimulus-response-gap',
+    conceptAnimationLabel: 'Cardiovascular Threat vs Challenge Physiological Shift',
+    takeaways: [
+      {
+        point: 'Reframe Anxiety as Excitement',
+        detail: 'Physiologically, anxiety and excitement are nearly identical. Tell yourself out loud: "I am excited and energized," not "I am terrified."',
+        isActionable: true,
+      },
+      {
+        point: 'The "Tend-and-Befriend" Hormone (Oxytocin)',
+        detail: 'Stress releases oxytocin, prompting you to seek social connection. Reaching out to others during hardship physically protects your heart.',
+        isActionable: true,
+      },
+      {
+        point: 'Meaningful Lives are Stressful',
+        detail: 'You don’t stress about things you don’t care about. High stress is often a sign of deep commitment to worthwhile goals.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Challenge Response vs Threat Response',
+      description: 'Reframing autonomic physiological arousal from a dangerous threat into a resource for courageous action.',
+      formulaOrRule: 'Pounding Heart = Biological Mobilization of Energy for Peak Performance',
+    },
+    immediateActionChallenge: 'Next time your heart races before a presentation or meeting, tell yourself: "My body is getting me ready to deliver my best."',
+    quiz: {
+      question: 'What Harvard study finding did Dr. McGonigal reveal about stress and mortality?',
+      options: [
+        'Stress kills everyone equally regardless of mindset',
+        'People who experienced high stress but did NOT view stress as harmful had the lowest risk of dying—even lower than people with little stress',
+        'Stress only affects your digestive tract',
+        'Meditation cures 100% of high blood pressure',
+      ],
+      correctIndex: 1,
+      explanation: 'A landmark study of 30,000 adults over eight years revealed that believing stress is bad for you, not stress alone, was the 15th largest cause of death in America.',
+    },
+    tags: ['Stress', 'Mindset', 'Neuroscience', 'Resilience'],
+    likesCount: 4610,
+    audioScript: "When your heart pounds before a big challenge, what do you tell yourself? Most people think: I am panicking. But what if your body is actually saying: I am giving you extra oxygen and adrenaline to succeed? When you change your mind about stress, you change your body's physical response. Don't fight the adrenaline; ride the wave.",
+  },
+
+  // 34. JONATHAN HAIDT — The Righteous Mind (Elephant and Rider)
+  {
+    id: 'reel-haidt-elephant-and-rider',
+    title: 'The Emotional Elephant and The Rational Rider',
+    subtitle: 'The Righteous Mind: Why Good People Are Divided by Jonathan Haidt',
+    category: 'psychology',
+    source: {
+      name: 'The Righteous Mind',
+      authorOrTopic: 'Jonathan Haidt, PhD',
+      tag: 'Moral Psychology',
+    },
+    coreIdea: 'The human mind is divided: the intuitive emotional Elephant leans automatically, while the rational Rider is merely the Elephant’s PR spokesperson, fabricating reasons to justify where it already moved.',
+    quoteAuthor: 'Jonathan Haidt',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Intuitive Shift', text: 'The massive Elephant leans instinctively...', emphasis: 'gut emotional reaction first.' },
+      { phase: 1, stepLabel: 'The Spokesperson', text: 'The tiny Rider invents clever post-hoc logic...', emphasis: 'rationalizing the emotional lean.' },
+      { phase: 2, stepLabel: 'Persuasion Mastery', text: 'Never argue logic with the Rider...', emphasis: 'Speak directly to the Elephant’s heart!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'system1-system2',
+    conceptAnimationLabel: 'The 6-Ton Intuitive Elephant vs Tiny Rational Rider',
+    takeaways: [
+      {
+        point: 'Intuitions Come First, Strategic Reasoning Second',
+        detail: 'People do not arrive at their beliefs through detached logical syllogisms; they feel an intuitive pull, then hunt for confirming data.',
+        isActionable: false,
+      },
+      {
+        point: 'Speak to the Elephant to Persuade',
+        detail: 'If you attack someone’s arguments with raw logic, their Rider defends the fortress. Validate their values and empathy to turn the Elephant.',
+        isActionable: true,
+      },
+      {
+        point: 'Check Your Own PR Spokesperson',
+        detail: 'When you feel absolute moral outrage, pause and ask: "Is my Rider just defending my own tribal biases?"',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Elephant and Rider Metaphor',
+      description: 'Recognizing that conscious rationalization is subservient to automatic subconscious moral intuitions.',
+      formulaOrRule: 'Intuitive Emotion (Elephant) First → Logical Justification (Rider) Second',
+    },
+    immediateActionChallenge: 'Think of someone you politically disagree with. Identify one valid moral concern that motivates their perspective.',
+    quiz: {
+      question: 'In Jonathan Haidt’s metaphor, what is the primary job of the Rider sitting atop the Elephant?',
+      options: [
+        'To dictate every step the Elephant takes with absolute dominance',
+        'To act as an attorney or PR press secretary, fabricating rational justifications for the Elephant’s intuitive impulses',
+        'To put the Elephant to sleep during conflict',
+        'To calculate algebraic formulas',
+      ],
+      correctIndex: 1,
+      explanation: 'Haidt showed through moral dumbfounding experiments that people invent logical explanations after their intuitive gut has already rendered a moral verdict.',
+    },
+    tags: ['Psychology', 'Biases', 'Influence', 'Empathy'],
+    likesCount: 3770,
+    audioScript: "Intuitions come first, strategic reasoning second. Picture an emotional six-ton elephant with a small rider on its back. We like to think the rider is in charge, but the rider is actually the elephant's press secretary. If you want to change someone's mind, stop throwing charts at their rider. You have to speak to the elephant.",
+  },
+
+  // 35. NASSIM NICHOLAS TALEB — Antifragile (Benefiting from Shocks)
+  {
+    id: 'reel-taleb-antifragile-shocks',
+    title: 'Antifragility: Beyond Resilience and Robustness',
+    subtitle: 'Antifragile: Things That Gain from Disorder by Nassim Nicholas Taleb',
+    category: 'mindset',
+    source: {
+      name: 'Antifragile',
+      authorOrTopic: 'Nassim Nicholas Taleb',
+      tag: 'Risk & Complexity Theory',
+    },
+    coreIdea: 'The fragile breaks under volatility. The robust merely resists shocks. But the antifragile actually grows stronger, more capable, and wiser when exposed to stress, randomness, and disorder.',
+    quoteAuthor: 'Nassim Nicholas Taleb',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Fragile Glass', text: 'The fragile shatters under unexpected shocks...', emphasis: 'demanding artificial predictability.' },
+      { phase: 1, stepLabel: 'The Robust Rock', text: 'The robust withstands the storm...', emphasis: 'remaining completely unchanged.' },
+      { phase: 2, stepLabel: 'The Antifragile Muscle', text: 'The antifragile feeds on stressors...', emphasis: 'gaining exponential strength from chaos!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'compounding-curve',
+    conceptAnimationLabel: 'Fragile vs Robust vs Antifragile Volatility Curve',
+    takeaways: [
+      {
+        point: 'Overprotection Causes Fragility',
+        detail: 'Eliminating all stress, germs, and arguments makes immune systems and organizations brittle and helpless to sudden shocks.',
+        isActionable: false,
+      },
+      {
+        point: 'Seek Convex Payoffs',
+        detail: 'Structure your career and investments so you have limited downside when things go wrong, but uncapped upside when good randomness hits.',
+        isActionable: true,
+      },
+      {
+        point: 'Physical Hormesis',
+        detail: 'Lifting heavy weights or taking cold showers temporarily damages cells, signaling biological adaptation and greater vitality.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Triad: Fragile, Robust, Antifragile',
+      description: 'Evaluating any system by its response to volatility: Does it hate stressors, ignore stressors, or feast on stressors?',
+      formulaOrRule: 'Fragile: Shocks = Ruin. Robust: Shocks = No Change. Antifragile: Shocks = Evolution & Power.',
+    },
+    immediateActionChallenge: 'Intentionally introduce one small healthy stressor into your body or mind today: a 3-minute cold shower or a 10-minute sprint.',
+    quiz: {
+      question: 'What is the crucial difference between being "robust" and being "antifragile" according to Taleb?',
+      options: [
+        'Robust things cost more money to repair',
+        'The robust simply resists shocks and stays the same; the antifragile actually improves and grows stronger from shocks and volatility',
+        'Antifragile things cannot ever be moved',
+        'There is no difference; they are synonyms',
+      ],
+      correctIndex: 1,
+      explanation: 'Taleb coined the term "antifragile" because the exact opposite of fragile isn’t resilient or unbreakable—it is something that requires volatility to flourish (like bone remodeling or market evolution).',
+    },
+    tags: ['Antifragility', 'Risk', 'Philosophy', 'Resilience'],
+    likesCount: 4380,
+    audioScript: "Some things benefit from shocks; they thrive and grow when exposed to volatility, randomness, disorder, and stressors. Wind extinguishes a candle and energizes fire. You want to be the fire, not the candle. Don't wish for an easy life free from volatility. Build yourself into an antifragile machine that converts every obstacle into fuel.",
+  },
+
+  // 36. NASSIM NICHOLAS TALEB — Antifragile (Via Negativa)
+  {
+    id: 'reel-taleb-via-negativa',
+    title: 'Via Negativa: Improvement Through Subtraction',
+    subtitle: 'Antifragile by Nassim Nicholas Taleb',
+    category: 'habits',
+    source: {
+      name: 'Antifragile',
+      authorOrTopic: 'Nassim Nicholas Taleb',
+      tag: 'Epistemology & Health',
+    },
+    coreIdea: 'Wisdom is knowing what to subtract rather than what to add. In health, wealth, and thinking, the greatest leap forward comes from eliminating bad habits, toxic foods, and foolish risks.',
+    quoteAuthor: 'Nassim Nicholas Taleb',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Addition Fallacy', text: 'Trying to fix problems by piling on supplements...', emphasis: 'more apps, more meetings, more complexity.' },
+      { phase: 1, stepLabel: 'Via Negativa Cleansing', text: 'Eliminating the toxic few...', emphasis: 'smoking, ultra-processed sugars, negative news.' },
+      { phase: 2, stepLabel: 'Effortless Equilibrium', text: 'Removal of friction restores natural vitality...', emphasis: 'Subtractive wisdom reigns supreme.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#ec4899',
+    visualConceptType: 'essentialism-filter',
+    conceptAnimationLabel: 'Subtractive Filter: Eliminating Fragility First',
+    takeaways: [
+      {
+        point: 'Health Through Subtraction',
+        detail: 'Removing sugar, processed seed oils, and smoking adds 10x more years to your life than drinking exotic green powder supplements.',
+        isActionable: true,
+      },
+      {
+        point: 'Productivity by Killing Distractions',
+        detail: 'Before hunting for a new productivity app, delete social media apps from your phone and cancel 3 useless recurring meetings.',
+        isActionable: true,
+      },
+      {
+        point: 'Charie Munger’s Inversion',
+        detail: 'Tell me where I’m going to die so I don’t go there. Avoid profound stupidity instead of striving for brilliant genius.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'Via Negativa (Subtractive Epistemology)',
+      description: 'The principle that we know what is wrong with much more certainty than what is right; progress occurs by eliminating errors.',
+      formulaOrRule: 'True Mastery = Removing Fragile Vulnerabilities > Adding Fragile Novelties',
+    },
+    immediateActionChallenge: 'Identify one toxic habit, app, or person draining your energy. Cut it out of your life for the next 7 days.',
+    quiz: {
+      question: 'What does the philosophical concept of "Via Negativa" dictate?',
+      options: [
+        'Saying negative things to people to build their character',
+        'Improving systems, health, and knowledge by subtracting the bad, rather than adding the unproven good',
+        'Refusing to pay taxes in negative interest rate regimes',
+        'A medieval method of calculating calculus',
+      ],
+      correctIndex: 1,
+      explanation: 'Via Negativa (by way of the negative) teaches that eliminating known harms yields far greater and safer upside than adding complex, untested interventions.',
+    },
+    tags: ['Philosophy', 'Habits', 'Health', 'Mental Models'],
+    likesCount: 3620,
+    audioScript: "We know what is wrong with much more certainty than what is right. In medicine, stopping smoking does far more good than any supplement on earth. In business, avoiding catastrophe is better than chasing wild wins. Don't ask what you need to add to your life to succeed. Ask what you need to subtract. Subtraction is true power.",
+  },
+
+  // 37. BESSEL VAN DER KOLK — The Body Keeps the Score (Somatic Trauma)
+  {
+    id: 'reel-vanderkolk-body-score',
+    title: 'The Body Keeps the Score: Somatic Memory',
+    subtitle: 'The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma by Bessel van der Kolk, MD',
+    category: 'psychology',
+    source: {
+      name: 'The Body Keeps the Score',
+      authorOrTopic: 'Bessel van der Kolk, MD',
+      tag: 'Psychiatry & Somatics',
+    },
+    coreIdea: 'Trauma is not just a cognitive memory; it is physically imprinted in the autonomic nervous system. You cannot talk yourself out of bodily hyperarousal; you must heal through somatic awareness.',
+    quoteAuthor: 'Bessel van der Kolk, MD',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Trapped In The Flesh', text: 'Unprocessed stress freezes in muscle tissue...', emphasis: 'the nervous system stays on high alert.' },
+      { phase: 1, stepLabel: 'The Amygdala Alarm', text: 'Words alone cannot soothe a terrified body...', emphasis: 'rational logic fails against somatic panic.' },
+      { phase: 2, stepLabel: 'Somatic Release', text: 'Rhythmic breath, movement, and touch...', emphasis: 'restore deep biological safety.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f43f5e',
+    visualConceptType: 'stimulus-response-gap',
+    conceptAnimationLabel: 'Autonomic Vagus Nerve Dysregulation vs Somatic Safety',
+    takeaways: [
+      {
+        point: 'Listen to Physical Sensations',
+        detail: 'A tight throat, clenched jaw, or hollow stomach are your nervous system\'s early warning signals. Notice them without judgment.',
+        isActionable: true,
+      },
+      {
+        point: 'Use Bottom-Up Regulation',
+        detail: 'When flooded with anxiety, do not analyze your thoughts. Change your physiology: do extended exhalations, gentle stretching, or cold water.',
+        isActionable: true,
+      },
+      {
+        point: 'The Power of Rhythmic Movement',
+        detail: 'Activities like yoga, drumming, dancing, and walking synchronize heart rate and brain rhythms, signaling that the danger has passed.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'Bottom-Up Somatic Regulation',
+      description: 'Calming an overstimulated emotional brain through physical breath and body sensations rather than intellectual top-down logic.',
+      formulaOrRule: 'Body Arousal First → Slow Extended Exhalation → Nervous System Equilibrium',
+    },
+    immediateActionChallenge: 'Drop your shoulders down right now. Unclench your jaw. Take three long, audible sighs out through your mouth.',
+    quiz: {
+      question: 'Why does talk therapy sometimes fail with deep-seated trauma and severe anxiety according to Dr. van der Kolk?',
+      options: [
+        'Patients are unwilling to speak English',
+        'Trauma shuts down Broca’s area (the speech center) and resides primarily in the non-verbal autonomic nervous system and somatic sensations',
+        'Therapists don’t charge enough money',
+        'Trauma only exists in the digestive tract',
+      ],
+      correctIndex: 1,
+      explanation: 'Brain imaging shows that under traumatic recall, the speech center deactivates while primitive survival circuits light up; healing requires reconnecting to safe bodily sensations.',
+    },
+    tags: ['Trauma', 'Psychology', 'Nervous System', 'Mental Health'],
+    likesCount: 5210,
+    audioScript: "As long as you keep your body on high alert, you cannot heal. Trauma is not the story of what happened to you; it is the imprint left on your nervous system. You cannot talk your way out of a physiological alarm state. When your chest tightens and your throat closes, stop analyzing your thoughts. Slow your exhale, drop your shoulders, and teach your body that you are safe.",
+  },
+
+  // 38. DON MIGUEL RUIZ — The Four Agreements (Impeccable Word)
+  {
+    id: 'reel-ruiz-impeccable-word',
+    title: 'Agreement 1: Be Impeccable with Your Word',
+    subtitle: 'The Four Agreements by Don Miguel Ruiz',
+    category: 'mindset',
+    source: {
+      name: 'The Four Agreements',
+      authorOrTopic: 'Don Miguel Ruiz',
+      tag: 'Toltec Wisdom',
+    },
+    coreIdea: 'Your word is the power that you have to create; it is the gift of divinity. Speak only with integrity. Never use the word to speak against yourself or to gossip about others.',
+    quoteAuthor: 'Don Miguel Ruiz',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Black Magic of Gossip', text: 'Careless words and internal self-criticism...', emphasis: 'cast poisonous spells on the psyche.' },
+      { phase: 1, stepLabel: 'The Impeccable Oath', text: 'Impeccable means "without sin against oneself"...', emphasis: 'Truth, clarity, and pure intent.' },
+      { phase: 2, stepLabel: 'Creative Divinity', text: 'Your word creates your living reality...', emphasis: 'Speak truth, love, and elevation.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#06b6d4',
+    visualConceptType: 'growth-mindset',
+    conceptAnimationLabel: 'Poisonous Gossip Frequencies vs Pure Word Resonance',
+    takeaways: [
+      {
+        point: 'Zero Self-Deprecation',
+        detail: 'Stop calling yourself "stupid" or "clumsy" even as a joke. The subconscious mind accepts everything you say as truth.',
+        isActionable: true,
+      },
+      {
+        point: 'Refuse to Participate in Gossip',
+        detail: 'Gossip is pure emotional poison. When colleagues start trashing someone who isn’t in the room, change the subject or stay silent.',
+        isActionable: true,
+      },
+      {
+        point: 'Say Only What You Mean',
+        detail: 'Avoid double-talk, passive-aggressive hints, and false promises. Clean communication builds unshakeable self-trust.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Impeccability of Language',
+      description: 'Treating spoken and internal dialogue as potent creative forces that structure neural architecture and social reputation.',
+      formulaOrRule: 'Im-peccatus (Without Sin) = Never Weaponize Speech Against Yourself or Others',
+    },
+    immediateActionChallenge: 'Go the entire rest of today without speaking a single critical word about any person who is not present in the room.',
+    quiz: {
+      question: 'What does the Latin root of the word "impeccable" mean as referenced by Don Miguel Ruiz?',
+      options: [
+        'Rich and prosperous',
+        'Without sin or moral violation against oneself',
+        'Fluent in multiple languages',
+        'Capable of winning any debate',
+      ],
+      correctIndex: 1,
+      explanation: 'Ruiz explains that "pecatus" means sin; being impeccable means using your word in alignment with truth and love rather than turning it against your own self-worth.',
+    },
+    tags: ['Mindset', 'Communication', 'Wisdom', 'Integrity'],
+    likesCount: 4020,
+    audioScript: "Your word is not merely a sound or a written symbol; it is a force. It is the power you have to express and communicate, to think, and thereby to create the events in your life. When you gossip or criticize yourself, you are using your word as emotional poison. Speak with integrity. Say only what you mean. Be impeccable with your word.",
+  },
+
+  // 39. DON MIGUEL RUIZ — The Four Agreements (Don't Take Anything Personally)
+  {
+    id: 'reel-ruiz-dont-take-personally',
+    title: 'Agreement 2: Don’t Take Anything Personally',
+    subtitle: 'The Four Agreements by Don Miguel Ruiz',
+    category: 'mindset',
+    source: {
+      name: 'The Four Agreements',
+      authorOrTopic: 'Don Miguel Ruiz',
+      tag: 'Stoic Toltec Philosophy',
+    },
+    coreIdea: 'Nothing others do is because of you. What others say and do is a projection of their own reality, their own dream. When you are immune to the opinions of others, you are immune to needless suffering.',
+    quoteAuthor: 'Don Miguel Ruiz',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Personal Hook', text: 'Someone insults or rejects you...', emphasis: 'you swallow their poison.' },
+      { phase: 1, stepLabel: 'The Projection Mirror', text: 'Their words are 100% about their own wounds...', emphasis: 'It has nothing to do with who you are.' },
+      { phase: 2, stepLabel: 'Unshakeable Armor', text: 'Neither cruelty nor flattery can pierce you...', emphasis: 'You are sovereign in your truth.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'dichotomy-of-control',
+    conceptAnimationLabel: 'Deflective Mirror Shield Against Projected Wounds',
+    takeaways: [
+      {
+        point: 'Insults are Self-Confessions',
+        detail: 'When someone screams that you are selfish, they are reacting to their own unresolved fears and internal rules.',
+        isActionable: false,
+      },
+      {
+        point: 'Don’t Take Praise Personally Either',
+        detail: 'If you need their praise to feel worthy, you will be crushed when they withdraw it. Ground your worth internally.',
+        isActionable: true,
+      },
+      {
+        point: 'The Poison Hook Analogy',
+        detail: 'By taking things personally, you agree with the poison and ingest it. Let their words pass right through you like air.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Psychological Projection Armor',
+      description: 'Understanding that human behavior is an expression of internal conditioning, liberating you from reactive offense.',
+      formulaOrRule: 'Other Person\'s Words = Mirror of Their Mind, NOT Reality of Your Character',
+    },
+    immediateActionChallenge: 'Recall the last harsh criticism you received. Say to yourself: "That was their dream and their perspective, not my absolute truth."',
+    quiz: {
+      question: 'Why does Ruiz warn against taking even positive praise personally?',
+      options: [
+        'Because people are always lying when they compliment you',
+        'Because depending on external approval makes you equally vulnerable to external condemnation and manipulation',
+        'Because humility requires rejecting all gratitude',
+        'Because compliments cause arrogance in brain chemistry',
+      ],
+      correctIndex: 1,
+      explanation: 'If you rely on others to validate your goodness, you grant them the authority to destroy your self-worth the moment they criticize you.',
+    },
+    tags: ['Mindset', 'Emotional Freedom', 'Self-Worth', 'Stoicism'],
+    likesCount: 4890,
+    audioScript: "Even when someone takes a gun and shoots you in the head, it was nothing personal. That sounds radical, but it is the ultimate truth: People act out of their own suffering, their own belief systems, and their own wounds. When someone attacks you, they are talking to a movie playing inside their own skull. Refuse to take the bait.",
+  },
+
+  // 40. GARY KELLER — The One Thing (The Domino Effect)
+  {
+    id: 'reel-keller-focusing-question',
+    title: 'The Focusing Question & The Domino Effect',
+    subtitle: 'The ONE Thing: The Surprisingly Simple Truth Behind Extraordinary Results by Gary Keller',
+    category: 'productivity',
+    source: {
+      name: 'The ONE Thing',
+      authorOrTopic: 'Gary Keller',
+      tag: 'Hyper-Prioritization',
+    },
+    coreIdea: 'What’s the ONE Thing you can do such that by doing it, everything else will be easier or unnecessary? A single 2-inch domino can topple another 50% larger, ultimately knocking over a skyscraper.',
+    quoteAuthor: 'Gary Keller',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Scattered To-Do List', text: 'Treating all items on your list as equal...', emphasis: 'diffuses momentum to near zero.' },
+      { phase: 1, stepLabel: 'The Lead Domino', text: 'What is the ONE action that makes...', emphasis: 'everything else easier or unnecessary?' },
+      { phase: 2, stepLabel: 'Geometric Chain Reaction', text: 'Topple the first small domino...', emphasis: 'The skyscraper falls automatically!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'domino-effect',
+    conceptAnimationLabel: 'Exponential 1.5x Geometric Domino Cascade',
+    takeaways: [
+      {
+        point: 'Ask the Focusing Question Constantly',
+        detail: '"What’s the ONE thing I can do right now that will make everything else easier or unnecessary?" Run this filter on your morning.',
+        isActionable: true,
+      },
+      {
+        point: 'To-Do Lists are Not Priority Lists',
+        detail: 'A to-do list is just a wish list of chores. A priority list has a ruthless hierarchy where #1 must fall before #2 is touched.',
+        isActionable: true,
+      },
+      {
+        point: 'Time-Block 4 Hours for Your One Thing',
+        detail: 'Protect your mornings like a sacred bunker. Do not check social media or take calls until your lead domino is struck.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Keller Domino Multiplier',
+      description: 'A physics-backed metaphor where solving the single highest-leverage bottleneck creates exponential downstream momentum.',
+      formulaOrRule: 'Domino n+1 = 1.5 × Domino n. 31 Dominoes = The Empire State Building Topples.',
+    },
+    immediateActionChallenge: 'Ask yourself right now: "What is the ONE task on my plate today that makes everything else simpler?" Do only that for the next hour.',
+    quiz: {
+      question: 'According to physics experiments cited in The ONE Thing, how much larger a domino can a falling domino knock over?',
+      options: [
+        'Only a domino identical in size',
+        'A domino up to 50% larger in height and mass',
+        'A domino 10 times larger',
+        'Dominoes cannot transfer kinetic energy uphill',
+      ],
+      correctIndex: 1,
+      explanation: 'A physics study showed each domino can topple one 1.5x its size. Starting with a 2-inch domino, the 18th topples the Leaning Tower of Pisa; the 31st topples Mount Everest.',
+    },
+    tags: ['Productivity', 'Focus', 'Success', 'Time Management'],
+    likesCount: 4410,
+    audioScript: "Extraordinary results are directly determined by how narrow you can make your focus. You don't need to do twenty things today. You need to find the lead domino—the single task that, once completed, will knock down five other tasks or make them obsolete. Ask yourself: What is the ONE thing I can do right now to make everything else easier?",
+  },
+];

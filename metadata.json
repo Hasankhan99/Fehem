@@ -1,0 +1,8 @@
+{
+  "name": "Fehem",
+  "description": "Short-form micro-learning reels focused on psychology, human behavior, mindset, habits, productivity, and personal development from world-class non-fiction books.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

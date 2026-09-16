@@ -1,0 +1,1223 @@
+import { MicroReel } from '../../types';
+
+export const BATCH_4_REELS: MicroReel[] = [
+  // 61. ROBERT GREENE — The Laws of Human Nature (Law of Irrationality)
+  {
+    id: 'reel-greene-law-of-irrationality',
+    title: 'The Law of Irrationality: Mastering the Inner Beast',
+    subtitle: 'The Laws of Human Nature by Robert Greene',
+    category: 'psychology',
+    source: {
+      name: 'The Laws of Human Nature',
+      authorOrTopic: 'Robert Greene',
+      tag: 'Psychology & Human Nature',
+    },
+    coreIdea: 'You like to imagine you are in control of your fate, consciously planning the course of your life. But you are largely unaware of how deeply your emotions continually dominate your perceptions.',
+    quoteAuthor: 'Robert Greene',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Illusion of Reason', text: 'We imagine our beliefs are pure logic...', emphasis: 'Blind to our hidden emotional biases.' },
+      { phase: 1, stepLabel: 'The Subconscious Undercurrent', text: 'Ego, insecurity, and tribal pride...', emphasis: 'Drive our choices from the shadows.' },
+      { phase: 2, stepLabel: 'The Higher Self', text: 'Self-awareness cools emotional fires...', emphasis: 'Opening the door to true rationality.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#ec4899',
+    visualConceptType: 'system1-system2',
+    conceptAnimationLabel: 'Emotional Shadow Biases vs Rational Clear-Eyed Sovereign',
+    takeaways: [
+      {
+        point: 'Admit Your Own Irrationality First',
+        detail: 'The first step toward becoming rational is acknowledging that you are inherently biased, defensive, and susceptible to emotional tides.',
+        isActionable: true,
+      },
+      {
+        point: 'Watch for Emotional Triggers',
+        detail: 'Notice the physical sensations when your ego feels attacked—the hot neck, quickened pulse, defensive posture. Step away immediately.',
+        isActionable: true,
+      },
+      {
+        point: 'Examine Childhood Roots',
+        detail: 'Our deepest emotional patterns (fear of abandonment, hunger for approval) were etched in childhood and play out on colleagues today.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Greene Rationality Spectrum',
+      description: 'Understanding that human nature defaults to emotional reactive rationalization; true rationality is an acquired discipline requiring self-skepticism.',
+      formulaOrRule: 'Feel Acute Emotional Surge → Pause 24 Hours → Analyze Hidden Motive Before Responding',
+    },
+    immediateActionChallenge: 'Identify one person whose actions irritate you. Step into their shoes and write down what hidden insecurities might drive their behavior.',
+    quiz: {
+      question: 'According to Robert Greene, who is the most dangerously irrational person in any organization?',
+      options: [
+        'The quiet junior associate in the corner',
+        'The person who believes they are completely rational and devoid of emotional biases',
+        'The hot-tempered manager who yells loudly',
+        'The customer service agent',
+      ],
+      correctIndex: 1,
+      explanation: 'Greene warns that those who believe they are immune to emotion are the most delusional, because they mistake their strong feelings for objective truth.',
+    },
+    tags: ['Psychology', 'Human Nature', 'Self-Awareness', 'Emotional Intelligence'],
+    likesCount: 4670,
+    audioScript: "The first step toward becoming rational is to understand our fundamental irrationality. You like to think you are rational, but you aren't. Your emotions filter everything you see, seeking confirmation for what you want to believe. When you feel a sudden surge of anger, love, or panic, do not act. Sleep on it. The rational self awakens only when the emotional storm has passed.",
+  },
+
+  // 62. ROBERT GREENE — Mastery (The Apprenticeship Phase)
+  {
+    id: 'reel-greene-apprenticeship',
+    title: 'The Apprenticeship Phase: Value Learning Over Money',
+    subtitle: 'Mastery by Robert Greene',
+    category: 'mindset',
+    source: {
+      name: 'Mastery',
+      authorOrTopic: 'Robert Greene',
+      tag: 'Skill Acquisition',
+    },
+    coreIdea: 'In your twenties and thirties, the goal is not immediate wealth or comfort; it is learning. Choose the position, mentor, or craft that offers the steepest learning curve, not the highest immediate paycheck.',
+    quoteAuthor: 'Robert Greene',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Golden Handcuffs', text: 'Chasing prestige and an easy paycheck early...', emphasis: 'Arrests your long-term creative development.' },
+      { phase: 1, stepLabel: 'The Sacred Apprenticeship', text: 'Submitting to rigorous discipline and repetition...', emphasis: 'Absorbing tacit wisdom from true masters.' },
+      { phase: 2, stepLabel: 'Creative-Active Mastery', text: 'Skills fuse into intuitive instinct...', emphasis: 'You become irreplaceable and sovereign.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'compounding-curve',
+    conceptAnimationLabel: 'The Apprenticeship Learning Curve vs Short-Term Paycheck Drift',
+    takeaways: [
+      {
+        point: 'Value Learning Over Immediate Cash',
+        detail: 'Knowledge and mastery compound geometrically over 40 years. High starting salaries often lock you into narrow, non-transferable clerical traps.',
+        isActionable: true,
+      },
+      {
+        point: 'Submit to Rigorous Repetition',
+        detail: 'The brain requires hundreds of hours of boring repetition to convert conscious clumsy effort into fluid neural automation.',
+        isActionable: false,
+      },
+      {
+        point: 'Find a Mentor and Absorb Tacit Wisdom',
+        detail: 'A master can teach you in one year what would take you ten years of trial and error to learn alone. Serve them with humility.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Greene’s Three Phases of Mastery',
+      description: 'The progression of human achievement: Apprenticeship (Observation & Skill) → Creative-Active (Experimentation) → Mastery (Intuition).',
+      formulaOrRule: 'Apprenticeship (Skill Over Money) + 10,000 Hours + Deep Reflection = Irreplaceable Mastery',
+    },
+    immediateActionChallenge: 'Identify one skill you have been dabbling in. Commit to finding a world-class book or mentor and practicing the basics for 30 minutes every day.',
+    quiz: {
+      question: 'What does Robert Greene argue you should optimize for in the early phases of your career?',
+      options: [
+        'A high starting salary and stock options',
+        'Acquiring practical skills, dynamic mentorship, and a steep learning curve',
+        'Having as much leisure time as possible',
+        'Starting an executive consulting agency with zero experience',
+      ],
+      correctIndex: 1,
+      explanation: 'Greene emphasizes: "Value learning above all else. This will lead you to all the right choices. If you choose for money, you will eventually burn out or be replaced."',
+    },
+    tags: ['Mastery', 'Career', 'Learning', 'Discipline'],
+    likesCount: 4280,
+    audioScript: "The future belongs to those who learn more skills and combine them in creative ways. When you enter any new field, your only goal must be learning. Do not choose the easy job with the fat paycheck that teaches you nothing. Choose the demanding job with the tough mentor that forces you to stretch. Skills compound for life; cash gets spent in months.",
+  },
+
+  // 63. DANIEL PINK — Drive (Motivation 3.0)
+  {
+    id: 'reel-pink-motivation-3-0',
+    title: 'Motivation 3.0: Autonomy, Mastery, Purpose',
+    subtitle: 'Drive: The Surprising Truth About What Motivates Us by Daniel H. Pink',
+    category: 'productivity',
+    source: {
+      name: 'Drive',
+      authorOrTopic: 'Daniel H. Pink',
+      tag: 'Intrinsic Motivation',
+    },
+    coreIdea: 'Carrots and sticks (rewards and punishments) work only for simple, repetitive mechanical tasks. For creative, complex work, human performance is driven by Autonomy, Mastery, and Purpose.',
+    quoteAuthor: 'Daniel H. Pink',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Carrot and Stick Fail', text: 'Financial bonuses narrow cognitive vision...', emphasis: 'Crushing creative problem solving.' },
+      { phase: 1, stepLabel: 'The Trifold Engine', text: 'Autonomy over task, time, and technique...', emphasis: 'Paired with the urge to master the craft.' },
+      { phase: 2, stepLabel: 'Purpose Transcendence', text: 'Connecting effort to a transcendent mission...', emphasis: 'Ignites relentless intrinsic drive!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'ikigai',
+    conceptAnimationLabel: 'The Triad of Drive: Autonomy, Mastery, Purpose',
+    takeaways: [
+      {
+        point: 'Autonomy Over Micromanagement',
+        detail: 'True motivation requires control over the 4 T\'s: Task (what you do), Time (when you do it), Technique (how you do it), and Team (who you do it with).',
+        isActionable: true,
+      },
+      {
+        point: 'Mastery is an Asymptote',
+        detail: 'You can never fully reach perfection, but the lifelong pursuit of mastery is what makes the process deeply joyful and engaging.',
+        isActionable: false,
+      },
+      {
+        point: 'Anchor in Transcendent Purpose',
+        detail: 'People work harder and happier when they know their daily labor genuinely improves human lives rather than merely moving quarterly numbers.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Motivation 3.0 Triad',
+      description: 'The science of human motivation proving that modern cognitive work requires internal intrinsic drives rather than external bribes.',
+      formulaOrRule: 'Autonomy (Self-Direction) + Mastery (Desire to Improve) + Purpose (Larger Cause) = Peak Flow',
+    },
+    immediateActionChallenge: 'Evaluate your current project on a 1-to-10 scale for Autonomy, Mastery, and Purpose. Identify one change to raise the lowest score.',
+    quiz: {
+      question: 'What happened when MIT researchers offered massive financial bonuses to students solving complex cognitive puzzles?',
+      options: [
+        'Their performance broke world records',
+        'Higher incentives led to significantly worse cognitive performance due to narrowed attention and stress',
+        'The students solved the problems in half the time',
+        'The students refused the cash out of moral outrage',
+      ],
+      correctIndex: 1,
+      explanation: 'Numerous behavioral economics studies prove that for tasks requiring even rudimentary cognitive skill, large financial incentives backfire and degrade performance.',
+    },
+    tags: ['Motivation', 'Psychology', 'Leadership', 'Productivity'],
+    likesCount: 4120,
+    audioScript: "The secret to high performance isn't our biological drive or our reward-and-punishment drive. It's our third drive—our deep-seated desire to direct our own lives, to extend and expand our abilities, and to live a life of purpose. Stop trying to motivate yourself or your team with external bribes. Give people autonomy, the challenge of mastery, and a cause worth fighting for.",
+  },
+
+  // 64. DANIEL PINK — Drive (The Sawyer Effect)
+  {
+    id: 'reel-pink-sawyer-effect',
+    title: 'The Sawyer Effect: How Bribes Kill Joy',
+    subtitle: 'Drive by Daniel H. Pink & Mark Twain',
+    category: 'psychology',
+    source: {
+      name: 'Drive',
+      authorOrTopic: 'Daniel H. Pink',
+      tag: 'Behavioral Economics',
+    },
+    coreIdea: 'Named after Tom Sawyer whitewashing the fence: Rewarding an activity that someone already finds enjoyable transforms play into work, extinguishing their natural intrinsic enthusiasm.',
+    quoteAuthor: 'Daniel H. Pink',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Pure Intrinsic Joy', text: 'Drawing, reading, or coding for pure delight...', emphasis: 'Flowing from pure curiosity.' },
+      { phase: 1, stepLabel: 'The Bribe Poison', text: 'Pay someone cash for doing what they love...', emphasis: 'The brain reframes the act: "This must be a chore."' },
+      { phase: 2, stepLabel: 'The Joy Extinction', text: 'Remove the cash reward later...', emphasis: 'They refuse to ever do it for fun again!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f43f5e',
+    visualConceptType: 'habit-loop',
+    conceptAnimationLabel: 'The Overjustification Effect: Play Degraded into Work',
+    takeaways: [
+      {
+        point: 'The Overjustification Effect',
+        detail: 'When preschoolers who loved drawing were offered ribbons for drawing, their drawing time plummeted by half once the ribbons stopped.',
+        isActionable: false,
+      },
+      {
+        point: 'Keep Play Autonomous',
+        detail: 'If you want your kids or yourself to love reading, never pay them money per book. Let curiosity and story be the pure reward.',
+        isActionable: true,
+      },
+      {
+        point: 'Use "Now That" Instead of "If-Then" Rewards',
+        detail: 'Avoid "If you do X, I\'ll give you Y." Instead, offer unexpected celebration gifts afterward: "Now that you did incredible work, let\'s celebrate."',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Sawyer Effect (Overjustification)',
+      description: 'The psychological phenomenon where external incentives diminish intrinsic motivation to perform an intrinsically interesting task.',
+      formulaOrRule: 'Intrinsic Passion + Contingent Extrinsic Bribe = Passion Destroyed',
+    },
+    immediateActionChallenge: 'Think of one hobby you used to love before you tried to monetize it. Do it for 20 minutes today purely for fun with zero profit intent.',
+    quiz: {
+      question: 'Why did Mark Twain’s Tom Sawyer succeed in getting neighborhood boys to pay him for the privilege of whitewashing his aunt’s fence?',
+      options: [
+        'He threatened them with physical violence',
+        'He made whitewashing seem like an exclusive, highly desirable artistic privilege rather than required labor',
+        'He offered them gold coins',
+        'He claimed the paint had magical powers',
+      ],
+      correctIndex: 1,
+      explanation: 'Twain wrote: "Work consists of whatever a body is obliged to do, and Play consists of whatever a body is not obliged to do." Reframing changes everything.',
+    },
+    tags: ['Psychology', 'Motivation', 'Parenting', 'Habits'],
+    likesCount: 3890,
+    audioScript: "Work is whatever you are obliged to do; play is whatever you choose to do. When you start paying someone for something they already loved doing, you poison their intrinsic motivation. Psychologists call it the Sawyer Effect. If you want to keep your passion alive, protect your creative craft from being reduced to a cold financial transaction. Love the play.",
+  },
+
+  // 65. TARA BRACH — Radical Acceptance (The RAIN Technique)
+  {
+    id: 'reel-brach-rain-technique',
+    title: 'The RAIN Technique: Healing Difficult Emotions',
+    subtitle: 'Radical Acceptance by Tara Brach, PhD',
+    category: 'psychology',
+    source: {
+      name: 'Radical Acceptance',
+      authorOrTopic: 'Tara Brach, PhD',
+      tag: 'Mindfulness & Self-Compassion',
+    },
+    coreIdea: 'When difficult emotions storm your mind—shame, grief, rage—do not push them down or drown in them. Practice RAIN: Recognize, Allow, Investigate with kindness, and Nurture.',
+    quoteAuthor: 'Tara Brach, PhD',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Recognize & Allow', text: 'Acknowledge what is happening inside...', emphasis: 'Say: "Yes, this pain is here right now."' },
+      { phase: 1, stepLabel: 'Investigate Kindly', text: 'Where does it live in the body? Tight chest?...', emphasis: 'Bring gentle somatic curiosity, not judgment.' },
+      { phase: 2, stepLabel: 'Nurture with Love', text: 'Place a warm hand over your heart...', emphasis: 'Offer comfort as you would to a hurt child.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#8b5cf6',
+    visualConceptType: 'stimulus-response-gap',
+    conceptAnimationLabel: 'The 4-Stage RAIN Self-Compassion Cleansing Cycle',
+    takeaways: [
+      {
+        point: 'R — Recognize What is Present',
+        detail: 'Mentally whisper what you are feeling: "I recognize fear. I recognize unworthiness. I recognize sorrow."',
+        isActionable: true,
+      },
+      {
+        point: 'A — Allow It to Be There',
+        detail: 'Do not fix or resist the feeling. Give it permission to exist for a moment: "Let it be. It belongs."',
+        isActionable: true,
+      },
+      {
+        point: 'I & N — Investigate & Nurture',
+        detail: 'Feel the somatic sensation in your body, and send a message of radical compassion: "I see you, and you are going to be okay."',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The RAIN Mindfulness Protocol',
+      description: 'A 4-step somatic compassion framework for disarming shame spirals and emotional reactivity.',
+      formulaOrRule: 'Recognize → Allow → Investigate with Care → Nurture with Self-Compassion',
+    },
+    immediateActionChallenge: 'Place your right hand flat over your heart right now. Take two deep breaths and silently whisper: "I am doing the best I can."',
+    quiz: {
+      question: 'What do the letters in Tara Brach’s RAIN practice stand for?',
+      options: [
+        'Run, Attack, Ignore, Neglect',
+        'Recognize, Allow, Investigate with kindness, Nurture',
+        'Remember, Analyze, Inspect, Navigate',
+        'Read, Act, Inspire, Network',
+      ],
+      correctIndex: 1,
+      explanation: 'RAIN is Dr. Brach’s four-step mindfulness practice that moves awareness from intellectual rumination into compassionate somatic healing.',
+    },
+    tags: ['Mindfulness', 'Emotional Health', 'Self-Compassion', 'Psychology'],
+    likesCount: 4890,
+    audioScript: "The boundary to what we can accept is the boundary to our freedom. When you feel overwhelmed by anxiety or shame, remember RAIN. Recognize what is happening. Allow life to be just as it is in this moment. Investigate where it hurts in your body with deep gentleness. And Nurture yourself with compassion. You don't have to fight your pain. Hold it with love.",
+  },
+
+  // 66. TARA BRACH — Radical Acceptance (Trance of Unworthiness)
+  {
+    id: 'reel-brach-trance-of-unworthiness',
+    title: 'The Trance of Unworthiness: Waking Up to Wholeness',
+    subtitle: 'Radical Acceptance by Tara Brach, PhD',
+    category: 'mindset',
+    source: {
+      name: 'Radical Acceptance',
+      authorOrTopic: 'Tara Brach, PhD',
+      tag: 'Psychology of Self-Worth',
+    },
+    coreIdea: 'Most humans live trapped in the "Trance of Unworthiness"—a persistent, subconscious belief that we are fundamentally deficient, falling behind, and not good enough. Radical acceptance snaps the trance.',
+    quoteAuthor: 'Tara Brach, PhD',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Unseen Fog', text: '"I should be further ahead, I am failing"...', emphasis: 'The toxic background hum of modern life.' },
+      { phase: 1, stepLabel: 'Seeing the Trance', text: 'Recognizing this self-judgment is an illusion...', emphasis: 'Conditioned by societal comparison.' },
+      { phase: 2, stepLabel: 'Radical Wholeness', text: 'You accept this moment, flawed and human...', emphasis: 'You realize nothing was ever missing.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#06b6d4',
+    visualConceptType: 'power-of-now',
+    conceptAnimationLabel: 'Disolving the Trance of Unworthiness into Present Wholeness',
+    takeaways: [
+      {
+        point: 'Spot the "I Should Be Better" Whisper',
+        detail: 'Notice how often your inner dialogue begins with "I should." This is the calling card of the trance of unworthiness.',
+        isActionable: true,
+      },
+      {
+        point: 'Accepting What Is Does Not Mean Giving Up',
+        detail: 'Radical acceptance is not resignation. It is seeing the present moment clearly so you can respond with wisdom rather than panic.',
+        isActionable: false,
+      },
+      {
+        point: 'Look with Compassionate Eyes',
+        detail: 'When a tree in the forest grows twisted because it lacked light, we do not blame the tree; we understand. Treat your own scars the same way.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Trance of Unworthiness',
+      description: 'The pervasive cultural conditioning that convinces individuals they must earn their right to exist through relentless perfectionism.',
+      formulaOrRule: 'Self-Judgment Detected → "This is the Trance" → Radical Self-Acceptance',
+    },
+    immediateActionChallenge: 'Say out loud to yourself: "There is nothing wrong with me right now in this moment. I am enough as I am."',
+    quiz: {
+      question: 'What is Tara Brach’s famous analogy regarding trees in a forest?',
+      options: [
+        'Only tall trees survive winter',
+        'When we walk in the forest and see a crooked or bent tree, we appreciate it as it is because we understand the conditions; we should view human beings with the same grace',
+        'Trees should be cut down to build bookshelves',
+        'Forests are dangerous places to meditate',
+      ],
+      correctIndex: 1,
+      explanation: 'We don’t judge trees for bending toward sunlight; similarly, our quirks and coping mechanisms are natural responses to the circumstances we lived through.',
+    },
+    tags: ['Mindset', 'Self-Worth', 'Healing', 'Peace'],
+    likesCount: 4340,
+    audioScript: "The curious paradox is that when I accept myself just as I am, then I can change. Most of us live in a silent trance, believing that something is fundamentally wrong with us. We feel like we are constantly falling short. Wake up from the trance. You are not broken. You are a human being doing your best to navigate a complex world. Put down the whip.",
+  },
+
+  // 67. BJ FOGG — Tiny Habits (The Fogg Behavior Model)
+  {
+    id: 'reel-fogg-behavior-model',
+    title: 'The Fogg Behavior Model: B = MAP',
+    subtitle: 'Tiny Habits: The Small Changes That Change Everything by BJ Fogg, PhD',
+    category: 'habits',
+    source: {
+      name: 'Tiny Habits',
+      authorOrTopic: 'BJ Fogg, PhD (Stanford)',
+      tag: 'Behavior Design',
+    },
+    coreIdea: 'Behavior only happens when three elements converge simultaneously: Motivation, Ability, and a Prompt. If any one is missing, the behavior will never occur. When motivation is low, make ability effortless.',
+    quoteAuthor: 'BJ Fogg, PhD',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The High-Motivation Myth', text: 'Waiting for massive inspiration to strike...', emphasis: 'Motivation fluctuates like the weather.' },
+      { phase: 1, stepLabel: 'The Ability Lever', text: 'Shrink the habit until it is ridiculously easy...', emphasis: 'Floss one tooth, do two push-ups.' },
+      { phase: 2, stepLabel: 'The Action Line', text: 'Pair it with an infallible prompt...', emphasis: 'Behavior happens automatically every time!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'habit-loop',
+    conceptAnimationLabel: 'The Fogg Action Line: Motivation vs Ability vs Prompt',
+    takeaways: [
+      {
+        point: 'B = MAP Equation',
+        detail: 'Behavior = Motivation + Ability + Prompt. You cannot control motivation reliably, so maximize Ability by making the action tiny.',
+        isActionable: true,
+      },
+      {
+        point: 'Floss Just One Tooth',
+        detail: 'If you want to build a flossing habit, start by flossing one single tooth. The goal is wiring the neurological consistency, not the output.',
+        isActionable: true,
+      },
+      {
+        point: 'No Prompt, No Action',
+        detail: 'No behavior happens without a trigger. "Remembering to do it" is not a prompt. You must anchor it to a concrete physical event.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Fogg Behavior Model',
+      description: 'The definitive Stanford behavioral science formula defining the three necessary preconditions for any human action.',
+      formulaOrRule: 'Behavior = Motivation × Ability × Prompt (Action Line Crossed)',
+    },
+    immediateActionChallenge: 'Pick a habit you have struggled to start. Shrink it to under 30 seconds (e.g. read 1 page, do 1 squat) and do it right after your next meal.',
+    quiz: {
+      question: 'In the Fogg Behavior Model (B = MAP), what should you focus on when motivation is naturally low?',
+      options: [
+        'Listen to loud motivational rap music',
+        'Increase Ability by making the habit dramatically smaller and simpler so it sits below the action line',
+        'Pay someone to punish you',
+        'Give up and wait for next year',
+      ],
+      correctIndex: 1,
+      explanation: 'When motivation is low, an action must be exceptionally easy to do (high ability) in order for the prompt to trigger successful execution.',
+    },
+    tags: ['Habits', 'Behavior Design', 'Stanford', 'Productivity'],
+    likesCount: 4710,
+    audioScript: "If you want to create long-term change, it's best to start small. Tiny habits work because they don't rely on motivation, which is fickle and fleeting. Remember the Stanford formula: Behavior equals Motivation, Ability, and Prompt. When motivation is low, make the habit ridiculously easy. Floss one tooth. Do two pushups. Read one sentence. Consistency wires the brain.",
+  },
+
+  // 68. BJ FOGG — Tiny Habits (Anchor Habits & Celebration)
+  {
+    id: 'reel-fogg-anchor-celebration',
+    title: 'The Recipe for Habit Wiring: Anchors & Celebration',
+    subtitle: 'Tiny Habits by BJ Fogg, PhD',
+    category: 'habits',
+    source: {
+      name: 'Tiny Habits',
+      authorOrTopic: 'BJ Fogg, PhD',
+      tag: 'Neuroplasticity & Habits',
+    },
+    coreIdea: 'Emotions create habits; repetition does not. Wire a new tiny habit immediately by anchoring it to an existing physical routine, and instantly celebrating with genuine positive emotion.',
+    quoteAuthor: 'BJ Fogg, PhD',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Anchor Event', text: '"After I pour my morning coffee..."...', emphasis: 'A fixed, guaranteed daily routine.' },
+      { phase: 1, stepLabel: 'The Tiny Behavior', text: '"...I will write down three priorities."...', emphasis: 'Takes less than twenty seconds.' },
+      { phase: 2, stepLabel: 'The Dopamine Celebration', text: 'Instantly smile and say: "Awesome!"...', emphasis: 'Neurochemistry locks the circuit into place!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'habit-loop',
+    conceptAnimationLabel: 'Anchor Routine → Micro-Habit → Dopamine Celebration Loop',
+    takeaways: [
+      {
+        point: 'The Tiny Habit Recipe Format',
+        detail: 'Always use the formula: "After I [EXISTING ANCHOR], I will [TINY HABIT]. Then I will [CELEBRATE]."',
+        isActionable: true,
+      },
+      {
+        point: 'Celebration Fires Dopamine',
+        detail: 'Habits aren\'t formed by repeating something 21 days; they are formed when your brain feels an immediate spike of authentic pride.',
+        isActionable: false,
+      },
+      {
+        point: 'Find Your Authentic Celebration',
+        detail: 'A fist pump, a quiet smile, a mental "Yes!", or humming a victory riff. Whatever makes you feel successful in that split second.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Shine Neurochemical Wiring',
+      description: 'BJ Fogg’s discovery that the feeling of "Shine" (authentic self-celebration) is what rapidly encodes new behaviors into striatal memory.',
+      formulaOrRule: 'Anchor Event + Tiny Action + Instant Celebration ("Shine") = Rapid Neural Hardwiring',
+    },
+    immediateActionChallenge: 'Complete this sentence right now: "After I brush my teeth tonight, I will do 2 pushups." Celebrate immediately after doing them!',
+    quiz: {
+      question: 'According to BJ Fogg’s research at Stanford, what actually encodes a habit into human brain architecture?',
+      options: [
+        'Repeating an action for precisely 66 days while feeling miserable',
+        'Feeling a burst of positive emotion (like celebration or pride) immediately after the action',
+        'Writing the habit on a chalkboard 100 times',
+        'Drinking three glasses of cold water',
+      ],
+      correctIndex: 1,
+      explanation: 'Fogg disproved the old myth that mere mechanical repetition creates habits; neurobiologically, dopamine released by feeling positive emotion is what welds neural circuits.',
+    },
+    tags: ['Habits', 'Neuroscience', 'Psychology', 'Personal Growth'],
+    likesCount: 4230,
+    audioScript: "You change best by feeling good, not by feeling bad. Most people try to beat themselves into changing, but neuroscience shows that emotions create habits. When you finish a tiny new habit, give yourself an immediate burst of celebration—a fist pump, a genuine smile, a mental 'Yes!' That feeling of success releases dopamine and locks the habit into your brain.",
+  },
+
+  // 69. MARCUS AURELIUS — Meditations (The Obstacle Is the Way)
+  {
+    id: 'reel-aurelius-obstacle-is-way',
+    title: 'The Obstacle Is the Way: Alchemy of Adversity',
+    subtitle: 'Meditations by Marcus Aurelius & Ryan Holiday',
+    category: 'mindset',
+    source: {
+      name: 'Meditations',
+      authorOrTopic: 'Marcus Aurelius',
+      tag: 'Stoic Philosophy',
+    },
+    coreIdea: 'The impediment to action advances action. What stands in the way becomes the way. Every obstacle, setback, and unfair tragedy contains within it an opportunity to practice virtue.',
+    quoteAuthor: 'Marcus Aurelius',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Blocked Road', text: 'A sudden catastrophe blocks your path...', emphasis: 'Frustration and panic threaten to take over.' },
+      { phase: 1, stepLabel: 'The Stoic Alchemy', text: 'Ask: What virtue does this demand of me?...', emphasis: 'Patience? Courage? Resourcefulness?' },
+      { phase: 2, stepLabel: 'Fuel for the Fire', text: 'The obstacle becomes the very staircase...', emphasis: 'You advance because of the hindrance!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'dichotomy-of-control',
+    conceptAnimationLabel: 'Impediment Block Transformed into Ascending Staircase',
+    takeaways: [
+      {
+        point: 'A Blaze Feeds on What is Thrown at It',
+        detail: 'A small fire is extinguished by a log, but a roaring fire consumes the timber, turning everything into bright flame and fury.',
+        isActionable: false,
+      },
+      {
+        point: 'Every Problem Demands a Virtue',
+        detail: 'Unfair criticism allows you to practice equanimity. Delays teach patience. Illness teaches fortitude. Nothing is wasted.',
+        isActionable: true,
+      },
+      {
+        point: 'Shift from "Why Me?" to "How Can I Use This?"',
+        detail: 'The victim asks why bad things happen to them. The Stoic asks: "How can I transform this setback into strength for others?"',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Stoic Obstacle Inversion',
+      description: 'Reframing external resistance not as a stoppage of progress, but as the exact curriculum designed to train personal greatness.',
+      formulaOrRule: 'What Stands In The Way BECOMES The Way',
+    },
+    immediateActionChallenge: 'Think of the biggest headache you are dealing with right now. Name one virtue (patience, courage, resilience) it is forcing you to develop.',
+    quiz: {
+      question: 'What famous quote from Book 5 of Meditations inspired the modern revival of Stoicism?',
+      options: [
+        'Money is the root of all evil',
+        'The impediment to action advances action. What stands in the way becomes the way.',
+        'To be or not to be, that is the question',
+        'An unexamined life is not worth living',
+      ],
+      correctIndex: 1,
+      explanation: 'Roman Emperor Marcus Aurelius reminded himself that external blockages simply redirect human effort toward developing virtues like justice, courage, and perseverance.',
+    },
+    tags: ['Stoicism', 'Mindset', 'Resilience', 'Philosophy'],
+    likesCount: 5280,
+    audioScript: "The mind adapts and converts to its own purposes the obstacle to our acting. What stands in the way becomes the way. A blazing fire turns everything thrown onto it into fuel and brilliance. When life puts a wall in front of you, stop crying that the path is blocked. The wall is the workout. The obstacle is the way.",
+  },
+
+  // 70. MARCUS AURELIUS — Meditations (Memento Mori)
+  {
+    id: 'reel-aurelius-memento-mori',
+    title: 'Memento Mori: You Could Leave Life Right Now',
+    subtitle: 'Meditations by Marcus Aurelius',
+    category: 'mindset',
+    source: {
+      name: 'Meditations',
+      authorOrTopic: 'Marcus Aurelius',
+      tag: 'Existential Stoicism',
+    },
+    coreIdea: 'You could leave life right now. Let that determine what you do and say and think. Remembering our inevitable mortality does not create depression; it delivers radical clarity, gratitude, and presence.',
+    quoteAuthor: 'Marcus Aurelius',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Petty Complaints', text: 'Arguing over politics, traffic, and pride...', emphasis: 'Living as if we will live for ten thousand years.' },
+      { phase: 1, stepLabel: 'The Sovereign Reminder', text: 'You could leave life right now...', emphasis: 'Death stands silently behind every mortal.' },
+      { phase: 2, stepLabel: 'Crystalline Presence', text: 'Petty drama evaporates into dust...', emphasis: 'Only kindness, honor, and truth remain.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#3b82f6',
+    visualConceptType: 'power-of-now',
+    conceptAnimationLabel: 'Memento Mori Hourglass: Crystallizing the Present Hour',
+    takeaways: [
+      {
+        point: 'Stop Living as if You Have 10,000 Years',
+        detail: '"Do not act as if you were going to live ten thousand years. Death hangs over you. While you live, while it is in your power, be good."',
+        isActionable: true,
+      },
+      {
+        point: 'Instant Clarity on Petty Fights',
+        detail: 'Next time you want to argue with someone over a trivial slight, ask: "If I died tonight, would I want my last moments spent on this?"',
+        isActionable: true,
+      },
+      {
+        point: 'Gratitude for the Borrowed Day',
+        detail: 'Waking up in the morning is a miraculous bonus day. You are not owed tomorrow. Savor this breath, this coffee, this conversation.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'Memento Mori (Remember You Must Die)',
+      description: 'The ancient practice of reflecting on mortality as a psychological tool to strip away trivial vanity and clarify urgent priorities.',
+      formulaOrRule: 'Contemplate Mortality → Trivial Vanity Vanishes → Urgent Gratitude & Virtue Reign',
+    },
+    immediateActionChallenge: 'Step outside right now or look through a window. Look at the sky and acknowledge: "I am alive on Earth today. What a magnificent privilege."',
+    quiz: {
+      question: 'In Meditations, why does Marcus Aurelius repeatedly tell himself "You could leave life right now"?',
+      options: [
+        'He was suffering from severe clinical depression and wanted to surrender',
+        'To serve as an ultimate moral compass, ensuring his words, actions, and priorities were grounded in honor and immediate presence',
+        'To prepare his troops for a planned suicide mission',
+        'He believed in omens and astrology',
+      ],
+      correctIndex: 1,
+      explanation: 'Stoics used Memento Mori not as macabre obsession, but as an invigorating reminder of the preciousness of time, preventing them from wasting life on petty grievances.',
+    },
+    tags: ['Stoicism', 'Memento Mori', 'Gratitude', 'Philosophy'],
+    likesCount: 5040,
+    audioScript: "You could leave life right now. Let that determine what you do and say and think. We live as if we have ten thousand years, worrying about reputations, petty insults, and useless arguments. Death is the great clarifier. When you realize that your time on this earth is brief and unpromised, the noise fades. Love deeply. Forgive quickly. Be good now.",
+  },
+
+  // 71. SENECA — On the Shortness of Life
+  {
+    id: 'reel-seneca-shortness-of-life',
+    title: 'It Is Not That Life Is Short, But That We Waste Much',
+    subtitle: 'On the Shortness of Life by Lucius Annaeus Seneca',
+    category: 'mindset',
+    source: {
+      name: 'On the Shortness of Life',
+      authorOrTopic: 'Lucius Annaeus Seneca',
+      tag: 'Ancient Stoic Wisdom',
+    },
+    coreIdea: 'Life is long enough, and a sufficiently generous estimate has been given to us for the highest achievements, if it were all well invested. But when it is wasted in heedless luxury and trivial pursuits, we find that it has slipped away.',
+    quoteAuthor: 'Lucius Annaeus Seneca',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Universal Complaint', text: '"Life is so short, time flies by so fast"...', emphasis: 'We blame nature for our own carelessness.' },
+      { phase: 1, stepLabel: 'Squandering the Treasure', text: 'We guard our money with fierce locks...', emphasis: 'Yet we give our priceless time away to any stranger!' },
+      { phase: 2, stepLabel: 'Sovereign Stewardship', text: 'Treat every hour as your most sacred asset...', emphasis: 'Life becomes rich, wide, and abundant.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#ec4899',
+    visualConceptType: 'power-of-now',
+    conceptAnimationLabel: 'Guarding Gold vs Squandering Precious Hours',
+    takeaways: [
+      {
+        point: 'Be Miserly with Your Time',
+        detail: 'People are frugal in guarding their property; but as soon as it comes to squandering time, they are most wasteful of the one thing it is right to be stingy about.',
+        isActionable: true,
+      },
+      {
+        point: 'Stop Postponing Life to Retirement',
+        detail: 'How foolish to begin life only at fifty or sixty, planning to retire when faculties are dull and death is knocking at the door.',
+        isActionable: false,
+      },
+      {
+        point: 'Being Busy is Not Living',
+        detail: 'No one is further from true living than the person who is perpetually busy with meetings, status games, and other people\'s business.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Seneca’s Stewardship of Time',
+      description: 'Recognizing that life is not short by nature, but made short by our reckless surrender of attention to trivialities.',
+      formulaOrRule: 'Life is Long IF Well Invested. Life is Vanishing IF Squandered on Trivial Vanity.',
+    },
+    immediateActionChallenge: 'Say "no" to one request or invitation today that you only felt obliged to accept out of people-pleasing guilt.',
+    quiz: {
+      question: 'What paradox does Seneca highlight regarding how humans protect their money versus their time?',
+      options: [
+        'People protect both equally well',
+        'People fiercely guard their money with guards and locks, but freely hand over their priceless, non-renewable time to anyone who asks',
+        'People waste money on luxury cars but save every second',
+        'Time can be traded on open stock exchanges',
+      ],
+      correctIndex: 1,
+      explanation: 'Seneca writes that humans are stingy with their property, but the moment it comes to time—the only asset that cannot be recovered—they are reckless spendthrifts.',
+    },
+    tags: ['Stoicism', 'Time Management', 'Philosophy', 'Productivity'],
+    likesCount: 4780,
+    audioScript: "It is not that we have a short time to live, but that we waste a lot of it. You wouldn't let a stranger walk into your home and steal your wallet. So why do you let emails, gossip, and useless meetings rob you of your hours? Money can be made back; a lost hour is gone forever. Guard your time like the priceless treasure it is.",
+  },
+
+  // 72. SENECA — Letters from a Stoic (Premeditatio Malorum)
+  {
+    id: 'reel-seneca-premeditatio-malorum',
+    title: 'Premeditatio Malorum: Rehearsing the Worst',
+    subtitle: 'Letters from a Stoic by Lucius Annaeus Seneca',
+    category: 'mindset',
+    source: {
+      name: 'Letters from a Stoic',
+      authorOrTopic: 'Lucius Annaeus Seneca',
+      tag: 'Stoic Cognitive Inoculation',
+    },
+    coreIdea: 'He robs present ills of their power who has perceived their coming beforehand. By regularly contemplating potential disasters in advance, we inoculate our mind against catastrophic shock.',
+    quoteAuthor: 'Lucius Annaeus Seneca',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Blindsided by Fortune', text: 'Assuming tomorrow will be comfortable and sunny...', emphasis: 'An unexpected setback shatters your world.' },
+      { phase: 1, stepLabel: 'The Premeditated Rehearsal', text: 'Envision exile, poverty, slander, or illness...', emphasis: 'Look your worst fears dead in the eye.' },
+      { phase: 2, stepLabel: 'Total Psychological Armor', text: 'When misfortune strikes, you say: "I knew this might come"...', emphasis: 'Unshakeable calm in the eye of the storm.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'dichotomy-of-control',
+    conceptAnimationLabel: 'Pre-Mortem Inoculation Shield Deflecting Fortune’s Arrows',
+    takeaways: [
+      {
+        point: 'Rehearse Worst Scenarios in Calm Waters',
+        detail: 'Set aside a few days each month to eat the cheapest food and wear rough clothes. Ask yourself: "Is this the condition that I feared?"',
+        isActionable: true,
+      },
+      {
+        point: 'Surprise Multiplies Pain',
+        detail: 'The unexpected blow lands with double weight. When you have mentally rehearsed the obstacle, you react with surgical solutions, not hysteria.',
+        isActionable: false,
+      },
+      {
+        point: 'Pre-Mortem for Projects',
+        detail: 'Before launching any venture, ask the team: "Imagine we are 6 months in the future and this failed catastrophically. What caused it?"',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Premeditatio Malorum',
+      description: 'The ancient Stoic cognitive exercise of premeditating evils to disarm fear and develop tactical contingency plans.',
+      formulaOrRule: 'Premeditate Adverse Scenarios → Shock Disarmed → Tactical Equanimity Secured',
+    },
+    immediateActionChallenge: 'Take 2 minutes before starting your workday to anticipate: "What could go wrong today? How will I respond with calm dignity if it does?"',
+    quiz: {
+      question: 'What is the goal of the Stoic practice of "Premeditatio Malorum"?',
+      options: [
+        'To become chronically depressed and pessimistic about everything',
+        'To inoculate the mind against psychological panic so that unexpected setbacks arrive without paralyzing shock',
+        'To cast spells on enemies',
+        'To hoard survival supplies in an underground bunker',
+      ],
+      correctIndex: 1,
+      explanation: 'Seneca taught that suffering is intensified by surprise; by contemplating adversity in advance, we strip misfortune of its ability to blindside us.',
+    },
+    tags: ['Stoicism', 'Mental Toughness', 'Preparation', 'Philosophy'],
+    likesCount: 4560,
+    audioScript: "If you would not have a man flinch when the crisis comes, train him before it comes. Most people practice toxic optimism, pretending that nothing bad could ever happen. But the wise person practices Premeditatio Malorum: premeditating potential evils. Think about the market crash, the cancelled flight, the difficult conversation. When you rehearse the storm beforehand, you don't panic when it arrives.",
+  },
+
+  // 73. EPICTETUS — Enchiridion (Opinions, Not Things)
+  {
+    id: 'reel-epictetus-opinions-not-things',
+    title: 'We Are Disturbed by Opinions, Not Things',
+    subtitle: 'Enchiridion (The Manual) by Epictetus',
+    category: 'psychology',
+    source: {
+      name: 'Enchiridion',
+      authorOrTopic: 'Epictetus',
+      tag: 'CBT Foundation & Stoicism',
+    },
+    coreIdea: 'Men are disturbed not by things, but by the view which they take of them. Death is nothing terrible, or else it would have seemed so to Socrates; the terror consists in our judgment that death is terrible.',
+    quoteAuthor: 'Epictetus',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Neutral Event', text: 'Someone cuts you off or insults your work...', emphasis: 'In itself, it is raw neutral data.' },
+      { phase: 1, stepLabel: 'The Cognitive Lens', text: 'You attach the narrative: "They disrespected me!"...', emphasis: 'Your own judgment generates the rage!' },
+      { phase: 2, stepLabel: 'Sovereign Interpretation', text: 'Change the opinion and the hurt vanishes...', emphasis: 'You are the author of your own peace.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#8b5cf6',
+    visualConceptType: 'stimulus-response-gap',
+    conceptAnimationLabel: 'Event (A) → Belief Narrative (B) → Emotional Consequence (C)',
+    takeaways: [
+      {
+        point: 'Events are Neither Good nor Bad',
+        detail: 'External occurrences are morally indifferent. It is only the lens and meaning you apply that turns an event into a tragedy or a triumph.',
+        isActionable: false,
+      },
+      {
+        point: 'The Origin of Cognitive Behavioral Therapy (CBT)',
+        detail: 'Dr. Albert Ellis and Aaron Beck built modern CBT directly on this single sentence of Epictetus: thoughts cause feelings, not events.',
+        isActionable: false,
+      },
+      {
+        point: 'Revoke the Story',
+        detail: 'Next time you feel hurt, say to the thought: "You are just an impression, and not at all what you claim to represent."',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The ABC Cognitive Model (Stoic CBT)',
+      description: 'The psychological reality that Adversity (A) does not directly cause Emotional Consequence (C); Belief (B) is the intermediary mediator.',
+      formulaOrRule: 'Adversity (A) + Belief / Opinion (B) = Emotional Consequence (C)',
+    },
+    immediateActionChallenge: 'When something frustrating happens today, catch yourself and say: "This event is neutral; it is only my opinion of it that causes my frustration."',
+    quiz: {
+      question: 'Which modern psychological therapy was founded directly upon the philosophy of Epictetus?',
+      options: [
+        'Freudian Psychoanalysis',
+        'Cognitive Behavioral Therapy (CBT)',
+        'Electroconvulsive Therapy',
+        'Phrenology',
+      ],
+      correctIndex: 1,
+      explanation: 'Albert Ellis explicitly cited Epictetus when creating Rational Emotive Behavior Therapy (the pioneer of CBT), demonstrating that human suffering arises from cognitive interpretations rather than external events.',
+    },
+    tags: ['Stoicism', 'CBT', 'Psychology', 'Mental Clarity'],
+    likesCount: 4930,
+    audioScript: "Men are disturbed not by things, but by the principles and notions which they form concerning things. If someone insults you, they did not hurt you. You hurt yourself the moment you agreed with their insult. External events have no power to penetrate your soul unless you open the door. Change your interpretation, and the suffering evaporates on the spot.",
+  },
+
+  // 74. JAMES CLEAR — Atomic Habits (Habit Stacking)
+  {
+    id: 'reel-clear-habit-stacking',
+    title: 'Habit Stacking: Piggybacking on Neural Highways',
+    subtitle: 'Atomic Habits by James Clear & Dr. BJ Fogg',
+    category: 'habits',
+    source: {
+      name: 'Atomic Habits',
+      authorOrTopic: 'James Clear',
+      tag: 'Habit Architecture',
+    },
+    coreIdea: 'One of the best ways to build a new habit is to identify a current habit you already do each day and stack your new behavior on top. Don\'t reinvent triggers; latch onto existing neural freeways.',
+    quoteAuthor: 'James Clear',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Vague Aspiration', text: '"I will read more and meditate more"...', emphasis: 'Without a concrete time and place, it fails.' },
+      { phase: 1, stepLabel: 'The Established Anchor', text: '"After I pour my morning coffee..."...', emphasis: 'An existing 10-year neural freeway.' },
+      { phase: 2, stepLabel: 'The Stacked Habit', text: '"...I will read one page of a philosophy book."...', emphasis: 'Instant effortless execution every day!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'habit-loop',
+    conceptAnimationLabel: 'Established Neural Highway with Piggybacked Habit Exit',
+    takeaways: [
+      {
+        point: 'The Habit Stacking Formula',
+        detail: '"After [CURRENT HABIT], I will [NEW HABIT]." Make the trigger specific and immediate (e.g., "After I close my laptop for the evening, I will do 10 pushups").',
+        isActionable: true,
+      },
+      {
+        point: 'Chain Multiple Micro-Habits',
+        detail: 'Stack 3-4 behaviors together into a morning or evening ritual: Coffee → Journal 1 line → Meditate 2 minutes → Review 1 goal.',
+        isActionable: true,
+      },
+      {
+        point: 'Anchor Must Have Same Frequency',
+        detail: 'Don\'t pair a daily habit with something you only do on Tuesdays. Choose everyday anchors like brushing teeth, making coffee, or sitting at your desk.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'Synaptic Pruning & Habit Stacking',
+      description: 'Using preexisting, myelinated neural pathways as the immediate environmental trigger for a new behavioral sequence.',
+      formulaOrRule: 'Existing Neural Freeway (Trigger) → New Micro-Habit (Action) → Friction = 0',
+    },
+    immediateActionChallenge: 'Create one habit stack right now: "After I take off my shoes when returning home, I will immediately change into workout clothes."',
+    quiz: {
+      question: 'What is the primary advantage of Habit Stacking over setting an alarm on your phone?',
+      options: [
+        'Alarms drain phone battery',
+        'It connects the new habit to an already hardwired behavioral anchor in your daily physical routine, making the cue impossible to miss or postpone',
+        'It was invented by Roman gladiators',
+        'It only works for eating breakfast',
+      ],
+      correctIndex: 1,
+      explanation: 'Clear explains that tying a new habit to a deeply established physical action (like brushing your teeth) provides an automatic, frictionless cue built into your environment.',
+    },
+    tags: ['Atomic Habits', 'Behavior Design', 'Productivity', 'Routines'],
+    likesCount: 5190,
+    audioScript: "The most effective way to build a new habit is to piggyback on an existing one. You already have dozens of habits hardwired into your brain: pouring coffee, brushing your teeth, taking off your shoes. Use that existing neural highway. Use the formula: After I do X, I will do Y. Stop relying on willpower. Anchor to your routine.",
+  },
+
+  // 75. JAMES CLEAR — Atomic Habits (Environment Design)
+  {
+    id: 'reel-clear-environment-design',
+    title: 'Environment Design: The Invisible Architect of Behavior',
+    subtitle: 'Atomic Habits by James Clear',
+    category: 'habits',
+    source: {
+      name: 'Atomic Habits',
+      authorOrTopic: 'James Clear',
+      tag: 'Choice Architecture',
+    },
+    coreIdea: 'Environment is the invisible hand that shapes human behavior. We often believe our habits are driven by motivation, but they are actually governed by the cues visible in our immediate space. Be the architect of your room.',
+    quoteAuthor: 'James Clear',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Willpower Trap', text: 'Leaving cookies on the counter and trying to resist...', emphasis: 'Willpower exhausts itself in minutes.' },
+      { phase: 1, stepLabel: 'Friction Engineering', text: 'Increase friction on bad habits: hide the candy...', emphasis: 'Decrease friction on good habits: put books on the pillow.' },
+      { phase: 2, stepLabel: 'Effortless Alignment', text: 'Your environment pulls you toward virtue...', emphasis: 'Good choices become the path of least resistance.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#06b6d4',
+    visualConceptType: 'habit-loop',
+    conceptAnimationLabel: 'Visual Cue Choice Architecture: High vs Zero Friction',
+    takeaways: [
+      {
+        point: 'Make Good Habits Obvious',
+        detail: 'Leave your water bottle on your desk, your running shoes by the front door, and your notebook open to a fresh page.',
+        isActionable: true,
+      },
+      {
+        point: 'Make Bad Habits Invisible',
+        detail: 'People with the highest self-control don\'t have superhero willpower; they simply structure environments where they rarely encounter temptation.',
+        isActionable: true,
+      },
+      {
+        point: 'One Space, One Use',
+        detail: 'Don\'t work in bed, play games at your work desk, and scroll on the sofa. Dedicate separate physical spaces for work, rest, and play.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Choice Architecture (Environment Design)',
+      description: 'Systematically structuring your physical surroundings so the desired behavior requires minimal physical friction and the undesired behavior requires maximum friction.',
+      formulaOrRule: 'Distance to Good Habit ↓ + Distance to Bad Habit ↑ = Automatic Good Behavior',
+    },
+    immediateActionChallenge: 'Remove one distraction from your immediate eye-line right now: hide your phone in a drawer or move a junk-food item to the back of the pantry.',
+    quiz: {
+      question: 'What did hospital researcher Dr. Anne Thorndike discover when she rearranged cafeteria drinks to place water at eye level instead of soda?',
+      options: [
+        'People complained loudly and left the cafeteria',
+        'Water sales increased by 25.8% and soda sales dropped by 11.4% without anyone ever saying a word to the customers',
+        'Soda sales tripled',
+        'There was no measurable change in behavior',
+      ],
+      correctIndex: 1,
+      explanation: 'People choose products not because of deep conscious desire, but because of visual availability. Redesigning visual cues directly shifts behavior.',
+    },
+    tags: ['Atomic Habits', 'Environment', 'Psychology', 'Productivity'],
+    likesCount: 4940,
+    audioScript: "Disciplined people don't have superhuman willpower; they have better environments. If you leave your phone on your desk, you'll check it twenty times an hour. If you put it in another room, you'll barely think about it. Stop fighting yourself in an environment designed for distraction. Make good habits obvious and bad habits invisible. Be the architect of your space.",
+  },
+
+  // 76. DANIEL KAHNEMAN — Thinking, Fast and Slow (The Peak-End Rule)
+  {
+    id: 'reel-kahneman-peak-end-rule',
+    title: 'The Peak-End Rule: How the Remembering Self Lies',
+    subtitle: 'Thinking, Fast and Slow by Daniel Kahneman',
+    category: 'psychology',
+    source: {
+      name: 'Thinking, Fast and Slow',
+      authorOrTopic: 'Daniel Kahneman',
+      tag: 'Cognitive Biases & Memory',
+    },
+    coreIdea: 'The human memory does not integrate the duration of an experience. Instead, it evaluates the entire event based almost entirely on two points: the emotional PEAK (highest intensity) and the END.',
+    quoteAuthor: 'Daniel Kahneman',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Duration Neglect', text: 'A 2-week wonderful vacation with a terrible final flight...', emphasis: 'Duration is completely ignored by memory.' },
+      { phase: 1, stepLabel: 'The Peak & The End', text: 'The brain remembers only the emotional climax...', emphasis: 'and how the experience concluded.' },
+      { phase: 2, stepLabel: 'Memory Engineering', text: 'Engineer magnificent endings for meetings and dates...', emphasis: 'The entire experience is coded as extraordinary!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#ec4899',
+    visualConceptType: 'system1-system2',
+    conceptAnimationLabel: 'Experiencing Self Duration vs Remembering Self Peak-End Average',
+    takeaways: [
+      {
+        point: 'Always End on a High Note',
+        detail: 'Whether ending a presentation, a date, a client project, or a workout, save an uplifting, triumphant moment for the final 60 seconds.',
+        isActionable: true,
+      },
+      {
+        point: 'Duration Neglect',
+        detail: 'Suffering 10 minutes of moderate pain and 5 minutes of mild pain is remembered more favorably than 10 minutes of moderate pain that ends abruptly.',
+        isActionable: false,
+      },
+      {
+        point: 'Experiencing Self vs Remembering Self',
+        detail: 'Your experiencing self lives every moment, but your remembering self makes all future choices. Learn to manage both.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Peak-End Rule & Duration Neglect',
+      description: 'A psychological heuristic in which people judge an experience largely based on how they felt at its peak and at its end, rather than the total sum of every moment.',
+      formulaOrRule: 'Memory Score = (Emotional Peak + Final Ending Sensation) / 2',
+    },
+    immediateActionChallenge: 'End your workday today with a 2-minute intentional celebration or recap of one win so your memory records the day as a triumph.',
+    quiz: {
+      question: 'What did Daniel Kahneman’s landmark colonoscopy experiment reveal about human memory?',
+      options: [
+        'Patients remember every single second of physical discomfort accurately',
+        'Patients whose procedure was extended with a few minutes of milder discomfort remembered the overall experience as less painful than those whose procedure ended abruptly at high pain',
+        'Patients forgot everything under general anesthesia',
+        'Music makes physical pain disappear completely',
+      ],
+      correctIndex: 1,
+      explanation: 'Because memory averages the peak and the end, adding a few minutes of milder discomfort lowered the final ending score, making the entire procedure feel less unpleasant in retrospect.',
+    },
+    tags: ['Psychology', 'Biases', 'Memory', 'Communication'],
+    likesCount: 4410,
+    audioScript: "The remembering self doesn't care about duration. You can have a wonderful two-week vacation, but if your flight home is delayed for twelve hours and your luggage is lost, your brain will remember the entire trip as a nightmare. This is the Peak-End Rule. If you want people to remember a meeting, a date, or a product with joy, always finish with your strongest moment.",
+  },
+
+  // 77. DANIEL KAHNEMAN — Thinking, Fast and Slow (The Anchoring Effect)
+  {
+    id: 'reel-kahneman-anchoring-effect',
+    title: 'The Anchoring Effect: The First Number Wins',
+    subtitle: 'Thinking, Fast and Slow by Daniel Kahneman & Amos Tversky',
+    category: 'psychology',
+    source: {
+      name: 'Thinking, Fast and Slow',
+      authorOrTopic: 'Daniel Kahneman',
+      tag: 'Cognitive Heuristics',
+    },
+    coreIdea: 'When people consider a particular value for an unknown quantity before estimating that quantity, the estimate stays close to the number considered. The brain clings to any anchor, even completely irrelevant ones.',
+    quoteAuthor: 'Daniel Kahneman',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Arbitrary Anchor', text: 'Spin a roulette wheel that lands on 65...', emphasis: 'A completely random, meaningless number.' },
+      { phase: 1, stepLabel: 'The Subconscious Gravitation', text: 'Ask: What percentage of African nations are in the UN?...', emphasis: 'Estimates anchor tightly around 65%!' },
+      { phase: 2, stepLabel: 'Negotiation Mastery', text: 'Drop the first high anchor in negotiations...', emphasis: 'You pull the entire discussion into your orbit.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'system1-system2',
+    conceptAnimationLabel: 'Anchoring Gravitational Well Pulling Estimates Away from Center',
+    takeaways: [
+      {
+        point: 'Set the Anchor in Negotiations',
+        detail: 'In salary or contract discussions, the person who names a credible, ambitious first number anchors the entire compromise range around it.',
+        isActionable: true,
+      },
+      {
+        point: 'Beware "Original Price" Markdowns',
+        detail: 'Seeing "Was $199, Now $49!" makes you judge the $49 relative to $199 rather than assessing whether the item is actually worth $49.',
+        isActionable: true,
+      },
+      {
+        point: 'Counter-Anchor Aggressively',
+        detail: 'If the other party sets an outrageous anchor, do not counter with a polite concession. State clearly that the anchor is unacceptable and reset the baseline.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Anchoring and Adjustment Heuristic',
+      description: 'The cognitive bias where individuals rely too heavily on an initial piece of information offered when making subsequent judgments.',
+      formulaOrRule: 'Initial Number Exposed → Insufficient Cognitive Adjustment = Biased Final Estimate',
+    },
+    immediateActionChallenge: 'Next time you look at a sale item with a "Original Price" strike-through, cover the old price and ask: "Is this worth the cash in my hand right now?"',
+    quiz: {
+      question: 'In Kahneman and Tversky’s famous experiment, how did spinning a rigged wheel of fortune (landing on 10 or 65) affect students’ factual estimates of African UN membership?',
+      options: [
+        'Students immediately recognized the trick and gave identical answers',
+        'Those who saw 65 guessed an average of 45%, while those who saw 10 guessed an average of 25%, heavily pulled by an irrelevant wheel spin',
+        'Students refused to answer',
+        'The wheel spin caused temporary amnesia',
+      ],
+      correctIndex: 1,
+      explanation: 'System 1 automatically treats any initial number as a candidate truth, anchoring estimates heavily even when subjects are explicitly told the number was random.',
+    },
+    tags: ['Psychology', 'Biases', 'Negotiation', 'Behavioral Economics'],
+    likesCount: 4620,
+    audioScript: "Anchoring is one of the most reliable glitches in human psychology. When you hear a number, your brain unconsciously adjusts around it like a ship tied to an anchor. Real estate agents and car dealers use this every day with inflated list prices. In any negotiation, remember: Whoever drops the first reasonable number anchors the entire conversation.",
+  },
+
+  // 78. STEPHEN COVEY — The 7 Habits (Habit 1: Be Proactive)
+  {
+    id: 'reel-covey-be-proactive-circle',
+    title: 'Circle of Influence vs. Circle of Concern',
+    subtitle: 'The 7 Habits of Highly Effective People by Stephen R. Covey',
+    category: 'mindset',
+    source: {
+      name: 'The 7 Habits of Highly Effective People',
+      authorOrTopic: 'Stephen R. Covey',
+      tag: 'Personal Leadership',
+    },
+    coreIdea: 'Reactive people focus their energy on the Circle of Concern—things they have no control over: national politics, weather, other people\'s moods. Proactive people focus on the Circle of Influence—things they can actually change.',
+    quoteAuthor: 'Stephen R. Covey',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Reactive Drain', text: 'Complaining about the economy, traffic, coworkers...', emphasis: 'Circle of Concern drains all mental energy.' },
+      { phase: 1, stepLabel: 'The Proactive Shift', text: 'Pouring energy into what you can control...', emphasis: 'Your attitude, your craft, your preparation.' },
+      { phase: 2, stepLabel: 'Compounding Influence', text: 'As your integrity and results grow...', emphasis: 'Your Circle of Influence expands outward!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'dichotomy-of-control',
+    conceptAnimationLabel: 'Expanding Circle of Influence Overcoming Paralyzing Concern',
+    takeaways: [
+      {
+        point: 'Work From the Inside Out',
+        detail: 'Reactive people want the outside world to change before they do ("If only my boss was nicer"). Proactive people change themselves first.',
+        isActionable: true,
+      },
+      {
+        point: 'Watch Your Language',
+        detail: 'Eliminate reactive phrases like "I have to," "He makes me so mad," or "There\'s nothing I can do." Replace with "I choose to," and "Let\'s look at alternatives."',
+        isActionable: true,
+      },
+      {
+        point: 'The Expanding Circle Rule',
+        detail: 'When you focus on what you can control, your competence grows and others entrust you with greater responsibility, widening your influence.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'Covey’s Circles of Concern and Influence',
+      description: 'A mental model separating elements of existence into what you care about (Concern) versus what you can actually affect (Influence).',
+      formulaOrRule: 'Energy in Circle of Influence = Personal Power ↑. Energy in Circle of Concern = Helplessness ↑.',
+    },
+    immediateActionChallenge: 'Catch yourself complaining about something outside your control today. Immediately pivot and ask: "What is one small thing within my power right now?"',
+    quiz: {
+      question: 'What happens to a person’s Circle of Influence when they spend all their time obsessing over their Circle of Concern?',
+      options: [
+        'It grows larger because they are well-informed',
+        'It shrinks, because their negative blaming energy causes them to neglect the things they actually had the power to change',
+        'It stays identical',
+        'It attracts government subsidies',
+      ],
+      correctIndex: 1,
+      explanation: 'Covey proved that obsessing over things you cannot control produces a victim mindset and causes your real sphere of influence to wither away.',
+    },
+    tags: ['The 7 Habits', 'Leadership', 'Proactivity', 'Mindset'],
+    likesCount: 5310,
+    audioScript: "Proactive people focus their efforts in the Circle of Influence. They work on the things they can do something about: their health, their skills, their reactions. Reactive people focus on the Circle of Concern—things they can't control like the news, the weather, and other people's faults. Stop wasting your energy where you have no power. Focus on what you can control.",
+  },
+
+  // 79. STEPHEN COVEY — The 7 Habits (Habit 2: Begin with the End in Mind)
+  {
+    id: 'reel-covey-begin-with-end',
+    title: 'Begin with the End in Mind: The Funeral Test',
+    subtitle: 'The 7 Habits of Highly Effective People by Stephen R. Covey',
+    category: 'mindset',
+    source: {
+      name: 'The 7 Habits of Highly Effective People',
+      authorOrTopic: 'Stephen R. Covey',
+      tag: 'Life Purpose & Values',
+    },
+    coreIdea: 'All things are created twice: first mentally in the blueprint, then physically in reality. If your ladder is not leaning against the right wall, every step you take only gets you to the wrong place faster.',
+    quoteAuthor: 'Stephen R. Covey',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Climbing Fast and Blind', text: 'Working 80 hours a week climbing the corporate ladder...', emphasis: 'Never checking what wall it leans against.' },
+      { phase: 1, stepLabel: 'The Funeral Meditation', text: 'What do you want said at your eulogy?...', emphasis: 'By your family, your friends, your community?' },
+      { phase: 2, stepLabel: 'The True North Compass', text: 'Align your daily schedule with your legacy...', emphasis: 'You live every single day on purpose!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#3b82f6',
+    visualConceptType: 'essentialism-filter',
+    conceptAnimationLabel: 'Ladder Leaning Against Wrong Wall vs True North Compass',
+    takeaways: [
+      {
+        point: 'The Two Creations Principle',
+        detail: 'You would never build a home without architectural blueprints; do not build your life without a clear mental blueprint of your character values.',
+        isActionable: true,
+      },
+      {
+        point: 'Nobody Wishes They Spent More Time at the Office',
+        detail: 'On deathbeds, people mourn neglected relationships, compromised integrity, and unlived dreams—never unanswered emails.',
+        isActionable: false,
+      },
+      {
+        point: 'Write a Personal Mission Statement',
+        detail: 'Draft a one-page constitution describing who you want to be (character) and what you want to do (contributions).',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Two Creations & The Funeral Heuristic',
+      description: 'Mental creation precedes physical manifestation; aligning daily habits with ultimate eulogy values ensures meaningful accomplishment.',
+      formulaOrRule: 'First Creation (Vision & Values) → Second Creation (Daily Action) = True Success',
+    },
+    immediateActionChallenge: 'Write down 3 sentences: What would you want your children, partner, or closest friend to say about who you were at your 80th birthday?',
+    quiz: {
+      question: 'In Habit 2 of The 7 Habits, what does Covey mean by "the ladder leaning against the wrong wall"?',
+      options: [
+        'A violation of construction safety codes',
+        'It is possible to be extremely efficient and busy, only to achieve success in things that ultimately do not matter to your deepest values',
+        'Buying real estate in declining neighborhoods',
+        'Failing to use an aluminum ladder',
+      ],
+      correctIndex: 1,
+      explanation: 'Efficiency is doing things right; effectiveness is doing the right things. If the ladder leans against the wrong wall, speed just rushes you to regret.',
+    },
+    tags: ['The 7 Habits', 'Purpose', 'Legacy', 'Mindset'],
+    likesCount: 4760,
+    audioScript: "It's incredibly easy to get caught in the busyness of life, climbing the ladder of success only to realize it's leaning against the wrong wall. Begin with the end in mind. Imagine your funeral three decades from now. What do you want your loved ones to say about your character, your love, your contributions? Live today so that those words will be true.",
+  },
+
+  // 80. CAL NEWPORT — Digital Minimalism (The 30-Day Declutter)
+  {
+    id: 'reel-newport-digital-minimalism',
+    title: 'The Digital Declutter: Reclaiming Your Brain',
+    subtitle: 'Digital Minimalism: Choosing a Focused Life in a Noisy World by Cal Newport',
+    category: 'productivity',
+    source: {
+      name: 'Digital Minimalism',
+      authorOrTopic: 'Cal Newport, PhD',
+      tag: 'Attention Economics',
+    },
+    coreIdea: 'Digital minimalists see tech as a tool to support the things they deeply value, not as a source of endless cheap entertainment. A 30-day digital declutter resets your relationship with hyper-addictive screens.',
+    quoteAuthor: 'Cal Newport',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Compulsive Screen Glancing', text: 'Checking feeds 85 times a day out of twitch reflex...', emphasis: 'Attention shattered into micro-fragments.' },
+      { phase: 1, stepLabel: 'The 30-Day Digital Fast', text: 'Delete all non-essential apps from your phone...', emphasis: 'Rediscover the lost joy of deep offline living.' },
+      { phase: 2, stepLabel: 'Sovereign Reintroduction', text: 'Reintroduce technology on strict terms...', emphasis: 'Tech serves you; you never serve tech.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#8b5cf6',
+    visualConceptType: 'deep-work-funnel',
+    conceptAnimationLabel: 'Digital App Clutter Filter: The High-Bar Threshold',
+    takeaways: [
+      {
+        point: 'The Cost of Low-Value Convenience',
+        detail: 'Thoreau wrote: "The cost of a thing is the amount of life which is required to be exchanged for it." Social media costs your precious attention.',
+        isActionable: false,
+      },
+      {
+        point: 'Remove Social Apps From Your Phone',
+        detail: 'You don\'t have to quit Instagram or X entirely. Only access them via a desktop browser. Adding friction breaks the compulsive thumb twitch.',
+        isActionable: true,
+      },
+      {
+        point: 'Reclaim High-Quality Leisure',
+        detail: 'When you take away the pacifying screen, fill the void with physical crafts, real social dinners, books, and long walks in nature.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Philosophy of Digital Minimalism',
+      description: 'A philosophy of technology use in which you focus your online time on a small number of carefully selected and optimized activities that strongly support things you deeply value.',
+      formulaOrRule: 'App Utility > Severe Attention Fragmentation? If NO → Delete App Immediately.',
+    },
+    immediateActionChallenge: 'Delete your most addictive social media or news app from your smartphone for the next 7 days. Use it only on your computer.',
+    quiz: {
+      question: 'What is the guiding rule of Digital Minimalism according to Cal Newport?',
+      options: [
+        'Smash all computers with a hammer',
+        'Clearing away low-value digital noise to optimize technology exclusively for activities that strongly serve your core human values',
+        'Only using devices manufactured before 2005',
+        'Answering all emails in less than 60 seconds',
+      ],
+      correctIndex: 1,
+      explanation: 'Digital minimalists are not luddites; they simply refuse to surrender their mental autonomy to slot-machine notification designs created by advertising corporations.',
+    },
+    tags: ['Digital Minimalism', 'Productivity', 'Focus', 'Mental Health'],
+    likesCount: 4830,
+    audioScript: "Digital minimalists see that the cost of an app isn't measured in dollars; it's measured in fragments of your life. The slot-machine algorithms on your phone were engineered by the smartest minds on earth to capture your attention. Take your mind back. Delete the apps from your phone. Use technology intentionally on your terms, not theirs.",
+  },
+];

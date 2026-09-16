@@ -1,0 +1,1223 @@
+import { MicroReel } from '../../types';
+
+export const BATCH_1_REELS: MicroReel[] = [
+  // 1. VIKTOR FRANKL — Man's Search for Meaning
+  {
+    id: 'reel-frankl-stimulus-response',
+    title: 'The Space Between Stimulus and Response',
+    subtitle: 'Man’s Search for Meaning by Viktor E. Frankl',
+    category: 'psychology',
+    source: {
+      name: 'Man’s Search for Meaning',
+      authorOrTopic: 'Viktor E. Frankl',
+      tag: 'Logotherapy & Resilience',
+    },
+    coreIdea: 'Between stimulus and response there is a space. In that space is our power to choose our response. In our response lies our growth and our freedom.',
+    quoteAuthor: 'Viktor E. Frankl',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Stimulus', text: 'Between stimulus and response...', emphasis: 'there is a space.' },
+      { phase: 1, stepLabel: 'The Choice', text: 'In that space lies our power...', emphasis: 'to choose our response.' },
+      { phase: 2, stepLabel: 'The Freedom', text: 'In our response lies our...', emphasis: 'growth and our freedom.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'stimulus-response-gap',
+    conceptAnimationLabel: 'The Space of Proactive Choice',
+    takeaways: [
+      {
+        point: 'Insert a 3-Second Pause',
+        detail: 'When triggered by anger, frustration, or fear, physically exhale and pause for 3 seconds before reacting.',
+        isActionable: true,
+      },
+      {
+        point: 'Shift from Reactive to Proactive',
+        detail: 'Animals react to stimuli automatically; human consciousness grants us the unique ability to decide what meaning to attach.',
+        isActionable: true,
+      },
+      {
+        point: 'Ultimate Human Freedom',
+        detail: 'Everything can be taken from a person but one thing: the freedom to choose one’s attitude in any set of circumstances.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Stimulus-Response Gap',
+      description: 'The conscious buffer between an external event and your emotional reaction.',
+      formulaOrRule: 'Stimulus → [PAUSE & CHOOSE] → Response',
+    },
+    immediateActionChallenge: 'Next time you receive an annoying notification or message today, wait exactly 5 slow deep breaths before typing a response.',
+    quiz: {
+      question: 'According to Viktor Frankl, where does true human growth and freedom reside?',
+      options: [
+        'In completely eliminating negative emotional stimuli from your environment',
+        'In the conscious space between the stimulus and how you choose to respond',
+        'In venting your automatic emotional reaction as quickly as possible',
+        'In avoiding difficult or high-friction situations altogether',
+      ],
+      correctIndex: 1,
+      explanation: 'Frankl identified that even in the most extreme hardship, humans retain the sovereign power to decide their internal response to external circumstances.',
+    },
+    tags: ['Psychology', 'Stoicism', 'Resilience', 'Emotional Intelligence'],
+    likesCount: 3840,
+    audioScript: "Between stimulus and response, there is a space. In that space lies our power to choose. Most people live on autopilot, reacting instantly to every trigger. But your greatest superpower is pausing. The next time you feel an impulse to snap or react, take a 3-second breath. Own the space, and you own your life.",
+  },
+
+  // 2. DANIEL KAHNEMAN — Thinking, Fast and Slow
+  {
+    id: 'reel-kahneman-system-1-2',
+    title: 'System 1 vs. System 2: The Cognitive Glitch',
+    subtitle: 'Thinking, Fast and Slow by Daniel Kahneman',
+    category: 'psychology',
+    source: {
+      name: 'Thinking, Fast and Slow',
+      authorOrTopic: 'Daniel Kahneman',
+      tag: 'Behavioral Economics',
+    },
+    coreIdea: 'System 1 runs automatically on gut instincts and heuristics. System 2 is slow, analytical, and lazy. Cognitive mastery is knowing when to wake up System 2.',
+    quoteAuthor: 'Daniel Kahneman',
+    quotePhases: [
+      { phase: 0, stepLabel: 'System 1 Intuition', text: 'System 1 thinks fast and automatic...', emphasis: '95% of daily habits.' },
+      { phase: 1, stepLabel: 'Cognitive Laziness', text: 'System 2 is analytical and deep...', emphasis: 'yet inherently lazy.' },
+      { phase: 2, stepLabel: 'The Deliberate Shift', text: 'Mastery is knowing when to...', emphasis: 'wake up System 2.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#06b6d4',
+    visualConceptType: 'system1-system2',
+    conceptAnimationLabel: 'Dual-Process Cognitive Architecture',
+    takeaways: [
+      {
+        point: 'WYSIATI Bias (What You See Is All There Is)',
+        detail: 'System 1 constructs quick stories based solely on available clues, ignoring everything unseen. Always ask: "What am I not seeing?"',
+        isActionable: true,
+      },
+      {
+        point: 'Force a Slow-Down on Big Decisions',
+        detail: 'Never sign a contract, commit to an investment, or judge a person in a rushed System 1 emotional state.',
+        isActionable: true,
+      },
+      {
+        point: 'System 2 Energy Depletion',
+        detail: 'Deliberate thinking burns physical glucose. Make your most critical strategic choices early when your brain is rested.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Dual-Process Cognitive Theory',
+      description: 'Balancing fast heuristics (System 1) with deliberate analytical verification (System 2).',
+      formulaOrRule: 'Emotional Gut Check (Sys 1) + 24-Hour Cooling Logic (Sys 2)',
+    },
+    immediateActionChallenge: 'Identify one major decision you made this week based on gut feeling. Write down 3 counter-arguments to test it with System 2.',
+    quiz: {
+      question: 'Why does Kahneman describe System 2 as "lazy"?',
+      options: [
+        'It refuses to learn new languages or math',
+        'It consumes significant cognitive energy, so the brain defaults to System 1 heuristics whenever possible',
+        'It shuts down during sleep cycles',
+        'It only activates when someone offers a monetary reward',
+      ],
+      correctIndex: 1,
+      explanation: 'System 2 requires high mental effort and glucose; the brain naturally minimizes cognitive strain by relying on fast System 1 shortcuts.',
+    },
+    tags: ['Cognitive Biases', 'Decision Making', 'Psychology', 'Mindset'],
+    likesCount: 2950,
+    audioScript: "Your brain operates on two distinct systems. System 1 is fast, automatic, and emotional—it controls 95% of your day. System 2 is slow, rational, and deeply focused—but it is lazy. Most poor decisions happen when we let fast System 1 answer complex questions. Learn to spot the trigger, slow down, and activate System 2.",
+  },
+
+  // 3. JAMES CLEAR — Atomic Habits
+  {
+    id: 'reel-atomic-habits-1-percent',
+    title: 'The 1% Rule & The Plateau of Latent Potential',
+    subtitle: 'Atomic Habits by James Clear',
+    category: 'habits',
+    source: {
+      name: 'Atomic Habits',
+      authorOrTopic: 'James Clear',
+      tag: 'Behavior Design',
+    },
+    coreIdea: 'Habits are the compound interest of self-improvement. Getting 1% better each day compounds into a 37-fold improvement in one year.',
+    quoteAuthor: 'James Clear',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Daily Shift', text: 'Small choices seem insignificant daily...', emphasis: '1.01 vs 0.99.' },
+      { phase: 1, stepLabel: 'The Hidden Plateau', text: 'Results lag behind your efforts...', emphasis: 'compounding beneath the surface.' },
+      { phase: 2, stepLabel: 'The Breakthrough', text: 'Suddenly the tipping point arrives...', emphasis: '37.78x transformation.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'compounding-curve',
+    conceptAnimationLabel: 'Exponential Compounding Formula (37.78x)',
+    takeaways: [
+      {
+        point: 'Systems Beat Goals',
+        detail: 'You do not rise to the level of your goals; you fall to the level of your systems. Focus on your daily routine, not the scoreboard.',
+        isActionable: true,
+      },
+      {
+        point: 'The 2-Minute Rule',
+        detail: 'Scale any new habit down so it takes under 2 minutes to perform (e.g., "put on running shoes", "read one paragraph").',
+        isActionable: true,
+      },
+      {
+        point: 'Identity-Based Habits',
+        detail: 'Every action you take is a vote for the person you wish to become. Focus on identity over outcomes.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Compounding 1% Curve',
+      description: 'Tiny daily iterative improvements yield massive nonlinear results over time.',
+      formulaOrRule: '(1.01)³⁶⁵ = 37.78x vs (0.99)³⁶⁵ = 0.03x',
+    },
+    immediateActionChallenge: 'Scale your biggest intimidating goal down to a 2-minute version and execute it right now before switching tabs.',
+    quiz: {
+      question: 'What is the "Plateau of Latent Potential" according to James Clear?',
+      options: [
+        'The period where habits decline due to boredom',
+        'The early phase where your hard work has not yet produced visible breakthrough results, but is storing energy',
+        'The maximum IQ ceiling a person can achieve',
+        'A technique to eliminate sleep deprivation',
+      ],
+      correctIndex: 1,
+      explanation: 'Clear explains that results lag behind habits. You must persist through the Valley of Disappointment before the exponential compounding curve bends upward.',
+    },
+    tags: ['Habits', 'Systems', 'Productivity', 'Self-Improvement'],
+    likesCount: 5120,
+    audioScript: "Habits are the compound interest of self-improvement. Just as money multiplies through compound interest, the effects of your habits multiply as you repeat them. Getting 1% better every day yields 37 times greater ability by year's end. Forget aggressive leaps; fall in love with daily tiny systems.",
+  },
+
+  // 4. CHARLES DUHIGG — The Power of Habit
+  {
+    id: 'reel-duhigg-habit-loop',
+    title: 'The Golden Rule of Habit Change',
+    subtitle: 'The Power of Habit by Charles Duhigg',
+    category: 'habits',
+    source: {
+      name: 'The Power of Habit',
+      authorOrTopic: 'Charles Duhigg',
+      tag: 'Neurology of Habits',
+    },
+    coreIdea: 'You cannot extinguish a bad habit; you can only change the routine once the craving strikes. Keep the cue, provide the same reward, insert a new routine.',
+    quoteAuthor: 'Charles Duhigg',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Cue & Craving', text: 'Every habit begins with an environmental cue...', emphasis: 'sparking an anticipation craving.' },
+      { phase: 1, stepLabel: 'The Routine Swap', text: 'Do not fight the craving...', emphasis: 'swap the routine.' },
+      { phase: 2, stepLabel: 'The Golden Rule', text: 'Same cue, same reward...', emphasis: 'a brand-new constructive routine.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f43f5e',
+    visualConceptType: 'habit-loop',
+    conceptAnimationLabel: 'The 4-Quadrant Neurological Habit Loop',
+    takeaways: [
+      {
+        point: 'Identify the Real Craving',
+        detail: 'If you crave a cigarette or social media scroll at 3 PM, the actual craving is often social connection or mental relief, not nicotine or pixels.',
+        isActionable: true,
+      },
+      {
+        point: 'Keep the Cue and Reward Intact',
+        detail: 'Keep the 3 PM timer (Cue) and the 5-minute break (Reward), but swap the routine for a quick brisk walk or herbal tea.',
+        isActionable: true,
+      },
+      {
+        point: 'The Power of Keystone Habits',
+        detail: 'Exercise or morning journaling often acts as a keystone habit, triggering a positive chain reaction across sleep, diet, and focus.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Golden Rule of Habit Re-engineering',
+      description: 'Retain the Cue and Reward while substituting the Routine.',
+      formulaOrRule: 'Same Cue + Same Reward + NEW Routine = Lasting Habit Transformation',
+    },
+    immediateActionChallenge: 'Pick your worst daily habit. Write down: What is the exact Cue? What is the real underlying Reward? What new routine replaces it?',
+    quiz: {
+      question: 'According to Charles Duhigg, what is the most effective way to eliminate an unwanted habit?',
+      options: [
+        'Use willpower to resist both cue and craving indefinitely',
+        'Keep the cue and the reward, but substitute the routine that satisfies the craving',
+        'Punish yourself immediately whenever the routine is performed',
+        'Change jobs and move to a new city to eliminate all cues',
+      ],
+      correctIndex: 1,
+      explanation: 'Duhigg shows that once neural pathways are formed, cues and cravings remain. Change happens by substituting a healthy routine that provides the identical reward.',
+    },
+    tags: ['Habits', 'Psychology', 'Behavioral Science', 'Dopamine'],
+    likesCount: 3180,
+    audioScript: "Neurology shows that you cannot truly erase a bad habit—you can only replace it. The habit loop consists of three parts: Cue, Routine, and Reward. When stress hits at 3 PM, you do not crave junk food; you crave emotional relief. Keep the cue, give your brain the reward, but switch the routine. That is the Golden Rule of Habit Change.",
+  },
+
+  // 5. STEPHEN R. COVEY — The 7 Habits of Highly Effective People
+  {
+    id: 'reel-covey-quadrant-2',
+    title: 'Quadrant II: The Urgent vs. The Important',
+    subtitle: 'The 7 Habits of Highly Effective People by Stephen R. Covey',
+    category: 'productivity',
+    source: {
+      name: 'The 7 Habits',
+      authorOrTopic: 'Stephen R. Covey',
+      tag: 'Time Mastery & Leadership',
+    },
+    coreIdea: 'What is important is seldom urgent, and what is urgent is seldom important. High-impact achievers spend the majority of their mental energy in Quadrant II.',
+    quoteAuthor: 'Stephen R. Covey',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Urgency Trap', text: 'Most people spend life in Quadrant I & III...', emphasis: 'firefighting urgent noise.' },
+      { phase: 1, stepLabel: 'The Quadrant II Shift', text: 'Important but not urgent...', emphasis: 'health, strategy, relationships.' },
+      { phase: 2, stepLabel: 'Proactive Power', text: 'Say no to the trivial many...', emphasis: 'to protect the vital Quadrant II.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'eisenhower-matrix',
+    conceptAnimationLabel: 'The Eisenhower-Covey 4-Quadrant Time Matrix',
+    takeaways: [
+      {
+        point: 'Say No to Quadrant III',
+        detail: 'Quadrant III tasks appear urgent (emails, ringing phones, other people’s emergencies) but have zero bearing on your long-term legacy.',
+        isActionable: true,
+      },
+      {
+        point: 'Schedule Quadrant II First',
+        detail: 'Book gym sessions, strategic planning, deep reading, and family dinners as immovable calendar events at the start of each week.',
+        isActionable: true,
+      },
+      {
+        point: 'Prevention Beats Firefighting',
+        detail: 'Spending 30 minutes in Quadrant II prevention eliminates 10 hours of Quadrant I crises later.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Covey Time Matrix',
+      description: 'Categorizing every task by Urgency and Importance to prioritize prevention over reaction.',
+      formulaOrRule: 'Quadrant II Priority: Important + Non-Urgent = Long-Term Freedom',
+    },
+    immediateActionChallenge: 'Open your calendar. Block out a 90-minute Quadrant II session tomorrow morning for proactive skill-building or deep work.',
+    quiz: {
+      question: 'Which quadrant produces extraordinary results and prevents crises according to Stephen Covey?',
+      options: [
+        'Quadrant I: Urgent and Important (Crises & pressing deadlines)',
+        'Quadrant II: Not Urgent, but Highly Important (Prevention, relationships, planning)',
+        'Quadrant III: Urgent, but Not Important (Interruptions & meeting requests)',
+        'Quadrant IV: Neither Urgent nor Important (Trivia & busywork)',
+      ],
+      correctIndex: 1,
+      explanation: 'Quadrant II contains activities that build your capability and prevent fires before they ignite. Because they are not urgent, they require proactive initiative.',
+    },
+    tags: ['Productivity', 'Leadership', 'Time Management', 'Focus'],
+    likesCount: 4210,
+    audioScript: "Are you being productive or just busy? Stephen Covey revealed that most people spend their entire lives trapped in the tyranny of the urgent. Quadrant II activities—like your physical health, deep study, and long-term strategy—never scream for your attention. But they dictate your entire future. Schedule your Quadrant II priorities first.",
+  },
+
+  // 6. CAL NEWPORT — Deep Work
+  {
+    id: 'reel-newport-deep-work',
+    title: 'Attention Residue & The Focus Funnel',
+    subtitle: 'Deep Work by Cal Newport',
+    category: 'productivity',
+    source: {
+      name: 'Deep Work',
+      authorOrTopic: 'Cal Newport',
+      tag: 'Cognitive Superpowers',
+    },
+    coreIdea: 'Every quick check of your inbox or Slack leaves a thick residue of attention on that task, crippling your cognitive capacity for the next 20 minutes.',
+    quoteAuthor: 'Cal Newport',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Quick Check Trap', text: 'A 10-second glance at notifications...', emphasis: 'leaves heavy attention residue.' },
+      { phase: 1, stepLabel: 'The Fragmented Mind', text: 'Your cognitive bandwidth is fractured...', emphasis: 'dropping IQ by 10 points.' },
+      { phase: 2, stepLabel: 'The Deep Shield', text: 'Shield your attention completely...', emphasis: 'High Output = Time × Focus Intensity.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#8b5cf6',
+    visualConceptType: 'deep-work-funnel',
+    conceptAnimationLabel: 'The Cognitive Distraction Deflection Shield',
+    takeaways: [
+      {
+        point: 'Eliminate Semi-Distraction',
+        detail: 'Never work with Slack, WhatsApp, or email open on a secondary monitor. Batch communications into 2 designated slots per day.',
+        isActionable: true,
+      },
+      {
+        point: 'High-Value Output Formula',
+        detail: 'High-Quality Work Produced = (Time Spent) × (Intensity of Focus). 2 hours of pure focus beats 8 hours of distracted multitasking.',
+        isActionable: false,
+      },
+      {
+        point: 'Embrace Boredom',
+        detail: 'Stop pulling out your phone every time you stand in line for coffee. Train your neural tolerance for unoccupied downtime.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Attention Residue Law',
+      description: 'Switching between tasks leaves fragmented cognitive residue that impairs deep analytical reasoning.',
+      formulaOrRule: 'Work Output = Time × Intensity of Focus (Zero Context Switching)',
+    },
+    immediateActionChallenge: 'Put your phone in another room or inside a drawer for the next 45 minutes while doing one deep task.',
+    quiz: {
+      question: 'What happens when you quickly check an email while writing a complex report?',
+      options: [
+        'Your brain gets an energy boost from novelty',
+        'Attention residue from the email remains active, diminishing performance on the report for 15-20 minutes',
+        'Both tasks are processed in parallel with zero drop in accuracy',
+        'Your working memory capacity doubles',
+      ],
+      correctIndex: 1,
+      explanation: 'Research by Sophie Leroy cited in Deep Work shows that people have attention residue stuck on prior tasks, meaning their cognitive engine is severely handicapped.',
+    },
+    tags: ['Deep Work', 'Focus', 'Productivity', 'Cal Newport'],
+    likesCount: 3890,
+    audioScript: "The ability to perform deep work is becoming increasingly rare at the exact same time it is becoming increasingly valuable in our economy. When you switch from your core project to quickly check an email, you leave attention residue behind. Even a 5-second distraction sabotages your flow for 20 minutes. Protect your focus like your career depends on it—because it does.",
+  },
+
+  // 7. CAROL S. DWECK — Mindset: The New Psychology of Success
+  {
+    id: 'reel-dweck-growth-mindset',
+    title: 'The Power of "Yet": Growth vs. Fixed Mindset',
+    subtitle: 'Mindset: The New Psychology of Success by Carol S. Dweck',
+    category: 'mindset',
+    source: {
+      name: 'Mindset',
+      authorOrTopic: 'Carol S. Dweck',
+      tag: 'Neuroplasticity & Potential',
+    },
+    coreIdea: 'In a fixed mindset, effort is a sign of weakness and failure is an identity. In a growth mindset, effort is what makes you smart and failure is information.',
+    quoteAuthor: 'Carol S. Dweck',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Fixed Plateau', text: 'I am not good at this...', emphasis: 'a fixed belief in static talent.' },
+      { phase: 1, stepLabel: 'The Magic Word', text: 'Add the word YET to every limitation...', emphasis: 'I cannot do this YET.' },
+      { phase: 2, stepLabel: 'Neuroplastic Growth', text: 'Effort rewires neural synapses...', emphasis: 'Failure is feedback, not identity.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#3b82f6',
+    visualConceptType: 'growth-mindset',
+    conceptAnimationLabel: 'Fixed vs Growth Mindset Neural Expansion',
+    takeaways: [
+      {
+        point: 'Praise Process Over Intelligence',
+        detail: 'Praising effort, strategy, and resilience builds grit. Praising raw talent fosters defensive fragility and risk-aversion.',
+        isActionable: true,
+      },
+      {
+        point: 'Failure is Information',
+        detail: 'When an experiment or interview fails, ask: "What did I learn from this data point?" rather than "What is wrong with me?"',
+        isActionable: true,
+      },
+      {
+        point: 'The Word "Yet"',
+        detail: 'Whenever you catch yourself saying "I don\'t understand this," immediately append the word "yet."',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Growth Mindset Heuristic',
+      description: 'Viewing intellectual and psychological capacity as elastic muscles developed through deliberate challenge.',
+      formulaOrRule: 'Limitation Statement + "YET" = Neural Growth Pathway',
+    },
+    immediateActionChallenge: 'Catch one self-limiting thought you had today and say out loud: "I haven\'t mastered this YET, but I am learning."',
+    quiz: {
+      question: 'What is the fundamental distinction between a fixed and growth mindset?',
+      options: [
+        'Fixed mindset people are born with higher baseline IQ',
+        'Fixed mindsets believe abilities are static traits; growth mindsets believe abilities can be developed through dedication and hard work',
+        'Growth mindsets never experience feelings of frustration or fatigue',
+        'Fixed mindsets achieve better academic outcomes in competitive environments',
+      ],
+      correctIndex: 1,
+      explanation: 'Dweck proved that viewing challenges as opportunities to strengthen neural connections fundamentally alters how humans respond to setbacks and achieve mastery.',
+    },
+    tags: ['Mindset', 'Psychology', 'Neuroscience', 'Resilience'],
+    likesCount: 3410,
+    audioScript: "The passion for stretching yourself and sticking to it, especially when it is not going well, is the hallmark of the growth mindset. In a fixed mindset, every challenge feels like a test of your worth. In a growth mindset, challenge is the very engine of brain growth. When you hit a roadblock, don't say you can't do it. Say: I can't do it YET.",
+  },
+
+  // 8. RYAN HOLIDAY — The Daily Stoic
+  {
+    id: 'reel-holiday-dichotomy-of-control',
+    title: 'The Dichotomy of Control',
+    subtitle: 'The Daily Stoic by Ryan Holiday',
+    category: 'mindset',
+    source: {
+      name: 'The Daily Stoic',
+      authorOrTopic: 'Ryan Holiday (Epictetus)',
+      tag: 'Stoic Philosophy',
+    },
+    coreIdea: 'The chief task in life is simply this: to identify and separate matters so that I can say clearly to myself which are externals not under my control, and which have to do with the choices I actually control.',
+    quoteAuthor: 'Epictetus / Ryan Holiday',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Circle of Concern', text: 'Weather, market fluctuations, other opinions...', emphasis: 'Zero control over externals.' },
+      { phase: 1, stepLabel: 'The Inner Circle', text: 'Your judgements, actions, and ethics...', emphasis: 'Complete sovereign control.' },
+      { phase: 2, stepLabel: 'Radical Equanimity', text: 'Pour 100% of your energy...', emphasis: 'into what is yours to decide.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'dichotomy-of-control',
+    conceptAnimationLabel: 'Concentric Circles of Stoic Control',
+    takeaways: [
+      {
+        point: 'Separate What You Control',
+        detail: 'You cannot control whether someone rejects you, the economy crashes, or the server goes down. You control your preparation and your response.',
+        isActionable: true,
+      },
+      {
+        point: 'Stop Wasting Emotional Fuel',
+        detail: 'Worrying about what you cannot control is the primary source of human anxiety and suffering.',
+        isActionable: false,
+      },
+      {
+        point: 'Amor Fati (Love of Fate)',
+        detail: 'Do not merely tolerate obstacles; view them as fuel for practicing patience, courage, and creativity.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Stoic Dichotomy of Control',
+      description: 'Categorizing every stressor into In-My-Control vs Out-of-My-Control, then ruthlessly ignoring the latter.',
+      formulaOrRule: 'If (Out of My Control) → Release It. If (In My Control) → Act With Excellence.',
+    },
+    immediateActionChallenge: 'Write down the single biggest anxiety on your mind right now. Cross out everything in it you cannot directly control.',
+    quiz: {
+      question: 'According to Epictetus and Stoic philosophy, which of the following is entirely within your control?',
+      options: [
+        'Your reputation and what your peers think of you',
+        'The external results and financial return of your project',
+        'Your own opinions, impulses, desires, and aversions',
+        'Whether your flight departs on time',
+      ],
+      correctIndex: 2,
+      explanation: 'Stoics established that external events, other people\'s perceptions, and final outcomes belong to fate; only our internal judgements and voluntary choices are ours.',
+    },
+    tags: ['Stoicism', 'Mental Health', 'Anxiety Relief', 'Wisdom'],
+    likesCount: 4620,
+    audioScript: "The chief task in life is simply this: to separate what is in your control from what is not. You cannot control the weather, the traffic, or how someone behaves toward you. But you possess complete ownership of your thoughts, your values, and your reaction. Stop agonizing over the storm outside. Anchor yourself to what is within.",
+  },
+
+  // 9. CHRIS VOSS — Never Split the Difference
+  {
+    id: 'reel-voss-tactical-empathy',
+    title: 'Tactical Empathy & The Power of Mirroring',
+    subtitle: 'Never Split the Difference by Chris Voss',
+    category: 'communication',
+    source: {
+      name: 'Never Split the Difference',
+      authorOrTopic: 'Chris Voss',
+      tag: 'FBI Negotiation Tactics',
+    },
+    coreIdea: 'Conflict disappears when the other party feels genuinely heard. Mirror the last three words of what they said with a curious tone to unlock hidden information.',
+    quoteAuthor: 'Chris Voss',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Defensive Wall', text: 'When people feel pressured to say yes...', emphasis: 'their defensive shields rise.' },
+      { phase: 1, stepLabel: 'The Mirror Technique', text: 'Repeat the last 1 to 3 words...', emphasis: 'with a gentle upward inflection.' },
+      { phase: 2, stepLabel: 'That\'s Right Breakthrough', text: 'When they say "That\'s right"...', emphasis: 'real collaboration begins.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#ec4899',
+    visualConceptType: 'tactical-empathy',
+    conceptAnimationLabel: 'Mirroring & Emotional Labeling Waveform',
+    takeaways: [
+      {
+        point: 'The Mirror: Repeat Last 3 Words',
+        detail: 'When someone says "I just don\'t have time for this," mirror back with a calm, curious voice: "Don\'t have time?" They will naturally elaborate.',
+        isActionable: true,
+      },
+      {
+        point: 'Label Their Negative Emotions',
+        detail: 'Use phrases like: "It seems like you feel unappreciated," or "It sounds like you\'re under immense pressure." Naming fear diffuses amygdala activation.',
+        isActionable: true,
+      },
+      {
+        point: 'Aim for "That\'s Right"',
+        detail: 'Never push for a shallow "Yes" (which is often counterfeit). Summarize their perspective so accurately that they say: "That\'s right."',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Tactical Empathy',
+      description: 'Listening not to agree, but to completely uncover and neutralize the emotional friction behind an opponent\'s resistance.',
+      formulaOrRule: 'Mirror (Last 3 Words) + Label ("It seems like...") = "That\'s Right"',
+    },
+    immediateActionChallenge: 'In your next conversation, do not offer an opinion. Mirror the last 3 words your partner says and pause for 4 seconds.',
+    quiz: {
+      question: 'What is the goal of "Mirroring" in Chris Voss’s negotiation methodology?',
+      options: [
+        'To mimic their physical posture to manipulate them',
+        'To repeat the last 1 to 3 critical words to buy time and encourage the speaker to voluntarily elaborate',
+        'To interrupt them before they make an unreasonable demand',
+        'To force them to agree to a contract immediately',
+      ],
+      correctIndex: 1,
+      explanation: 'Mirroring uses the listener’s words with a curious tone, prompting the speaker to expound and reveal what they are truly worried about without triggering defense mechanisms.',
+    },
+    tags: ['Negotiation', 'Communication', 'Psychology', 'Influence'],
+    likesCount: 3750,
+    audioScript: "The most dangerous negotiation mistake is assuming you know what the other side wants. Great negotiators use Tactical Empathy. When someone pushes back, don't argue. Mirror them: repeat the last three words of what they just said with a calm, curious tone. Then pause. The silence forces them to open up and reveal their real motivation.",
+  },
+
+  // 10. BRIAN TRACY — Eat That Frog!
+  {
+    id: 'reel-tracy-eat-that-frog',
+    title: 'Eat Your Biggest Frog First Thing in the Morning',
+    subtitle: 'Eat That Frog! by Brian Tracy',
+    category: 'productivity',
+    source: {
+      name: 'Eat That Frog!',
+      authorOrTopic: 'Brian Tracy',
+      tag: 'Anti-Procrastination',
+    },
+    coreIdea: 'If the first thing you do each morning is eat a live frog, you can go through the day with the satisfaction of knowing that that is probably the worst thing that is going to happen to you all day long.',
+    quoteAuthor: 'Brian Tracy (Mark Twain)',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Procrastination Bog', text: 'You have 10 tasks on your list...', emphasis: 'avoiding the hardest high-impact item.' },
+      { phase: 1, stepLabel: 'The Frog Selection', text: 'Identify the ONE task with the greatest...', emphasis: 'consequence for completion.' },
+      { phase: 2, stepLabel: 'Morning Consumption', text: 'Execute it before opening email...', emphasis: 'Unstoppable momentum all day.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'eat-that-frog',
+    conceptAnimationLabel: 'Morning Peak Willpower Curve vs Friction',
+    takeaways: [
+      {
+        point: 'Your Frog is Your Highest-Friction Task',
+        detail: 'The "frog" is the one task you are most likely to procrastinate on, but which has the single greatest positive impact on your life.',
+        isActionable: true,
+      },
+      {
+        point: 'Never Look at It for Long',
+        detail: 'If you have to eat a live frog, it doesn\'t pay to sit and stare at it for 2 hours. Start immediately without negotiation.',
+        isActionable: true,
+      },
+      {
+        point: 'Protect Your First 60 Minutes',
+        detail: 'Never check email or social feeds before spending at least 45 minutes on your chief frog.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Frog Prioritization Law',
+      description: 'Attacking the highest-value, hardest task when mental glucose and willpower are at their natural circadian peak.',
+      formulaOrRule: 'Wake Up → Zero Inputs → Swallow Biggest Frog First',
+    },
+    immediateActionChallenge: 'Identify the one task you have been putting off for days. Do the first 10 minutes of it right now.',
+    quiz: {
+      question: 'What constitutes your "frog" in Brian Tracy\'s framework?',
+      options: [
+        'The quickest and easiest email to check off your list',
+        'The biggest, hardest, and most important task that you are most likely to procrastinate on',
+        'A team meeting with multiple stakeholders',
+        'A social engagement after working hours',
+      ],
+      correctIndex: 1,
+      explanation: 'Your frog is your highest-leverage task. Completing it first delivers an immense neurochemical boost of dopamine and ensures that your day is already a victory.',
+    },
+    tags: ['Productivity', 'Procrastination', 'Willpower', 'Habits'],
+    likesCount: 3100,
+    audioScript: "If you have to eat a live frog, it does not pay to sit and look at it for very long. Mark Twain's classic wisdom is the ultimate antidote to procrastination. Your frog is your most critical, high-friction task of the day. Stop cleaning your desk or clearing unread emails. Sit down, swallow the frog, and enjoy effortless momentum for the rest of your day.",
+  },
+
+  // 11. ANGELA DUCKWORTH — Grit
+  {
+    id: 'reel-duckworth-grit-equation',
+    title: 'The Effort Equation: Why Effort Counts Twice',
+    subtitle: 'Grit: The Power of Passion and Perseverance by Angela Duckworth',
+    category: 'mindset',
+    source: {
+      name: 'Grit',
+      authorOrTopic: 'Angela Duckworth',
+      tag: 'Psychology of Achievement',
+    },
+    coreIdea: 'Talent × Effort = Skill. Skill × Effort = Achievement. Talent is merely how fast your skills improve when you invest effort. But achievement only occurs when you apply effort again.',
+    quoteAuthor: 'Angela Duckworth',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Talent Bias', text: 'Society idolizes effortless natural talent...', emphasis: 'yet talent alone achieves zero.' },
+      { phase: 1, stepLabel: 'Building The Skill', text: 'Talent multiplied by Effort...', emphasis: 'builds refined skill.' },
+      { phase: 2, stepLabel: 'The Double Multiplier', text: 'Skill multiplied by Effort again...', emphasis: 'Effort counts twice in achievement!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'grit-equation',
+    conceptAnimationLabel: 'Duckworth\'s Dual Effort Multiplier Engine',
+    takeaways: [
+      {
+        point: 'Effort Counts Twice',
+        detail: 'Effort builds skill. At the same time, effort makes skill productive. Without effort, your talent is nothing more than unmet potential.',
+        isActionable: false,
+      },
+      {
+        point: 'Grit is Passion + Long-Term Stamina',
+        detail: 'Grit is not just working intensely for 2 weeks; it is holding the same top-level goal for years, regardless of setbacks.',
+        isActionable: true,
+      },
+      {
+        point: 'Deliberate Practice over Mindless Repetition',
+        detail: 'Gritty experts isolate their specific weaknesses, practice at the edge of comfort, and actively solicit critical feedback.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Dual Effort Multiplier',
+      description: 'Talent without continuous effort remains inert potential. Effort is calculated twice.',
+      formulaOrRule: '(Talent × Effort = Skill) → (Skill × Effort = Achievement)',
+    },
+    immediateActionChallenge: 'Pick a skill you gave up on because "you weren\'t naturally gifted." Commit to 15 minutes of deliberate practice today.',
+    quiz: {
+      question: 'Why does Angela Duckworth assert that "effort counts twice"?',
+      options: [
+        'Because you should work twice as many hours as your competitors',
+        'Effort first transforms raw talent into skill, and then effort transforms that skill into tangible achievement',
+        'Because physical effort burns twice as many calories as mental effort',
+        'Because teachers award double points for effort on exams',
+      ],
+      correctIndex: 1,
+      explanation: 'In Duckworth\'s equations, effort appears twice: first to build the skill from raw potential, and second to deploy that skill into actual tangible accomplishments.',
+    },
+    tags: ['Grit', 'Perseverance', 'Psychology', 'Achievement'],
+    likesCount: 2890,
+    audioScript: "Our society is obsessed with natural talent. But psychologist Angela Duckworth proved that effort counts twice. Talent multiplied by effort equals skill. But skill multiplied by effort equals achievement. Talent without effort is nothing more than unmet potential. Do not look for shortcuts; cultivate grit and fall in love with the grind.",
+  },
+
+  // 12. MORGAN HOUSEL — The Psychology of Money
+  {
+    id: 'reel-housel-psychology-of-money',
+    title: 'Getting Wealthy vs. Staying Wealthy',
+    subtitle: 'The Psychology of Money by Morgan Housel',
+    category: 'psychology',
+    source: {
+      name: 'The Psychology of Money',
+      authorOrTopic: 'Morgan Housel',
+      tag: 'Behavioral Finance',
+    },
+    coreIdea: 'Getting money requires taking risks, being optimistic, and putting yourself out there. But keeping money requires the exact opposite: humility, frugality, and room for error.',
+    quoteAuthor: 'Morgan Housel',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Getting Wealthy', text: 'Accumulating wealth requires courage, risk...', emphasis: 'and offensive ambition.' },
+      { phase: 1, stepLabel: 'Staying Wealthy', text: 'Keeping wealth requires humility, paranoia...', emphasis: 'and defensive survivability.' },
+      { phase: 2, stepLabel: 'The Compounding Secret', text: 'The greatest financial power is not genius...', emphasis: 'It is uninterrupted compounding over time.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'psychology-money',
+    conceptAnimationLabel: 'Offense vs Defense Wealth Balance & Margin of Safety',
+    takeaways: [
+      {
+        point: 'Room for Error (Margin of Safety)',
+        detail: 'The most important part of any financial or life plan is planning on your plan not going according to plan.',
+        isActionable: true,
+      },
+      {
+        point: 'Reasonable Beats Strictly Rational',
+        detail: 'Do not aim to be cold, spreadsheet-rational; aim to be psychologically reasonable so you can sleep soundly at night.',
+        isActionable: true,
+      },
+      {
+        point: 'Compounding Requires Survival',
+        detail: '99% of Warren Buffett\'s wealth was accumulated after his 50th birthday. Longevity and not getting wiped out is the entire secret.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Survival-First Wealth Model',
+      description: 'Prioritizing financial endurance and room for error so that compounding is never interrupted by forced liquidation.',
+      formulaOrRule: 'Survivability > High Yield. Room for Error = Infinite Compounding Horizon.',
+    },
+    immediateActionChallenge: 'Review your cash emergency buffer. Ensure you have enough runway so that an unexpected crisis will never force you to sell your investments.',
+    quiz: {
+      question: 'What is the primary factor behind Warren Buffett’s immense financial net worth according to Morgan Housel?',
+      options: [
+        'He achieved the highest single-year investment return in history',
+        'Uninterrupted time: He began investing at age 10 and survived every crash for over 70 years',
+        'He relied entirely on high-frequency algorithmic trading',
+        'He avoided paying capital gains tax through special loopholes',
+      ],
+      correctIndex: 1,
+      explanation: 'Housel highlights that Buffett’s superpower is not exceptional short-term returns, but staying in the game long enough for compounding to do the heavy lifting.',
+    },
+    tags: ['Money', 'Behavioral Economics', 'Psychology', 'Compounding'],
+    likesCount: 4120,
+    audioScript: "Doing well with money has a little to do with how smart you are and a lot to do with how you behave. Getting money requires taking risks and being optimistic. But keeping money requires the exact opposite: humility, frugality, and room for error. The most valuable financial asset you can build is an emergency buffer that protects your peace of mind.",
+  },
+
+  // 13. GREG MCKEOWN — Essentialism
+  {
+    id: 'reel-mckeown-essentialism',
+    title: 'The 90% Rule: The Disciplined Pursuit of Less',
+    subtitle: 'Essentialism by Greg McKeown',
+    category: 'productivity',
+    source: {
+      name: 'Essentialism',
+      authorOrTopic: 'Greg McKeown',
+      tag: 'Radical Focus',
+    },
+    coreIdea: 'If it isn’t a clear yes, then it’s a clear no. If you don’t prioritize your life, someone else will. The disciplined pursuit of less yields exponential momentum.',
+    quoteAuthor: 'Greg McKeown',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Non-Essentialist Trap', text: 'Saying yes to every opportunity...', emphasis: 'moving a millimeter in a million directions.' },
+      { phase: 1, stepLabel: 'The 90% Decision Filter', text: 'Score opportunities from 0 to 100...', emphasis: 'Anything below 90 is an automatic NO.' },
+      { phase: 2, stepLabel: 'The Vital Few', text: 'Channeling 100% of your energy...', emphasis: 'into the few things that truly matter.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'essentialism-filter',
+    conceptAnimationLabel: 'Scattered Energy vs Concentrated Essentialist Vector',
+    takeaways: [
+      {
+        point: 'The 90% Rule',
+        detail: 'When evaluating an opportunity, score it against your highest criterion. If it rates below 90%, it is a total zero. Say no.',
+        isActionable: true,
+      },
+      {
+        point: 'Trade-offs are Inevitable',
+        detail: 'A non-essentialist asks: "How can I do all of this?" An essentialist asks: "Which problem do I want to solve with excellence?"',
+        isActionable: true,
+      },
+      {
+        point: 'Pause Before Committing',
+        detail: 'Use the pause: "Let me check my calendar and get back to you." Give yourself space to decline with grace.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The 90% Essentialism Filter',
+      description: 'Eliminating the good to make room for the truly great. Banning lukewarm commitments.',
+      formulaOrRule: 'If (Opportunity Score < 90%) → Clear, Unapologetic NO',
+    },
+    immediateActionChallenge: 'Say a polite, definitive "no" to one non-essential meeting, request, or project this week to protect your creative energy.',
+    quiz: {
+      question: 'What is the core premise of Greg McKeown’s 90% Rule?',
+      options: [
+        'You should complete 90% of your task list every morning',
+        'If an option does not score at least a 90 on your criteria, discard it as an absolute zero',
+        'You should save 90% of your monthly income',
+        'You must delegate 90% of your workload to virtual assistants',
+      ],
+      correctIndex: 1,
+      explanation: 'The 90% rule forces extreme selectivity: if an opportunity is merely good or mediocre, it steals bandwidth from the rare opportunities that are truly exceptional.',
+    },
+    tags: ['Essentialism', 'Productivity', 'Boundaries', 'Focus'],
+    likesCount: 3990,
+    audioScript: "You cannot do it all. You cannot have it all. When you try to do everything, you end up making a millimeter of progress in a million directions. An Essentialist asks: What is the vital few versus the trivial many? Apply the 90% rule: If an opportunity is not a clear, resounding yes, it must be a clear no. Protect your life's work.",
+  },
+
+  // 14. ECKHART TOLLE — The Power of Now
+  {
+    id: 'reel-tolle-power-of-now',
+    title: 'The Illusion of Psychological Time',
+    subtitle: 'The Power of Now by Eckhart Tolle',
+    category: 'mindset',
+    source: {
+      name: 'The Power of Now',
+      authorOrTopic: 'Eckhart Tolle',
+      tag: 'Mindfulness & Consciousness',
+    },
+    coreIdea: 'Unease, anxiety, tension, stress, worry—all forms of fear—are caused by too much future, and not enough presence. Guilt, regret, resentment, and bitterness are caused by too much past.',
+    quoteAuthor: 'Eckhart Tolle',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Ego\'s Trap', text: 'Past regret and future anxiety...', emphasis: 'psychological time consuming reality.' },
+      { phase: 1, stepLabel: 'The Anchor Point', text: 'Realize deeply that the present moment...', emphasis: 'is all you will ever have.' },
+      { phase: 2, stepLabel: 'Living in the Now', text: 'Step out of mental chatter...', emphasis: 'Peace is found only right here, right now.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f43f5e',
+    visualConceptType: 'power-of-now',
+    conceptAnimationLabel: 'Dissolving Past & Future into the Eternal Now',
+    takeaways: [
+      {
+        point: 'Clock Time vs. Psychological Time',
+        detail: 'Clock time is using the present to plan a trip or set an appointment. Psychological time is obsessing over future what-ifs or past regrets.',
+        isActionable: true,
+      },
+      {
+        point: 'Notice the Gaps Between Thoughts',
+        detail: 'Ask yourself: "What will my next thought be?" The momentary silent gap before your mind responds is pure conscious awareness.',
+        isActionable: true,
+      },
+      {
+        point: 'Accept What Is Before Acting',
+        detail: 'Whatever the present moment contains, accept it as if you had chosen it. Then take constructive action without internal resentment.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Present Moment Anchor',
+      description: 'Dismantling anxiety by pulling attention out of imagined futures back to current sensory reality.',
+      formulaOrRule: 'Anxiety = Over-projection into Future. Peace = Sensory Anchor to NOW.',
+    },
+    immediateActionChallenge: 'Stop and feel your breath right now. Notice your feet touching the floor. Stay in sensory awareness for 30 full seconds.',
+    quiz: {
+      question: 'According to Eckhart Tolle, what is the root cause of chronic human anxiety and stress?',
+      options: [
+        'Having too many unread notifications',
+        'Living continuously in psychological time—projecting into an imagined future while ignoring present reality',
+        'Lacking sufficient financial investments',
+        'Genetic personality defects that cannot be altered',
+      ],
+      correctIndex: 1,
+      explanation: 'Tolle shows that virtually all non-physical suffering is created when the ego projects into an imagined future scenario or relives past grievances instead of resting in the present.',
+    },
+    tags: ['Mindfulness', 'Presence', 'Anxiety Relief', 'Consciousness'],
+    likesCount: 3680,
+    audioScript: "Unease, anxiety, and stress are caused by too much future and not enough presence. Guilt, regret, and resentment are caused by too much past. Nothing ever happened in the past; it happened in the Now. Nothing will ever happen in the future; it will happen in the Now. Return your attention to this breath. All you ever have is right now.",
+  },
+
+  // 15. KERRY PATTERSON ET AL. — Crucial Conversations
+  {
+    id: 'reel-crucial-conversations',
+    title: 'The Pool of Shared Meaning',
+    subtitle: 'Crucial Conversations by Patterson, Grenny, McMillan, Switzler',
+    category: 'communication',
+    source: {
+      name: 'Crucial Conversations',
+      authorOrTopic: 'Kerry Patterson et al.',
+      tag: 'High-Stakes Dialogue',
+    },
+    coreIdea: 'When stakes are high, opinions vary, and emotions run strong, people resort to silence or violence. Dialogue succeeds only when psychological safety is restored.',
+    quoteAuthor: 'Kerry Patterson et al.',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Danger Zone', text: 'High stakes, differing opinions, big emotions...', emphasis: 'Silence or violence erupts.' },
+      { phase: 1, stepLabel: 'Restore Mutual Safety', text: 'Step out of the content...', emphasis: 'Rebuild mutual respect & purpose.' },
+      { phase: 2, stepLabel: 'The Shared Pool', text: 'When safety returns...', emphasis: 'Both minds pour truth into the shared pool.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#06b6d4',
+    visualConceptType: 'tactical-empathy',
+    conceptAnimationLabel: 'Dual Dialogue Streams into the Pool of Shared Meaning',
+    takeaways: [
+      {
+        point: 'Spot Silence vs. Violence',
+        detail: 'When safety is lost, people withdraw into sarcasm/stonewalling (Silence) or attack with shouting/blame (Violence). Step out and rebuild safety.',
+        isActionable: true,
+      },
+      {
+        point: 'STATE Your Path',
+        detail: 'Share your facts first, Tell your story, Ask for their perspective, Talk tentatively, and Encourage testing.',
+        isActionable: true,
+      },
+      {
+        point: 'Separate Facts from Stories',
+        detail: 'Facts: "You arrived 20 minutes late to our 3 meetings." Story: "You don\'t respect my time." Only argue from observable facts.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Safety First Dialogue Principle',
+      description: 'Never debate controversial content until mutual purpose and mutual respect are firmly established.',
+      formulaOrRule: 'Tension Detected → Step Out of Content → Restore Mutual Safety → Resume Dialogue',
+    },
+    immediateActionChallenge: 'Think of a tense conversation you are avoiding. Separate the raw observable facts from the emotional story you invented about their intent.',
+    quiz: {
+      question: 'When a crucial conversation begins to break down into arguments or stonewalling, what is the immediate first step?',
+      options: [
+        'Present your data with more forceful tone and legal evidence',
+        'Step out of the conversation content and restore psychological safety and mutual respect first',
+        'Walk out of the room and never speak to them again',
+        'Ask an executive to penalize the other person',
+      ],
+      correctIndex: 1,
+      explanation: 'The authors emphasize that people never become defensive because of what you are saying, but because they believe you do not respect them or share their safety.',
+    },
+    tags: ['Communication', 'Relationships', 'Leadership', 'Conflict Resolution'],
+    likesCount: 2940,
+    audioScript: "When a conversation turns crucial—when stakes are high and emotions run hot—humans almost always fall into silence or violence. We shut down, or we attack. The secret to master communicators is recognizing that when dialogue breaks, it is never about the content; it is about safety. Step back, re-establish mutual respect, and invite their truth into the room.",
+  },
+
+  // 16. BRENÉ BROWN — Daring Greatly
+  {
+    id: 'reel-brown-daring-greatly',
+    title: 'The Man in the Arena: Vulnerability is Courage',
+    subtitle: 'Daring Greatly by Brené Brown',
+    category: 'mindset',
+    source: {
+      name: 'Daring Greatly',
+      authorOrTopic: 'Brené Brown',
+      tag: 'Vulnerability & Courage',
+    },
+    coreIdea: 'Vulnerability is not winning or losing; it is having the courage to show up and be seen when you have no control over the outcome.',
+    quoteAuthor: 'Brené Brown (Theodore Roosevelt)',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Cheap Seats', text: 'Critics safely shouting from the bleachers...', emphasis: 'who never risk entering the arena.' },
+      { phase: 1, stepLabel: 'Entering The Arena', text: 'Daring to show up imperfectly...', emphasis: 'willing to fail openly.' },
+      { phase: 2, stepLabel: 'True Wholeheartedness', text: 'Vulnerability is not weakness...', emphasis: 'It is our greatest measure of courage.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f43f5e',
+    visualConceptType: 'growth-mindset',
+    conceptAnimationLabel: 'The Arena of Vulnerability vs Defensive Armor',
+    takeaways: [
+      {
+        point: 'Vulnerability is the Birthplace of Innovation',
+        detail: 'You cannot create new art, launch a company, or build intimacy without risking rejection and failure.',
+        isActionable: false,
+      },
+      {
+        point: 'Ignore the Cheap Seats',
+        detail: 'If someone is not in the arena getting their face marred by dust and blood, their criticism is not worth your sleep.',
+        isActionable: true,
+      },
+      {
+        point: 'Ditch Armor for Authenticity',
+        detail: 'Perfectionism is a 20-ton shield we carry hoping it protects us from shame. Drop the shield; perfectionism is just fear.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Arena Filter',
+      description: 'Filtering whose opinions matter based on whether they also dare greatly in the arena.',
+      formulaOrRule: 'If (Critic is not in the arena taking risks) → Mute Their Opinion',
+    },
+    immediateActionChallenge: 'Share an honest, imperfect piece of work or express authentic appreciation to someone today without hiding behind a protective barrier.',
+    quiz: {
+      question: 'According to Brené Brown\'s decades of research, what is vulnerability?',
+      options: [
+        'An emotional weakness that should be suppressed in professional environments',
+        'Uncertainty, risk, and emotional exposure—the single greatest measure of courage',
+        'Oversharing personal secrets with strangers on social media',
+        'A symptom of low self-esteem',
+      ],
+      correctIndex: 1,
+      explanation: 'Brown’s empirical research proves that vulnerability is the birthplace of love, belonging, joy, courage, and creativity; without it, true connection is impossible.',
+    },
+    tags: ['Courage', 'Vulnerability', 'Psychology', 'Self-Worth'],
+    likesCount: 3560,
+    audioScript: "It is not the critic who counts; not the man who points out how the strong man stumbles. The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood. Vulnerability is not weakness. It is having the raw courage to show up when you cannot control the outcome. Ditch the armor, and dare greatly.",
+  },
+
+  // 17. DALE CARNEGIE — How to Win Friends and Influence People
+  {
+    id: 'reel-carnegie-win-friends',
+    title: 'Become Genuinely Interested in Other People',
+    subtitle: 'How to Win Friends and Influence People by Dale Carnegie',
+    category: 'communication',
+    source: {
+      name: 'How to Win Friends',
+      authorOrTopic: 'Dale Carnegie',
+      tag: 'Social Psychology',
+    },
+    coreIdea: 'You can make more friends in two months by becoming interested in other people than you can in two years by trying to get other people interested in you.',
+    quoteAuthor: 'Dale Carnegie',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Self-Absorbed Trap', text: 'Most people spend conversations waiting...', emphasis: 'to speak about themselves.' },
+      { phase: 1, stepLabel: 'The 80/20 Listening Ratio', text: 'Listen 80% with sincere curiosity...', emphasis: 'Ask about their passions & obstacles.' },
+      { phase: 2, stepLabel: 'Instant Magnetism', text: 'Remember their name and values...', emphasis: 'A person\'s name is the sweetest sound.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#ec4899',
+    visualConceptType: 'tactical-empathy',
+    conceptAnimationLabel: '80/20 Active Listening & Genuine Interest Ratio',
+    takeaways: [
+      {
+        point: 'A Person\'s Name is Sacred',
+        detail: 'Remember that a person\'s name is to that person the sweetest and most important sound in any language.',
+        isActionable: true,
+      },
+      {
+        point: 'Be an Active Listener',
+        detail: 'Encourage others to talk about themselves and their accomplishments. Stop interjecting with your own stories.',
+        isActionable: true,
+      },
+      {
+        point: 'Talk in Terms of Their Interests',
+        detail: 'Before pitching an idea or asking for help, frame the solution entirely around what the other person wants to achieve.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Carnegie Principle of Genuine Interest',
+      description: 'Shifting focus from self-promotion to uncovering and elevating the world of the other person.',
+      formulaOrRule: 'Curiosity > Self-Promotion. 80% Sincere Questions + 20% Thoughtful Replies.',
+    },
+    immediateActionChallenge: 'In your next conversation, ask two follow-up questions about the other person without mentioning yourself once.',
+    quiz: {
+      question: 'What is Dale Carnegie’s core secret for building deep, genuine relationships and social influence?',
+      options: [
+        'Impressing others by reciting your accolades and credentials',
+        'Becoming genuinely interested in other people rather than trying to make them interested in you',
+        'Offering unsolicited advice whenever someone shares a struggle',
+        'Dominating conversations with strong, unyielding opinions',
+      ],
+      correctIndex: 1,
+      explanation: 'Carnegie demonstrated that humans crave feeling valued. When you listen deeply and demonstrate sincere interest in their world, they naturally gravitate toward you.',
+    },
+    tags: ['Communication', 'Influence', 'Psychology', 'Leadership'],
+    likesCount: 4320,
+    audioScript: "Do you want to win friends and exert genuine influence? Stop trying to be interesting, and start being interested. You can make more friends in two months by showing sincere curiosity in other people than you can in two years trying to get people interested in you. Remember their name, ask about their story, and truly listen.",
+  },
+
+  // 18. MARK MANSON — The Subtle Art of Not Giving a F*ck
+  {
+    id: 'reel-manson-subtle-art',
+    title: 'The Backward Law: Choose Better Problems',
+    subtitle: 'The Subtle Art of Not Giving a F*ck by Mark Manson',
+    category: 'psychology',
+    source: {
+      name: 'The Subtle Art',
+      authorOrTopic: 'Mark Manson',
+      tag: 'Counterintuitive Psychology',
+    },
+    coreIdea: 'The desire for a more positive experience is itself a negative experience. And, paradoxically, the acceptance of one’s negative experience is itself a positive experience. Happiness comes from solving problems, not avoiding them.',
+    quoteAuthor: 'Mark Manson (Alan Watts)',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Backward Law', text: 'Desperately chasing happiness and positivity...', emphasis: 'only magnifies your emptiness.' },
+      { phase: 1, stepLabel: 'Embrace The Struggle', text: 'Accepting your flaws and temporary pain...', emphasis: 'unlocks genuine liberation.' },
+      { phase: 2, stepLabel: 'Choose Better Problems', text: 'Life never stops having problems...', emphasis: 'Choose problems you love solving.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'growth-mindset',
+    conceptAnimationLabel: 'The Backward Law & Problem-Solving Paradigm',
+    takeaways: [
+      {
+        point: 'The Feedback Loop from Hell',
+        detail: 'Feeling anxious about feeling anxious creates a vicious cycle. Accept that feeling bad is a normal, healthy part of being human.',
+        isActionable: true,
+      },
+      {
+        point: 'Select Your Values Carefully',
+        detail: 'Poor values (pleasure, fame, always being right) are external and uncontrollable. Good values (honesty, curiosity, humility) are internal.',
+        isActionable: true,
+      },
+      {
+        point: 'What Pain Are You Willing to Sustain?',
+        detail: 'Don\'t ask "What do I want?" Ask "What struggle am I willing to endure?" True fulfillment is found in the climbing, not the summit.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Backward Law of Happiness',
+      description: 'Chasing positive emotions breeds dissatisfaction; embracing necessary friction and good problems creates genuine contentment.',
+      formulaOrRule: 'Accepting Negative = Positive Experience. Rejecting Negative = Endless Suffering.',
+    },
+    immediateActionChallenge: 'Accept one thing that is frustrating you today as a normal challenge rather than a crisis. Ask: "How can I solve this calmly?"',
+    quiz: {
+      question: 'What does Mark Manson call "The Backward Law"?',
+      options: [
+        'Working backwards from your retirement goal to today',
+        'The reality that desiring positive experiences creates negative feelings, whereas accepting negative experiences is itself positive',
+        'Writing essays from the conclusion to the introduction',
+        'A legal doctrine regarding copyright infringement',
+      ],
+      correctIndex: 1,
+      explanation: 'Drawn from philosopher Alan Watts, the Backward Law points out that obsessing over feeling good constantly reinforces the feeling that you are currently missing something.',
+    },
+    tags: ['Mindset', 'Philosophy', 'Authenticity', 'Psychology'],
+    likesCount: 3820,
+    audioScript: "The desire for positive experience is itself a negative experience. And the acceptance of one’s negative experience is itself a positive experience. We are taught that a good life means avoiding struggle. In reality, a good life is simply having better problems that you genuinely enjoy solving. Stop running from struggle; choose what you care enough to fight for.",
+  },
+
+  // 19. DAVID ALLEN — Getting Things Done (GTD)
+  {
+    id: 'reel-allen-gtd-workflow',
+    title: 'Mind Like Water & The 2-Minute Rule',
+    subtitle: 'Getting Things Done by David Allen',
+    category: 'productivity',
+    source: {
+      name: 'Getting Things Done',
+      authorOrTopic: 'David Allen',
+      tag: 'Cognitive Architecture',
+    },
+    coreIdea: 'Your mind is for having ideas, not holding them. If an incoming action takes less than two minutes to complete, do it immediately. Otherwise, externalize it into a trusted system.',
+    quoteAuthor: 'David Allen',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Overwhelmed Mind', text: 'Holding open loops in short-term memory...', emphasis: 'causes chronic background anxiety.' },
+      { phase: 1, stepLabel: 'The 2-Minute Filter', text: 'Takes under 2 minutes? Do it NOW...', emphasis: 'Takes longer? Capture & Clarify.' },
+      { phase: 2, stepLabel: 'Mind Like Water', text: 'Your mind is for having ideas...', emphasis: 'NOT for holding them.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#06b6d4',
+    visualConceptType: 'deep-work-funnel',
+    conceptAnimationLabel: 'The 2-Minute Action Funnel & Cognitive Offloading',
+    takeaways: [
+      {
+        point: 'The 2-Minute Rule',
+        detail: 'If a task takes less than 120 seconds (reply to an RSVP, pay a utility bill, file a document), doing it immediately takes less energy than cataloging it.',
+        isActionable: true,
+      },
+      {
+        point: 'Close Open Loops (The Zeigarnik Effect)',
+        detail: 'Unfinished tasks linger in working memory, draining cognitive battery. Capture every task into an external trusted inbox.',
+        isActionable: true,
+      },
+      {
+        point: 'Define the Very Next Physical Action',
+        detail: 'Never write "Taxes" on your todo list. Write: "Open laptop and download 1099 PDF from bank portal."',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Cognitive Offloading & Mind Like Water',
+      description: 'Emptying working memory by externalizing every commitment into a trusted, reviewable digital or physical system.',
+      formulaOrRule: 'If (Task Time < 2 mins) → Do It Now! Else → Capture into External System.',
+    },
+    immediateActionChallenge: 'Find 3 small tasks on your desk or phone that take under 2 minutes. Knock all 3 out right now.',
+    quiz: {
+      question: 'According to David Allen, why does holding todo items in your head cause mental fatigue?',
+      options: [
+        'The brain forgets items after exactly 4 minutes',
+        'Open loops trigger the Zeigarnik effect, continuously pinging working memory and draining cognitive battery',
+        'Brain cells die when tasks are delayed',
+        'It causes physical eye strain',
+      ],
+      correctIndex: 1,
+      explanation: 'Psychological research on the Zeigarnik effect proves that uncompleted commitments create persistent cognitive intrusion until they are externalized into a trusted plan.',
+    },
+    tags: ['GTD', 'Productivity', 'Time Management', 'Clarity'],
+    likesCount: 3290,
+    audioScript: "Your mind is for having ideas, not holding them. Whenever you try to store tasks, appointments, and promises in your head, you live in constant low-grade panic. Master David Allen's two-minute rule: If a task takes less than two minutes, do it right now. If it takes longer, write down the very next physical action into a trusted system. Clear your mind, and find stillness.",
+  },
+
+  // 20. BRIANNA WIEST — The Mountain Is You
+  {
+    id: 'reel-wiest-mountain-is-you',
+    title: 'Self-Sabotage is Simply an Unmet Need',
+    subtitle: 'The Mountain Is You by Brianna Wiest',
+    category: 'psychology',
+    source: {
+      name: 'The Mountain Is You',
+      authorOrTopic: 'Brianna Wiest',
+      tag: 'Emotional Regulation',
+    },
+    coreIdea: 'Your self-sabotage is not a defect or a lack of discipline; it is your subconscious mind’s desperate attempt to fulfill a valid emotional need safely. To conquer the mountain, you must become the mountain.',
+    quoteAuthor: 'Brianna Wiest',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Sabotage Cycle', text: 'You set ambitious goals, then stall...', emphasis: 'Procrastinating at the critical moment.' },
+      { phase: 1, stepLabel: 'The Unmet Need', text: 'Self-sabotage is not laziness...', emphasis: 'It is a protective coping mechanism.' },
+      { phase: 2, stepLabel: 'Emotional Mastery', text: 'Honor the unmet need consciously...', emphasis: 'The mountain you face is yourself.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#ec4899',
+    visualConceptType: 'stimulus-response-gap',
+    conceptAnimationLabel: 'Subconscious Protection vs Conscious Evolution',
+    takeaways: [
+      {
+        point: 'Self-Sabotage is Protection',
+        detail: 'If you self-sabotage success, your subconscious may fear the visibility, responsibility, or potential rejection that comes with it.',
+        isActionable: false,
+      },
+      {
+        point: 'Ask: What Need is Being Met?',
+        detail: 'When you binge-watch TV instead of studying, what need is being met? Rest? Comfort? Safety? Address that need directly without guilt.',
+        isActionable: true,
+      },
+      {
+        point: 'Feel Feelings to Release Them',
+        detail: 'Emotions last only 90 seconds chemically in the bloodstream; it is our mental resistance and rumination that keeps them alive for years.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Protective Sabotage Reframing',
+      description: 'Viewing behavioral resistance not as moral weakness, but as a misdirected protective reflex signaling an unmet core need.',
+      formulaOrRule: 'Resistance Detected → Ask: "What fear or unmet need is my subconscious trying to protect me from?"',
+    },
+    immediateActionChallenge: 'Think of one area where you are procrastinating. Write down: "By not doing this, what uncomfortable feeling am I avoiding?"',
+    quiz: {
+      question: 'According to Brianna Wiest in The Mountain Is You, what is the true underlying cause of self-sabotage?',
+      options: [
+        'Inherent biological laziness and lack of moral character',
+        'A subconscious attempt to meet a valid emotional need or protect oneself from perceived danger/vulnerability',
+        'Negative planetary alignments',
+        'Having too much free time on weekends',
+      ],
+      correctIndex: 1,
+      explanation: 'Wiest argues that self-sabotage is a trauma or coping reflex. Your mind chooses familiar discomfort over unfamiliar risk until you consciously address the core fear.',
+    },
+    tags: ['Self-Sabotage', 'Emotional Healing', 'Psychology', 'Personal Growth'],
+    likesCount: 4490,
+    audioScript: "You do not self-sabotage because you are broken or lazy. You self-sabotage because your subconscious is trying to protect you. If you sabotage love, you fear heartbreak. If you sabotage success, you fear being judged. When resistance hits, stop beating yourself up. Ask yourself: What unmet emotional need is my brain trying to protect right now? Heal the need, and the mountain dissolves.",
+  },
+];

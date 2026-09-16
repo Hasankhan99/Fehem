@@ -1,0 +1,1223 @@
+import { MicroReel } from '../../types';
+
+export const BATCH_5_REELS: MicroReel[] = [
+  // 81. CAL NEWPORT — Slow Productivity (The 3 Principles)
+  {
+    id: 'reel-newport-slow-productivity',
+    title: 'Slow Productivity: Do Fewer Things, Obsess Over Quality',
+    subtitle: 'Slow Productivity: The Lost Art of Accomplishment Without Burnout by Cal Newport',
+    category: 'productivity',
+    source: {
+      name: 'Slow Productivity',
+      authorOrTopic: 'Cal Newport, PhD',
+      tag: 'Knowledge Work Philosophy',
+    },
+    coreIdea: 'Pseudo-productivity measures visible busyness: fast email replies and packed calendars. True accomplishment requires Slow Productivity: (1) Do fewer things, (2) Work at a natural pace, and (3) Obsess over quality.',
+    quoteAuthor: 'Cal Newport',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Pseudo-Productivity', text: 'Scrambling through 12 meetings and Slack pings...', emphasis: 'Exhausted by performative busyness.' },
+      { phase: 1, stepLabel: 'The Slow Philosophy', text: 'Strip obligations down to the essential core...', emphasis: 'Allow projects to mature over seasons.' },
+      { phase: 2, stepLabel: 'Masterpiece Output', text: 'Deep craftsmanship at an unhurried pace...', emphasis: 'Produces timeless, world-class breakthroughs.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'deep-work-funnel',
+    conceptAnimationLabel: 'Performative Busyness vs Unhurried High-Craft Mastery',
+    takeaways: [
+      {
+        point: 'Principle 1: Do Fewer Things',
+        detail: 'Keep your active project pipeline tiny. Work on one or two major deliverables at a time so your cognitive overhead stays clear.',
+        isActionable: true,
+      },
+      {
+        point: 'Principle 2: Work at a Natural Pace',
+        detail: 'Human energy is cyclical, not factory machinery. Match intense creative sprints with periods of restorative slowness across the year.',
+        isActionable: false,
+      },
+      {
+        point: 'Principle 3: Obsess Over Quality',
+        detail: 'World-class work buys you autonomy. If your output is undeniably magnificent, employers and clients will grant you freedom.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Slow Productivity Triad',
+      description: 'A sustainable alternative to frantic knowledge-work burnout based on the working habits of history’s greatest scientists and artists.',
+      formulaOrRule: 'Fewer Concurrent Projects + Natural Pace + Uncompromising Quality = Masterpiece Output',
+    },
+    immediateActionChallenge: 'Say no or defer one non-urgent project today to protect space for your single highest-craft endeavor.',
+    quiz: {
+      question: 'What is "pseudo-productivity" according to Cal Newport?',
+      options: [
+        'Working with obsolete computer equipment',
+        'The use of visible activity (like rapid email replies, chat pings, and packed calendars) as the primary proxy for actual valuable output',
+        'Sleeping 10 hours a day',
+        'Refusing to use calendar software',
+      ],
+      correctIndex: 1,
+      explanation: 'When knowledge work lacks clear metrics, organizations default to measuring fast visual activity rather than deep intellectual contribution.',
+    },
+    tags: ['Productivity', 'Deep Work', 'Craftsmanship', 'Burnout'],
+    likesCount: 4690,
+    audioScript: "Busyness is not accomplishment. For centuries, our greatest thinkers, writers, and scientists worked at a natural, unhurried pace. They didn't juggle forty tasks a day. They did fewer things, worked at a humane tempo, and obsessed over quality. If you want to make work that lasts, stop sprinting through trivia. Slow down, go deep, and build something extraordinary.",
+  },
+
+  // 82. CHARLES DUHIGG — Smarter Faster Better (Internal Locus of Control)
+  {
+    id: 'reel-duhigg-locus-of-control',
+    title: 'Internal Locus of Control: The Engine of Drive',
+    subtitle: 'Smarter Faster Better by Charles Duhigg',
+    category: 'mindset',
+    source: {
+      name: 'Smarter Faster Better',
+      authorOrTopic: 'Charles Duhigg',
+      tag: 'Psychology of Motivation',
+    },
+    coreIdea: 'Self-motivation is triggered by asserting control. When people believe that their destiny is shaped by their own choices (Internal Locus of Control), they display resilience, initiative, and grit in the face of crisis.',
+    quoteAuthor: 'Charles Duhigg',
+    quotePhases: [
+      { phase: 0, stepLabel: 'External Victim Mind', text: '"Things happen to me; the world is unfair"...', emphasis: 'Helplessness and apathy settle in.' },
+      { phase: 1, stepLabel: 'The Subversive Choice', text: 'Find even one microscopic choice to make...', emphasis: 'A tiny act of defiance and agency.' },
+      { phase: 2, stepLabel: 'Internal Mastery', text: 'You become the sovereign author of your fate...', emphasis: 'Resilience and unstoppable drive awaken!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#3b82f6',
+    visualConceptType: 'growth-mindset',
+    conceptAnimationLabel: 'External Victim Vector vs Internal Agency Ignition',
+    takeaways: [
+      {
+        point: 'Turn Passive Tasks into Active Choices',
+        detail: 'When faced with a mandatory boring assignment, make a rebellious micro-choice: decide where you sit, what playlist you use, or what style you write in.',
+        isActionable: true,
+      },
+      {
+        point: 'Marine Corps Boot Camp Training',
+        detail: 'The Marines train recruits to clean cafeterias not by giving orders, but by challenging recruits to figure out their own tactical plan, instilling an internal locus.',
+        isActionable: false,
+      },
+      {
+        point: 'Ask "Why" to Connect to Values',
+        detail: 'Whenever you feel resistance to a task, ask why it matters to your long-term vision until you reconnect with your sovereign reason.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Internal vs External Locus of Control (Julian Rotter)',
+      description: 'The psychological belief system that outcomes in life are primarily caused by one’s own decisions and effort (Internal) versus external luck and fate (External).',
+      formulaOrRule: 'Autonomy Choice Triggered → Dopamine of Agency Fires → High Motivation',
+    },
+    immediateActionChallenge: 'Take an obligation you have been dreading. Choose one creative or unorthodox way to complete it entirely on your own terms.',
+    quiz: {
+      question: 'How did the US Marine Corps revolutionize recruit training to dramatically decrease attrition rates?',
+      options: [
+        'They lowered the physical fitness standards',
+        'They redesigned training to force recruits to make their own choices in chaotic scenarios, building an internal locus of control',
+        'They paid recruits double salary',
+        'They increased daily television time',
+      ],
+      correctIndex: 1,
+      explanation: 'General Krulak redesigned boot camp so recruits were forced to make continuous micro-decisions, teaching them that they have sovereign control over their actions.',
+    },
+    tags: ['Motivation', 'Psychology', 'Mindset', 'Agency'],
+    likesCount: 4320,
+    audioScript: "Motivation isn't a magical character trait you're born with. It's a muscle that gets triggered when you assert agency. When you feel trapped or unmotivated, it's because you feel like a pawn being moved by external forces. Reclaim your power. Make one small, independent choice. The moment you feel in control, motivation roars back to life.",
+  },
+
+  // 83. BRIAN TRACY — Eat That Frog! (The ABCDE Priority Method)
+  {
+    id: 'reel-tracy-abcde-method',
+    title: 'The ABCDE Method: Ruthless Prioritization',
+    subtitle: 'Eat That Frog! 21 Great Ways to Stop Procrastinating by Brian Tracy',
+    category: 'productivity',
+    source: {
+      name: 'Eat That Frog!',
+      authorOrTopic: 'Brian Tracy',
+      tag: 'Time Management Systems',
+    },
+    coreIdea: 'Review your task list and place an A, B, C, D, or E next to each item before you begin. Never do a B task when an A task is left undone. An "A" task has severe consequences if not done.',
+    quoteAuthor: 'Brian Tracy',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Unfiltered Task Chaos', text: 'Dozens of chores screaming with equal volume...', emphasis: 'The mind defaults to easy, low-value trivia.' },
+      { phase: 1, stepLabel: 'The ABCDE Classification', text: 'A = Serious Consequences. B = Mild. C = Nice...', emphasis: 'D = Delegate. E = Eliminate permanently.' },
+      { phase: 2, stepLabel: 'Single-Handed Execution', text: 'Attack Task A-1 until 100% completed...', emphasis: 'Massive progress before noon!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'eat-that-frog',
+    conceptAnimationLabel: 'ABCDE Priority Filter Funnel to Single-Minded Focus',
+    takeaways: [
+      {
+        point: 'A Tasks Have Real Consequences',
+        detail: 'An "A" task is defined as something that carries significant positive or negative consequences for your life or job. This is your frog.',
+        isActionable: true,
+      },
+      {
+        point: 'The Golden Rule of the System',
+        detail: 'The rule is: Never do a "B" task (minor consequence) when an "A" task is still waiting for you.',
+        isActionable: true,
+      },
+      {
+        point: 'E is for Eliminate',
+        detail: 'An "E" task is something that may have been important in the past, but is no longer relevant. Strike it off forever without guilt.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Tracy’s ABCDE Prioritization Matrix',
+      description: 'A disciplined categorization system that forces linear execution based strictly on consequence severity.',
+      formulaOrRule: 'A (High Consequence) > B (Mild Consequence) > C (No Consequence) > D (Delegate) > E (Eliminate)',
+    },
+    immediateActionChallenge: 'Look at today’s to-do list. Mark your top task with an "A-1". Do not touch any other task until A-1 is 100% finished.',
+    quiz: {
+      question: 'What defines an "A" task in Brian Tracy’s ABCDE method?',
+      options: [
+        'It is the easiest task on the list',
+        'It is something very important that carries serious consequences if done or not done',
+        'It was assigned by someone whose name starts with A',
+        'It takes less than five minutes to complete',
+      ],
+      correctIndex: 1,
+      explanation: 'Tracy emphasizes that the mark of high performers is their clarity on consequences: A-tasks carry massive positive or negative outcomes.',
+    },
+    tags: ['Productivity', 'Prioritization', 'Time Management', 'Discipline'],
+    likesCount: 4530,
+    audioScript: "The key to productivity is not getting everything done; it's knowing what to ignore. Use the ABCDE method every morning. A tasks have serious consequences if you don't do them. B tasks only have mild consequences. The golden rule is simple: Never do a B task when an A task is staring you in the face. Eat your biggest frog first.",
+  },
+
+  // 84. BRIAN TRACY — Maximum Achievement (Law of Concentration)
+  {
+    id: 'reel-tracy-law-of-concentration',
+    title: 'The Law of Concentration: Single-Handling Tasks',
+    subtitle: 'Maximum Achievement by Brian Tracy',
+    category: 'productivity',
+    source: {
+      name: 'Maximum Achievement',
+      authorOrTopic: 'Brian Tracy',
+      tag: 'Executive Effectiveness',
+    },
+    coreIdea: 'Whatever you dwell upon grows. Single-handling a major task until it is 100% finished can reduce the time required to complete it by as much as 500%. Every time you stop and start, you lose 80% of momentum.',
+    quoteAuthor: 'Brian Tracy',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Start-Stop Friction', text: 'Starting a task, stopping for email, resuming...', emphasis: '500% more time wasted re-orienting.' },
+      { phase: 1, stepLabel: 'The Single-Handling Rule', text: 'Pick up the task and refuse to put it down...', emphasis: 'Absolute unbroken concentration.' },
+      { phase: 2, stepLabel: 'Compound Completion Velocity', text: 'You finish in 90 minutes what took days...', emphasis: 'Dopamine of completion empowers your afternoon.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#ec4899',
+    visualConceptType: 'deep-work-funnel',
+    conceptAnimationLabel: 'Continuous Flow Momentum vs Fragmented Start-Stop Friction',
+    takeaways: [
+      {
+        point: 'Single-Handling is a Superpower',
+        detail: 'Single-handling means once you begin an important task, you resolve to work on it with zero interruption until it is 100% finished.',
+        isActionable: true,
+      },
+      {
+        point: 'The 500% Time Penalty',
+        detail: 'Studies show that picking up and putting down a complex document multiple times multiplies total completion time by up to 5 times.',
+        isActionable: false,
+      },
+      {
+        point: 'The Sense of Urgency',
+        detail: 'Develop a bias for action. High achievers move fast when a priority is identified, creating positive momentum.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Law of Concentration & Single-Handling',
+      description: 'Focusing 100% of cognitive resources on a single priority to eliminate task-switching penalty and capture flow velocity.',
+      formulaOrRule: 'Task-Switching = +500% Latency Penalty. Single-Handling = Maximum Velocity & Energy Efficiency.',
+    },
+    immediateActionChallenge: 'Close all browser tabs except the one for your current task. Work on it without looking away until it is done.',
+    quiz: {
+      question: 'What happens to the total time needed to complete a project when you "single-handle" it compared to starting and stopping repeatedly?',
+      options: [
+        'It takes the exact same amount of time',
+        'It can reduce the total time required by up to 80% (5 times faster) by eliminating switching residue',
+        'It doubles the required time due to eye strain',
+        'It requires taking hourly naps',
+      ],
+      correctIndex: 1,
+      explanation: 'Every time you step away from a complex task, your brain must re-read, re-orient, and rebuild context. Working continuously cuts completion time by up to 5x.',
+    },
+    tags: ['Productivity', 'Focus', 'Time Management', 'Flow'],
+    likesCount: 4180,
+    audioScript: "Every time you abandon an important task to check a text, you lose your mental momentum. It takes twenty minutes just to get back to where you were. Practice single-handling: Pick up your most important task and refuse to put it down until it is one hundred percent finished. You will get more done in two hours of unbroken focus than in two days of multitasking.",
+  },
+
+  // 85. ANGELA DUCKWORTH — Grit (Deliberate Practice)
+  {
+    id: 'reel-duckworth-deliberate-practice',
+    title: 'Deliberate Practice: The 4 Tenets of World-Class Skill',
+    subtitle: 'Grit: The Power of Passion and Perseverance by Angela Duckworth',
+    category: 'habits',
+    source: {
+      name: 'Grit',
+      authorOrTopic: 'Angela Duckworth & Anders Ericsson',
+      tag: 'Skill Acquisition',
+    },
+    coreIdea: 'Ten thousand hours of mindless repetition produces mediocrity. World-class mastery requires Deliberate Practice: (1) A stretch goal, (2) Full concentration, (3) Immediate informative feedback, and (4) Repetition with reflection.',
+    quoteAuthor: 'Angela Duckworth',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Mindless Autopilot', text: 'Running the same 3 miles or typing the same way...', emphasis: 'Skill plateaus permanently.' },
+      { phase: 1, stepLabel: 'Deliberate Discomfort', text: 'Target a microscopic weakness with intense focus...', emphasis: 'Immediate expert feedback illuminates mistakes.' },
+      { phase: 2, stepLabel: 'Micro-Iterative Leaps', text: 'Correct the error on the very next repetition...', emphasis: 'Exponential mastery compounds!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#06b6d4',
+    visualConceptType: 'grit-equation',
+    conceptAnimationLabel: 'Mindless Plateau vs Deliberate Practice Feedback Loop',
+    takeaways: [
+      {
+        point: 'Focus on One Tiny Weakness',
+        detail: 'Don\'t practice what you are already good at. Find the specific chord, line of code, or backhand stroke where you stumble, and drill only that.',
+        isActionable: true,
+      },
+      {
+        point: 'Demand Instant Informative Feedback',
+        detail: 'You cannot improve without knowing exactly what was wrong within seconds of the attempt. Measure feedback objectively.',
+        isActionable: true,
+      },
+      {
+        point: 'It Is Not Meant to Feel Fun in the Moment',
+        detail: 'Deliberate practice feels strained and mentally exhausting. Limit it to 60-90 minutes of maximum quality rather than hours of slacking.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Deliberate Practice Loop (Ericsson & Duckworth)',
+      description: 'A structured method of practice aimed at exceeding one’s current skill level through targeted stretch goals and immediate feedback.',
+      formulaOrRule: 'Stretch Goal (Tiny Weakness) + Full Focus + Instant Feedback + Reflective Repetition = World-Class Skill',
+    },
+    immediateActionChallenge: 'Identify one specific technical aspect of your craft that you are weak at. Spend 20 minutes doing drills focused solely on that flaw.',
+    quiz: {
+      question: 'Why does playing recreational tennis or driving a car for 20 years fail to make most adults world-class experts?',
+      options: [
+        'Biological age deteriorates hand-eye coordination',
+        'After reaching basic competency, human behavior becomes automatic and autonomous; without deliberate stretch goals and feedback, improvement stops',
+        'Lack of expensive sports equipment',
+        'Only prodigies possess the genetic capacity',
+      ],
+      correctIndex: 1,
+      explanation: 'Anders Ericsson proved that automaticity is the enemy of mastery. Once a skill becomes comfortable, repetition simply maintains existing capability without improving it.',
+    },
+    tags: ['Grit', 'Deliberate Practice', 'Mastery', 'Learning'],
+    likesCount: 4770,
+    audioScript: "Experience does not equal expertise. Most people drive a car for thirty years and never become a Formula One driver. Why? Because once we become reasonably competent, our brain switches to autopilot. If you want to become truly world-class at anything, you need Deliberate Practice: target your specific weakness, demand immediate feedback, and fix it on the next rep.",
+  },
+
+  // 86. MORGAN HOUSEL — The Psychology of Money (Man in the Car Paradox)
+  {
+    id: 'reel-housel-man-in-the-car',
+    title: 'The "Man in the Car" Paradox: The Vanity Illusion',
+    subtitle: 'The Psychology of Money by Morgan Housel',
+    category: 'psychology',
+    source: {
+      name: 'The Psychology of Money',
+      authorOrTopic: 'Morgan Housel',
+      tag: 'Wealth & Status Psychology',
+    },
+    coreIdea: 'When you see someone driving a Ferrari, you rarely think: "The person driving that car is so cool." Instead, you imagine how cool YOU would look driving that car. Nobody cares about your possessions as much as you do.',
+    quoteAuthor: 'Morgan Housel',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Status Spending Trap', text: 'Buying luxury items to earn respect and admiration...', emphasis: 'Spending cash you don\'t have.' },
+      { phase: 1, stepLabel: 'The Universal Projection', text: 'Others look at your fancy car and only imagine...', emphasis: 'THEMSELVES sitting behind the wheel!' },
+      { phase: 2, stepLabel: 'The Wealth Awakening', text: 'Respect comes from humility, humor, and kindness...', emphasis: 'Never from manufactured status symbols.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'psychology-money',
+    conceptAnimationLabel: 'Status Symbol Projection: The Ego Mirror Illusion',
+    takeaways: [
+      {
+        point: 'People Admire the Benchmark, Not You',
+        detail: 'When you flaunt wealth, people use you as a benchmark to imagine their own glory. Your luxury does not buy their genuine affection.',
+        isActionable: false,
+      },
+      {
+        point: 'Humility Over Horsepower',
+        detail: 'If your goal is genuine respect and love, cultivate kindness, generosity, and intelligence. They cost zero dollars and earn real loyalty.',
+        isActionable: true,
+      },
+      {
+        point: 'Wealth is What You Don’t See',
+        detail: 'Rich is an expensive car you bought; Wealth is the option and financial freedom you have because you chose not to buy the expensive car.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Man in the Car Paradox',
+      description: 'The psychological disconnect where people buy expensive goods to gain admiration, unaware that observers only imagine themselves possessing the good.',
+      formulaOrRule: 'Spending Money on Status = Buying a Mirror for Other People’s Self-Absorption',
+    },
+    immediateActionChallenge: 'Ask yourself about your next desired purchase: "Would I still buy this if nobody on earth would ever see me with it?"',
+    quiz: {
+      question: 'What is Morgan Housel’s core observation about luxury status spending in The Psychology of Money?',
+      options: [
+        'Luxury cars appreciate faster than index funds',
+        'People buy things to telegraph status and earn admiration, but onlookers completely ignore the owner and only imagine themselves in possession of the luxury',
+        'Status spending is required to land high-paying jobs',
+        'Luxury brands are inherently more durable',
+      ],
+      correctIndex: 1,
+      explanation: 'Housel worked as a valet in Los Angeles and noticed people buy cars thinking it makes them admired, but bystanders only daydream about themselves driving it.',
+    },
+    tags: ['Money', 'Psychology', 'Status', 'Wisdom'],
+    likesCount: 5420,
+    audioScript: "There is a paradox at the heart of status spending. You think you want an expensive car or a luxury watch because you want respect and admiration from others. But when you see someone in a Ferrari, you don't think about how cool the driver is. You daydream about how cool you would look driving it. Stop spending money you don't have to impress people who don't care.",
+  },
+
+  // 87. MORGAN HOUSEL — Same as Ever (Expectations vs Reality)
+  {
+    id: 'reel-housel-expectations-reality',
+    title: 'Happiness = Reality Minus Expectations',
+    subtitle: 'Same as Ever: A Guide to What Never Changes by Morgan Housel',
+    category: 'mindset',
+    source: {
+      name: 'Same as Ever',
+      authorOrTopic: 'Morgan Housel',
+      tag: 'Human Nature & Contentment',
+    },
+    coreIdea: 'The world gets wealthier, safer, and technologically miraculous, yet people feel miserable because expectations rise faster than circumstances. True peace is keeping your expectations lower than your reality.',
+    quoteAuthor: 'Morgan Housel',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Upward Goalpost', text: 'Income doubles, but lifestyle expectations triple...', emphasis: 'The hedonic treadmill accelerates.' },
+      { phase: 1, stepLabel: 'The Entitlement Deficit', text: 'When high expectations meet ordinary reality...', emphasis: 'Disappointment and bitterness brew.' },
+      { phase: 2, stepLabel: 'The Secret Formula', text: 'Happiness = Reality Minus Expectations...', emphasis: 'Anchor your expectations low and celebrate every win!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'compounding-curve',
+    conceptAnimationLabel: 'Hedonic Goalpost Inflation vs Rooted Contentment Baseline',
+    takeaways: [
+      {
+        point: 'Control Your Expectations First',
+        detail: 'The first rule of a happy life is low expectations. If your expectations are unrealistically high, even a lottery win will feel disappointing.',
+        isActionable: true,
+      },
+      {
+        point: 'The Hedonic Treadmill Danger',
+        detail: 'A luxury once experienced becomes your new baseline necessity. Be cautious about escalating your luxuries too fast.',
+        isActionable: true,
+      },
+      {
+        point: 'Gratitude for Modern Miracles',
+        detail: 'You carry a supercomputer in your pocket with access to all human knowledge. Remember how miraculously comfortable your life is compared to kings of the past.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Happiness Equation',
+      description: 'The mathematical reality of human subjective well-being: subjective happiness is driven by relative expectation gaps, not absolute conditions.',
+      formulaOrRule: 'Subjective Happiness = Objective Reality - Subjective Expectations',
+    },
+    immediateActionChallenge: 'Write down 3 everyday modern conveniences you take for granted (hot running water, electricity, GPS). Savor them with pure gratitude today.',
+    quiz: {
+      question: 'Why are citizens in modern wealthy nations often less content than historical populations living in simpler times?',
+      options: [
+        'They suffer from vitamin deficiencies',
+        'Social media and marketing inflate lifestyle expectations far faster than real economic gains, creating a constant psychological deficit',
+        'Modern food has lost its taste',
+        'People work twice as many physical hours',
+      ],
+      correctIndex: 1,
+      explanation: 'Charlie Munger noted: "The world is not driven by greed; it’s driven by envy." If expectations rise faster than income, people feel chronically poor.',
+    },
+    tags: ['Mindset', 'Happiness', 'Psychology', 'Philosophy'],
+    likesCount: 5120,
+    audioScript: "The most important financial and psychological truth is simple: Happiness is just reality minus expectations. When you expect perfection, you're guaranteed to feel miserable. When you keep your expectations humble and appreciate what you have, every sunny day, every warm meal, and every small win feels like an unexpected miracle. Manage your expectations.",
+  },
+
+  // 88. GREG MCKEOWN — Effortless (Inverted Effort)
+  {
+    id: 'reel-mckeown-effortless-state',
+    title: 'The Effortless State: What If This Was Easy?',
+    subtitle: 'Effortless: Make It Easier to Do What Matters Most by Greg McKeown',
+    category: 'productivity',
+    source: {
+      name: 'Effortless',
+      authorOrTopic: 'Greg McKeown',
+      tag: 'Frictionless Productivity',
+    },
+    coreIdea: 'We are conditioned to believe that meaningful achievement must be back-breaking and painful. When faced with a daunting project, invert the question: "How can I make this effortless and enjoyable?"',
+    quoteAuthor: 'Greg McKeown',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Grinding Complex', text: 'Believing that only extreme suffering yields results...', emphasis: 'Over-complicating every task.' },
+      { phase: 1, stepLabel: 'The Inversion Question', text: 'Ask: "What would this look like if it were easy?"...', emphasis: 'Stripping away artificial complexity.' },
+      { phase: 2, stepLabel: 'Effortless Execution', text: 'Pair the work with joy, humor, and simplicity...', emphasis: 'Accomplishment flows naturally!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#ec4899',
+    visualConceptType: 'essentialism-filter',
+    conceptAnimationLabel: 'Complex Grinding Friction vs Streamlined Effortless Flow',
+    takeaways: [
+      {
+        point: 'Ask the Inversion Question',
+        detail: 'Whenever a project feels overwhelming, stop and ask: "How would this look if it were easy?" Often you discover 80% of steps are unnecessary.',
+        isActionable: true,
+      },
+      {
+        point: 'Pair Chores with Fun',
+        detail: 'Only listen to your favorite podcast while doing the dishes or folding laundry. Turn friction-heavy chores into anticipated treats.',
+        isActionable: true,
+      },
+      {
+        point: 'Define "Done" Clearly',
+        detail: 'Perfectionists keep polishing long after the work has served its purpose. Establish clear criteria for "Done" and stop immediately when reached.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Effortless Inversion',
+      description: 'The practice of challenging the Protestant work ethic assumption that difficulty is proof of virtue, seeking the simplest path to execution.',
+      formulaOrRule: 'Overwhelmed → Ask: "How can I make this simple, easy, and fun?" → Strip Superfluous Steps',
+    },
+    immediateActionChallenge: 'Take the most dreaded task on your schedule today. Ask: "How can I make this easier?" Remove two unnecessary steps before doing it.',
+    quiz: {
+      question: 'What is the core fallacy that Greg McKeown identifies in our modern relationship with hard work?',
+      options: [
+        'People don’t work enough overtime',
+        'We falsely assume that things that are hard are inherently more valuable, causing us to over-complicate tasks that could be done simply and joyfully',
+        'Office equipment is poorly maintained',
+        'Vacations make people lazy',
+      ],
+      correctIndex: 1,
+      explanation: 'We often wear exhaustion like a badge of honor. McKeown shows that high leverage comes from simplifying and removing friction, not agonizing effort.',
+    },
+    tags: ['Productivity', 'Essentialism', 'Simplicity', 'Mindset'],
+    likesCount: 4390,
+    audioScript: "Why do we always assume that doing what matters most has to be hard? When you hit a massive roadblock, stop gritting your teeth and pushing through the pain. Ask yourself: What would this look like if it were easy? When you strip away the drama, the perfectionism, and the unnecessary steps, high-impact work becomes almost effortless.",
+  },
+
+  // 89. ECKHART TOLLE — A New Earth (The Pain-Body)
+  {
+    id: 'reel-tolle-pain-body',
+    title: 'The Pain-Body: Starving the Emotional Monster',
+    subtitle: 'A New Earth: Awakening to Your Life’s Purpose by Eckhart Tolle',
+    category: 'psychology',
+    source: {
+      name: 'A New Earth',
+      authorOrTopic: 'Eckhart Tolle',
+      tag: 'Spiritual Psychology',
+    },
+    coreIdea: 'The pain-body is an accumulated field of old emotional pain living in your subconscious. When triggered, it wants to take over your mind, picking fights and feeding on negative drama to stay alive.',
+    quoteAuthor: 'Eckhart Tolle',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Dormant Monster', text: 'Old emotional wounds sit silently inside...', emphasis: 'Waiting for an environmental spark.' },
+      { phase: 1, stepLabel: 'The Hijacking', text: 'The pain-body awakens, hungry for negativity...', emphasis: 'Compelling you to yell, fight, and stew.' },
+      { phase: 2, stepLabel: 'Conscious Presence', text: 'Observe the pain-body with silent awareness...', emphasis: 'Unfed by thought, the monster dissolves!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#8b5cf6',
+    visualConceptType: 'power-of-now',
+    conceptAnimationLabel: 'The Subconscious Pain-Body Starved by Conscious Witnessing',
+    takeaways: [
+      {
+        point: 'Recognize the Pain-Body Awakening',
+        detail: 'When a minor comment sends you into a blazing fury or weeping despair, recognize: "This is not me; this is the pain-body looking for food."',
+        isActionable: true,
+      },
+      {
+        point: 'Do Not Feed It with Thought',
+        detail: 'The pain-body feeds on negative internal monologues ("They always disrespect me, nobody loves me"). Refuse to spin the narrative.',
+        isActionable: true,
+      },
+      {
+        point: 'Shine the Light of Presence',
+        detail: 'The pain-body cannot survive conscious presence. Feel its heavy somatic energy in your body without judging it, and it will transmute.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Pain-Body Heuristic',
+      description: 'Understanding accumulated emotional trauma as a semi-autonomous energetic entity that feeds on negative emotional conflict.',
+      formulaOrRule: 'Sudden Emotional Rage Surge → Label: "Pain-Body Awakened" → Maintain Silent Presence → Energy Starved',
+    },
+    immediateActionChallenge: 'When you feel a sudden impulse to pick a fight or dwell on a past grudge today, catch it and say silently: "I see you, pain-body. I am not feeding you."',
+    quiz: {
+      question: 'According to Eckhart Tolle, what does the "pain-body" feed upon to sustain its survival?',
+      options: [
+        'Green vegetables and water',
+        'Negative emotional energy, interpersonal drama, and grievance-based thinking',
+        'Physical exhaustion from sports',
+        'Reading philosophical texts',
+      ],
+      correctIndex: 1,
+      explanation: 'The pain-body is an energetic entity that requires negative thoughts and emotional turmoil to replenish itself; bringing conscious presence cuts off its food supply.',
+    },
+    tags: ['Mindfulness', 'Emotional Healing', 'Psychology', 'Presence'],
+    likesCount: 4720,
+    audioScript: "The pain-body is an accumulated energy field of old emotional wounds. It wants to survive, just like any other organism, and it survives by feeding on negative drama. That sudden urge to pick a fight with your partner? That's the pain-body craving food. Don't fight it; just shine the flashlight of awareness on it. The moment you see it clearly, it loses its power.",
+  },
+
+  // 90. KERRY PATTERSON — Crucial Conversations (Make It Safe)
+  {
+    id: 'reel-patterson-make-it-safe',
+    title: 'Make It Safe: The Bedrock of Crucial Conversations',
+    subtitle: 'Crucial Conversations by Kerry Patterson, Joseph Grenny, Ron McMillan, Al Switzler',
+    category: 'communication',
+    source: {
+      name: 'Crucial Conversations',
+      authorOrTopic: 'Patterson, Grenny, McMillan, Switzler',
+      tag: 'Communication & Negotiation',
+    },
+    coreIdea: 'When conversations go south, people don\'t become defensive because of what you are saying; they become defensive because they do not feel safe. When psychological safety is established, you can talk about anything.',
+    quoteAuthor: 'Kerry Patterson',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Safety Collapses', text: 'Tension rises and people retreat into silence or violence...', emphasis: 'Sarcasm, withdrawal, or defensive screaming.' },
+      { phase: 1, stepLabel: 'Step Out & Build Safety', text: 'Reassure Mutual Purpose and Mutual Respect...', emphasis: '"I value you, and I want both of us to succeed."' },
+      { phase: 2, stepLabel: 'Radical Candor Dialogue', text: 'Safety restored, hard truths are spoken gently...', emphasis: 'True breakthrough and collaborative union!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#06b6d4',
+    visualConceptType: 'crucial-conversations',
+    conceptAnimationLabel: 'Defensive Flight/Fight vs Psychological Safety Harbor',
+    takeaways: [
+      {
+        point: 'Watch for Silence or Violence',
+        detail: 'When someone shuts down, goes sarcastic (Silence), or attacks and interrupts (Violence), safety has broken down. Stop arguing the topic.',
+        isActionable: true,
+      },
+      {
+        point: 'Use Contrasting to Clarify Intent',
+        detail: 'Say: "I don\'t want you to think I\'m unhappy with your dedication [Don\'t statement], I do want to figure out how we fix this bottleneck together [Do statement]."',
+        isActionable: true,
+      },
+      {
+        point: 'Establish Mutual Purpose',
+        detail: 'Find the shared goal both parties care about before attempting to negotiate differences. Shared purpose unites adversaries into partners.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Psychological Safety & Contrasting',
+      description: 'The rule that difficult content can only be received when the listener feels mutual purpose and mutual respect are preserved.',
+      formulaOrRule: 'Defense Detected → Step Out → Re-establish Mutual Respect & Purpose via Contrasting → Resume Dialogue',
+    },
+    immediateActionChallenge: 'Use a Contrasting statement ("I don\'t want X, I do want Y") in your next sensitive conversation with a friend or colleague.',
+    quiz: {
+      question: 'When a crucial conversation becomes heated, what should you do first according to Patterson and Grenny?',
+      options: [
+        'Speak louder to assert authority',
+        'Step out of the conversation content to restore mutual purpose and psychological safety before continuing',
+        'Leave the room and never speak to them again',
+        'Send an angry email after midnight',
+      ],
+      correctIndex: 1,
+      explanation: 'When safety collapses, people either fight or flee. You cannot debate the issue until you step out of the content and reassure the person of your mutual respect.',
+    },
+    tags: ['Communication', 'Crucial Conversations', 'Psychology', 'Empathy'],
+    likesCount: 4860,
+    audioScript: "People never become defensive because of the content of what you're saying. They become defensive because they don't feel safe. The moment someone feels you don't respect them, they will either retreat into silence or attack with violence. Step out of the debate. Reassure them that you care about their goals and respect their perspective. Build safety first.",
+  },
+
+  // 91. BRENÉ BROWN — The Gifts of Imperfection (Letting Go of Perfection)
+  {
+    id: 'reel-brown-gifts-of-imperfection',
+    title: 'Perfectionism is a 20-Ton Shield',
+    subtitle: 'The Gifts of Imperfection by Brené Brown, PhD',
+    category: 'mindset',
+    source: {
+      name: 'The Gifts of Imperfection',
+      authorOrTopic: 'Brené Brown, PhD',
+      tag: 'Vulnerability & Wholeheartedness',
+    },
+    coreIdea: 'Perfectionism is not the same thing as striving for excellence. Perfectionism is a 20-ton shield we haul around, thinking: "If I look perfect, work perfect, and live perfect, I can avoid the pain of blame, judgment, and shame."',
+    quoteAuthor: 'Brené Brown, PhD',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The 20-Ton Shield', text: 'Polishing your mask of flawlessness...', emphasis: 'Desperate to prevent anyone from seeing your flaws.' },
+      { phase: 1, stepLabel: 'Exhaustion & Isolation', text: 'The shield keeps you safe from criticism...', emphasis: 'But prevents true love, belonging, and joy from entering.' },
+      { phase: 2, stepLabel: 'Drop the Shield', text: 'Embrace your messy, authentic humanity...', emphasis: 'True belonging begins with showing up as you are!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f43f5e',
+    visualConceptType: 'daring-greatly',
+    conceptAnimationLabel: 'The 20-Ton Perfectionism Armor Dropped for Wholehearted Living',
+    takeaways: [
+      {
+        point: 'Perfectionism is Other-Focused',
+        detail: 'Healthy striving asks: "How can I improve?" Perfectionism asks: "What will they think of me?" It is rooted in terror of judgment.',
+        isActionable: false,
+      },
+      {
+        point: 'Perfectionism is the Enemy of Creation',
+        detail: 'Perfectionism paralyzes drafts, books, and businesses before they are ever launched. Ship the imperfect version.',
+        isActionable: true,
+      },
+      {
+        point: 'Cultivate "Good Enough"',
+        detail: 'Practice releasing 80% finished work without compulsive re-polishing. Courage is showing up unarmored.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Healthy Striving vs Toxic Perfectionism',
+      description: 'Differentiating internal self-improvement (Healthy Striving) from the shame-driven defense mechanism of external validation (Perfectionism).',
+      formulaOrRule: 'Perfectionism = "What Will They Think?" (Shame Defense). Healthy Striving = "How Can I Grow?" (Self-Growth).',
+    },
+    immediateActionChallenge: 'Send or submit an email or project today at 90% perfection instead of spending another hour obsessively tweaking the details.',
+    quiz: {
+      question: 'How does Dr. Brené Brown define perfectionism in The Gifts of Imperfection?',
+      options: [
+        'A desirable genetic trait of surgeons',
+        'A defensive, 20-ton shield designed to protect us from feeling shame, blame, and judgment',
+        'The highest form of artistic discipline',
+        'A mental strategy for winning competitions',
+      ],
+      correctIndex: 1,
+      explanation: 'Brown’s qualitative research demonstrates that perfectionism is a trauma and shame armor; it does not protect us, it merely prevents genuine connection and progress.',
+    },
+    tags: ['Vulnerability', 'Perfectionism', 'Self-Worth', 'Mindset'],
+    likesCount: 5290,
+    audioScript: "Perfectionism is not the path to success; it's a twenty-ton shield we carry around thinking it will protect us from being hurt. But the shield that protects you from criticism also blocks love, belonging, and joy from getting in. You don't need to be perfect to be worthy. Put the heavy shield down. Show up as your messy, authentic self.",
+  },
+
+  // 92. DALE CARNEGIE — How to Win Friends (The Sweetest Sound)
+  {
+    id: 'reel-carnegie-sweetest-sound-name',
+    title: 'A Person’s Name: The Sweetest Sound on Earth',
+    subtitle: 'How to Win Friends and Influence People by Dale Carnegie',
+    category: 'communication',
+    source: {
+      name: 'How to Win Friends and Influence People',
+      authorOrTopic: 'Dale Carnegie',
+      tag: 'Social Psychology',
+    },
+    coreIdea: 'Remember that a person\'s name is to that person the sweetest and most important sound in any language. Remembering and using someone\'s name pays a subtle, powerful compliment that opens hearts instantly.',
+    quoteAuthor: 'Dale Carnegie',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Careless Forgetter', text: '"I\'m terrible with names, sorry!"...', emphasis: 'Signaling: "You are not important to me."' },
+      { phase: 1, stepLabel: 'The Active Memory Lock', text: 'Repeat the name immediately upon introduction...', emphasis: 'Associate it with a vivid mental image.' },
+      { phase: 2, stepLabel: 'The Warmest Melody', text: 'Greeting them by name with a warm smile...', emphasis: 'Validates their individual human dignity!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'win-friends',
+    conceptAnimationLabel: 'Name Acoustic Resonance: Lighting Up Social Receptivity',
+    takeaways: [
+      {
+        point: 'Say the Name Immediately',
+        detail: 'When introduced, say: "It is wonderful to meet you, Sarah." Repeating it aloud locks it into short-term auditory memory.',
+        isActionable: true,
+      },
+      {
+        point: 'Andrew Carnegie’s Secret Weapon',
+        detail: 'Industrialist Andrew Carnegie named locomotive plants and steel orders after his rivals and clients, winning their lifelong loyalty.',
+        isActionable: false,
+      },
+      {
+        point: 'Write It Down Afterwards',
+        detail: 'Keep a private contact note on your phone. After meeting someone new, record their name, their partner\'s name, and their hobbies.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Carnegie Name Principle',
+      description: 'Using personal names as high-resonance psychological anchors that validate human self-worth and foster genuine rapport.',
+      formulaOrRule: 'Name Heard → Repeat Aloud → Mental Association → Warm Usage = Instant Human Connection',
+    },
+    immediateActionChallenge: 'Use the name of the cashier, barista, or colleague you interact with today with a genuine, warm smile.',
+    quiz: {
+      question: 'Why did Dale Carnegie consider remembering names the cardinal rule of winning friends?',
+      options: [
+        'It is required by formal etiquette schools',
+        'A person’s name is intimately tied to their personal identity and ego; remembering it is the ultimate signal of deep respect',
+        'It makes accounting records simpler',
+        'It helps police officers track citizens',
+      ],
+      correctIndex: 1,
+      explanation: 'Carnegie wrote that most people forget names because they don’t care enough to concentrate; taking the time to remember pays a massive, memorable compliment.',
+    },
+    tags: ['Communication', 'Social Skills', 'Relationships', 'Influence'],
+    likesCount: 4610,
+    audioScript: "If you want to win someone's trust, remember this fundamental rule: A person's name is to that person the sweetest and most important sound in any language. When you remember someone's name, you tell them: You matter. You are seen. Next time you meet someone, don't just nod. Repeat their name back to them, look them in the eye, and lock it in.",
+  },
+
+  // 93. MARK MANSON — The Subtle Art (Fault vs Responsibility)
+  {
+    id: 'reel-manson-fault-vs-responsibility',
+    title: 'Fault vs. Responsibility: Reclaiming Your Life',
+    subtitle: 'The Subtle Art of Not Giving a F*ck by Mark Manson',
+    category: 'mindset',
+    source: {
+      name: 'The Subtle Art of Not Giving a F*ck',
+      authorOrTopic: 'Mark Manson',
+      tag: 'Radical Ownership',
+    },
+    coreIdea: 'Something may not be your FAULT, but it is always your RESPONSIBILITY. If someone leaves a baby on your doorstep, it is not your fault, but you are 100% responsible for what you do with that baby right now.',
+    quoteAuthor: 'Mark Manson',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Blame Paralysis', text: '"They broke my heart, the boss is toxic, it\'s not my fault!"...', emphasis: 'Waiting for the world to apologize.' },
+      { phase: 1, stepLabel: 'The Sovereign Distinction', text: 'Fault looks backward at past blame...', emphasis: 'Responsibility looks forward at present choice!' },
+      { phase: 2, stepLabel: 'Radical Sovereignty', text: 'You take 100% responsibility for your response...', emphasis: 'You become completely untouchable and free.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'subtle-art-values',
+    conceptAnimationLabel: 'Backward Blame Vector vs Forward Responsibility Engine',
+    takeaways: [
+      {
+        point: 'Fault is in the Past; Responsibility is Right Now',
+        detail: 'Bad luck, genetic illness, and traumatic upbringings are not your fault. But how you choose to live today is 100% your responsibility.',
+        isActionable: true,
+      },
+      {
+        point: 'Blaming Others Keeps You a Prisoner',
+        detail: 'When you blame your ex or your parents for your current misery, you grant them custody of your future. Take custody back.',
+        isActionable: false,
+      },
+      {
+        point: 'Responsibility Equals Power',
+        detail: 'The moment you accept full responsibility for your health, bank account, and mindset, you acquire the power to change them.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Fault vs Responsibility Duality',
+      description: 'Separating the moral assignment of past culpability (Fault) from the present sovereign agency of behavioral response (Responsibility).',
+      formulaOrRule: 'Fault = Past Causes (Out of Your Hands). Responsibility = Present Action (100% In Your Hands).',
+    },
+    immediateActionChallenge: 'Think of one unfair situation in your life. Say out loud: "This was not my fault, but it is my responsibility to fix how I respond right now."',
+    quiz: {
+      question: 'What is Mark Manson’s famous analogy illustrating the difference between fault and responsibility?',
+      options: [
+        'A driver speeding through a red light',
+        'If someone leaves a baby on your doorstep, it is not your fault that the baby is there, but you are 100% responsible for what you do next',
+        'Losing an umbrella on a rainy afternoon',
+        'Buying a lottery ticket that doesn’t win',
+      ],
+      correctIndex: 1,
+      explanation: 'Manson points out that many terrible things happen to us that are not our fault, but waiting for the world to fix them keeps us helpless victims.',
+    },
+    tags: ['Mindset', 'Radical Ownership', 'Responsibility', 'Personal Growth'],
+    likesCount: 5380,
+    audioScript: "Nobody else is ever responsible for your situation but you. Many people may be to blame for your unhappiness, but nobody is ever responsible for your unhappiness but you. This is the difference between fault and responsibility. It might not be your fault that you were dealt a tough hand. But it is always your responsibility to play the hand like a champion.",
+  },
+
+  // 94. DAVID ALLEN — GTD (The Weekly Review)
+  {
+    id: 'reel-allen-weekly-review',
+    title: 'The Weekly Review: The Engine of Clear Mind',
+    subtitle: 'Getting Things Done: The Art of Stress-Free Productivity by David Allen',
+    category: 'productivity',
+    source: {
+      name: 'Getting Things Done',
+      authorOrTopic: 'David Allen',
+      tag: 'GTD System Architecture',
+    },
+    coreIdea: 'Most productivity systems collapse within three weeks because they lack maintenance. The Weekly Review is the sacred 60-minute ritual where you clear your inboxes, update project lists, and achieve "Mind Like Water."',
+    quoteAuthor: 'David Allen',
+    quotePhases: [
+      { phase: 0, stepLabel: 'System Drift', text: 'Receipts piling up, open loops multiplying...', emphasis: 'Subconscious anxiety builds to a boil.' },
+      { phase: 1, stepLabel: 'The Weekly Maintenance', text: 'Every Friday afternoon, review every project list...', emphasis: 'Clear inboxes, update next actions, clean the deck.' },
+      { phase: 2, stepLabel: 'Mind Like Water', text: 'Your system is 100% trusted and current...', emphasis: 'You enter the weekend with total serene presence!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'gtd-workflow',
+    conceptAnimationLabel: 'The GTD Weekly Review Cleanse: Re-centering the Mind',
+    takeaways: [
+      {
+        point: 'Schedule It Non-Negotiable',
+        detail: 'Block Friday 3:00 PM to 4:00 PM every single week. Treat it with the same sacred discipline as a board meeting.',
+        isActionable: true,
+      },
+      {
+        point: 'Clear Inboxes to Zero',
+        detail: 'Collect loose papers, download receipts, clear physical notebooks, and empty your email inbox down to zero.',
+        isActionable: true,
+      },
+      {
+        point: 'Review Every Single Active Project',
+        detail: 'Look at each active project and ask: "What is the very next physical action step required to move this forward?"',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The GTD Maintenance Cycle',
+      description: 'The weekly calibration ritual that restores cognitive confidence in your external brain system, eliminating subconscious anxiety.',
+      formulaOrRule: 'Gather Loose Ends → Review All Projects → Clarify Next Actions = Unshakeable Trust in Your System',
+    },
+    immediateActionChallenge: 'Put a recurring 60-minute calendar block on your Friday afternoon named "Weekly Review & Brain Cleanse."',
+    quiz: {
+      question: 'According to David Allen, what is the single biggest reason people abandon personal organizational systems?',
+      options: [
+        'They chose the wrong software app',
+        'Failing to conduct a consistent Weekly Review, causing the system to lose synchronization with reality and destroying the subconscious mind’s trust',
+        'Not buying expensive binders',
+        'Having too many family members',
+      ],
+      correctIndex: 1,
+      explanation: 'Allen teaches that if you don’t empty the inboxes weekly, your subconscious mind realizes the lists are out of date and resumes keeping open loops in your head.',
+    },
+    tags: ['GTD', 'Productivity', 'Weekly Review', 'Focus'],
+    likesCount: 4420,
+    audioScript: "The magic of Getting Things Done doesn't come from a fancy app; it comes from the Weekly Review. If you don't clean your system once a week, it becomes a graveyard of outdated to-dos, and your brain goes right back to panicking. Take one hour every Friday. Clear your desk, review your projects, and set your next actions. Walk into your weekend free.",
+  },
+
+  // 95. BRIANNA WIEST — 101 Essays (Subconscious Resistance)
+  {
+    id: 'reel-wiest-subconscious-resistance',
+    title: 'The Upper Limit Problem: Why Good Feels Unsafe',
+    subtitle: '101 Essays That Will Change the Way You Think by Brianna Wiest & Gay Hendricks',
+    category: 'psychology',
+    source: {
+      name: '101 Essays That Will Change the Way You Think',
+      authorOrTopic: 'Brianna Wiest',
+      tag: 'Subconscious Psychology',
+    },
+    coreIdea: 'We are conditioned to familiar misery rather than unfamiliar joy. When things start going exceptionally well in your career or love life, your subconscious may trigger anxiety or self-sabotage to drag you back to what feels familiar.',
+    quoteAuthor: 'Brianna Wiest',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Breakthrough High', text: 'You experience unprecedented success and joy...', emphasis: 'Stepping outside your habitual comfort zone.' },
+      { phase: 1, stepLabel: 'The Upper Limit Panic', text: 'Subconscious thermostat says: "This is too good to last!"...', emphasis: 'Manufactured worry and petty fights arise.' },
+      { phase: 2, stepLabel: 'Expanding the Baseline', text: 'Breathe through the unfamiliar expansion...', emphasis: 'You normalize happiness, ease, and wealth as your new home.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#ec4899',
+    visualConceptType: 'mountain-is-you',
+    conceptAnimationLabel: 'Upper Limit Thermostat Resetting to Higher Baseline Joy',
+    takeaways: [
+      {
+        point: 'Familiar Discomfort Feels "Safe"',
+        detail: 'The human nervous system equates the familiar with safety, even if the familiar is misery, dysfunction, or poverty.',
+        isActionable: false,
+      },
+      {
+        point: 'Spot Manufactured Worry',
+        detail: 'Notice when you start inventing catastrophic worries immediately after a major triumph. That is your subconscious trying to reset the thermostat.',
+        isActionable: true,
+      },
+      {
+        point: 'Practice Receiving Goodness',
+        detail: 'When compliments, money, or love arrive, do not deflect them or rush to balance the ledger. Breathe in and say: "I am safe to receive this."',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Upper Limit Problem (Gay Hendricks & Brianna Wiest)',
+      description: 'The internal subconscious ceiling on the amount of love, success, and positive emotional experience an individual allows themselves to experience.',
+      formulaOrRule: 'Joy Exceeds Comfort Baseline → Subconscious Sabotage Tripped → Expand Capacity to Receive Goodness',
+    },
+    immediateActionChallenge: 'Next time you experience a wonderful moment today, close your eyes, take 3 deep breaths, and let yourself feel 100% happy without looking for what might go wrong.',
+    quiz: {
+      question: 'What is the "Upper Limit Problem"?',
+      options: [
+        'A maximum legal cap on credit card interest',
+        'A subconscious emotional thermostat that triggers worry or self-sabotage whenever our happiness or success exceeds our familiar baseline',
+        'Running out of disk space on a hard drive',
+        'Physical altitude sickness during mountain climbing',
+      ],
+      correctIndex: 1,
+      explanation: 'Hendricks and Wiest show that each person has an internal setting for how much love and abundance they feel safe experiencing; expanding that setting requires conscious awareness.',
+    },
+    tags: ['Psychology', 'Self-Sabotage', 'Emotional Growth', 'Healing'],
+    likesCount: 5190,
+    audioScript: "True self-sabotage is not an accident; it is your subconscious trying to keep you safe in the familiar. When your life starts getting dramatically better, your internal thermostat sounds the alarm: 'Wait, this is unfamiliar, something terrible is about to happen!' Stop looking for the other shoe to drop. You are worthy of peace. Breathe, expand, and let the good stay.",
+  },
+
+  // 96. ROBERT CIALDINI — Pre-Suasion (Privileged Moments)
+  {
+    id: 'reel-cialdini-presuasion',
+    title: 'Pre-Suasion: Winning the Mind Before You Speak',
+    subtitle: 'Pre-Suasion: A Revolutionary Way to Influence and Persuade by Robert Cialdini, PhD',
+    category: 'communication',
+    source: {
+      name: 'Pre-Suasion',
+      authorOrTopic: 'Robert B. Cialdini, PhD',
+      tag: 'Strategic Influence',
+    },
+    coreIdea: 'Optimal persuasion is not about what you say in the message; it is about what you do in the moment BEFORE you deliver the message. Directing attention to a specific concept pre-conditions the mind to accept your proposal.',
+    quoteAuthor: 'Robert B. Cialdini, PhD',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Direct Pitch Trap', text: 'Jumping straight into your sales pitch or proposal...', emphasis: 'Meeting natural cognitive resistance.' },
+      { phase: 1, stepLabel: 'The Pre-Suasive Question', text: 'Ask: "Do you consider yourself an adventurous person?"...', emphasis: 'Priming identity and focused attention.' },
+      { phase: 2, stepLabel: 'Effortless Agreement', text: 'Present the new, bold proposal...', emphasis: 'Their primed self-concept accepts it enthusiastically!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#3b82f6',
+    visualConceptType: 'tactical-empathy',
+    conceptAnimationLabel: 'Attention Prime Vector Paving the Way for Effortless Buy-In',
+    takeaways: [
+      {
+        point: 'What is Focal is Seen as Causal',
+        detail: 'Whatever you direct people\'s visual and mental attention toward in the opening 10 seconds is perceived as having outsized importance.',
+        isActionable: false,
+      },
+      {
+        point: 'Prime the Desired Trait First',
+        detail: 'Before asking for feedback, ask: "Are you someone who values brutal honesty?" Once they say yes, they will give you the real truth.',
+        isActionable: true,
+      },
+      {
+        point: 'Music and Background Atmosphere',
+        detail: 'In a wine store, playing French music caused French wine sales to surge by 77%; German music caused German wine to surge by 73%. Atmosphere primes choice.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'Pre-Suasive Priming (Privileged Moments)',
+      description: 'Creating a receptive psychological context immediately prior to delivering an idea, channeling attention to make agreement effortless.',
+      formulaOrRule: 'Channel Attention to Concept X → Concept X Gains Perceived Importance → Proposal Aligned with X Accepted',
+    },
+    immediateActionChallenge: 'Before asking someone to try a new tool today, ask them: "Do you enjoy finding smarter, more efficient shortcuts?" Watch their response.',
+    quiz: {
+      question: 'What did researchers find when they asked shoppers "Do you consider yourself adventurous?" before offering a sample of a new soft drink?',
+      options: [
+        'People were offended and walked away',
+        '75.7% of people agreed to try the drink and give their email, compared to only 33% when asked without the pre-suasive question',
+        'Sales remained completely identical',
+        'People bought the store’s furniture',
+      ],
+      correctIndex: 1,
+      explanation: 'By answering "yes" to being adventurous, the shoppers primed their identity to align with adventurous behavior, more than doubling their willingness to try the new drink.',
+    },
+    tags: ['Influence', 'Persuasion', 'Psychology', 'Communication'],
+    likesCount: 4620,
+    audioScript: "The highest form of persuasion doesn't happen during the pitch; it happens before the pitch even begins. What is focal is seen as causal. If you want someone to accept a creative risk, don't start with the budget. Start by discussing innovation and adventure. When you direct their attention first, you prepare the soil so the seed can take root.",
+  },
+
+  // 97. MATTHEW WALKER — Why We Sleep (Adenosine & Sleep Pressure)
+  {
+    id: 'reel-walker-adenosine-sleep-pressure',
+    title: 'Adenosine & Sleep Pressure: How Coffee Borrows Energy',
+    subtitle: 'Why We Sleep by Matthew Walker, PhD',
+    category: 'habits',
+    source: {
+      name: 'Why We Sleep',
+      authorOrTopic: 'Matthew Walker, PhD',
+      tag: 'Neurochemistry & Sleep',
+    },
+    coreIdea: 'From the minute you wake up, a chemical called Adenosine accumulates in your brain, creating "sleep pressure." Caffeine doesn’t give you energy; it merely plugs the adenosine receptors like a mute button. When it wears off, you crash.',
+    quoteAuthor: 'Matthew Walker, PhD',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Adenosine Accumulation', text: 'Every waking hour stacks more adenosine in the brain...', emphasis: 'Natural biological sleep pressure climbs.' },
+      { phase: 1, stepLabel: 'The Caffeine Mask', text: 'Caffeine blocks the receptors without clearing the chemical...', emphasis: 'Adenosine keeps building up silently behind the dam!' },
+      { phase: 2, stepLabel: 'The Inevitable Crash', text: 'The liver breaks down caffeine...', emphasis: 'The tsunami of adenosine floods the receptors at once.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f43f5e',
+    visualConceptType: 'habit-loop',
+    conceptAnimationLabel: 'Adenosine Receptor Blockade vs The Inevitable Caffeine Crash Tsunami',
+    takeaways: [
+      {
+        point: 'Caffeine Only Borrows Energy from Tomorrow',
+        detail: 'Caffeine does not create energy. It merely masks tiredness while your fatigue debt continues to compound behind the dam.',
+        isActionable: false,
+      },
+      {
+        point: 'The 12-Hour Half-Life Rule',
+        detail: 'Caffeine has a half-life of 5-7 hours and a quarter-life of 12 hours. A cup of coffee at 2:00 PM means 25% of caffeine is still buzzing in your brain at 2:00 AM.',
+        isActionable: true,
+      },
+      {
+        point: 'Delay Morning Caffeine by 90 Minutes',
+        detail: 'Wait 90 minutes after waking before your first cup. This lets natural cortisol clear overnight adenosine, eliminating the dreaded afternoon crash.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Adenosine Sleep Pressure Model',
+      description: 'The biochemical mechanism of sleep pressure regulated by adenosine accumulation and cleared exclusively during deep sleep.',
+      formulaOrRule: 'Waking Hours = Adenosine Accumulates. Caffeine = Receptor Plug (NOT Energy). Deep Sleep = Total Molecular Cleansing.',
+    },
+    immediateActionChallenge: 'Delay your first cup of coffee tomorrow morning until 90 minutes after waking up to avoid the 2 PM energy crash.',
+    quiz: {
+      question: 'What is the actual biochemical mechanism of caffeine in the human brain?',
+      options: [
+        'It manufactures millions of new sugar molecules for brain cells',
+        'It physically blocks adenosine receptors, preventing the brain from detecting the biological sleep pressure accumulating behind the plug',
+        'It permanently destroys all sleepiness enzymes',
+        'It burns body fat directly in the skull',
+      ],
+      correctIndex: 1,
+      explanation: 'Caffeine is a molecular mimic of adenosine; it parks in the receptor site without activating it, muting the fatigue signal while adenosine continues to build up.',
+    },
+    tags: ['Sleep', 'Neuroscience', 'Caffeine', 'Health'],
+    likesCount: 5210,
+    audioScript: "Caffeine does not create energy. It creates an illusion. Every hour you are awake, your brain produces a chemical called adenosine, building up sleep pressure. Caffeine simply plugs the receptors so your brain can't feel the fatigue. But the adenosine keeps building up behind the dam. When the caffeine wears off, the dam breaks, and you crash. Respect your sleep.",
+  },
+
+  // 98. MIHALY CSIKSZENTMIHALYI — Creativity (The 5 Stages)
+  {
+    id: 'reel-csikszentmihalyi-creative-process',
+    title: 'The 5 Stages of the Creative Flow Process',
+    subtitle: 'Creativity: Flow and the Psychology of Discovery and Invention by Mihaly Csikszentmihalyi',
+    category: 'mindset',
+    source: {
+      name: 'Creativity',
+      authorOrTopic: 'Mihaly Csikszentmihalyi',
+      tag: 'Creativity & Discovery',
+    },
+    coreIdea: 'Creativity is not a sudden lightning bolt; it is a five-stage neurological rhythm: Preparation, Incubation, Insight (Eureka), Evaluation, and Elaboration. If you skip incubation (letting the subconscious chew alone), insights never arrive.',
+    quoteAuthor: 'Mihaly Csikszentmihalyi',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Preparation Immersion', text: 'Soaking the mind in data, research, and trial...', emphasis: 'Exhausting conscious effort.' },
+      { phase: 1, stepLabel: 'Subconscious Incubation', text: 'Step away completely: sleep, walk, daydream...', emphasis: 'The subconscious makes unexpected cross-connections.' },
+      { phase: 2, stepLabel: 'The Eureka Breakthrough', text: 'Insight flashes into consciousness unexpectedly...', emphasis: 'Followed by ruthless elaboration and craft.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'growth-mindset',
+    conceptAnimationLabel: '5-Stage Creative Cycle: From Conscious Struggle to Subconscious Insight',
+    takeaways: [
+      {
+        point: 'Never Skip Incubation',
+        detail: 'When stuck on a tough coding bug or writing block, stop staring at the screen. Go for a 20-minute walk without your phone. Let your subconscious work.',
+        isActionable: true,
+      },
+      {
+        point: 'Evaluation Requires Cold Rationality',
+        detail: 'The Eureka moment is intoxicating, but most insights are flawed. Subject the insight to cold, objective testing before falling in love with it.',
+        isActionable: true,
+      },
+      {
+        point: 'Elaboration is 99% of the Work',
+        detail: 'Edison said genius is 1% inspiration, 99% perspiration. Turning a sparkling idea into a polished product takes months of disciplined grind.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The 5-Stage Wallas-Csikszentmihalyi Creative Cycle',
+      description: 'The proven neurological cycle of breakthrough thought: Preparation → Incubation → Insight → Evaluation → Elaboration.',
+      formulaOrRule: 'Intense Conscious Input + Incubation Walk/Sleep = The Subconscious Breakthrough',
+    },
+    immediateActionChallenge: 'If you are stuck on a difficult problem right now, close your computer and take a 15-minute walk outside with no headphones.',
+    quiz: {
+      question: 'Why do our greatest ideas almost always arrive in the shower, on a walk, or right upon waking up?',
+      options: [
+        'Shampoo contains chemicals that stimulate neurons',
+        'Stepping away allows the "Incubation" phase to occur, where the subconscious mind freely synthesizes connections without prefrontal analytical interference',
+        'Walking burns excess calories',
+        'Showers increase body temperature',
+      ],
+      correctIndex: 1,
+      explanation: 'Incubation allows default mode network activity to recombine ideas subconsciously while executive prefrontal tension is temporarily disengaged.',
+    },
+    tags: ['Creativity', 'Flow', 'Neuroscience', 'Innovation'],
+    likesCount: 4780,
+    audioScript: "Breakthrough ideas don't strike while you're frantically staring at a blank screen. They strike in the shower, on a walk, or when you're washing dishes. That is the Incubation phase. You feed your brain the raw data, and then you step away. The subconscious takes over, connects the dots, and hands you the Eureka moment. Work hard, then walk away.",
+  },
+
+  // 99. NASSIM NICHOLAS TALEB — Skin in the Game (Symmetry)
+  {
+    id: 'reel-taleb-skin-in-the-game',
+    title: 'Skin in the Game: The Filter of Real Wisdom',
+    subtitle: 'Skin in the Game: Hidden Asymmetries in Daily Life by Nassim Nicholas Taleb',
+    category: 'mindset',
+    source: {
+      name: 'Skin in the Game',
+      authorOrTopic: 'Nassim Nicholas Taleb',
+      tag: 'Ethics & Epistemology',
+    },
+    coreIdea: 'Never take advice from someone who does not suffer the consequences of their advice. If someone gives you stock picks, medical protocols, or career advice without having personal skin in the game, ignore them.',
+    quoteAuthor: 'Nassim Nicholas Taleb',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Empty Talkers', text: 'Pundits and advisors who risk nothing of their own...', emphasis: 'Profiting when you win, immune when you lose.' },
+      { phase: 1, stepLabel: 'The Hammurabi Symmetry', text: 'If a builder builds a house that collapses, he pays...', emphasis: 'True wisdom requires symmetrical exposure to ruin.' },
+      { phase: 2, stepLabel: 'Sovereign Integrity', text: 'Put your own reputation and skin on the line...', emphasis: 'Actions speak with undeniable moral authority.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'essentialism-filter',
+    conceptAnimationLabel: 'Symmetrical Downside Filter: Weeding Out Zero-Risk Advice',
+    takeaways: [
+      {
+        point: 'Don’t Tell Me What You Think, Show Me Your Portfolio',
+        detail: 'Words are cheap. Ask financial advisors, mentors, and experts: "Do you personally invest your own money in this exact vehicle?"',
+        isActionable: true,
+      },
+      {
+        point: 'Beware Agency Asymmetry',
+        detail: 'Bureaucrats and corporate middle managers often optimize for passing blame rather than solving problems because they bear no downside risk.',
+        isActionable: false,
+      },
+      {
+        point: 'Bear the Consequences with Honor',
+        detail: 'If you lead a team or make a decision, openly absorb the blame when things fail. Taking the hit creates legendary trust.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Skin in the Game (The Symmetry Rule)',
+      description: 'An ancient ethical and operational principle requiring decision-makers to share in the downside risk of their prescriptions.',
+      formulaOrRule: 'No Personal Downside Risk = Zero Epistemic Credibility (Do Not Listen)',
+    },
+    immediateActionChallenge: 'Before listening to another influencer or analyst today, check: "Do they have real personal skin in the game, or are they just selling clicks?"',
+    quiz: {
+      question: 'What was the ancient law of King Hammurabi (1750 BC) cited by Taleb regarding builders?',
+      options: [
+        'Builders must pay 10% tax on marble',
+        'If a builder creates a house that collapses and kills the owner, the builder shall be put to death',
+        'Builders must wear helmets at all times',
+        'Builders can never be sued in court',
+      ],
+      correctIndex: 1,
+      explanation: 'Hammurabi understood that eliminating agency problems requires absolute skin in the game: the builder’s life was tethered to the safety of the house he erected.',
+    },
+    tags: ['Skin In The Game', 'Philosophy', 'Ethics', 'Decision Making'],
+    likesCount: 4910,
+    audioScript: "Never ask anyone for their opinion, forecast, or recommendation. Just ask them what they have in their personal portfolio. Talk is cheap. Pundits and commentators win when they're right, but they suffer nothing when they're wrong and you lose your life savings. Always demand Skin in the Game. If you don't share the downside, your advice is worthless.",
+  },
+
+  // 100. VIKTOR FRANKL — The Will to Meaning (Tragic Optimism)
+  {
+    id: 'reel-frankl-tragic-optimism',
+    title: 'Tragic Optimism: Saying YES to Life in Spite of Everything',
+    subtitle: 'Man’s Search for Meaning & The Will to Meaning by Viktor E. Frankl',
+    category: 'psychology',
+    source: {
+      name: 'Man’s Search for Meaning',
+      authorOrTopic: 'Viktor E. Frankl, MD, PhD',
+      tag: 'Existential Logotherapy',
+    },
+    coreIdea: 'Tragic Optimism is the capacity to say YES to life in spite of the tragic triad: pain, guilt, and death. It transforms suffering into human triumph, guilt into personal evolution, and mortality into responsible action.',
+    quoteAuthor: 'Viktor E. Frankl',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Tragic Triad', text: 'Human existence inevitably meets pain, guilt, and death...', emphasis: 'Toxic positivity fails in the dark.' },
+      { phase: 1, stepLabel: 'The Defiant Human Spirit', text: 'We do not ask life what it owes us...', emphasis: 'We answer what life is asking of us right now!' },
+      { phase: 2, stepLabel: 'The Triumph of Meaning', text: 'Suffering transmutes into human service and love...', emphasis: 'An unshakeable YES to life forever!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'stimulus-response-gap',
+    conceptAnimationLabel: 'The Tragic Triad Transmuted into the Golden Ray of Meaning',
+    takeaways: [
+      {
+        point: 'Say YES to Life in Spite of Everything',
+        detail: 'Frankl titled his original post-Auschwitz book: "Saying Yes to Life in Spite of Everything." Hope is not denial; it is an active decision.',
+        isActionable: true,
+      },
+      {
+        point: 'Turn Pain into Achievement',
+        detail: 'When suffering cannot be avoided, our challenge is to transform tragedy into a personal achievement of dignity, grace, and courage.',
+        isActionable: true,
+      },
+      {
+        point: 'Life Asks Something of You',
+        detail: 'Stop asking what you want from life. Realize that life is asking a question of you right now, and you must answer through responsible deeds.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'Tragic Optimism (Frankl’s Logotherapy)',
+      description: 'An optimism in the face of tragedy that presupposes that life has unconditional meaning under any and all conditions, even the most miserable.',
+      formulaOrRule: 'Pain → Transmuted to Achievement. Guilt → Transmuted to Change. Mortality → Transmuted to Urgency of Love.',
+    },
+    immediateActionChallenge: 'Say out loud with complete conviction: "No matter what hardship comes, I choose to say YES to life today with courage, honor, and love."',
+    quiz: {
+      question: 'What is Viktor Frankl’s definition of "Tragic Optimism"?',
+      options: [
+        'Believing that everything will be easy and comfortable forever',
+        'Maintaining genuine optimism and finding purpose in the face of life’s unavoidable tragic triad: pain, guilt, and death',
+        'Hoping that tragic plays will win theatrical awards',
+        'Refusing to acknowledge medical illnesses',
+      ],
+      correctIndex: 1,
+      explanation: 'Frankl taught that true optimism is not naive denial, but the heroic human ability to extract meaning, courage, and service from the darkest hardships of life.',
+    },
+    tags: ['Logotherapy', 'Resilience', 'Meaning of Life', 'Psychology', 'Stoicism'],
+    likesCount: 6840,
+    audioScript: "To live is to suffer; to survive is to find some meaning in the suffering. Viktor Frankl survived the concentration camps of Auschwitz and Dachau and discovered the ultimate truth of human existence: You cannot control what happens to you, but you can always choose your attitude. Say yes to life in spite of everything. Stand tall, find your purpose, and shine your light in the dark.",
+  },
+];

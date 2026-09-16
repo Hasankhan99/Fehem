@@ -1,0 +1,1223 @@
+import { MicroReel } from '../../types';
+
+export const BATCH_3_REELS: MicroReel[] = [
+  // 41. BARRY SCHWARTZ — The Paradox of Choice (Tyranny of Options)
+  {
+    id: 'reel-schwartz-paradox-of-choice',
+    title: 'The Paradox of Choice: Why More is Less',
+    subtitle: 'The Paradox of Choice: Why More Is Less by Barry Schwartz',
+    category: 'psychology',
+    source: {
+      name: 'The Paradox of Choice',
+      authorOrTopic: 'Barry Schwartz',
+      tag: 'Cognitive Psychology',
+    },
+    coreIdea: 'Autonomy and choice are essential to well-being, but past a threshold, an explosion of options produces paralysis rather than liberation, and regret rather than satisfaction.',
+    quoteAuthor: 'Barry Schwartz',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Illusion of Choice', text: 'We assume endless variety equals freedom...', emphasis: 'more jams, more cereal, more paths.' },
+      { phase: 1, stepLabel: 'Choice Paralysis', text: 'Faced with 30 options instead of 4...', emphasis: 'the brain freezes and walks away.' },
+      { phase: 2, stepLabel: 'Escalated Regret', text: 'Whatever you pick, you mourn the alternatives...', emphasis: 'Voluntary constraint brings true peace.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'system1-system2',
+    conceptAnimationLabel: 'Option Overload Jam Experiment vs High-Conversion Curated Shelf',
+    takeaways: [
+      {
+        point: 'Curate Your Daily Options',
+        detail: 'Steve Jobs and Barack Obama wore identical outfits to eliminate decision fatigue on trivial choices. Limit menu options ruthlessly.',
+        isActionable: true,
+      },
+      {
+        point: 'The Jam Experiment Reality',
+        detail: 'Shoppers offered 24 flavors of jam bought 10 times less often than shoppers offered only 6 flavors. Simplicity sells.',
+        isActionable: false,
+      },
+      {
+        point: 'Opportunity Cost Sours Satisfaction',
+        detail: 'When choices proliferate, you imagine all the attractive features of the choices you passed up, eroding your joy.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Paradox of Choice',
+      description: 'The psychological reality that abundant alternatives elevate cognitive burden, paralysis, and post-decision regret.',
+      formulaOrRule: 'More Options = Higher Expectation + High Paralysis + Increased Regret',
+    },
+    immediateActionChallenge: 'Pick one area of your life (wardrobe, breakfast, or streaming playlist) and restrict your choices to just 3 options for this week.',
+    quiz: {
+      question: 'In Sheena Iyengar’s famous jam experiment, what happened when the display was reduced from 24 jam jars to 6?',
+      options: [
+        'Total sales plummeted to zero',
+        'Sales increased dramatically from 3% of visitors buying to 30% of visitors buying',
+        'Customers protested angrily',
+        'People spent 5 hours tasting each jar',
+      ],
+      correctIndex: 1,
+      explanation: 'While the 24-jam display attracted more onlookers, having only 6 jars reduced cognitive friction, producing a tenfold increase in purchases.',
+    },
+    tags: ['Psychology', 'Decision Making', 'Simplicity', 'Focus'],
+    likesCount: 3870,
+    audioScript: "Learning to choose is hard. Learning to choose well is harder. And learning to choose well in a world of unlimited possibilities is hardest of all. When you have too many options, you don't feel liberated—you feel paralyzed. And whichever one you pick, you wonder about what you missed. Simplify your rules. Restrict your options. Freedom lives in constraint.",
+  },
+
+  // 42. BARRY SCHWARTZ — The Paradox of Choice (Satisficing vs Maximizing)
+  {
+    id: 'reel-schwartz-satisficing',
+    title: 'Satisficers vs. Maximizers: The Secret to Contentment',
+    subtitle: 'The Paradox of Choice by Barry Schwartz',
+    category: 'mindset',
+    source: {
+      name: 'The Paradox of Choice',
+      authorOrTopic: 'Barry Schwartz & Herbert Simon',
+      tag: 'Behavioral Economics',
+    },
+    coreIdea: 'Maximizers seek the absolute best possible outcome; Satisficers settle for "good enough" that meets their standards. Satisficers make decisions faster and are measurably happier.',
+    quoteAuthor: 'Barry Schwartz',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Maximizer Trap', text: 'Hunting through 40 reviews for the perfect toaster...', emphasis: 'obsessed with avoiding minor imperfections.' },
+      { phase: 1, stepLabel: 'The Satisficer Standard', text: 'Establish clear criteria for what is good enough...', emphasis: 'When a choice meets the criteria, pull the trigger.' },
+      { phase: 2, stepLabel: 'Mental Serenity', text: 'Satisficers save hours of mental energy...', emphasis: 'and experience zero post-purchase regret.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'essentialism-filter',
+    conceptAnimationLabel: 'Maximizer Exhaustion vs Satisficer Decisive Threshold',
+    takeaways: [
+      {
+        point: 'Define "Good Enough" in Advance',
+        detail: 'Write down 2-3 essential criteria before shopping or hiring. Buy or choose the first candidate that meets them, and stop looking.',
+        isActionable: true,
+      },
+      {
+        point: 'Maximizers Suffer Worse Depression',
+        detail: 'Even when Maximizers achieve statistically superior outcomes, they feel worse because they blame themselves for not finding perfection.',
+        isActionable: false,
+      },
+      {
+        point: 'Make Decisions Irreversible',
+        detail: 'Generous return policies make maximizers doubt their purchases forever. Commit fully once a choice is made.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Satisficing (Herbert Simon)',
+      description: 'A decision-making strategy that aims for a satisfactory or adequate result, rather than the optimal solution.',
+      formulaOrRule: 'Choice >= Pre-defined Threshold → Accept & Close Debate',
+    },
+    immediateActionChallenge: 'For your next non-critical decision (lunch or a book purchase), choose the first option that satisfies your criteria within 60 seconds.',
+    quiz: {
+      question: 'Why do Satisficers consistently report higher happiness levels than Maximizers?',
+      options: [
+        'They earn significantly more money on average',
+        'They don’t waste energy ruminating over whether an infinitesimally better option existed elsewhere in the universe',
+        'They only buy luxury designer goods',
+        'They never make any decisions at all',
+      ],
+      correctIndex: 1,
+      explanation: 'Nobel laureate Herbert Simon coined "satisficing." Satisficers stop searching once their criteria are satisfied, escaping the curse of perpetual regret.',
+    },
+    tags: ['Mindset', 'Happiness', 'Decision Making', 'Mental Models'],
+    likesCount: 3540,
+    audioScript: "To satisfice is to settle for something that is good enough and not worry about the possibility that there might be something better. Maximizers search tirelessly for perfection, comparing fifty hotel rooms and a hundred reviews. They might find a slightly better room, but they arrive exhausted and stressed. Be a satisficer: Set your standard, meet it, and enjoy your life.",
+  },
+
+  // 43. DAN ARIELY — Predictably Irrational (The Decoy Effect)
+  {
+    id: 'reel-ariely-decoy-effect',
+    title: 'The Decoy Effect: How Options Control Your Mind',
+    subtitle: 'Predictably Irrational: The Hidden Forces That Shape Our Decisions by Dan Ariely',
+    category: 'psychology',
+    source: {
+      name: 'Predictably Irrational',
+      authorOrTopic: 'Dan Ariely',
+      tag: 'Behavioral Economics',
+    },
+    coreIdea: 'Humans rarely choose things in absolute terms; we judge value based on relative comparisons. Adding an inferior third option (a decoy) manipulates people into picking the expensive choice.',
+    quoteAuthor: 'Dan Ariely',
+    quotePhases: [
+      { phase: 0, stepLabel: 'A Difficult Choice', text: 'Option A ($59 web) vs Option B ($125 print+web)...', emphasis: 'The mind struggles to weigh trade-offs.' },
+      { phase: 1, stepLabel: 'The Decoy Trap', text: 'Introduce Option C ($125 print-only)...', emphasis: 'A completely useless decoy!' },
+      { phase: 2, stepLabel: 'The Asymmetric Pull', text: 'Option B suddenly looks like a genius bargain...', emphasis: '84% of buyers jump straight to the expensive bundle.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#ec4899',
+    visualConceptType: 'system1-system2',
+    conceptAnimationLabel: 'Asymmetric Dominance Decoy Force Field',
+    takeaways: [
+      {
+        point: 'Spot Pricing Decoys',
+        detail: 'Look at SaaS pricing tiers: Basic ($10), Pro ($30), Team ($32). The $30 tier is often a decoy created to make the $32 tier look irresistible.',
+        isActionable: true,
+      },
+      {
+        point: 'Humans Cannot Price in a Vacuum',
+        detail: 'We have no internal meter showing what an item is worth. We only know if it looks cheaper or better than the alternative right next to it.',
+        isActionable: false,
+      },
+      {
+        point: 'Compare Against Absolute Need',
+        detail: 'Ask yourself: "If this option were standing completely alone with no comparison chart, would I willingly pay this amount for it?"',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Decoy Effect (Asymmetric Dominance)',
+      description: 'A cognitive bias wherein consumers change their preference between two options when presented with a third option that is asymmetrically dominated.',
+      formulaOrRule: 'Target > Decoy on all attributes → Target Perceived as Irresistible Bargain',
+    },
+    immediateActionChallenge: 'Check a subscription you pay for. Identify whether the pricing tier was influenced by an adjacent decoy option.',
+    quiz: {
+      question: 'In Dan Ariely’s Economist experiment, what happened when the middle option (Print only for $125) was removed from the choices?',
+      options: [
+        'Everyone stopped reading the magazine',
+        'Students shifted overwhelmingly from the expensive $125 bundle to the cheap $59 web subscription',
+        'Everyone upgraded to the most expensive tier',
+        'Subscription revenue doubled',
+      ],
+      correctIndex: 1,
+      explanation: 'Without the decoy (Print alone for $125), the Print+Web bundle lost its apparent bargain status, and 68% chose the cheap $59 digital option.',
+    },
+    tags: ['Behavioral Economics', 'Psychology', 'Biases', 'Persuasion'],
+    likesCount: 4120,
+    audioScript: "We don't know what we want unless we see it in context. We don't know what kind of bicycle we want until we see a tour de France champ pedaling a certain model. Most people don't know what a $125 subscription is worth until a decoy makes it look like an insane discount. Watch out for comparison traps. Marketers don't sell products; they sell contrasts.",
+  },
+
+  // 44. DAN ARIELY — Predictably Irrational (The Cost of Free)
+  {
+    id: 'reel-ariely-cost-of-zero',
+    title: 'The High Price of "FREE!": The Zero-Price Effect',
+    subtitle: 'Predictably Irrational by Dan Ariely',
+    category: 'psychology',
+    source: {
+      name: 'Predictably Irrational',
+      authorOrTopic: 'Dan Ariely',
+      tag: 'Cognitive Biases',
+    },
+    coreIdea: 'Zero is an emotional hot button. A price cut from 2 cents to 1 cent is just a discount, but a price cut from 1 cent to FREE triggers an irrational surge that wipes out logical evaluation.',
+    quoteAuthor: 'Dan Ariely',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Rational Calculation', text: 'Lindt truffle for 15 cents vs Hershey Kiss for 1 cent...', emphasis: '73% prefer the luxury truffle.' },
+      { phase: 1, stepLabel: 'The Zero Mutation', text: 'Reduce both prices by 1 cent: Lindt 14¢, Kiss FREE...', emphasis: 'Instant psychological stampede!' },
+      { phase: 2, stepLabel: 'Irrational Reversal', text: '69% now pick the cheap Hershey Kiss...', emphasis: 'Free eliminates the perception of risk!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f43f5e',
+    visualConceptType: 'system1-system2',
+    conceptAnimationLabel: 'The Zero-Price Emotional Gravitational Vortex',
+    takeaways: [
+      {
+        point: 'Free Blinds You to Real Costs',
+        detail: 'When something is free, we forget the hidden cost: your time, your private data, your attention, and the mental clutter of storage.',
+        isActionable: true,
+      },
+      {
+        point: 'The Free Shipping Trap',
+        detail: 'Buying $30 worth of unnecessary junk just to get "Free Shipping" ($5 value) is an irrational loss masquerading as a win.',
+        isActionable: true,
+      },
+      {
+        point: 'Zero Eliminates Fear of Loss',
+        detail: 'The difference between $1 and $0 is infinitely greater psychologically than between $2 and $1 because $0 feels completely risk-free.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Zero-Price Effect',
+      description: 'The psychological phenomenon where demand for a good is dramatically higher at a price of zero compared to even a penny.',
+      formulaOrRule: 'Cost = $0.00 → Perceived Downside = 0 → Emotional Bias Overrides True Utility',
+    },
+    immediateActionChallenge: 'The next time an online checkout offers "Free shipping if you add $25 to your cart," close the tab or pay the $5 shipping.',
+    quiz: {
+      question: 'Why do humans behave irrationally when an item is marked as "FREE!"?',
+      options: [
+        'Because free items are manufactured with better ingredients',
+        'Because humans have an intrinsic fear of loss, and "Free" tricks the brain into believing there is zero possibility of loss',
+        'Because legal rules require free items to be indestructible',
+        'Because banks refuse to process one-penny credit card fees',
+      ],
+      correctIndex: 1,
+      explanation: 'Ariely explains that most transactions carry upside and downside risk; "FREE" makes us forget downside entirely, causing us to make foolish trade-offs.',
+    },
+    tags: ['Psychology', 'Biases', 'Money', 'Decision Making'],
+    likesCount: 3680,
+    audioScript: "FREE! is not just a price; it is an emotional trigger. When something is free, we completely forget the downside. We wait in line for forty minutes in the freezing cold for a free scoop of ice cream worth three dollars. What is your time worth? Remember this rule: If the product is free, your attention, time, or data is the true price being extracted.",
+  },
+
+  // 45. ANNIE DUKE — Thinking in Bets (Resulting)
+  {
+    id: 'reel-duke-resulting-bias',
+    title: 'The "Resulting" Fallacy: Luck vs. Skill',
+    subtitle: 'Thinking in Bets: Making Smarter Decisions When You Don’t Have All the Facts by Annie Duke',
+    category: 'mindset',
+    source: {
+      name: 'Thinking in Bets',
+      authorOrTopic: 'Annie Duke',
+      tag: 'Probabilistic Thinking',
+    },
+    coreIdea: 'Resulting is the dangerous habit of judging the quality of a decision based solely on its outcome. A brilliant decision can have a bad outcome, and a reckless decision can get lucky.',
+    quoteAuthor: 'Annie Duke',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Drunk Driving Trap', text: 'Driving home drunk and arriving safely...', emphasis: 'Does not make it a brilliant decision!' },
+      { phase: 1, stepLabel: 'The Resulting Bias', text: 'We judge poker bets and startup launches...', emphasis: 'purely by the final score.' },
+      { phase: 2, stepLabel: 'Process Over Outcome', text: 'Grade your process, not the variance...', emphasis: 'Probabilistic mastery breeds long-term victory.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#3b82f6',
+    visualConceptType: 'stimulus-response-gap',
+    conceptAnimationLabel: 'Decision Quality Matrix vs Stochastic Outcome Variance',
+    takeaways: [
+      {
+        point: 'Separate Decision from Outcome',
+        detail: 'You can execute a 90% probability winning strategy and still hit the 10% bad outcome. Do not abandon good strategy due to bad luck.',
+        isActionable: true,
+      },
+      {
+        point: 'Don’t Praise Dumb Luck',
+        detail: 'If an employee gambled company assets against policy and happened to double them, reprimand the process rather than celebrating the luck.',
+        isActionable: true,
+      },
+      {
+        point: 'Life is Poker, Not Chess',
+        detail: 'Chess has no hidden information and no dice. Life has incomplete information and massive luck. Think in probabilistic bets.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'Resulting (Outcome Bias)',
+      description: 'The cognitive error of equating the quality of a decision with the quality of its outcome in an uncertain, probabilistic world.',
+      formulaOrRule: 'Good Process + Bad Luck = Bad Outcome (Keep the Process!). Bad Process + Good Luck = Good Outcome (Fix the Process!).',
+    },
+    immediateActionChallenge: 'Think of one recent failure. Ask yourself: "Was my initial decision process sound, or was I simply hit by unlucky variance?"',
+    quiz: {
+      question: 'What is "resulting" as coined by world poker champion Annie Duke?',
+      options: [
+        'Calculating arithmetic equations rapidly in your head',
+        'The tendency to judge the quality of a past decision based entirely on whether the result was good or bad, rather than the logic of the process at the time',
+        'Refusing to play poker with strangers',
+        'The legal process of suing for breach of contract',
+      ],
+      correctIndex: 1,
+      explanation: 'Just like winning a hand by drawing an inside straight on the river doesn’t make the initial call smart, good outcomes do not guarantee good decision-making.',
+    },
+    tags: ['Decision Making', 'Mental Models', 'Poker', 'Probability'],
+    likesCount: 4310,
+    audioScript: "What makes a decision great is not that it has a great outcome. A great decision is the result of a good process. If you drive home blindfolded and make it without crashing, it doesn't mean driving blindfolded was a smart decision. Life is not chess; life is poker. Grade your thinking on the quality of your bets, not the roll of the dice.",
+  },
+
+  // 46. ANNIE DUKE — Thinking in Bets (10-10-10 Rule)
+  {
+    id: 'reel-duke-10-10-10-rule',
+    title: 'The 10-10-10 Rule: Escaping Emotional Myopia',
+    subtitle: 'Thinking in Bets by Annie Duke & Suzy Welch',
+    category: 'mindset',
+    source: {
+      name: 'Thinking in Bets',
+      authorOrTopic: 'Annie Duke',
+      tag: 'Decision Science',
+    },
+    coreIdea: 'When making a high-stress decision, we suffer from temporal discounting. Ask: How will I feel about this choice in 10 minutes? In 10 months? In 10 years? This collapses irrational emotional panic.',
+    quoteAuthor: 'Annie Duke',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Present Panic', text: 'An awkward conversation or temporary rejection...', emphasis: 'feels like life-or-death right now.' },
+      { phase: 1, stepLabel: 'The 10-10-10 Scan', text: '10 minutes: awkward. 10 months: forgotten...', emphasis: '10 years: proud that you spoke up.' },
+      { phase: 2, stepLabel: 'Long-Horizon Courage', text: 'Temporal distance dissolves the fear...', emphasis: 'Empowering courageous, honorable choices.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#8b5cf6',
+    visualConceptType: 'power-of-now',
+    conceptAnimationLabel: '10 Minutes vs 10 Months vs 10 Years Horizon Dilator',
+    takeaways: [
+      {
+        point: 'Deploy 10-10-10 on Difficult Talks',
+        detail: 'Firing a toxic employee or saying no to a client feels awful in 10 minutes, but in 10 months your culture is saved and in 10 years you are thriving.',
+        isActionable: true,
+      },
+      {
+        point: 'Overcome Impulse Cravings',
+        detail: 'Eating the slice of cake feels amazing in 10 minutes, but terrible in 10 months when habits deteriorate. Shift your gaze to the 10-month horizon.',
+        isActionable: true,
+      },
+      {
+        point: 'Time-Travel Back from the Future',
+        detail: 'Look back at your current crisis from your 80-year-old self. Notice how trivial 99% of daily embarrassments really are.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The 10-10-10 Temporal Prism',
+      description: 'A mental model pioneered by Suzy Welch to counteract present bias by evaluating decisions across three distinct time horizons.',
+      formulaOrRule: 'Evaluate Impact: +10 Minutes (Emotion) → +10 Months (Habit) → +10 Years (Legacy)',
+    },
+    immediateActionChallenge: 'Apply 10-10-10 to a difficult decision you are procrastinating on today. What does the 10-month horizon say you should do?',
+    quiz: {
+      question: 'How does the 10-10-10 rule overcome the neurological flaw of "present bias"?',
+      options: [
+        'It forces you to count backward from 10 out loud',
+        'It forces the prefrontal cortex to simulate future consequences across three horizons, disarming the emotional amygdala\'s obsession with instant comfort',
+        'It requires taking 10 deep breaths every 10 seconds',
+        'It is an investment strategy for high-yield treasury bonds',
+      ],
+      correctIndex: 1,
+      explanation: 'Our brains evolved to hyper-weight the present moment. Stepping into 10 months and 10 years breaks the emotional grip of short-term embarrassment.',
+    },
+    tags: ['Mindset', 'Decision Making', 'Stoicism', 'Productivity'],
+    likesCount: 3960,
+    audioScript: "When we are triggered, we become victims of the moment. We eat the junk food or send the angry email because right now it feels urgent. Break the spell with the 10-10-10 rule. Ask: How will I feel about this in 10 minutes? In 10 months? In 10 years? What feels like a disaster today won't even be a footnote next year. Play the long game.",
+  },
+
+  // 47. NIR EYAL — Indistractable (Traction vs Distraction)
+  {
+    id: 'reel-eyal-traction-distraction',
+    title: 'Traction vs. Distraction & Internal Triggers',
+    subtitle: 'Indistractable: How to Control Your Attention and Choose Your Life by Nir Eyal',
+    category: 'productivity',
+    source: {
+      name: 'Indistractable',
+      authorOrTopic: 'Nir Eyal',
+      tag: 'Attention Management',
+    },
+    coreIdea: 'Distraction is not about technology; distraction is an unhealthy escape from uncomfortable internal emotional states: boredom, loneliness, uncertainty, or fatigue.',
+    quoteAuthor: 'Nir Eyal',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Uncomfortable Itch', text: 'You hit a tough paragraph or boring task...', emphasis: 'Anxiety or boredom surfaces.' },
+      { phase: 1, stepLabel: 'The Addictive Escape', text: 'Your hand reaches for the phone reflexively...', emphasis: 'to numb the uncomfortable sensation.' },
+      { phase: 2, stepLabel: 'Surf The Urge', text: 'Sit with the discomfort for 10 minutes...', emphasis: 'Traction pulls you toward your true purpose!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#06b6d4',
+    visualConceptType: 'deep-work-funnel',
+    conceptAnimationLabel: 'Traction vs Distraction Intentional Attention Vector',
+    takeaways: [
+      {
+        point: 'Identify the Internal Trigger',
+        detail: 'Whenever you check your phone, ask: "What emotion was I feeling right before I picked it up?" (Boredom? Anxiety? Impatience?)',
+        isActionable: true,
+      },
+      {
+        point: 'Traction vs Distraction Rule',
+        detail: 'Traction is any action that moves you toward what you truly want. Distraction is any action that pulls you away. Even reading email can be distraction.',
+        isActionable: false,
+      },
+      {
+        point: 'Timebox Your Calendar 100%',
+        detail: 'You cannot call something a distraction unless you know what it distracted you from. If your calendar has empty white space, it will be filled with garbage.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Four Pillars of Indistractability',
+      description: 'Recognizing that all human behavior is spurred by the desire to escape discomfort; mastery requires managing internal triggers.',
+      formulaOrRule: 'Traction = Towards Your Values. Distraction = Away from Your Values. Root Cause = Internal Discomfort.',
+    },
+    immediateActionChallenge: 'Put your phone in another room or across the desk for the next 45 minutes of work. Notice the impulse to grab it.',
+    quiz: {
+      question: 'According to Nir Eyal, what is the ultimate root cause of human distraction?',
+      options: [
+        'Notifications and social media algorithms alone',
+        'The subconscious drive to relieve uncomfortable internal sensations like boredom, anxiety, loneliness, or frustration',
+        'A genetic mutation found in 90% of adults',
+        'Lack of caffeine in the morning bloodstream',
+      ],
+      correctIndex: 1,
+      explanation: 'Technology is just an easy proximate trigger; the fundamental root cause is emotional discomfort. Until you master internal triggers, you cannot become indistractable.',
+    },
+    tags: ['Productivity', 'Habits', 'Focus', 'Psychology'],
+    likesCount: 4210,
+    audioScript: "Most people blame social media and push notifications for their lack of focus. But distraction is an inside job. We reach for our phones not because of the ping, but because we are trying to escape an uncomfortable feeling: boredom, anxiety, or self-doubt. You cannot manage your time until you learn to manage your discomfort.",
+  },
+
+  // 48. NIR EYAL — Indistractable (The 10-Minute Rule)
+  {
+    id: 'reel-eyal-10-minute-rule',
+    title: 'The 10-Minute Rule: Surfing the Urge',
+    subtitle: 'Indistractable by Nir Eyal',
+    category: 'habits',
+    source: {
+      name: 'Indistractable',
+      authorOrTopic: 'Nir Eyal',
+      tag: 'Behavioral Self-Control',
+    },
+    coreIdea: 'When an urge hits to check social media, eat candy, or quit working, never say "Never." Say: "I can indulge this in exactly 10 minutes, but right now I will surf the urge."',
+    quoteAuthor: 'Nir Eyal',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Craving Crests', text: 'The urge to check Instagram spikes...', emphasis: 'like an ocean wave.' },
+      { phase: 1, stepLabel: 'The 10-Minute Timer', text: 'Tell yourself: "I can check it in 10 minutes"...', emphasis: 'Eliminate the friction of strict denial.' },
+      { phase: 2, stepLabel: 'Urge Subsides', text: 'By minute six, the neurochemical craving dies...', emphasis: 'You are back in deep focus!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'habit-loop',
+    conceptAnimationLabel: 'Oceanic Craving Wave: Surfing the 10-Minute Crest',
+    takeaways: [
+      {
+        point: 'Don\'t Suppress; Postpone',
+        detail: 'Strict abstinence creates psychological reactance. Postponing by 10 minutes honors the desire while giving reason time to recover.',
+        isActionable: true,
+      },
+      {
+        point: 'Urges Peak in 3 Minutes',
+        detail: 'Neurochemical cravings act like ocean waves: they swell, peak within 3-5 minutes, and naturally recede if you don\'t feed them.',
+        isActionable: false,
+      },
+      {
+        point: 'Label the Physical Sensation',
+        detail: 'Notice where the urge lives in your body: Is it a tingling in your fingers? Tightness in your chest? Observe it like a curious scientist.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Urge Surfing (Alan Marlatt)',
+      description: 'A cognitive behavioral therapy technique where cravings are treated like waves that peak and dissipate naturally without obedience.',
+      formulaOrRule: 'Impulse Detected → Set 10-Minute Mental Timer → Surf the Sensation → Craving Dissolves',
+    },
+    immediateActionChallenge: 'Next time you want to open YouTube or check your phone while working, tell yourself: "I will do it in 10 minutes." Keep working.',
+    quiz: {
+      question: 'Why is "I will indulge in 10 minutes" scientifically more effective than saying "I must never do this"?',
+      options: [
+        'Because 10 minutes is the legal cooling-off period',
+        'Postponing satisfies the brain’s short-term panic while letting the transient dopamine surge dissipate naturally before taking action',
+        'Because 10 minutes resets the iPhone battery cycle',
+        'It has no scientific basis and is merely superstition',
+      ],
+      correctIndex: 1,
+      explanation: 'Saying "no" causes acute craving through mental rebound; saying "not right now, in 10 minutes" avoids the forbidden-fruit effect while letting the impulse crest and die.',
+    },
+    tags: ['Habits', 'Focus', 'Mindfulness', 'Self-Control'],
+    likesCount: 3790,
+    audioScript: "When you tell yourself 'I can never check my phone,' your brain rebels like a stubborn child. Try this instead: The 10-Minute Rule. When you feel the itch to scroll, tell yourself: 'It's okay to check, but in ten minutes.' Urges are like ocean waves—they crest, peak, and crash. If you can surf the wave for just ten minutes, the craving will vanish on its own.",
+  },
+
+  // 49. RAY DALIO — Principles (Pain + Reflection = Progress)
+  {
+    id: 'reel-dalio-pain-plus-reflection',
+    title: 'Pain + Reflection = Progress',
+    subtitle: 'Principles: Life and Work by Ray Dalio',
+    category: 'mindset',
+    source: {
+      name: 'Principles',
+      authorOrTopic: 'Ray Dalio',
+      tag: 'Systematic Evolution',
+    },
+    coreIdea: 'Pain is nature’s reminder that there is something important for you to learn. If you react to psychological pain with defensive excuses, you stagnate. If you reflect with radical honesty, you evolve.',
+    quoteAuthor: 'Ray Dalio',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Collision with Reality', text: 'You fail publicly or suffer painful feedback...', emphasis: 'The ego wants to flee or blame others.' },
+      { phase: 1, stepLabel: 'The Radical Pause', text: 'Refuse to justify or rationalize...', emphasis: 'Lean into the pain with clinical curiosity.' },
+      { phase: 2, stepLabel: 'Algorithmic Progress', text: 'Extract the principle from the mistake...', emphasis: 'You evolve into a higher-tier thinker.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'compounding-curve',
+    conceptAnimationLabel: 'Painful Collision to Upward Evolutionary Spiral',
+    takeaways: [
+      {
+        point: 'Welcome Pain as a Teacher',
+        detail: 'Whenever you feel emotional sting, guilt, or embarrassment, treat it as a red beacon signaling a blind spot waiting to be fixed.',
+        isActionable: true,
+      },
+      {
+        point: 'Write Down Your Principle',
+        detail: 'Never let a painful error pass without writing a rule: "Whenever X happens, our standard procedure will now be Y to prevent this."',
+        isActionable: true,
+      },
+      {
+        point: 'Don’t Let the Ego Hijack Evolution',
+        detail: 'The two greatest barriers to success are your ego and your blind spots. Crave finding out where you are wrong more than being right.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Evolutionary Formula',
+      description: 'Ray Dalio’s core operating principle transforming acute personal suffering into permanent cognitive upgrades.',
+      formulaOrRule: 'Pain + Reflection = Progress. Pain - Reflection = Stagnation and Perpetual Repetition.',
+    },
+    immediateActionChallenge: 'Recall the most painful mistake you made this past month. Write down one explicit rule you will follow so it never happens again.',
+    quiz: {
+      question: 'According to billionaire investor Ray Dalio, what is the two-part equation for human evolution?',
+      options: [
+        'Intelligence + Capital = Victory',
+        'Pain + Reflection = Progress',
+        'Speed + Audacity = Market Dominance',
+        'Charisma + Networking = Influence',
+      ],
+      correctIndex: 1,
+      explanation: 'Dalio emphasizes that pain is an essential biological signal; paired with rigorous, objective reflection, it creates permanent personal growth.',
+    },
+    tags: ['Mindset', 'Principles', 'Evolution', 'Resilience'],
+    likesCount: 4570,
+    audioScript: "Look at nature. Everything evolves or dies. In life, mistakes and painful setbacks are guaranteed. But the people who achieve extraordinary lives treat psychological pain not as a tragedy, but as nature's invitation to learn. When things go wrong, don't run. Pause, reflect, and write down the principle. Pain plus reflection equals progress.",
+  },
+
+  // 50. RAY DALIO — Principles (Radical Open-Mindedness)
+  {
+    id: 'reel-dalio-radical-openmindedness',
+    title: 'Radical Open-Mindedness & Believability Weighting',
+    subtitle: 'Principles by Ray Dalio',
+    category: 'mindset',
+    source: {
+      name: 'Principles',
+      authorOrTopic: 'Ray Dalio',
+      tag: 'Decision Engineering',
+    },
+    coreIdea: 'The probability of having the best answer all by yourself is tiny. Radically open-minded thinkers don’t care about being right; they care about discovering what is true, especially from credible opponents.',
+    quoteAuthor: 'Ray Dalio',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Closed Fortress', text: 'Defending your initial opinion like a castle...', emphasis: 'Trapped in confirmation bias.' },
+      { phase: 1, stepLabel: 'Believability Filter', text: 'Seek out the smartest people who disagree with you...', emphasis: 'Weight opinions by proven track record.' },
+      { phase: 2, stepLabel: 'Truth Above Ego', text: 'You abandon your prior belief without shame...', emphasis: 'Objective truth elevates the entire system.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#3b82f6',
+    visualConceptType: 'essentialism-filter',
+    conceptAnimationLabel: 'Believability-Weighted Dialectic Truth Sieve',
+    takeaways: [
+      {
+        point: 'Ask: "How Do I Know I\'m Not Wrong?"',
+        detail: 'Before making any major bet or proclamation, force yourself to ask: "What evidence would completely prove my thesis wrong?"',
+        isActionable: true,
+      },
+      {
+        point: 'Weight by Believability',
+        detail: 'Not all opinions are equal. Prioritize people who have (1) repeatedly succeeded in this exact domain, and (2) can explain their reasoning clearly.',
+        isActionable: true,
+      },
+      {
+        point: 'Thoughtful Disagreement is a Gift',
+        detail: 'Find someone brilliant who disagrees with you and examine the world through their eyes. It costs nothing and doubles your perspective.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'Believability-Weighted Decision Making',
+      description: 'A governance model that weights individuals’ inputs based on their objective track record and depth of demonstrated understanding.',
+      formulaOrRule: 'Decision Weight = Track Record of Proven Results × Logical Transparency',
+    },
+    immediateActionChallenge: 'Find a coworker or peer who disagrees with your stance on a current project. Ask them: "Walk me through what you see that I might be missing."',
+    quiz: {
+      question: 'What defines a "believable" person in Ray Dalio’s decision-making system?',
+      options: [
+        'Someone with high social media follower counts',
+        'Someone who has repeatedly and successfully accomplished the thing in question, and has great explanations of the cause-effect relationships',
+        'Someone who speaks with loud theatrical confidence',
+        'The eldest person in the room',
+      ],
+      correctIndex: 1,
+      explanation: 'Bridgewater weights opinions by believability: proven track record of repeated success plus the ability to rationally explain the mechanics.',
+    },
+    tags: ['Mindset', 'Leadership', 'Mental Models', 'Truth'],
+    likesCount: 3840,
+    audioScript: "If you don't look back at what you thought a year ago and think how foolish you were, you haven't learned much. Radical open-mindedness is the realization that you cannot see everything alone. Find the most credible people you can, especially those who disagree with you, and ask them: What am I blind to? Greatness lies in hunting for your blind spots.",
+  },
+
+  // 51. MICHAEL SINGER — The Untethered Soul (The Inner Roommate)
+  {
+    id: 'reel-singer-inner-roommate',
+    title: 'The Neurotic Inner Roommate in Your Skull',
+    subtitle: 'The Untethered Soul: The Journey Beyond Yourself by Michael A. Singer',
+    category: 'psychology',
+    source: {
+      name: 'The Untethered Soul',
+      authorOrTopic: 'Michael A. Singer',
+      tag: 'Consciousness & Mindfulness',
+    },
+    coreIdea: 'There is a relentless voice inside your head that never stops talking, complaining, and worrying. You are not that neurotic voice; you are the silent conscious observer listening to it.',
+    quoteAuthor: 'Michael A. Singer',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Constant Chatter', text: '"Will they like me? What if I fail? Why is it raining?"...', emphasis: 'An exhausting stream of mental noise.' },
+      { phase: 1, stepLabel: 'The Great Awakening', text: 'Step back into the seat of consciousness...', emphasis: 'Notice that you are the listener, not the voice!' },
+      { phase: 2, stepLabel: 'Liberated Sovereignty', text: 'The roommate can chatter all day long...', emphasis: 'Your peace remains untouched and still.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#8b5cf6',
+    visualConceptType: 'power-of-now',
+    conceptAnimationLabel: 'Conscious Observer Witnessing Mental Monologue',
+    takeaways: [
+      {
+        point: 'Treat the Voice as an Outside Person',
+        detail: 'If a real human followed you around saying everything your mind says in an hour, you would have them committed or run away. Stop trusting it blindly.',
+        isActionable: false,
+      },
+      {
+        point: 'Step Back into Witnessing Awareness',
+        detail: 'When anxiety speaks, say silently: "I notice anxiety is talking in my mind right now." Creating that gap breaks the emotional trance.',
+        isActionable: true,
+      },
+      {
+        point: 'You Are Not Your Thoughts',
+        detail: 'Just as you observe clouds drifting across an infinite blue sky, you observe thoughts passing through awareness. The sky is never harmed by clouds.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Seat of Witnessing Consciousness',
+      description: 'The fundamental psychological shift from identifying with internal mental chatter to resting as the impartial observer of thoughts.',
+      formulaOrRule: 'Thought Occurs → "I Am The Awareness Observing The Thought" → Inner Freedom',
+    },
+    immediateActionChallenge: 'Close your eyes for 30 seconds right now. Listen to your mind speak, and ask yourself: "Who is the one listening to this?"',
+    quiz: {
+      question: 'According to Michael Singer, who are you fundamentally in relation to the voice in your head?',
+      options: [
+        'You are the voice itself and must obey its every instruction',
+        'You are the conscious witness who hears the voice talking',
+        'You are a collection of electrical circuits with no awareness',
+        'You are the physical tongue and vocal cords',
+      ],
+      correctIndex: 1,
+      explanation: 'Singer points out the self-evident truth: if you can hear the thoughts in your head, you must be the subject experiencing them, not the thoughts themselves.',
+    },
+    tags: ['Mindfulness', 'Psychology', 'Spiritual Wisdom', 'Mental Freedom'],
+    likesCount: 4920,
+    audioScript: "There is nothing more important to true growth than realizing that you are not the voice of the mind—you are the one who hears it. Imagine if someone followed you around all day, constantly narrating every doubt, every insecurity, and every complaint. You would kick them out of your house. Why do you let that roommate run your life? Step back. Just observe.",
+  },
+
+  // 52. MICHAEL SINGER — The Untethered Soul (Releasing Samskaras)
+  {
+    id: 'reel-singer-relax-and-release',
+    title: 'Relax and Release: Unclogging the Heart',
+    subtitle: 'The Untethered Soul by Michael A. Singer',
+    category: 'psychology',
+    source: {
+      name: 'The Untethered Soul',
+      authorOrTopic: 'Michael A. Singer',
+      tag: 'Emotional Release',
+    },
+    coreIdea: 'When old emotional scars (samskaras) are triggered by events, our natural instinct is to tense up and push them down. Freedom requires the exact opposite: relax your chest, breathe, and let the energy pass through.',
+    quoteAuthor: 'Michael A. Singer',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Trigger Spike', text: 'Someone pushes an old emotional wound...', emphasis: 'The chest and stomach instantly clamp shut.' },
+      { phase: 1, stepLabel: 'The Instinctive Clench', text: 'Resisting or fighting traps the poison forever...', emphasis: 'Solidifying trauma in your energetic body.' },
+      { phase: 2, stepLabel: 'Relax and Release', text: 'Exhale, soften the heart, let it pass through...', emphasis: 'Pure liberation and permanent lightness.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'stimulus-response-gap',
+    conceptAnimationLabel: 'Heart Center Clench vs Open Relaxed Energy Flow',
+    takeaways: [
+      {
+        point: 'Soften the Center of Your Chest',
+        detail: 'The moment you feel offended or wounded, immediately soften your pectoral muscles, chest, and stomach. Do not clench.',
+        isActionable: true,
+      },
+      {
+        point: 'Do Not Touch the Thorn',
+        detail: 'If you have a thorn stuck in your arm, you can build a cage around it so nothing touches it, or you can pull it out. Pull the thorn out.',
+        isActionable: false,
+      },
+      {
+        point: 'Let Life Be the Catalyst',
+        detail: 'View irritating people not as enemies, but as sandpaper polishing away the stored blocks keeping you from inner freedom.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The Relax and Release Technique',
+      description: 'A physical practice of un-tensing the heart and solar plexus during emotional triggers to allow blocked emotional energy to discharge.',
+      formulaOrRule: 'Trigger Hits → Consciously Relax Chest & Belly → Breathe → Let Energy Dissipate',
+    },
+    immediateActionChallenge: 'Next time you feel a surge of annoyance or jealousy today, physically drop your shoulders and relax your heart center completely.',
+    quiz: {
+      question: 'What is the "thorn" analogy in The Untethered Soul?',
+      options: [
+        'A technique for planting rose bushes',
+        'A metaphor showing that avoiding emotional triggers is like building padding around a thorn in your flesh instead of just pulling it out',
+        'A financial penalty for defaulting on loans',
+        'A way to test physical reflexes',
+      ],
+      correctIndex: 1,
+      explanation: 'Most people spend their lives attempting to control the world so nothing touches their emotional wounds; Singer teaches that the only true cure is pulling out the thorn.',
+    },
+    tags: ['Emotional Health', 'Healing', 'Mindfulness', 'Psychology'],
+    likesCount: 4670,
+    audioScript: "The heart is like an open valve. When life pokes an old unresolved wound, what do you do? You clench your chest, hold your breath, and try to protect yourself. But clenching only traps the pain inside your system. The next time you feel that burning tightness of anger or jealousy, do the revolutionary thing: Relax your shoulders. Soften your heart. Let it pass through you.",
+  },
+
+  // 53. DAVID GOGGINS — Can't Hurt Me (The 40% Rule)
+  {
+    id: 'reel-goggins-40-percent-rule',
+    title: 'The 40% Rule: You Have More in the Tank',
+    subtitle: 'Can’t Hurt Me: Master Your Mind and Defy the Odds by David Goggins',
+    category: 'mindset',
+    source: {
+      name: 'Can’t Hurt Me',
+      authorOrTopic: 'David Goggins',
+      tag: 'Mental Toughness & Endurance',
+    },
+    coreIdea: 'When your brain tells you that you are completely exhausted, burned out, and cannot take another step, you are only at 40% of your true capability. The brain’s governor quits long before your body does.',
+    quoteAuthor: 'David Goggins',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Brain’s Governor', text: 'Pain flares and your mind screams to quit...', emphasis: 'A survival mechanism built for comfort.' },
+      { phase: 1, stepLabel: 'The 40% Threshold', text: 'Realize this wall is only 40% of your limit...', emphasis: 'You have 60% left in reserve!' },
+      { phase: 2, stepLabel: 'Callousing The Mind', text: 'Push three steps past the pain barrier...', emphasis: 'You break through into untapped greatness.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f43f5e',
+    visualConceptType: 'grit-equation',
+    conceptAnimationLabel: 'The 40% Reserve Governor vs 100% True Human Capacity',
+    takeaways: [
+      {
+        point: 'Recognize the Comfort Governor',
+        detail: 'Your brain is designed to keep you safe, warm, and fed. When it urges you to stop working or running, recognize it as a conservative governor.',
+        isActionable: false,
+      },
+      {
+        point: 'Just Five More Minutes',
+        detail: 'When studying or exercising and exhaustion hits, refuse to stop immediately. Push for exactly five more minutes or two more reps.',
+        isActionable: true,
+      },
+      {
+        point: 'Callous the Mind Through Friction',
+        detail: 'Just as hands develop callouses from lifting rough iron, the mind develops callouses by regularly doing things that are uncomfortable.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'The 40% Governor Model',
+      description: 'The human body\'s biological fail-safe mechanism that triggers intense psychological fatigue long before physical physiological failure.',
+      formulaOrRule: 'Mind Screaming "I Can\'t" = 40% of Capacity Reached. 60% Untapped Reserve Remains.',
+    },
+    immediateActionChallenge: 'During your workout or focus session today, when you feel like quitting, do exactly 3 more reps or 5 more minutes of focused work.',
+    quiz: {
+      question: 'What is the "40% Rule" popularized by Navy SEAL David Goggins?',
+      options: [
+        'You should save 40% of your income in gold',
+        'When your mind tells you that you are completely exhausted and finished, you have only reached about 40% of your actual capacity',
+        'You should sleep for 40% of every 24-hour cycle',
+        '40% of all decisions should be made randomly',
+      ],
+      correctIndex: 1,
+      explanation: 'Goggins drew from ultra-endurance racing and Navy SEAL training, proving that the human mind manufactures quit signals long before the physical organism fails.',
+    },
+    tags: ['Grit', 'Mental Toughness', 'Mindset', 'Discipline'],
+    likesCount: 5120,
+    audioScript: "The brain is the most powerful weapon in the world, but it has a built-in governor. It wants you to stay on the couch because comfort is safe. When your mind is screaming that you're done, that you can't run another mile or write another page, you're only at forty percent of your capacity. Take the governor off. You have so much more in you than you know.",
+  },
+
+  // 54. DAVID GOGGINS — Can't Hurt Me (The Cookie Jar)
+  {
+    id: 'reel-goggins-cookie-jar',
+    title: 'The Cookie Jar: Tapping Your Victory Vault',
+    subtitle: 'Can’t Hurt Me by David Goggins',
+    category: 'mindset',
+    source: {
+      name: 'Can’t Hurt Me',
+      authorOrTopic: 'David Goggins',
+      tag: 'Psychological Fuel',
+    },
+    coreIdea: 'The Cookie Jar is a mental archive of all the hard obstacles, suffering, and doubts you have conquered in your past. When despair hits, reach into the jar to remind yourself of who you are.',
+    quoteAuthor: 'David Goggins',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Abyss of Despair', text: 'Midway through Hell Week or life crisis...', emphasis: 'You forget your strength and feel small.' },
+      { phase: 1, stepLabel: 'The Cookie Jar Archive', text: 'Reach into your past and pull out a memory...', emphasis: 'That time you endured when all hope was lost.' },
+      { phase: 2, stepLabel: 'Dopamine of Defiance', text: 'Remind yourself what you survived...', emphasis: 'You tap an iron reserve of fierce resolve!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f59e0b',
+    visualConceptType: 'grit-equation',
+    conceptAnimationLabel: 'The Cookie Jar: Mining Past Trials for Present Resolve',
+    takeaways: [
+      {
+        point: 'Write Down Your Past Triumphs',
+        detail: 'List 10 times in your life where you overcame fear, heartbreak, injury, or poverty. These are your permanent cookies.',
+        isActionable: true,
+      },
+      {
+        point: 'Deploy in the Middle of the Storm',
+        detail: 'Do not wait for calm waters. When you are suffering in the trenches of a difficult project, pull out a cookie and savor the victory.',
+        isActionable: true,
+      },
+      {
+        point: 'The Power of Self-Evidence',
+        detail: 'Generic motivational quotes fail because you don\'t believe them. But your own past resilience is indisputable empirical proof.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Cookie Jar Heuristic',
+      description: 'Using visceral memories of personal triumph over adversity as an immediate cognitive countermeasure against present weakness.',
+      formulaOrRule: 'Present Weakness + Recall of Hard-Won Past Victory = Instant Adrenaline of Defiance',
+    },
+    immediateActionChallenge: 'Write down on an index card 3 of the toughest things you ever endured and conquered. Keep it in your wallet or on your phone.',
+    quiz: {
+      question: 'Why does Goggins consider the "Cookie Jar" more potent than external motivational speeches?',
+      options: [
+        'Because cookies contain high levels of refined sugar',
+        'Because external hype is superficial, but your own history of surviving hardship provides undeniable proof of what you are capable of',
+        'Because reading speeches takes too long during a marathon',
+        'Because only Navy SEALs have cookie jars',
+      ],
+      correctIndex: 1,
+      explanation: 'The Cookie Jar relies on your own undeniable lived evidence: you already proved you could survive suffering in the past, so you can survive the current storm.',
+    },
+    tags: ['Mindset', 'Resilience', 'Courage', 'Mental Toughness'],
+    likesCount: 4430,
+    audioScript: "The Cookie Jar is a reminder of who you truly are. We get caught in the present misery and forget everything we've overcome. When you feel defeated, reach into your mental cookie jar. Remember the times you got back up after being knocked out, the times you pushed through when everyone doubted you. Eat that cookie. Remind yourself what you're made of.",
+  },
+
+  // 55. STEVEN PRESSFIELD — The War of Art (Resistance)
+  {
+    id: 'reel-pressfield-resistance',
+    title: 'The Shadow of Resistance: The Anti-Creative Force',
+    subtitle: 'The War of Art: Break Through the Blocks and Win Your Inner Creative Battles by Steven Pressfield',
+    category: 'mindset',
+    source: {
+      name: 'The War of Art',
+      authorOrTopic: 'Steven Pressfield',
+      tag: 'Creative Psychology',
+    },
+    coreIdea: 'Most of us have two lives: the life we live, and the unlived life within us. Between the two stands Resistance—an invisible, universal, merciless force whose sole aim is to prevent you from doing your sacred work.',
+    quoteAuthor: 'Steven Pressfield',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Sacred Call', text: 'You resolve to write, build, or start a business...', emphasis: 'A vision of higher purpose stirs.' },
+      { phase: 1, stepLabel: 'The Counter-Attack', text: 'Resistance manifests as procrastination, fear, drama...', emphasis: 'A shape-shifting inner saboteur.' },
+      { phase: 2, stepLabel: 'The Rule of Resistance', text: 'The more resistance you feel...', emphasis: 'The more vital that work is to your soul!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#f43f5e',
+    visualConceptType: 'stimulus-response-gap',
+    conceptAnimationLabel: 'Creative Soul Impulse vs Gravitational Pull of Resistance',
+    takeaways: [
+      {
+        point: 'Resistance As a Compass',
+        detail: 'The more important a call or action is to your spiritual evolution, the more Resistance you will feel toward it. Use fear as a compass.',
+        isActionable: true,
+      },
+      {
+        point: 'Resistance Loves Rationalization',
+        detail: 'Resistance never says "I will never write this book." It whispers seductively: "You will write this book, but just wait until next Monday."',
+        isActionable: false,
+      },
+      {
+        point: 'Resistance Feeds on Drama',
+        detail: 'Creating interpersonal drama, picking fights, or inventing crises are common disguises Resistance uses to distract you from the canvas.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Pressfield’s Law of Resistance',
+      description: 'Understanding that creative procrastination is not personal weakness, but a universal repelling force inversely proportional to the importance of the art.',
+      formulaOrRule: 'Intensity of Resistance = Direct Indicator of Sacred Importance',
+    },
+    immediateActionChallenge: 'What is the project you are most afraid of starting right now? Sit down and work on it for just 15 uninterrupted minutes today.',
+    quiz: {
+      question: 'According to Steven Pressfield, what does experiencing extreme resistance toward a creative project signal?',
+      options: [
+        'That you possess no talent and should abandon it immediately',
+        'That the project is profoundly vital to the evolution of your soul and calling',
+        'That the market is over-saturated with competitors',
+        'That you need to buy a faster computer',
+      ],
+      correctIndex: 1,
+      explanation: 'Pressfield teaches: "Rule of thumb: The more important a call or action is to our soul’s evolution, the more Resistance we will feel toward pursuing it."',
+    },
+    tags: ['Creativity', 'Resistance', 'Mindset', 'Procrastination'],
+    likesCount: 4790,
+    audioScript: "Resistance cannot be reasoned with. It is an engine of destruction, fueled by fear. It doesn't want you to fail; it wants you to never begin. If you're wondering why sitting down to write your book or start your company feels so terrifying, listen closely: That terror is your compass. The more resistance you feel, the more important that work is to your life.",
+  },
+
+  // 56. STEVEN PRESSFIELD — The War of Art (Turning Pro)
+  {
+    id: 'reel-pressfield-turning-pro',
+    title: 'Turning Pro: The Shift from Amateur to Professional',
+    subtitle: 'The War of Art by Steven Pressfield',
+    category: 'habits',
+    source: {
+      name: 'The War of Art',
+      authorOrTopic: 'Steven Pressfield',
+      tag: 'Discipline & Craft',
+    },
+    coreIdea: 'The amateur plays for fun; the professional plays for keeps. The amateur waits for inspiration; the pro punches the clock every single morning regardless of mood, rain, or hangover.',
+    quoteAuthor: 'Steven Pressfield',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Amateur’s Illusion', text: 'Waiting for the magical muse to strike...', emphasis: 'Working only when inspiration visits.' },
+      { phase: 1, stepLabel: 'The Pro’s Schedule', text: 'Sitting in the chair at 8:00 AM every day...', emphasis: 'Rain or shine, inspired or depressed.' },
+      { phase: 2, stepLabel: 'The Muse Surrenders', text: 'The muse respects the professional’s routine...', emphasis: 'Inspiration arrives because you showed up!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'habit-loop',
+    conceptAnimationLabel: 'Amateur Whim vs Professional Clockwork Commitment',
+    takeaways: [
+      {
+        point: 'Show Up Every Single Day',
+        detail: 'Somerset Maugham said: "I write only when inspiration strikes. Fortunately it strikes every morning at nine o\'clock sharp."',
+        isActionable: true,
+      },
+      {
+        point: 'Do Not Over-Identify with the Work',
+        detail: 'The amateur takes criticism personally and collapses. The pro views their work with detached craftsmanship and accepts feedback coldly.',
+        isActionable: true,
+      },
+      {
+        point: 'No Excuses Policy',
+        detail: 'You show up for your day job even when tired. Apply that same ruthless standard to your personal creative masterpieces.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Professional Shift',
+      description: 'Transforming creative output from an emotional hobby into a disciplined, clockwork vocational commitment.',
+      formulaOrRule: 'Amateur: Mood Dictates Action. Professional: Routine Dictates Output.',
+    },
+    immediateActionChallenge: 'Pick a specific 60-minute window for tomorrow. Commit to sitting in the chair and working on your craft with zero phone access.',
+    quiz: {
+      question: 'What is the fundamental difference between an amateur and a professional according to Pressfield?',
+      options: [
+        'The professional has a university degree in the subject',
+        'The amateur works only when they feel inspired; the professional shows up every single day regardless of how they feel',
+        'The professional earns more than one million dollars',
+        'The amateur never reads books',
+      ],
+      correctIndex: 1,
+      explanation: 'The amateur believes they must first feel like doing the work; the professional knows that doing the work is what generates the feeling.',
+    },
+    tags: ['Discipline', 'Craftsmanship', 'Productivity', 'Habits'],
+    likesCount: 4220,
+    audioScript: "The amateur plays for fun. The professional plays for keeps. The amateur thinks inspiration comes first, so they wait on the couch for the lightning bolt. The pro sits down at the desk every single morning at the same hour, whether they feel like a genius or an idiot. When you show up like a professional, the muse shows up to meet you.",
+  },
+
+  // 57. TIM FERRISS — The 4-Hour Workweek (Fear Setting)
+  {
+    id: 'reel-ferriss-fear-setting',
+    title: 'Fear Setting: Conquering the Paralysis of the Unknown',
+    subtitle: 'The 4-Hour Workweek & TED by Tim Ferriss',
+    category: 'mindset',
+    source: {
+      name: 'The 4-Hour Workweek',
+      authorOrTopic: 'Tim Ferriss',
+      tag: 'Stoic Practicality',
+    },
+    coreIdea: 'What we fear doing most is usually what we most need to do. Instead of goal setting, practice Fear Setting: Define your nightmare scenarios, plan how to prevent them, and map how you would repair them.',
+    quoteAuthor: 'Tim Ferriss',
+    quotePhases: [
+      { phase: 0, stepLabel: 'Vague Terrifying Fog', text: 'Nebulous fear of starting a business or quitting...', emphasis: 'An undefined nightmare paralyzes action.' },
+      { phase: 1, stepLabel: 'Define, Prevent, Repair', text: 'Write down the exact worst-case outcome in detail...', emphasis: 'Notice how survivable and reversible it is.' },
+      { phase: 2, stepLabel: 'The Cost of Inaction', text: 'Measure the devastating cost of staying the same...', emphasis: 'Inaction is the true catastrophic risk!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#ec4899',
+    visualConceptType: 'dichotomy-of-control',
+    conceptAnimationLabel: 'Fear Setting: Define, Prevent, Repair, Cost of Inaction',
+    takeaways: [
+      {
+        point: 'Define the Absolute Worst Case',
+        detail: 'On a 1-to-10 scale of permanent damage, what would the worst-case scenario actually be? Usually it is a temporary 3 or 4.',
+        isActionable: true,
+      },
+      {
+        point: 'Map the Repair Strategy',
+        detail: 'If the worst happened, how would you recover? (Move into a friend\'s guest room, take a temp job, drive Uber). Realizing you will survive breeds bravery.',
+        isActionable: true,
+      },
+      {
+        point: 'Calculate the Cost of Inaction (3, 6, 36 Months)',
+        detail: 'If you stay in your comfortable misery for 3 more years, what will your emotional health, self-esteem, and finances look like?',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'Ferriss’s Fear-Setting Matrix',
+      description: 'A modern Stoic exercise (Premeditatio Malorum) that dispels anxiety by dissecting worst-case scenarios into granular, manageable steps.',
+      formulaOrRule: 'Worst-Case Defined + Prevention Plan + Repair Strategy = Fear Dissolved',
+    },
+    immediateActionChallenge: 'Take 10 minutes to write down the #1 decision you are avoiding. Write down: "What is the absolute worst thing that could happen if I do this?"',
+    quiz: {
+      question: 'Why does Tim Ferriss argue that Fear Setting is more vital than Goal Setting?',
+      options: [
+        'Goals are completely useless in the 21st century',
+        'Vague, unarticulated fears prevent us from ever pursuing our goals; clarifying our nightmares reveals that they are almost always reversible and survivable',
+        'Because fear releases endorphins that burn body fat',
+        'Because goals attract bad luck from the universe',
+      ],
+      correctIndex: 1,
+      explanation: 'Our anxieties thrive in ambiguity. When we define worst-case scenarios on paper, we realize the downside is temporary and easily repaired, while inaction carries guaranteed regret.',
+    },
+    tags: ['Mindset', 'Stoicism', 'Courage', 'Decision Making'],
+    likesCount: 4680,
+    audioScript: "What we fear doing most is usually what we most need to do. Most people stay stuck because they have a vague, foggy fear of catastrophic failure. Shine a flashlight into the dark. Write down the exact worst-case scenario. How would you prevent it? If it happened, how would you repair it? When you see your fears on paper, they lose their fangs.",
+  },
+
+  // 58. TIM FERRISS — The 4-Hour Workweek (Parkinson's Law)
+  {
+    id: 'reel-ferriss-parkinsons-law',
+    title: 'Parkinson’s Law: Shrink the Deadline',
+    subtitle: 'The 4-Hour Workweek by Tim Ferriss & C. Northcote Parkinson',
+    category: 'productivity',
+    source: {
+      name: 'The 4-Hour Workweek',
+      authorOrTopic: 'Tim Ferriss',
+      tag: 'Time Compression',
+    },
+    coreIdea: 'Work expands to fill the time available for its completion. If you give yourself eight hours to complete a task, it will take eight hours of agony. If you give yourself two hours, you will finish in two hours.',
+    quoteAuthor: 'Tim Ferriss',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The 8-Hour Vacuum', text: 'A full day allotted for a simple slide deck...', emphasis: 'Endless tweaking, social checks, and bloat.' },
+      { phase: 1, stepLabel: 'Artificial Scarcity', text: 'Give yourself an aggressive 90-minute deadline...', emphasis: 'Irrelevant minutiae gets burned away!' },
+      { phase: 2, stepLabel: 'Surgical Efficiency', text: 'Attention locks onto the vital core...', emphasis: 'Extraordinary speed and pristine clarity.' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#06b6d4',
+    visualConceptType: 'deep-work-funnel',
+    conceptAnimationLabel: 'Parkinson’s Deadline Compression vs Diluted Work Drift',
+    takeaways: [
+      {
+        point: 'Pair Parkinson’s with Pareto',
+        detail: 'Identify the 20% vital tasks, then give yourself only half the time you think you need to execute them.',
+        isActionable: true,
+      },
+      {
+        point: 'The Before-Vacation Miracle',
+        detail: 'Ever notice how you accomplish three weeks of work the day before leaving for vacation? That is Parkinson’s Law in action.',
+        isActionable: false,
+      },
+      {
+        point: 'Shorten Meeting Times by 50%',
+        detail: 'Never schedule a default 60-minute meeting. Cut all meetings to 20 minutes with a hard stop.',
+        isActionable: true,
+      },
+    ],
+    mentalModel: {
+      name: 'Parkinson’s Law',
+      description: 'The adage that the perceived complexity and duration of a task expands proportionally to the time allocated to its execution.',
+      formulaOrRule: 'Time Allocated ↓ = Trivial Distraction Burned Away + Focus Density ↑',
+    },
+    immediateActionChallenge: 'Take a project scheduled for the end of the day. Set a hard timer on your phone for 90 minutes and sprint to finish it.',
+    quiz: {
+      question: 'What is Parkinson’s Law as applied to personal productivity?',
+      options: [
+        'Employees always steal company pens',
+        'Work expands so as to fill the time available for its completion',
+        'Hardware prices drop by 50% every eighteen months',
+        'People always arrive 15 minutes late to meetings',
+      ],
+      correctIndex: 1,
+      explanation: 'Coined by C. Northcote Parkinson in 1955, this principle proves that generous deadlines generate fluff and procrastination; tight constraints create razor-sharp focus.',
+    },
+    tags: ['Productivity', 'Time Management', 'Efficiency', 'Focus'],
+    likesCount: 4150,
+    audioScript: "Work expands to fill the time allotted for its completion. Give yourself an entire week to finish a report, and you'll spend six days agonizing, researching irrelevant details, and procrastinating. Give yourself two hours before a flight, and you'll produce something sharp and effective. Want more time in your day? Cut your deadlines in half.",
+  },
+
+  // 59. ADAM GRANT — Think Again (The Rethinking Cycle)
+  {
+    id: 'reel-grant-think-again',
+    title: 'The Rethinking Cycle: The Joy of Being Wrong',
+    subtitle: 'Think Again: The Power of Knowing What You Don’t Know by Adam Grant',
+    category: 'mindset',
+    source: {
+      name: 'Think Again',
+      authorOrTopic: 'Adam Grant, PhD',
+      tag: 'Intellectual Humility',
+    },
+    coreIdea: 'Progress requires unlearning as much as learning. We too often think like Preachers (defending beliefs), Prosecutors (attacking others), or Politicians (campaigning for approval). We need to think like Scientists.',
+    quoteAuthor: 'Adam Grant',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Preacher & Prosecutor', text: 'Preaching our dogma and prosecuting dissenters...', emphasis: 'Clinging to certainty like a life raft.' },
+      { phase: 1, stepLabel: 'The Scientist’s Mindset', text: 'Treating beliefs as hypotheses to test...', emphasis: 'Looking eagerly for data that disproves you.' },
+      { phase: 2, stepLabel: 'Joy of Discovery', text: 'Realizing you were wrong means...', emphasis: 'You are less wrong today than you were yesterday!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#10b981',
+    visualConceptType: 'growth-mindset',
+    conceptAnimationLabel: 'Dogmatic Preacher Trap vs Inquisitive Scientist Rethinking Loop',
+    takeaways: [
+      {
+        point: 'Don\'t Let Your Views Become Your Identity',
+        detail: 'Define yourself by values (curiosity, integrity, generosity) rather than rigid opinions. If your views are your identity, changing them feels like death.',
+        isActionable: true,
+      },
+      {
+        point: 'Embrace the Thrill of Being Wrong',
+        detail: 'When proven wrong, say: "Fantastic, I just discovered something new!" It instantly replaces shame with curiosity.',
+        isActionable: true,
+      },
+      {
+        point: 'Beware the Dunning-Kruger Peak',
+        detail: 'A little knowledge leads to arrogant overconfidence. True masters possess confident humility: faith in their capacity to learn, but humility about what they know.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Rethinking Cycle',
+      description: 'An intellectual operating loop: Humility → Doubt → Curiosity → Discovery of New Realities.',
+      formulaOrRule: 'Identity = Values & Curiosity (NOT Fixed Dogmatic Opinions)',
+    },
+    immediateActionChallenge: 'Think of one topic you had a strong opinion on 3 years ago that you have changed your mind about. Acknowledge your growth.',
+    quiz: {
+      question: 'In Adam Grant’s framework, what are the three cognitive mindsets people default to instead of being a Scientist?',
+      options: [
+        'Warrior, Mage, and Rogue',
+        'Preacher, Prosecutor, and Politician',
+        'Optimist, Pessimist, and Realist',
+        'CEO, CFO, and CMO',
+      ],
+      correctIndex: 1,
+      explanation: 'We preach when our beliefs are jeopardized, prosecute when we spot flaws in others, and play politician when seeking approval; we must adopt the scientist mindset instead.',
+    },
+    tags: ['Mindset', 'Psychology', 'Learning', 'Humility'],
+    likesCount: 4360,
+    audioScript: "If knowledge is power, knowing what we don't know is wisdom. Most people spend their lives preaching their opinions or prosecuting anyone who disagrees. But the greatest thinkers operate like scientists: Every belief is just a hypothesis waiting to be tested. When someone proves you wrong, don't get defensive. Smile and say: Wow, I'm less wrong than I was five minutes ago.",
+  },
+
+  // 60. ADAM GRANT — Give and Take (Sustainable Generosity)
+  {
+    id: 'reel-grant-give-and-take',
+    title: 'Givers, Takers, & Matchers: How Generosity Wins',
+    subtitle: 'Give and Take: Why Helping Others Drives Our Success by Adam Grant',
+    category: 'communication',
+    source: {
+      name: 'Give and Take',
+      authorOrTopic: 'Adam Grant, PhD',
+      tag: 'Organizational Psychology',
+    },
+    coreIdea: 'In professional networks, Takers take all they can, Matchers trade tit-for-tat, and Givers give without calculating. Givers occupy both the bottom of success (doormats) AND the very top of the ladder.',
+    quoteAuthor: 'Adam Grant',
+    quotePhases: [
+      { phase: 0, stepLabel: 'The Taker Trap', text: 'Takers kiss up and kick down...', emphasis: 'Leaving a trail of burnt bridges.' },
+      { phase: 1, stepLabel: 'Selfless vs Otherish', text: 'Selfless givers burn out as martyrs...', emphasis: 'Otherish givers give generously while guarding boundaries.' },
+      { phase: 2, stepLabel: 'The Top of the Ladder', text: 'Otherish givers win exponentially...', emphasis: 'Because everyone actively wants them to succeed!' },
+    ],
+    estimatedReadSeconds: 30,
+    accentColor: '#ec4899',
+    visualConceptType: 'tactical-empathy',
+    conceptAnimationLabel: 'Taker Burnout vs Sustainable Otherish Giver Flywheel',
+    takeaways: [
+      {
+        point: 'Be "Otherish," Not a Selfless Doormat',
+        detail: 'Successful givers don\'t say yes to everyone. They have high concern for others AND high ambition for themselves, setting clear boundaries.',
+        isActionable: true,
+      },
+      {
+        point: 'The 5-Minute Favor Rule',
+        detail: 'Do favors that take less than five minutes: an introduction, a LinkedIn endorsement, a quick piece of feedback. High impact, low personal cost.',
+        isActionable: true,
+      },
+      {
+        point: 'Weed Out the Takers',
+        detail: 'A single toxic Taker poisons an entire company culture faster than three Givers can heal it. Protect your team from Takers.',
+        isActionable: false,
+      },
+    ],
+    mentalModel: {
+      name: 'The Otherish Giver Matrix',
+      description: 'Generosity balanced with self-advocacy that creates compounding social reciprocity networks without leading to personal burnout.',
+      formulaOrRule: 'High Care for Others + High Care for Self = The Most Successful Humans on Earth',
+    },
+    immediateActionChallenge: 'Perform one "5-minute favor" today: introduce two people who could help each other, or write an unsolicited recommendation.',
+    quiz: {
+      question: 'According to Adam Grant’s research, who occupies the very top of performance metrics in engineering, medicine, and sales?',
+      options: [
+        'Ruthless Takers who exploit others',
+        'Strict Matchers who calculate exact trades',
+        'Otherish Givers who give generously while maintaining clear personal boundaries',
+        'People who refuse to talk to anyone',
+      ],
+      correctIndex: 2,
+      explanation: 'While selfless givers sink to the bottom, "otherish" givers reach the absolute top because their success creates value for everyone around them, creating a massive supportive network.',
+    },
+    tags: ['Leadership', 'Networking', 'Success', 'Psychology'],
+    likesCount: 3990,
+    audioScript: "We're taught that nice guys finish last. And in fact, research shows that selfless givers who say yes to everything do end up at the bottom of the ladder. But guess who is at the very top of the ladder? Givers. The difference is being 'otherish'—giving generously through five-minute favors while setting firm boundaries against takers. Generosity compounds.",
+  },
+];
