@@ -85,7 +85,7 @@ export const DesktopCompanionDeck: React.FC<DesktopCompanionDeckProps> = ({
     <aside
       id="desktop-companion-deck"
       aria-label="Reel Deep Dive Companion"
-      className="hidden lg:flex flex-col w-[380px] xl:w-[440px] h-[calc(100dvh-6rem)] max-h-[820px] min-h-[520px] glass-panel bg-neutral-950/70 rounded-3xl border border-white/15 shadow-2xl overflow-hidden transition-all duration-300"
+      className="hidden lg:flex flex-col w-[380px] xl:w-[440px] h-[calc(100dvh-4.2rem)] max-h-[940px] min-h-[520px] glass-panel bg-neutral-950/70 rounded-3xl border border-white/15 shadow-2xl overflow-hidden transition-all duration-300"
     >
       {/* Top Header */}
       <div className="p-4 sm:p-4.5 border-b border-white/10 shrink-0 bg-neutral-950/50">

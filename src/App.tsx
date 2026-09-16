@@ -13,10 +13,40 @@ import { DesktopCompanionDeck } from './components/DesktopCompanionDeck';
 import { useSpeech } from './utils/useSpeech';
 import { focusMusic } from './utils/focusMusicEngine';
 import { ChevronUp, ChevronDown, Sparkles } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 const STORAGE_KEY_USER_DATA = 'fehem_reels_user_data_v1';
 const STORAGE_KEY_CUSTOM_REELS = 'fehem_reels_custom_v1';
 const STORAGE_KEY_USER_PROFILE = 'fehem_reels_google_profile_v1';
+
+// Vertical scroll animation variants (Instagram Reels Clone)
+const reelVariants = {
+  enter: (direction: number) => ({
+    y: direction > 0 ? '100%' : '-100%',
+    opacity: 0.85,
+    scale: 0.97,
+  }),
+  center: {
+    y: 0,
+    opacity: 1,
+    scale: 1,
+    transition: {
+      y: { type: 'spring', stiffness: 350, damping: 32, mass: 0.8 },
+      opacity: { duration: 0.2 },
+      scale: { duration: 0.22 },
+    },
+  },
+  exit: (direction: number) => ({
+    y: direction > 0 ? '-100%' : '100%',
+    opacity: 0.4,
+    scale: 0.95,
+    transition: {
+      y: { type: 'spring', stiffness: 350, damping: 32, mass: 0.8 },
+      opacity: { duration: 0.18 },
+      scale: { duration: 0.22 },
+    },
+  }),
+};
 
 export default function App() {
   // All Reels state (Curated + User Generated)
@@ -105,34 +135,6 @@ export default function App() {
     return false;
   });
 
-  // Touch swipe support for mobile devices
-  const touchStartYRef = useRef<number | null>(null);
-  const touchStartXRef = useRef<number | null>(null);
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartYRef.current = e.touches[0].clientY;
-    touchStartXRef.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartYRef.current === null) return;
-    const deltaY = touchStartYRef.current - e.changedTouches[0].clientY;
-    const deltaX = (touchStartXRef.current || 0) - e.changedTouches[0].clientX;
-
-    // Minimum swipe threshold of 45px, prioritizing vertical swipe
-    if (Math.abs(deltaY) > 45 && Math.abs(deltaY) > Math.abs(deltaX) * 1.2) {
-      if (deltaY > 0) {
-        // Swiped UP -> Next reel
-        handleNext();
-      } else {
-        // Swiped DOWN -> Previous reel
-        handlePrev();
-      }
-    }
-    touchStartYRef.current = null;
-    touchStartXRef.current = null;
-  };
-
   // Speech narration
   const speech = useSpeech();
 
@@ -203,9 +205,13 @@ export default function App() {
 
   const currentReel = filteredReels[currentIndex] || filteredReels[0];
 
+  // Scroll transition direction: 1 = next (slide up), -1 = prev (slide down)
+  const [scrollDirection, setScrollDirection] = useState<number>(1);
+
   // Navigation Handlers
   const handleNext = useCallback(() => {
     if (currentIndex < filteredReels.length - 1) {
+      setScrollDirection(1);
       setCurrentIndex((prev) => prev + 1);
       speech.stop();
       setAutoPlayProgress(0);
@@ -214,11 +220,32 @@ export default function App() {
 
   const handlePrev = useCallback(() => {
     if (currentIndex > 0) {
+      setScrollDirection(-1);
       setCurrentIndex((prev) => prev - 1);
       speech.stop();
       setAutoPlayProgress(0);
     }
   }, [currentIndex, speech]);
+
+  // Handle interactive vertical drag gestures (Instagram Reels drag flick)
+  const handleDragEnd = (
+    _event: MouseEvent | TouchEvent | PointerEvent,
+    info: { offset: { x: number; y: number }; velocity: { x: number; y: number } }
+  ) => {
+    const { offset, velocity } = info;
+    const swipeThreshold = 45;
+    const velocityThreshold = 220;
+
+    if (offset.y < -swipeThreshold || velocity.y < -velocityThreshold) {
+      if (currentIndex < filteredReels.length - 1) {
+        handleNext();
+      }
+    } else if (offset.y > swipeThreshold || velocity.y > velocityThreshold) {
+      if (currentIndex > 0) {
+        handlePrev();
+      }
+    }
+  };
 
   // Toggle Focus Background Music
   const handleToggleMusic = () => {
@@ -383,6 +410,7 @@ export default function App() {
     setCurrentCategory('all');
     const targetIdx = allReels.findIndex((r) => r.id === reelId);
     if (targetIdx !== -1) {
+      setScrollDirection(targetIdx >= currentIndex ? 1 : -1);
       setCurrentIndex(targetIdx);
       speech.stop();
       setAutoPlayProgress(0);
@@ -403,6 +431,7 @@ export default function App() {
       <HeaderNav
         currentCategory={currentCategory}
         onSelectCategory={(cat) => {
+          setScrollDirection(1);
           setCurrentCategory(cat);
           setCurrentIndex(0);
           speech.stop();
@@ -423,12 +452,8 @@ export default function App() {
       />
 
       {/* Center Reel Canvas & Desktop Studio Deck */}
-      <main className="flex-1 w-full max-w-6xl mx-auto flex items-center justify-center px-2 sm:px-4 py-1 sm:py-2 overflow-hidden relative">
-        <div
-          className="w-full flex items-center justify-center h-full relative"
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
+      <main className="flex-1 w-full max-w-7xl mx-auto flex items-center justify-center p-0 sm:px-4 sm:py-2 overflow-hidden relative h-[100dvh] sm:h-auto">
+        <div className="w-full flex items-center justify-center h-full relative">
           {filteredReels.length === 0 ? (
             <div className="p-8 rounded-3xl glass-panel text-center max-w-sm space-y-3">
               <Sparkles className="w-8 h-8 text-rose-400 mx-auto" />
@@ -442,41 +467,65 @@ export default function App() {
             </div>
           ) : (
             currentReel && (
-              <div className="relative flex items-center justify-center w-full max-w-full">
-                {/* Center Instagram Reel Card */}
-                <ReelCard
-                  reel={currentReel}
-                  index={currentIndex}
-                  totalReels={filteredReels.length}
-                  isLiked={userData.likedIds.includes(currentReel.id)}
-                  isBookmarked={userData.bookmarkedIds.includes(currentReel.id)}
-                  completedActionKeys={userData.completedActionIds}
-                  quizState={userData.completedQuizzes[currentReel.id]}
-                  onToggleLike={handleToggleLike}
-                  onToggleBookmark={handleToggleBookmark}
-                  onToggleActionItem={handleToggleActionItem}
-                  onAnswerQuiz={handleAnswerQuiz}
-                  onNext={handleNext}
-                  onPrev={handlePrev}
-                  isMusicPlaying={isMusicPlaying}
-                  onToggleMusic={handleToggleMusic}
-                  onShuffleMusic={handleShuffleMusic}
-                  onOpenMusicSelector={() => setIsMusicSelectorOpen(true)}
-                  musicTrackName={musicTrackName}
-                  isSpeechPlaying={speech.isPlaying}
-                  speechRate={speech.rate}
-                  onToggleSpeech={(text) => {
-                    if (speech.isPlaying) {
-                      speech.stop();
-                    } else {
-                      speech.speak(text);
-                    }
-                  }}
-                  onChangeSpeechRate={speech.toggleRate}
-                  isAutoPlay={isAutoPlay}
-                  autoPlayProgress={autoPlayProgress}
-                  onOpenShareModal={(reel) => setSharingReel(reel)}
-                />
+              <div className="relative flex items-center justify-center w-full h-full sm:h-auto max-w-full">
+                {/* Reels Stage with Vertical Slide Animation & Drag Gestures */}
+                <div
+                  className={`relative w-full h-full sm:h-[calc(100dvh-4.2rem)] sm:max-h-[940px] flex items-center justify-center overflow-hidden transition-all duration-300 ${
+                    isDesktopStudioMode
+                      ? 'sm:max-w-[480px] md:max-w-[500px] lg:max-w-[520px] xl:max-w-[540px]'
+                      : 'sm:max-w-[520px] md:max-w-[580px] lg:max-w-[640px] xl:max-w-[680px]'
+                  }`}
+                >
+                  <AnimatePresence custom={scrollDirection} initial={false} mode="popLayout">
+                    <motion.div
+                      key={currentReel.id}
+                      custom={scrollDirection}
+                      variants={reelVariants}
+                      initial="enter"
+                      animate="center"
+                      exit="exit"
+                      drag="y"
+                      dragConstraints={{ top: 0, bottom: 0 }}
+                      dragElastic={0.25}
+                      onDragEnd={handleDragEnd}
+                      className="w-full h-full absolute inset-0 flex items-center justify-center cursor-grab active:cursor-grabbing touch-pan-y select-none"
+                    >
+                      <ReelCard
+                        reel={currentReel}
+                        index={currentIndex}
+                        totalReels={filteredReels.length}
+                        isLiked={userData.likedIds.includes(currentReel.id)}
+                        isBookmarked={userData.bookmarkedIds.includes(currentReel.id)}
+                        completedActionKeys={userData.completedActionIds}
+                        quizState={userData.completedQuizzes[currentReel.id]}
+                        onToggleLike={handleToggleLike}
+                        onToggleBookmark={handleToggleBookmark}
+                        onToggleActionItem={handleToggleActionItem}
+                        onAnswerQuiz={handleAnswerQuiz}
+                        onNext={handleNext}
+                        onPrev={handlePrev}
+                        isMusicPlaying={isMusicPlaying}
+                        onToggleMusic={handleToggleMusic}
+                        onShuffleMusic={handleShuffleMusic}
+                        onOpenMusicSelector={() => setIsMusicSelectorOpen(true)}
+                        musicTrackName={musicTrackName}
+                        isSpeechPlaying={speech.isPlaying}
+                        speechRate={speech.rate}
+                        onToggleSpeech={(text) => {
+                          if (speech.isPlaying) {
+                            speech.stop();
+                          } else {
+                            speech.speak(text);
+                          }
+                        }}
+                        onChangeSpeechRate={speech.toggleRate}
+                        isAutoPlay={isAutoPlay}
+                        autoPlayProgress={autoPlayProgress}
+                        onOpenShareModal={(reel) => setSharingReel(reel)}
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
 
                 {/* Minimal desktop navigation buttons on right */}
                 <div className="hidden md:flex flex-col items-center space-y-2 ml-3 xl:ml-4 shrink-0">

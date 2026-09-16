@@ -241,7 +241,7 @@ export const ReelCard: React.FC<ReelCardProps> = ({
     <div
       id={`reel-card-${reel.id}`}
       onClick={handleCardTap}
-      className="relative w-full max-w-full sm:max-w-[420px] md:max-w-[440px] h-[calc(100dvh-5.5rem)] max-h-[820px] min-h-[500px] glass-panel rounded-2xl sm:rounded-[36px] overflow-hidden flex flex-col justify-between select-none shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85)] border border-white/15 transition-all"
+      className="relative w-full h-full glass-panel rounded-none sm:rounded-[32px] overflow-hidden flex flex-col justify-between select-none shadow-none sm:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85)] border-0 sm:border sm:border-white/15 transition-all"
     >
       {/* Dynamic atmospheric background glow */}
       <div
@@ -258,7 +258,7 @@ export const ReelCard: React.FC<ReelCardProps> = ({
       )}
 
       {/* TOP: Segmented Story / Reel Progress Bar */}
-      <div className="relative z-20 px-4 pt-3.5 pb-2">
+      <div className="relative z-20 px-4 pt-14 sm:pt-3.5 pb-2">
         <div className="flex items-center space-x-1.5 w-full">
           {Array.from({ length: Math.min(totalReels, 8) }).map((_, barIdx) => {
             const isCurrent = barIdx === index % 8;
@@ -354,16 +354,16 @@ export const ReelCard: React.FC<ReelCardProps> = ({
       </div>
 
       {/* CENTER: Main Instagram Visual Reel Content with Safe Margins from Floating Action Column */}
-      <div className="relative z-10 flex-1 pl-3 sm:pl-5 pr-13 sm:pr-16 flex flex-col justify-center items-center text-center my-auto w-full py-1 overflow-hidden">
+      <div className="relative z-10 flex-1 px-4 sm:px-6 md:px-8 pr-14 sm:pr-18 md:pr-20 flex flex-col justify-center items-center text-center my-auto w-full py-2 overflow-hidden">
         {/* View Mode Toggle Switch (When Animation is Available) OR Pure Quote Reflection Badge */}
         {hasAnimation ? (
-          <div className="flex items-center space-x-1.5 p-1 rounded-full glass-pill border border-white/15 mb-2 shadow-sm">
+          <div className="flex items-center space-x-1.5 p-1 rounded-full glass-pill border border-white/15 mb-2.5 shadow-sm">
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 setViewMode('visual');
               }}
-              className={`flex items-center space-x-1 px-2.5 py-0.8 rounded-full text-[10px] font-bold transition-all ${
+              className={`flex items-center space-x-1 px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all ${
                 viewMode === 'visual'
                   ? 'bg-white text-neutral-950 shadow-md'
                   : 'text-white/60 hover:text-white'
@@ -377,7 +377,7 @@ export const ReelCard: React.FC<ReelCardProps> = ({
                 e.stopPropagation();
                 setViewMode('quote');
               }}
-              className={`flex items-center space-x-1 px-2.5 py-0.8 rounded-full text-[10px] font-bold transition-all ${
+              className={`flex items-center space-x-1 px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all ${
                 viewMode === 'quote'
                   ? 'bg-white text-neutral-950 shadow-md'
                   : 'text-white/60 hover:text-white'
@@ -388,19 +388,19 @@ export const ReelCard: React.FC<ReelCardProps> = ({
             </button>
           </div>
         ) : (
-          <div className="flex items-center space-x-1.5 px-3 py-1 rounded-full glass-pill border border-white/15 mb-2 shadow-sm text-[10px] font-bold text-white/80">
+          <div className="flex items-center space-x-1.5 px-3.5 py-1 rounded-full glass-pill border border-white/15 mb-2.5 shadow-sm text-[10px] sm:text-[11px] font-bold text-white/80">
             <Quote className="w-3 h-3 text-amber-400" />
             <span>{reel.category === 'islamic' ? 'Hadith Wisdom' : 'Quote Reflection'}</span>
           </div>
         )}
 
         {/* Title */}
-        <h2 className="text-base sm:text-lg font-extrabold text-white tracking-tight leading-snug drop-shadow-md mb-0.5 max-w-xs">
+        <h2 className="text-lg sm:text-xl md:text-2xl font-extrabold text-white tracking-tight leading-snug drop-shadow-md mb-1 max-w-md sm:max-w-lg md:max-w-xl">
           {reel.title}
         </h2>
 
         {/* Subtitle / Book Attribution */}
-        <p className="text-[11px] text-white/70 font-medium max-w-xs mb-2 truncate">
+        <p className="text-xs sm:text-sm text-white/75 font-medium max-w-md sm:max-w-lg md:max-w-xl mb-3 truncate">
           {reel.subtitle}
         </p>
 
@@ -422,23 +422,23 @@ export const ReelCard: React.FC<ReelCardProps> = ({
               narrator={reel.narrator}
             />
           ) : (
-            <div className="w-full glass-pill p-4 rounded-2xl text-left border border-white/20 relative overflow-hidden shadow-xl backdrop-blur-xl">
+            <div className="w-full glass-pill p-4 sm:p-5 md:p-6 rounded-2xl text-left border border-white/20 relative overflow-hidden shadow-xl backdrop-blur-xl">
               <div className="absolute top-0 left-0 bottom-0 w-1 bg-gradient-to-b from-amber-400 via-rose-500 to-purple-500" />
-              <div className="flex items-start space-x-2.5 pl-1.5">
-                <Quote className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+              <div className="flex items-start space-x-3 pl-1">
+                <Quote className="w-6 h-6 text-amber-400 shrink-0 mt-0.5" />
                 <div>
-                  <span className="text-[9px] uppercase font-mono tracking-wider text-amber-300 font-bold block mb-1">
+                  <span className="text-[10px] uppercase font-mono tracking-wider text-amber-300 font-bold block mb-1.5">
                     {reel.hadithReference ? `Hadith Reference • ${reel.hadithReference}` : `Direct Insight • ${reel.source.name}`}
                   </span>
                   {reel.arabicText && (
-                    <p className="text-sm font-serif text-emerald-300 mb-1.5 leading-relaxed font-medium" dir="rtl">
+                    <p className="text-base sm:text-lg md:text-xl font-serif text-emerald-300 mb-2 leading-relaxed font-medium" dir="rtl">
                       {reel.arabicText}
                     </p>
                   )}
-                  <p className="text-xs sm:text-sm font-semibold text-white/95 leading-relaxed italic">
+                  <p className="text-sm sm:text-base md:text-lg font-semibold text-white/95 leading-relaxed italic">
                     &quot;{reel.coreIdea}&quot;
                   </p>
-                  <span className="text-[10px] text-white/60 font-mono block mt-1.5 font-medium">
+                  <span className="text-[11px] text-white/60 font-mono block mt-2 font-medium">
                     — {reel.narrator ? `Narrated by ${reel.narrator}` : (reel.quoteAuthor || reel.source.authorOrTopic)}
                     {reel.hadithReference && ` (${reel.hadithReference})`}
                   </span>
@@ -446,12 +446,12 @@ export const ReelCard: React.FC<ReelCardProps> = ({
               </div>
 
               {reel.mentalModel && (
-                <div className="mt-3 pt-2.5 border-t border-white/10 flex items-center space-x-2 text-[10px] text-white/80">
-                  <Zap className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <div className="mt-3.5 pt-3 border-t border-white/10 flex items-center space-x-2 text-xs text-white/80">
+                  <Zap className="w-4 h-4 text-amber-400 shrink-0" />
                   <span className="font-mono text-amber-300 font-bold">
                     {reel.mentalModel.name}:
                   </span>
-                  <span className="truncate text-white/80">
+                  <span className="truncate text-white/85">
                     {reel.mentalModel.formulaOrRule || reel.mentalModel.description}
                   </span>
                 </div>
@@ -467,18 +467,18 @@ export const ReelCard: React.FC<ReelCardProps> = ({
             e.stopPropagation();
             setShowDeepDive(true);
           }}
-          className="mt-3 px-3.5 py-1.5 rounded-full glass-pill bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-semibold flex items-center space-x-2 shadow-md hover:scale-105 active:scale-95 transition-all"
+          className="mt-3.5 px-4 py-2 rounded-full glass-pill bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs sm:text-sm font-semibold flex items-center space-x-2 shadow-md hover:scale-105 active:scale-95 transition-all"
         >
-          <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+          <Sparkles className="w-4 h-4 text-amber-300" />
           <span>Deep Dive & Takeaways</span>
-          <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-white/20 font-mono">
+          <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/20 font-mono">
             {reel.takeaways.length}
           </span>
         </button>
       </div>
 
       {/* RIGHT: Floating Instagram Action Column */}
-      <div className="absolute right-2 sm:right-3 bottom-14 sm:bottom-18 z-20 flex flex-col items-center space-y-2 sm:space-y-3">
+      <div className="absolute right-2.5 sm:right-4 bottom-14 sm:bottom-18 z-20 flex flex-col items-center space-y-2.5 sm:space-y-3.5">
         {/* Like Button */}
         <button
           id={`btn-like-${reel.id}`}
@@ -490,13 +490,13 @@ export const ReelCard: React.FC<ReelCardProps> = ({
           title="Like (L)"
         >
           <div
-            className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full glass-pill flex items-center justify-center transition-transform active:scale-125 ${
+            className={`w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full glass-pill flex items-center justify-center transition-transform active:scale-125 ${
               isLiked ? 'text-rose-500 bg-rose-500/20 border-rose-500/40' : 'text-white hover:text-rose-400'
             }`}
           >
-            <Heart className={`w-5 h-5 transition-all ${isLiked ? 'fill-rose-500 text-rose-500' : ''}`} />
+            <Heart className={`w-5 h-5 sm:w-5.5 sm:h-5.5 transition-all ${isLiked ? 'fill-rose-500 text-rose-500' : ''}`} />
           </div>
-          <span className="text-[10px] font-bold text-white/80 mt-0.5 font-mono">{simulatedLikes}</span>
+          <span className="text-[10px] sm:text-[11px] font-bold text-white/80 mt-0.5 font-mono">{simulatedLikes}</span>
         </button>
 
         {/* Deep Dive / Details Button */}
@@ -509,10 +509,10 @@ export const ReelCard: React.FC<ReelCardProps> = ({
           className="flex flex-col items-center group touch-manipulation"
           title="View Takeaways & Code"
         >
-          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full glass-pill flex items-center justify-center text-white hover:text-cyan-400 transition-transform active:scale-110">
-            <MessageCircle className="w-5 h-5" />
+          <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full glass-pill flex items-center justify-center text-white hover:text-cyan-400 transition-transform active:scale-110">
+            <MessageCircle className="w-5 h-5 sm:w-5.5 sm:h-5.5" />
           </div>
-          <span className="text-[10px] font-bold text-white/80 mt-0.5 font-mono">{simulatedComments}</span>
+          <span className="text-[10px] sm:text-[11px] font-bold text-white/80 mt-0.5 font-mono">{simulatedComments}</span>
         </button>
 
         {/* Bookmark Button */}
@@ -526,13 +526,13 @@ export const ReelCard: React.FC<ReelCardProps> = ({
           title="Save to Vault (B)"
         >
           <div
-            className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full glass-pill flex items-center justify-center transition-transform active:scale-110 ${
+            className={`w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full glass-pill flex items-center justify-center transition-transform active:scale-110 ${
               isBookmarked ? 'text-amber-400 bg-amber-500/20 border-amber-500/40' : 'text-white hover:text-amber-300'
             }`}
           >
-            <Bookmark className={`w-5 h-5 ${isBookmarked ? 'fill-amber-400' : ''}`} />
+            <Bookmark className={`w-5 h-5 sm:w-5.5 sm:h-5.5 ${isBookmarked ? 'fill-amber-400' : ''}`} />
           </div>
-          <span className="text-[10px] font-bold text-white/80 mt-0.5 font-mono">Save</span>
+          <span className="text-[10px] sm:text-[11px] font-bold text-white/80 mt-0.5 font-mono">Save</span>
         </button>
 
         {/* Share Button (Opens Instagram-Style Share Sheet Modal) */}
@@ -545,10 +545,10 @@ export const ReelCard: React.FC<ReelCardProps> = ({
           className="flex flex-col items-center group touch-manipulation"
           title="Share Reel (S)"
         >
-          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full glass-pill flex items-center justify-center text-white hover:text-emerald-400 transition-transform active:scale-110">
-            <Share2 className="w-5 h-5" />
+          <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full glass-pill flex items-center justify-center text-white hover:text-emerald-400 transition-transform active:scale-110">
+            <Share2 className="w-5 h-5 sm:w-5.5 sm:h-5.5" />
           </div>
-          <span className="text-[10px] font-bold text-white/80 mt-0.5 font-mono">Share</span>
+          <span className="text-[10px] sm:text-[11px] font-bold text-white/80 mt-0.5 font-mono">Share</span>
         </button>
 
         {/* Spinning Vinyl Record Disc (Click opens Soundscapes / Shuffle) */}
@@ -584,7 +584,7 @@ export const ReelCard: React.FC<ReelCardProps> = ({
       </div>
 
       {/* BOTTOM: Instagram Caption & Scrolling Music Track Bar */}
-      <div className="relative z-10 px-4 sm:px-5 pb-3 pt-2 bg-gradient-to-t from-neutral-950/90 via-neutral-950/50 to-transparent">
+      <div className="relative z-10 px-4 sm:px-5 pb-safe pb-4 sm:pb-3 pt-2 bg-gradient-to-t from-neutral-950/95 via-neutral-950/50 to-transparent">
         <div className="pr-14">
           <p className="text-xs font-semibold text-white/90 line-clamp-1">
             <span className="font-bold text-white mr-1.5">@{categoryConfig.authorHandle}</span>
@@ -617,6 +617,7 @@ export const ReelCard: React.FC<ReelCardProps> = ({
       {showDeepDive && (
         <div
           onClick={(e) => e.stopPropagation()}
+          onPointerDown={(e) => e.stopPropagation()}
           className="absolute inset-x-0 bottom-0 top-16 z-40 glass-panel bg-neutral-950/95 backdrop-blur-2xl rounded-t-[32px] border-t border-white/20 shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom duration-300"
         >
           {/* Drawer Drag Bar & Header */}

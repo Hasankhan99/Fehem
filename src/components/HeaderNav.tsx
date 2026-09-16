@@ -62,16 +62,16 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
   ];
 
   return (
-    <header className="w-full z-40 px-2 sm:px-4 md:px-6 pt-2 pb-1.5 transition-all">
-      <div className="max-w-6xl mx-auto glass-panel rounded-2xl px-3 sm:px-4 py-2 flex flex-col sm:flex-row items-center justify-between gap-2 shadow-xl border border-white/10">
-        {/* Top / Main Navigation Row */}
-        <div className="w-full sm:w-auto flex items-center justify-between sm:justify-start gap-3">
+    <header className="fixed sm:relative top-0 inset-x-0 z-40 px-2 sm:px-4 md:px-6 pt-safe pt-2 pb-2 sm:pb-1.5 transition-all bg-gradient-to-b from-neutral-950/95 via-neutral-950/60 to-transparent sm:bg-none pointer-events-none">
+      <div className="max-w-6xl mx-auto glass-panel bg-neutral-950/60 sm:bg-neutral-900/30 backdrop-blur-md rounded-2xl px-2.5 sm:px-4 py-1.5 sm:py-2 flex items-center justify-between gap-1.5 sm:gap-3 shadow-xl border border-white/10 pointer-events-auto">
+        {/* Left: Brand Logo & Mobile Audio Indicator */}
+        <div className="flex items-center space-x-1 sm:space-x-2 shrink-0">
           {/* Brand Logo */}
-          <div className="flex items-center space-x-2 shrink-0">
-            <div className="w-7 h-7 rounded-xl bg-gradient-to-tr from-rose-500 via-purple-500 to-cyan-500 flex items-center justify-center shadow-md">
-              <Sparkles className="w-3.5 h-3.5 text-white" />
+          <div className="flex items-center space-x-1.5">
+            <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-xl bg-gradient-to-tr from-rose-500 via-purple-500 to-cyan-500 flex items-center justify-center shadow-md">
+              <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white" />
             </div>
-            <span className="font-extrabold text-sm tracking-tight text-white flex items-center">
+            <span className="font-extrabold text-xs sm:text-sm tracking-tight text-white flex items-center">
               Fehem
               <span className="ml-1 w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
             </span>
@@ -81,7 +81,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
           <button
             id="btn-nav-focus-sound-mobile"
             onClick={onOpenMusicSelector}
-            className={`sm:hidden px-2.5 py-1 rounded-full glass-pill transition-all text-xs flex items-center space-x-1.5 border ${
+            className={`sm:hidden p-1.5 rounded-full glass-pill transition-all text-xs flex items-center border ${
               isMusicPlaying
                 ? 'text-rose-400 bg-rose-500/20 border-rose-500/40 shadow-sm shadow-rose-500/20'
                 : 'text-white/70 hover:text-white border-white/15'
@@ -97,14 +97,11 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
             ) : (
               <Music className="w-3 h-3" />
             )}
-            <span className="text-[10px] font-medium max-w-[70px] truncate">
-              {currentTrackName}
-            </span>
           </button>
         </div>
 
         {/* Center Category Glass Pills - Horizontally scrollable with smooth touch scrolling */}
-        <div className="w-full sm:w-auto flex-1 max-w-2xl flex items-center space-x-1 overflow-x-auto no-scrollbar py-0.5 px-0.5">
+        <div className="flex-1 max-w-full sm:max-w-2xl flex items-center space-x-1 overflow-x-auto no-scrollbar py-0.5 px-0.5">
           {categories.map((cat) => {
             const isSelected = currentCategory === cat.id;
 
@@ -113,7 +110,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
                 key={cat.id}
                 id={`cat-pill-${cat.id}`}
                 onClick={() => onSelectCategory(cat.id)}
-                className={`px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
+                className={`px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-all ${
                   isSelected
                     ? 'bg-white text-neutral-950 shadow-md font-bold'
                     : 'text-white/60 hover:text-white glass-pill border-transparent hover:border-white/20'
@@ -126,7 +123,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
         </div>
 
         {/* Right: Actions (Desktop Studio Toggle, Focus Sound, Search, AI, Vault, Google Auth) */}
-        <div className="w-full sm:w-auto flex items-center justify-end space-x-1 sm:space-x-1.5 shrink-0">
+        <div className="flex items-center justify-end space-x-1 sm:space-x-1.5 shrink-0">
           {/* Desktop Studio Split View Toggle (Visible on lg: screens) */}
           {onToggleDesktopStudioMode && (
             <button

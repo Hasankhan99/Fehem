@@ -103,8 +103,8 @@ export const ConceptVisualizer: React.FC<ConceptVisualizerProps> = ({
     return (
       <div
         id="quote-presentation-card"
-        className={`relative w-full rounded-2xl overflow-hidden glass-pill border border-white/20 p-3 sm:p-4 flex flex-col justify-between transition-all duration-300 shadow-xl backdrop-blur-xl h-[210px] sm:h-[240px] md:h-[250px] ${
-          isExpanded ? '!h-[300px] sm:!h-[330px]' : ''
+        className={`relative w-full rounded-2xl overflow-hidden glass-pill border border-white/20 p-3.5 sm:p-5 flex flex-col justify-between transition-all duration-300 shadow-xl backdrop-blur-xl h-[260px] sm:h-[290px] md:h-[320px] ${
+          isExpanded ? '!h-[350px] sm:!h-[400px]' : ''
         }`}
         style={{
           background:
@@ -146,12 +146,12 @@ export const ConceptVisualizer: React.FC<ConceptVisualizerProps> = ({
             </p>
           )}
 
-          <p className="text-xs sm:text-[13px] font-medium text-white/95 leading-relaxed italic drop-shadow-sm">
+          <p className="text-sm sm:text-base font-medium text-white/95 leading-relaxed italic drop-shadow-sm px-1">
             &quot;{quote}&quot;
           </p>
 
           {(quoteAuthor || narrator || hadithReference) && (
-            <span className="text-[10px] font-mono text-amber-300/90 font-semibold mt-2.5 block">
+            <span className="text-[11px] font-mono text-amber-300/90 font-semibold mt-2.5 block">
               — {narrator ? `Narrated by ${narrator}` : quoteAuthor}
               {hadithReference && ` • ${hadithReference}`}
             </span>
@@ -160,10 +160,10 @@ export const ConceptVisualizer: React.FC<ConceptVisualizerProps> = ({
 
         {/* Bottom Phase / Reflection Insight */}
         {activeQuotePhase ? (
-          <div className="mt-1 pt-2 border-t border-white/10 z-10 shrink-0 text-left">
-            <div className="flex items-center justify-between text-[9px] font-mono text-white/60 mb-0.5">
+          <div className="mt-1.5 pt-2.5 border-t border-white/10 z-10 shrink-0 text-left">
+            <div className="flex items-center justify-between text-[10px] font-mono text-white/60 mb-0.5">
               <span className="text-amber-300 font-bold flex items-center space-x-1">
-                <Sparkles className="w-2.5 h-2.5 inline mr-1 text-amber-400" />
+                <Sparkles className="w-3 h-3 inline mr-1 text-amber-400" />
                 {activeQuotePhase.stepLabel || `Reflection Phase ${currentPhaseIndex + 1}`}
               </span>
               <div className="flex items-center space-x-1">
@@ -171,13 +171,13 @@ export const ConceptVisualizer: React.FC<ConceptVisualizerProps> = ({
                   <span
                     key={pIdx}
                     className={`h-1.5 rounded-full transition-all duration-300 ${
-                      pIdx === currentPhaseIndex ? 'w-3.5 bg-amber-400' : 'w-1.5 bg-white/20'
+                      pIdx === currentPhaseIndex ? 'w-4 bg-amber-400' : 'w-1.5 bg-white/20'
                     }`}
                   />
                 ))}
               </div>
             </div>
-            <p className="text-[10.5px] font-semibold text-white/95 leading-snug truncate">
+            <p className="text-xs sm:text-[13px] font-semibold text-white/95 leading-snug truncate">
               {activeQuotePhase.text}
               {activeQuotePhase.emphasis && (
                 <span className="ml-1 text-amber-300 font-bold underline decoration-amber-400/60">
@@ -187,7 +187,7 @@ export const ConceptVisualizer: React.FC<ConceptVisualizerProps> = ({
             </p>
           </div>
         ) : (
-          <div className="text-[9px] font-mono text-white/40 text-center pt-1 border-t border-white/10">
+          <div className="text-[10px] font-mono text-white/50 text-center pt-1.5 border-t border-white/10">
             {category === 'islamic' ? 'Authentic Prophetic Wisdom' : 'Core Book Insight'}
           </div>
         )}
@@ -200,8 +200,8 @@ export const ConceptVisualizer: React.FC<ConceptVisualizerProps> = ({
   return (
     <div
       id={`concept-visualizer-${resolvedType}`}
-      className={`relative w-full rounded-2xl overflow-hidden glass-pill border border-white/20 p-3 sm:p-3.5 flex flex-col justify-between transition-all duration-300 shadow-xl backdrop-blur-xl h-[210px] sm:h-[240px] md:h-[250px] ${
-        isExpanded ? '!h-[300px] sm:!h-[330px]' : ''
+      className={`relative w-full rounded-2xl overflow-hidden glass-pill border border-white/20 p-3.5 sm:p-4 flex flex-col justify-between transition-all duration-300 shadow-xl backdrop-blur-xl h-[260px] sm:h-[290px] md:h-[320px] ${
+        isExpanded ? '!h-[350px] sm:!h-[400px]' : ''
       }`}
     >
       {/* Visual Header */}
