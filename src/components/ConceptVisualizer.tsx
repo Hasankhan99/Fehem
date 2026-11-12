@@ -50,6 +50,7 @@ interface ConceptVisualizerProps {
   isAutoPlay?: boolean;
   autoPlayProgress?: number;
   hadithReference?: string;
+  quranReference?: string;
   arabicText?: string;
   narrator?: string;
 }
@@ -65,6 +66,7 @@ export const ConceptVisualizer: React.FC<ConceptVisualizerProps> = ({
   isAutoPlay = true,
   autoPlayProgress = 0,
   hadithReference,
+  quranReference,
   arabicText,
   narrator,
 }) => {
@@ -108,7 +110,7 @@ export const ConceptVisualizer: React.FC<ConceptVisualizerProps> = ({
         }`}
         style={{
           background:
-            category === 'islamic'
+            category === 'islamic' || category === 'quran'
               ? 'linear-gradient(145deg, rgba(6, 78, 59, 0.4), rgba(15, 23, 42, 0.9))'
               : 'linear-gradient(145deg, rgba(30, 27, 75, 0.35), rgba(15, 23, 42, 0.9))',
         }}
@@ -118,7 +120,7 @@ export const ConceptVisualizer: React.FC<ConceptVisualizerProps> = ({
           <div className="flex items-center space-x-1.5 text-white/90 truncate max-w-[82%]">
             <Quote className="w-3.5 h-3.5 text-amber-400 shrink-0" />
             <span className="font-bold tracking-wide uppercase text-[10px] text-white/90 truncate">
-              {hadithReference ? `Hadith • ${hadithReference}` : title}
+              {quranReference ? `Quran • ${quranReference}` : hadithReference ? `Hadith • ${hadithReference}` : title}
             </span>
           </div>
 
@@ -136,7 +138,7 @@ export const ConceptVisualizer: React.FC<ConceptVisualizerProps> = ({
         </div>
 
         {/* Central Dedicated Quote Stage (No repeated animations) */}
-        <div className="relative flex-1 w-full flex flex-col items-center justify-center my-auto px-2 overflow-y-auto no-scrollbar text-center">
+        <div className="relative flex-1 min-h-0 w-full flex flex-col items-center my-auto px-2 overflow-y-auto no-scrollbar text-center [&>*:first-child]:mt-auto [&>*:last-child]:mb-auto">
           {arabicText && (
             <p
               className="text-base sm:text-lg font-serif text-emerald-300 mb-2 leading-relaxed tracking-wide font-medium"
@@ -150,7 +152,7 @@ export const ConceptVisualizer: React.FC<ConceptVisualizerProps> = ({
             &quot;{quote}&quot;
           </p>
 
-          {(quoteAuthor || narrator || hadithReference) && (
+          {(quoteAuthor || narrator || hadithReference || quranReference) && (
             <span className="text-[11px] font-mono text-amber-300/90 font-semibold mt-2.5 block">
               — {narrator ? `Narrated by ${narrator}` : quoteAuthor}
               {hadithReference && ` • ${hadithReference}`}
@@ -188,7 +190,7 @@ export const ConceptVisualizer: React.FC<ConceptVisualizerProps> = ({
           </div>
         ) : (
           <div className="text-[10px] font-mono text-white/50 text-center pt-1.5 border-t border-white/10">
-            {category === 'islamic' ? 'Authentic Prophetic Wisdom' : 'Core Book Insight'}
+            {category === 'quran' ? 'The Holy Quran' : category === 'islamic' ? 'Authentic Prophetic Wisdom' : 'Core Book Insight'}
           </div>
         )}
       </div>

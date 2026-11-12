@@ -103,3 +103,10 @@
   height: 100vh;
   height: 100dvh;
 }
+
+/* Arabic (Quran & Hadith) typography: Amiri is a classical Naskh face that
+   renders harakat and Quranic marks such as ﴿ ﴾ and ۗ correctly. */
+[dir='rtl'] {
+  font-family: 'Amiri', 'Noto Naskh Arabic', serif;
+  line-height: 2;
+}

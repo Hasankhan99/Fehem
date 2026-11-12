@@ -53,7 +53,8 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
 }) => {
   const categories: Array<{ id: Category; label: string; icon: React.ComponentType<{ className?: string }> }> = [
     { id: 'all', label: 'All', icon: Sparkles },
-    { id: 'islamic', label: 'Islamic Wisdom', icon: BookOpen },
+    { id: 'quran', label: 'Quran', icon: BookOpen },
+    { id: 'islamic', label: 'Hadith', icon: BookOpen },
     { id: 'psychology', label: 'Psychology', icon: Brain },
     { id: 'habits', label: 'Habits', icon: Zap },
     { id: 'mindset', label: 'Mindset', icon: Flame },
