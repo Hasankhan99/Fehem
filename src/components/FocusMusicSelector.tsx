@@ -45,7 +45,9 @@ export const FocusMusicSelector: React.FC<FocusMusicSelectorProps> = ({
       setIsPlaying(playing);
       setCustomTracks(focusMusic.getCustomTracks());
     });
-    return unsub;
+    return () => {
+      unsub();
+    };
   }, []);
 
   if (!isOpen) return null;

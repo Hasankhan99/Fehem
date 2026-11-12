@@ -1,6 +1,7 @@
 export type Category =
   | 'all'
   | 'islamic'
+  | 'quran'
   | 'psychology'
   | 'habits'
   | 'mindset'
@@ -86,7 +87,7 @@ export interface MicroReel {
   id: string;
   title: string;
   subtitle: string;
-  category: 'islamic' | 'psychology' | 'habits' | 'mindset' | 'productivity' | 'communication' | 'books' | 'programming' | 'system-design' | 'habits-mindset';
+  category: 'islamic' | 'quran' | 'psychology' | 'habits' | 'mindset' | 'productivity' | 'communication' | 'books' | 'programming' | 'system-design' | 'habits-mindset';
   source: ReelSource;
   coreIdea: string;
   quoteAuthor?: string;
@@ -105,6 +106,7 @@ export interface MicroReel {
   visualConceptType?: ConceptVisualType;
   conceptAnimationLabel?: string;
   hadithReference?: string;
+  quranReference?: string;
   arabicText?: string;
   narrator?: string;
 }
@@ -124,6 +126,8 @@ export interface UserSavedData {
   completedActionIds: string[]; // `${reelId}-${takeawayIndex}`
   completedQuizzes: Record<string, { selectedIndex: number; isCorrect: boolean }>;
   streakDays: number;
+  /** Channel handles (books, quran.daily, hadith.daily) shown in the Following feed. */
+  followedHandles?: string[];
   lastActiveDate: string;
   userProfile?: UserProfile;
 }
