@@ -126,6 +126,8 @@ export interface UserSavedData {
   completedActionIds: string[]; // `${reelId}-${takeawayIndex}`
   completedQuizzes: Record<string, { selectedIndex: number; isCorrect: boolean }>;
   streakDays: number;
+  /** Channel handles (books, quran.daily, hadith.daily) shown in the Following feed. */
+  followedHandles?: string[];
   lastActiveDate: string;
   userProfile?: UserProfile;
 }
