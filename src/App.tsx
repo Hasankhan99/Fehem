@@ -1,50 +1,58 @@
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { CURATED_REELS } from './data/curatedReels';
-import { MicroReel, Category, UserSavedData, UserProfile } from './types';
-import { HeaderNav } from './components/HeaderNav';
+import { MicroReel, UserSavedData, UserProfile } from './types';
 import { ReelCard } from './components/ReelCard';
 import { AIGeneratorModal } from './components/AIGeneratorModal';
 import { KnowledgeVaultModal } from './components/KnowledgeVaultModal';
-import { SearchModal } from './components/SearchModal';
 import { GoogleAuthModal } from './components/GoogleAuthModal';
 import { ShareReelModal } from './components/ShareReelModal';
 import { FocusMusicSelector } from './components/FocusMusicSelector';
 import { DesktopCompanionDeck } from './components/DesktopCompanionDeck';
+import { AppNav, AppTab } from './components/AppNav';
+import { ExploreView } from './components/ExploreView';
+import { ProfileView, SavedView } from './components/ProfileView';
 import { useSpeech } from './utils/useSpeech';
 import { focusMusic } from './utils/focusMusicEngine';
-import { ChevronUp, ChevronDown, Sparkles } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { getReelCreator, isScriptureReel } from './utils/reelMeta';
+import { ChevronUp, ChevronDown, ChevronLeft, Music, Search, Users, Sparkles } from 'lucide-react';
+import { motion, AnimatePresence, type Variants } from 'motion/react';
 
 const STORAGE_KEY_USER_DATA = 'fehem_reels_user_data_v1';
 const STORAGE_KEY_CUSTOM_REELS = 'fehem_reels_custom_v1';
 const STORAGE_KEY_USER_PROFILE = 'fehem_reels_google_profile_v1';
 
-// Vertical scroll animation variants (Instagram Reels Clone)
-const reelVariants = {
+type FeedTab = 'all' | 'following' | 'quran' | 'islamic' | 'books';
+
+const FEED_TABS: Array<{ id: FeedTab; label: string }> = [
+  { id: 'all', label: 'For You' },
+  { id: 'following', label: 'Following' },
+  { id: 'quran', label: 'Quran' },
+  { id: 'islamic', label: 'Hadith' },
+  { id: 'books', label: 'Books' },
+];
+
+/** A list opened from a grid (Explore, Saved, Profile), shown full-screen like Instagram's reel viewer. */
+interface OpenedList {
+  title: string;
+  reels: MicroReel[];
+  returnTo: AppTab;
+}
+
+// Vertical reel swipe animation
+const reelVariants: Variants = {
   enter: (direction: number) => ({
     y: direction > 0 ? '100%' : '-100%',
-    opacity: 0.85,
-    scale: 0.97,
+    opacity: 0.9,
   }),
   center: {
     y: 0,
     opacity: 1,
-    scale: 1,
-    transition: {
-      y: { type: 'spring', stiffness: 350, damping: 32, mass: 0.8 },
-      opacity: { duration: 0.2 },
-      scale: { duration: 0.22 },
-    },
+    transition: { y: { type: 'spring', stiffness: 380, damping: 36, mass: 0.8 }, opacity: { duration: 0.2 } },
   },
   exit: (direction: number) => ({
     y: direction > 0 ? '-100%' : '100%',
-    opacity: 0.4,
-    scale: 0.95,
-    transition: {
-      y: { type: 'spring', stiffness: 350, damping: 32, mass: 0.8 },
-      opacity: { duration: 0.18 },
-      scale: { duration: 0.22 },
-    },
+    opacity: 0.6,
+    transition: { y: { type: 'spring', stiffness: 380, damping: 36, mass: 0.8 }, opacity: { duration: 0.18 } },
   }),
 };
 
@@ -87,11 +95,12 @@ export default function App() {
       // fallback
     }
     return {
-      bookmarkedIds: ['reel-atomic-habits', 'reel-js-event-loop', 'reel-ikigai'],
+      bookmarkedIds: [],
       likedIds: [],
       completedActionIds: [],
       completedQuizzes: {},
-      streakDays: 3,
+      streakDays: 1,
+      followedHandles: [],
       lastActiveDate: today,
     };
   });
@@ -107,14 +116,15 @@ export default function App() {
     return null;
   });
 
-  // Navigation & Filter state
-  const [currentCategory, setCurrentCategory] = useState<Category>('all');
+  // Navigation state
+  const [activeTab, setActiveTab] = useState<AppTab>('home');
+  const [feedTab, setFeedTab] = useState<FeedTab>('all');
+  const [openedList, setOpenedList] = useState<OpenedList | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   // Modals state
   const [isAIModalOpen, setIsAIModalOpen] = useState(false);
   const [isVaultOpen, setIsVaultOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isMusicSelectorOpen, setIsMusicSelectorOpen] = useState(false);
   const [sharingReel, setSharingReel] = useState<MicroReel | null>(null);
@@ -127,24 +137,22 @@ export default function App() {
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [autoPlayProgress, setAutoPlayProgress] = useState(0);
 
-  // Desktop Studio Companion Mode (Split view on large screens)
-  const [isDesktopStudioMode, setIsDesktopStudioMode] = useState<boolean>(() => {
-    if (typeof window !== 'undefined') {
-      return window.innerWidth >= 1024;
-    }
-    return false;
-  });
+  // Study panel beside the reel on large screens
+  const [isDesktopStudioMode, setIsDesktopStudioMode] = useState<boolean>(() =>
+    typeof window !== 'undefined' ? window.innerWidth >= 1280 : false
+  );
 
   // Speech narration
   const speech = useSpeech();
 
-  // Subscribe to Focus Music Engine changes
   useEffect(() => {
     const unsubscribe = focusMusic.subscribe((track, playing) => {
       setIsMusicPlaying(playing);
       setMusicTrackName(track.title);
     });
-    return unsubscribe;
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   // Save userData to LocalStorage
@@ -190,11 +198,23 @@ export default function App() {
     }
   };
 
-  // Filtered Reels based on selected category
+  const followedHandles = userData.followedHandles || [];
+
+  // Reels shown in the vertical viewer: either a list opened from a grid, or the selected feed tab.
   const filteredReels = useMemo(() => {
-    if (currentCategory === 'all') return allReels;
-    return allReels.filter((r) => r.category === currentCategory);
-  }, [allReels, currentCategory]);
+    if (openedList) return openedList.reels;
+    switch (feedTab) {
+      case 'following':
+        return allReels.filter((r) => followedHandles.includes(getReelCreator(r).handle));
+      case 'quran':
+      case 'islamic':
+        return allReels.filter((r) => r.category === feedTab);
+      case 'books':
+        return allReels.filter((r) => !isScriptureReel(r));
+      default:
+        return allReels;
+    }
+  }, [allReels, feedTab, openedList, followedHandles]);
 
   // Ensure currentIndex stays within bounds
   useEffect(() => {
@@ -204,65 +224,49 @@ export default function App() {
   }, [filteredReels.length, currentIndex]);
 
   const currentReel = filteredReels[currentIndex] || filteredReels[0];
+  const isFeedVisible = activeTab === 'home';
 
   // Scroll transition direction: 1 = next (slide up), -1 = prev (slide down)
   const [scrollDirection, setScrollDirection] = useState<number>(1);
 
-  // Navigation Handlers
+  const resetPlayback = useCallback(() => {
+    speech.stop();
+    setAutoPlayProgress(0);
+  }, [speech]);
+
   const handleNext = useCallback(() => {
     if (currentIndex < filteredReels.length - 1) {
       setScrollDirection(1);
       setCurrentIndex((prev) => prev + 1);
-      speech.stop();
-      setAutoPlayProgress(0);
+      resetPlayback();
     }
-  }, [currentIndex, filteredReels.length, speech]);
+  }, [currentIndex, filteredReels.length, resetPlayback]);
 
   const handlePrev = useCallback(() => {
     if (currentIndex > 0) {
       setScrollDirection(-1);
       setCurrentIndex((prev) => prev - 1);
-      speech.stop();
-      setAutoPlayProgress(0);
+      resetPlayback();
     }
-  }, [currentIndex, speech]);
+  }, [currentIndex, resetPlayback]);
 
-  // Handle interactive vertical drag gestures (Instagram Reels drag flick)
+  // Vertical drag/flick between reels
   const handleDragEnd = (
     _event: MouseEvent | TouchEvent | PointerEvent,
     info: { offset: { x: number; y: number }; velocity: { x: number; y: number } }
   ) => {
     const { offset, velocity } = info;
-    const swipeThreshold = 45;
-    const velocityThreshold = 220;
-
-    if (offset.y < -swipeThreshold || velocity.y < -velocityThreshold) {
-      if (currentIndex < filteredReels.length - 1) {
-        handleNext();
-      }
-    } else if (offset.y > swipeThreshold || velocity.y > velocityThreshold) {
-      if (currentIndex > 0) {
-        handlePrev();
-      }
-    }
+    if (offset.y < -45 || velocity.y < -220) handleNext();
+    else if (offset.y > 45 || velocity.y > 220) handlePrev();
   };
 
-  // Toggle Focus Background Music
-  const handleToggleMusic = () => {
-    focusMusic.toggle();
-  };
+  const handleToggleMusic = () => focusMusic.toggle();
+  const handleShuffleMusic = () => focusMusic.selectRandomTrack();
 
-  // Random focus track selection
-  const handleShuffleMusic = () => {
-    focusMusic.selectRandomTrack();
-  };
-
-  // Auto-play timer effect (segmented reel progress)
+  // Auto-play timer: advances to the next reel when the progress line fills.
+  // Pausing keeps the progress where it is, like pausing a video.
   useEffect(() => {
-    if (!isAutoPlay) {
-      setAutoPlayProgress(0);
-      return;
-    }
+    if (!isAutoPlay || !isFeedVisible) return;
 
     const duration = (currentReel?.estimatedReadSeconds || 25) * 1000;
     const intervalTime = 100;
@@ -279,14 +283,29 @@ export default function App() {
     }, intervalTime);
 
     return () => clearInterval(timer);
-  }, [isAutoPlay, currentReel, handleNext]);
+  }, [isAutoPlay, isFeedVisible, currentReel, handleNext]);
 
-  // Keyboard navigation & shortcuts
+  // Interactions: Like, Bookmark, Follow, Action Items, Quizzes
+  const toggleInList = (list: string[], id: string) => (list.includes(id) ? list.filter((i) => i !== id) : [...list, id]);
+
+  const handleToggleLike = (id: string) => setUserData((prev) => ({ ...prev, likedIds: toggleInList(prev.likedIds, id) }));
+  const handleToggleBookmark = (id: string) =>
+    setUserData((prev) => ({ ...prev, bookmarkedIds: toggleInList(prev.bookmarkedIds, id) }));
+  const handleToggleFollow = (handle: string) =>
+    setUserData((prev) => ({ ...prev, followedHandles: toggleInList(prev.followedHandles || [], handle) }));
+  const handleToggleActionItem = (actionKey: string) =>
+    setUserData((prev) => ({ ...prev, completedActionIds: toggleInList(prev.completedActionIds, actionKey) }));
+  const handleAnswerQuiz = (reelId: string, selectedIndex: number, isCorrect: boolean) => {
+    setUserData((prev) => ({
+      ...prev,
+      completedQuizzes: { ...prev.completedQuizzes, [reelId]: { selectedIndex, isCorrect } },
+    }));
+  };
+
+  // Keyboard navigation & shortcuts (feed only)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (isAIModalOpen || isVaultOpen || isSearchOpen || isAuthModalOpen || isMusicSelectorOpen || sharingReel) {
-        return;
-      }
+      if (!isFeedVisible || isAIModalOpen || isVaultOpen || isAuthModalOpen || isMusicSelectorOpen || sharingReel) return;
       if (['input', 'textarea'].includes((document.activeElement?.tagName || '').toLowerCase())) return;
 
       if (e.key === 'ArrowDown' || e.key === 'j') {
@@ -299,44 +318,28 @@ export default function App() {
         e.preventDefault();
         setIsAutoPlay((prev) => !prev);
       } else if (e.key === 'm' || e.key === 'M') {
-        e.preventDefault();
         handleToggleMusic();
-      } else if (e.key === 'r' || e.key === 'R') {
-        e.preventDefault();
-        handleShuffleMusic();
       } else if (e.key === 'd' || e.key === 'D') {
-        e.preventDefault();
         setIsDesktopStudioMode((prev) => !prev);
-      } else if (e.key === 'l' || e.key === 'L') {
-        if (currentReel) {
-          e.preventDefault();
-          handleToggleLike(currentReel.id);
-        }
-      } else if (e.key === 's' || e.key === 'S') {
-        if (currentReel) {
-          e.preventDefault();
-          setSharingReel(currentReel);
-        }
-      } else if (e.key === 'b' || e.key === 'B') {
-        if (currentReel) {
-          handleToggleBookmark(currentReel.id);
-        }
-      } else if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault();
-        setIsSearchOpen(true);
+      } else if ((e.key === 'l' || e.key === 'L') && currentReel) {
+        handleToggleLike(currentReel.id);
+      } else if ((e.key === 's' || e.key === 'S') && currentReel) {
+        setSharingReel(currentReel);
+      } else if ((e.key === 'b' || e.key === 'B') && currentReel) {
+        handleToggleBookmark(currentReel.id);
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [handleNext, handlePrev, isAIModalOpen, isVaultOpen, isSearchOpen, isAuthModalOpen, isMusicSelectorOpen, sharingReel, currentReel]);
+  }, [handleNext, handlePrev, isFeedVisible, isAIModalOpen, isVaultOpen, isAuthModalOpen, isMusicSelectorOpen, sharingReel, currentReel]);
 
-  // Wheel debounce for vertical trackpad/mouse swipe
+  // Wheel / trackpad: one reel per gesture
   const lastWheelTimeRef = useRef(0);
   const handleWheel = (e: React.WheelEvent) => {
+    if (!isFeedVisible) return;
     const now = Date.now();
     if (now - lastWheelTimeRef.current < 550) return;
-
     if (e.deltaY > 45) {
       lastWheelTimeRef.current = now;
       handleNext();
@@ -346,47 +349,42 @@ export default function App() {
     }
   };
 
-  // Interactions: Like, Bookmark, Action Items, Quizzes
-  const handleToggleLike = (id: string) => {
-    setUserData((prev) => {
-      const isLiked = prev.likedIds.includes(id);
-      return {
-        ...prev,
-        likedIds: isLiked ? prev.likedIds.filter((i) => i !== id) : [...prev.likedIds, id],
-      };
-    });
+  // Navigation helpers
+  const goToTab = (tab: AppTab) => {
+    resetPlayback();
+    if (tab === 'home' && activeTab === 'home' && !openedList) {
+      // Tapping Home again jumps back to the top of the feed, like Instagram.
+      setScrollDirection(-1);
+      setCurrentIndex(0);
+    }
+    if (tab === 'home') setOpenedList(null);
+    setActiveTab(tab);
   };
 
-  const handleToggleBookmark = (id: string) => {
-    setUserData((prev) => {
-      const isBookmarked = prev.bookmarkedIds.includes(id);
-      return {
-        ...prev,
-        bookmarkedIds: isBookmarked ? prev.bookmarkedIds.filter((i) => i !== id) : [...prev.bookmarkedIds, id],
-      };
-    });
+  const selectFeedTab = (tab: FeedTab) => {
+    setScrollDirection(1);
+    setFeedTab(tab);
+    setOpenedList(null);
+    setCurrentIndex(0);
+    resetPlayback();
   };
 
-  const handleToggleActionItem = (actionKey: string) => {
-    setUserData((prev) => {
-      const isCompleted = prev.completedActionIds.includes(actionKey);
-      return {
-        ...prev,
-        completedActionIds: isCompleted
-          ? prev.completedActionIds.filter((k) => k !== actionKey)
-          : [...prev.completedActionIds, actionKey],
-      };
-    });
+  const openReelInList = (reel: MicroReel, list: MicroReel[], title: string) => {
+    const idx = Math.max(0, list.findIndex((r) => r.id === reel.id));
+    setOpenedList({ title, reels: list, returnTo: activeTab });
+    setScrollDirection(1);
+    setCurrentIndex(idx);
+    resetPlayback();
+    setIsAutoPlay(true);
+    setActiveTab('home');
   };
 
-  const handleAnswerQuiz = (reelId: string, selectedIndex: number, isCorrect: boolean) => {
-    setUserData((prev) => ({
-      ...prev,
-      completedQuizzes: {
-        ...prev.completedQuizzes,
-        [reelId]: { selectedIndex, isCorrect },
-      },
-    }));
+  const closeOpenedList = () => {
+    const back = openedList?.returnTo || 'home';
+    setOpenedList(null);
+    setCurrentIndex(0);
+    resetPlayback();
+    setActiveTab(back);
   };
 
   // When AI generates a new reel
@@ -394,91 +392,118 @@ export default function App() {
     setAllReels((prev) => {
       const updated = [newReel, ...prev];
       try {
-        const customOnly = updated.filter((r) => r.isUserGenerated);
-        localStorage.setItem(STORAGE_KEY_CUSTOM_REELS, JSON.stringify(customOnly));
+        localStorage.setItem(STORAGE_KEY_CUSTOM_REELS, JSON.stringify(updated.filter((r) => r.isUserGenerated)));
       } catch {
         // fallback
       }
       return updated;
     });
-
-    setCurrentCategory('all');
+    setOpenedList(null);
+    setFeedTab('all');
     setCurrentIndex(0);
+    setActiveTab('home');
   };
 
   const handleSelectReelById = (reelId: string) => {
-    setCurrentCategory('all');
-    const targetIdx = allReels.findIndex((r) => r.id === reelId);
-    if (targetIdx !== -1) {
-      setScrollDirection(targetIdx >= currentIndex ? 1 : -1);
-      setCurrentIndex(targetIdx);
-      speech.stop();
-      setAutoPlayProgress(0);
-    }
+    const saved = allReels.filter((r) => userData.bookmarkedIds.includes(r.id));
+    const reel = saved.find((r) => r.id === reelId) || allReels.find((r) => r.id === reelId);
+    if (reel) openReelInList(reel, saved.includes(reel) ? saved : [reel], 'Saved');
   };
+
+  const toggleSpeech = (text: string) => (speech.isPlaying ? speech.stop() : speech.speak(text));
 
   return (
     <div
       id="fehem-app-root"
       onWheel={handleWheel}
-      className="w-full h-[100dvh] max-h-[100dvh] bg-[#07070b] text-neutral-100 flex flex-col justify-between overflow-hidden relative selection:bg-rose-500/30 safe-top safe-bottom"
+      className="w-full h-[100dvh] bg-black text-neutral-100 flex flex-col md:flex-row overflow-hidden relative selection:bg-rose-500/30"
     >
-      {/* Atmospheric lighting mesh in background (Instagram aura + glass gradient) */}
-      <div className="fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[550px] bg-gradient-to-tr from-purple-700/15 via-rose-600/15 to-amber-500/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="fixed bottom-0 right-10 w-[450px] h-[450px] bg-cyan-600/10 rounded-full blur-[100px] pointer-events-none" />
+      <main className="flex-1 min-h-0 min-w-0 relative bg-[#07070b]">
+        {/* HOME: full-screen vertical reels */}
+        {activeTab === 'home' && (
+          <div className="h-full w-full flex items-center justify-center md:gap-4 md:py-4">
+            <div className="relative h-full w-full md:w-auto md:aspect-[9/16] md:max-w-[min(480px,100%)]">
+              {/* Feed tabs overlay (For You / Following / Quran / Hadith / Books) */}
+              <div className="absolute top-0 inset-x-0 z-30 pt-[env(safe-area-inset-top)] bg-gradient-to-b from-black/60 to-transparent md:rounded-t-lg">
+                <div className="h-14 flex items-center gap-1 px-2">
+                  {openedList ? (
+                    <>
+                      <button
+                        id="btn-close-opened-list"
+                        type="button"
+                        onClick={closeOpenedList}
+                        className="p-2 text-white"
+                        aria-label="Back"
+                      >
+                        <ChevronLeft className="w-7 h-7" />
+                      </button>
+                      <h1 className="text-lg font-extrabold text-white">{openedList.title}</h1>
+                    </>
+                  ) : (
+                    <>
+                      <div className="flex-1 min-w-0 flex items-center gap-3.5 overflow-x-auto no-scrollbar px-2">
+                        {FEED_TABS.map((t) => (
+                          <button
+                            key={t.id}
+                            id={`feed-tab-${t.id}`}
+                            type="button"
+                            onClick={() => selectFeedTab(t.id)}
+                            className={`shrink-0 text-[15px] transition-colors drop-shadow ${
+                              feedTab === t.id ? 'text-white font-extrabold' : 'text-white/60 font-semibold hover:text-white/80'
+                            }`}
+                          >
+                            {t.label}
+                          </button>
+                        ))}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setIsMusicSelectorOpen(true)}
+                        className={`hidden md:block p-2 shrink-0 ${isMusicPlaying ? 'text-rose-400' : 'text-white'}`}
+                        aria-label="Focus sounds"
+                        title="Focus sounds (M)"
+                      >
+                        <Music className="w-6 h-6" />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => goToTab('explore')}
+                        className="p-2 shrink-0 text-white md:hidden"
+                        aria-label="Search"
+                      >
+                        <Search className="w-6 h-6" />
+                      </button>
+                    </>
+                  )}
+                </div>
+              </div>
 
-      {/* Sleek, Simplified Instagram-style Glass Header */}
-      <HeaderNav
-        currentCategory={currentCategory}
-        onSelectCategory={(cat) => {
-          setScrollDirection(1);
-          setCurrentCategory(cat);
-          setCurrentIndex(0);
-          speech.stop();
-          setAutoPlayProgress(0);
-        }}
-        onOpenAIGenerator={() => setIsAIModalOpen(true)}
-        onOpenVault={() => setIsVaultOpen(true)}
-        onOpenSearch={() => setIsSearchOpen(true)}
-        vaultCount={userData.bookmarkedIds.length}
-        isMusicPlaying={isMusicPlaying}
-        onToggleMusic={handleToggleMusic}
-        onOpenMusicSelector={() => setIsMusicSelectorOpen(true)}
-        currentTrackName={musicTrackName}
-        userProfile={userProfile}
-        onOpenAuthModal={() => setIsAuthModalOpen(true)}
-        isDesktopStudioMode={isDesktopStudioMode}
-        onToggleDesktopStudioMode={() => setIsDesktopStudioMode((prev) => !prev)}
-      />
-
-      {/* Center Reel Canvas & Desktop Studio Deck */}
-      <main className="flex-1 w-full max-w-7xl mx-auto flex items-center justify-center p-0 sm:px-4 sm:py-2 overflow-hidden relative h-[100dvh] sm:h-auto">
-        <div className="w-full flex items-center justify-center h-full relative">
-          {filteredReels.length === 0 ? (
-            <div className="p-8 rounded-3xl glass-panel text-center max-w-sm space-y-3">
-              <Sparkles className="w-8 h-8 text-rose-400 mx-auto" />
-              <h3 className="text-base font-bold text-white">No reels here yet</h3>
-              <button
-                onClick={() => setIsAIModalOpen(true)}
-                className="px-4 py-2 rounded-full bg-gradient-to-r from-rose-500 to-purple-600 text-white font-bold text-xs shadow-lg"
-              >
-                Generate with AI
-              </button>
-            </div>
-          ) : (
-            currentReel && (
-              <div className="relative flex items-center justify-center w-full h-full sm:h-auto max-w-full">
-                {/* Reels Stage with Vertical Slide Animation & Drag Gestures */}
-                <div
-                  className={`relative w-full h-full sm:h-[calc(100dvh-4.2rem)] sm:max-h-[940px] flex items-center justify-center overflow-hidden transition-all duration-300 ${
-                    isDesktopStudioMode
-                      ? 'sm:max-w-[480px] md:max-w-[500px] lg:max-w-[520px] xl:max-w-[540px]'
-                      : 'sm:max-w-[520px] md:max-w-[580px] lg:max-w-[640px] xl:max-w-[680px]'
-                  }`}
-                >
+              {filteredReels.length === 0 || !currentReel ? (
+                <div className="h-full flex flex-col items-center justify-center text-center px-8 md:rounded-lg bg-[#0b0b10]">
+                  <div className="w-16 h-16 rounded-full border-2 border-white/80 flex items-center justify-center mb-4">
+                    {feedTab === 'following' ? <Users className="w-7 h-7" /> : <Sparkles className="w-7 h-7" />}
+                  </div>
+                  <h2 className="text-xl font-extrabold text-white mb-1">
+                    {feedTab === 'following' ? 'Follow books and channels' : 'No reels here yet'}
+                  </h2>
+                  <p className="text-sm text-white/60 max-w-xs mb-5">
+                    {feedTab === 'following'
+                      ? 'Tap Follow on any reel, for example a book you love or quran.daily, and their reels show up here.'
+                      : 'Try another tab or explore topics.'}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => (feedTab === 'following' ? selectFeedTab('all') : goToTab('explore'))}
+                    className="h-9 px-5 rounded-lg bg-sky-500 hover:bg-sky-400 text-white text-sm font-semibold"
+                  >
+                    {feedTab === 'following' ? 'Browse For You' : 'Explore'}
+                  </button>
+                </div>
+              ) : (
+                <div className="absolute inset-0 overflow-hidden md:rounded-lg">
                   <AnimatePresence custom={scrollDirection} initial={false} mode="popLayout">
                     <motion.div
-                      key={currentReel.id}
+                      key={`${openedList?.title || feedTab}-${currentReel.id}`}
                       custom={scrollDirection}
                       variants={reelVariants}
                       initial="enter"
@@ -488,7 +513,7 @@ export default function App() {
                       dragConstraints={{ top: 0, bottom: 0 }}
                       dragElastic={0.25}
                       onDragEnd={handleDragEnd}
-                      className="w-full h-full absolute inset-0 flex items-center justify-center cursor-grab active:cursor-grabbing touch-pan-y select-none"
+                      className="w-full h-full absolute inset-0 touch-pan-y select-none"
                     >
                       <ReelCard
                         reel={currentReel}
@@ -511,115 +536,114 @@ export default function App() {
                         musicTrackName={musicTrackName}
                         isSpeechPlaying={speech.isPlaying}
                         speechRate={speech.rate}
-                        onToggleSpeech={(text) => {
-                          if (speech.isPlaying) {
-                            speech.stop();
-                          } else {
-                            speech.speak(text);
-                          }
-                        }}
+                        onToggleSpeech={toggleSpeech}
                         onChangeSpeechRate={speech.toggleRate}
                         isAutoPlay={isAutoPlay}
                         autoPlayProgress={autoPlayProgress}
+                        onToggleAutoPlay={() => setIsAutoPlay((p) => !p)}
                         onOpenShareModal={(reel) => setSharingReel(reel)}
+                        isFollowing={followedHandles.includes(getReelCreator(currentReel).handle)}
+                        onToggleFollow={handleToggleFollow}
                       />
                     </motion.div>
                   </AnimatePresence>
                 </div>
+              )}
+            </div>
 
-                {/* Minimal desktop navigation buttons on right */}
-                <div className="hidden md:flex flex-col items-center space-y-2 ml-3 xl:ml-4 shrink-0">
-                  <button
-                    id="btn-desktop-prev"
-                    disabled={currentIndex === 0}
-                    onClick={handlePrev}
-                    className="w-10 h-10 rounded-full glass-pill flex items-center justify-center text-white/80 hover:text-white disabled:opacity-20 disabled:pointer-events-none transition-all active:scale-90 shadow-md"
-                    title="Previous Reel (Up Arrow / k)"
-                  >
-                    <ChevronUp className="w-5 h-5" />
-                  </button>
-
-                  <div className="text-[10px] font-mono text-white/50 font-bold py-1">
-                    {currentIndex + 1}/{filteredReels.length}
-                  </div>
-
-                  <button
-                    id="btn-desktop-next"
-                    disabled={currentIndex === filteredReels.length - 1}
-                    onClick={handleNext}
-                    className="w-10 h-10 rounded-full glass-pill flex items-center justify-center text-white/80 hover:text-white disabled:opacity-20 disabled:pointer-events-none transition-all active:scale-90 shadow-md"
-                    title="Next Reel (Down Arrow / j)"
-                  >
-                    <ChevronDown className="w-5 h-5" />
-                  </button>
-                </div>
-
-                {/* Desktop Studio Companion Deck (Split View for large screens) */}
-                {isDesktopStudioMode && currentReel && (
-                  <div className="hidden lg:block ml-4 xl:ml-6 shrink-0 animate-in fade-in slide-in-from-right-4 duration-300">
-                    <DesktopCompanionDeck
-                      reel={currentReel}
-                      isLiked={userData.likedIds.includes(currentReel.id)}
-                      isBookmarked={userData.bookmarkedIds.includes(currentReel.id)}
-                      completedActionKeys={userData.completedActionIds}
-                      quizState={userData.completedQuizzes[currentReel.id]}
-                      onToggleLike={handleToggleLike}
-                      onToggleBookmark={handleToggleBookmark}
-                      onToggleActionItem={handleToggleActionItem}
-                      onAnswerQuiz={handleAnswerQuiz}
-                      onOpenShareModal={(reel) => setSharingReel(reel)}
-                      isSpeechPlaying={speech.isPlaying}
-                      onToggleSpeech={(text) => {
-                        if (speech.isPlaying) {
-                          speech.stop();
-                        } else {
-                          speech.speak(text);
-                        }
-                      }}
-                      isMusicPlaying={isMusicPlaying}
-                      onToggleMusic={handleToggleMusic}
-                      musicTrackName={musicTrackName}
-                      onCloseCompanionDeck={() => setIsDesktopStudioMode(false)}
-                    />
-                  </div>
-                )}
+            {/* Desktop: up/down arrows beside the reel, like Instagram on the web */}
+            {filteredReels.length > 0 && (
+              <div className="hidden md:flex flex-col gap-3 shrink-0">
+                <button
+                  id="btn-desktop-prev"
+                  type="button"
+                  disabled={currentIndex === 0}
+                  onClick={handlePrev}
+                  className="w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white disabled:opacity-0 transition"
+                  title="Previous (↑)"
+                >
+                  <ChevronUp className="w-6 h-6" />
+                </button>
+                <button
+                  id="btn-desktop-next"
+                  type="button"
+                  disabled={currentIndex === filteredReels.length - 1}
+                  onClick={handleNext}
+                  className="w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white disabled:opacity-0 transition"
+                  title="Next (↓)"
+                >
+                  <ChevronDown className="w-6 h-6" />
+                </button>
               </div>
-            )
-          )}
-        </div>
+            )}
+
+            {/* Large screens: optional study panel next to the reel */}
+            {isDesktopStudioMode && currentReel && (
+              <div className="hidden lg:block shrink-0 h-full overflow-y-auto no-scrollbar">
+                <DesktopCompanionDeck
+                  reel={currentReel}
+                  isLiked={userData.likedIds.includes(currentReel.id)}
+                  isBookmarked={userData.bookmarkedIds.includes(currentReel.id)}
+                  completedActionKeys={userData.completedActionIds}
+                  quizState={userData.completedQuizzes[currentReel.id]}
+                  onToggleLike={handleToggleLike}
+                  onToggleBookmark={handleToggleBookmark}
+                  onToggleActionItem={handleToggleActionItem}
+                  onAnswerQuiz={handleAnswerQuiz}
+                  onOpenShareModal={(reel) => setSharingReel(reel)}
+                  isSpeechPlaying={speech.isPlaying}
+                  onToggleSpeech={toggleSpeech}
+                  isMusicPlaying={isMusicPlaying}
+                  onToggleMusic={handleToggleMusic}
+                  musicTrackName={musicTrackName}
+                  onCloseCompanionDeck={() => setIsDesktopStudioMode(false)}
+                />
+              </div>
+            )}
+          </div>
+        )}
+
+        {activeTab === 'explore' && (
+          <div className="h-full max-w-4xl mx-auto">
+            <ExploreView reels={allReels} onSelectReel={(r, list) => openReelInList(r, list, 'Explore')} />
+          </div>
+        )}
+
+        {activeTab === 'saved' && (
+          <SavedView
+            reels={allReels}
+            userData={userData}
+            onSelectReel={(r, list) => openReelInList(r, list, 'Saved')}
+            onOpenVault={() => setIsVaultOpen(true)}
+          />
+        )}
+
+        {activeTab === 'profile' && (
+          <ProfileView
+            reels={allReels}
+            userData={userData}
+            userProfile={userProfile}
+            onSelectReel={(r, list) => openReelInList(r, list, 'Profile')}
+            onOpenAccount={() => setIsAuthModalOpen(true)}
+            onOpenVault={() => setIsVaultOpen(true)}
+            onOpenSounds={() => setIsMusicSelectorOpen(true)}
+            onToggleFollow={handleToggleFollow}
+            isStudyPanelOn={isDesktopStudioMode}
+            onToggleStudyPanel={() => setIsDesktopStudioMode((p) => !p)}
+          />
+        )}
       </main>
 
-      {/* Desktop Keyboard Shortcuts Helper Footer */}
-      <footer className="hidden md:flex items-center justify-center space-x-3 text-[10px] font-mono text-white/40 pb-1.5 shrink-0 z-10 select-none">
-        <span><kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/70">↑</kbd> <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/70">↓</kbd> Scroll</span>
-        <span>•</span>
-        <span><kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/70">Space</kbd> {isAutoPlay ? 'Pause' : 'Play'}</span>
-        <span>•</span>
-        <span><kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/70">L</kbd> Like</span>
-        <span>•</span>
-        <span><kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/70">B</kbd> Vault</span>
-        <span>•</span>
-        <span><kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/70">M</kbd> Audio</span>
-        <span>•</span>
-        <span><kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/70">S</kbd> Share</span>
-        <span>•</span>
-        <span><kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/70">D</kbd> Studio</span>
-      </footer>
-
-      {/* Mobile Swipe / Index Indicator */}
-      <div className="sm:hidden fixed bottom-1 left-1/2 -translate-x-1/2 z-30 pointer-events-none px-2.5 py-0.5 rounded-full glass-pill bg-neutral-950/80 border border-white/15 text-[9px] font-mono text-white/60 flex items-center space-x-1.5 shadow-lg">
-        <span>Reel {currentIndex + 1}/{filteredReels.length}</span>
-        <span className="text-white/30">•</span>
-        <span>Swipe ↑ / ↓</span>
-      </div>
-
-      {/* Focus Music Soundscape Selector Drawer Modal */}
-      <FocusMusicSelector
-        isOpen={isMusicSelectorOpen}
-        onClose={() => setIsMusicSelectorOpen(false)}
+      <AppNav
+        active={activeTab}
+        onChange={goToTab}
+        onCreate={() => setIsAIModalOpen(true)}
+        userProfile={userProfile}
+        savedCount={userData.bookmarkedIds.length}
       />
 
-      {/* Google Authentication & Progress Tracking Modal */}
+      <FocusMusicSelector isOpen={isMusicSelectorOpen} onClose={() => setIsMusicSelectorOpen(false)} />
+
       <GoogleAuthModal
         isOpen={isAuthModalOpen}
         onClose={() => setIsAuthModalOpen(false)}
@@ -631,36 +655,20 @@ export default function App() {
         onAuthChange={handleAuthChange}
       />
 
-      {/* Instagram-Style Reel Share Modal */}
-      <ShareReelModal
-        isOpen={Boolean(sharingReel)}
-        reel={sharingReel}
-        onClose={() => setSharingReel(null)}
-      />
+      <ShareReelModal isOpen={Boolean(sharingReel)} reel={sharingReel} onClose={() => setSharingReel(null)} />
 
-      {/* AI Generator Modal */}
-      <AIGeneratorModal
-        isOpen={isAIModalOpen}
-        onClose={() => setIsAIModalOpen(false)}
-        onReelGenerated={handleReelGenerated}
-      />
+      <AIGeneratorModal isOpen={isAIModalOpen} onClose={() => setIsAIModalOpen(false)} onReelGenerated={handleReelGenerated} />
 
-      {/* Saved Knowledge Vault Modal */}
       <KnowledgeVaultModal
         isOpen={isVaultOpen}
         onClose={() => setIsVaultOpen(false)}
         allReels={allReels}
         userData={userData}
-        onSelectReel={handleSelectReelById}
+        onSelectReel={(id) => {
+          setIsVaultOpen(false);
+          handleSelectReelById(id);
+        }}
         onRemoveBookmark={handleToggleBookmark}
-      />
-
-      {/* Search Modal */}
-      <SearchModal
-        isOpen={isSearchOpen}
-        onClose={() => setIsSearchOpen(false)}
-        reels={allReels}
-        onSelectReel={handleSelectReelById}
       />
     </div>
   );

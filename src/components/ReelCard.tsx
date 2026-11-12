@@ -25,11 +25,32 @@ import {
   Film,
   Quote,
   Shuffle,
+  Send,
+  Headphones,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { MicroReel } from '../types';
 import { CodeViewer } from './CodeViewer';
 import { ConceptVisualizer, AVAILABLE_ANIMATION_TYPES } from './ConceptVisualizer';
+import { formatCount, getReelCreator } from '../utils/reelMeta';
+
+/** Plain Instagram-style action icon with a small label underneath. */
+const ActionButton: React.FC<{ id?: string; label: string; title: string; onClick: () => void; children: React.ReactNode }> = ({ id, label, title, onClick, children }) => (
+  <button
+    id={id}
+    type="button"
+    title={title}
+    aria-label={title}
+    onClick={(e) => {
+      e.stopPropagation();
+      onClick();
+    }}
+    className="flex flex-col items-center gap-1 touch-manipulation active:scale-90 transition-transform drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)]"
+  >
+    {children}
+    <span className="text-[12px] font-semibold leading-none">{label}</span>
+  </button>
+);
 
 interface ReelCardProps {
   reel: MicroReel;
@@ -59,8 +80,12 @@ interface ReelCardProps {
   // Auto-play progress
   isAutoPlay: boolean;
   autoPlayProgress: number;
+  onToggleAutoPlay: () => void;
   // Share modal trigger
   onOpenShareModal: (reel: MicroReel) => void;
+  // Follow the reel's channel (book / Quran / Hadith)
+  isFollowing: boolean;
+  onToggleFollow: (handle: string) => void;
 }
 
 export const ReelCard: React.FC<ReelCardProps> = ({
@@ -89,7 +114,11 @@ export const ReelCard: React.FC<ReelCardProps> = ({
   isAutoPlay,
   autoPlayProgress,
   onOpenShareModal,
+  onToggleAutoPlay,
+  isFollowing,
+  onToggleFollow,
 }) => {
+  const [captionExpanded, setCaptionExpanded] = useState(false);
   const [showDeepDive, setShowDeepDive] = useState(false);
   const [showHeartAnim, setShowHeartAnim] = useState(false);
   const [viewMode, setViewMode] = useState<'visual' | 'quote'>('visual');
@@ -105,27 +134,38 @@ export const ReelCard: React.FC<ReelCardProps> = ({
   // Reset view & deep dive when reel changes
   useEffect(() => {
     setShowDeepDive(false);
+    setCaptionExpanded(false);
     setViewMode('visual');
   }, [reel.id]);
 
-  // Double tap to like (Instagram style)
+  // Instagram-style taps: one tap pauses/resumes, two quick taps like the reel.
+  const tapTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [pauseFlash, setPauseFlash] = useState<'pause' | 'play' | null>(null);
+  useEffect(() => () => { if (tapTimerRef.current) clearTimeout(tapTimerRef.current); }, []);
+
   const handleCardTap = (e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
-    if (target.closest('button') || target.closest('input') || target.closest('a')) {
+    if (target.closest('button') || target.closest('input') || target.closest('a') || showDeepDive) {
       return;
     }
 
     const now = Date.now();
-    if (now - lastTapRef.current < 300) {
-      if (!isLiked) {
-        onToggleLike(reel.id);
-      }
+    if (now - lastTapRef.current < 280) {
+      if (tapTimerRef.current) clearTimeout(tapTimerRef.current);
+      tapTimerRef.current = null;
+      if (!isLiked) onToggleLike(reel.id);
       setShowHeartAnim(true);
       setTimeout(() => setShowHeartAnim(false), 900);
       lastTapRef.current = 0;
-    } else {
-      lastTapRef.current = now;
+      return;
     }
+    lastTapRef.current = now;
+    tapTimerRef.current = setTimeout(() => {
+      tapTimerRef.current = null;
+      setPauseFlash(isAutoPlay ? 'pause' : 'play');
+      setTimeout(() => setPauseFlash(null), 700);
+      onToggleAutoPlay();
+    }, 280);
   };
 
   const handleQuizSelection = (optionIndex: number) => {
@@ -142,224 +182,43 @@ export const ReelCard: React.FC<ReelCardProps> = ({
     onAnswerQuiz(reel.id, optionIndex, isCorrect);
   };
 
-  // Category styling
-  const categoryConfig = {
-    islamic: {
-      label: 'Islamic Wisdom',
-      icon: BookOpen,
-      gradient: 'from-emerald-950/70 via-teal-950/40 to-neutral-950',
-      avatarBorder: 'from-emerald-400 via-teal-400 to-amber-300',
-      badgeColor: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30',
-      authorHandle: 'hadith.wisdom',
-    },
-    psychology: {
-      label: 'Psychology',
-      icon: Brain,
-      gradient: 'from-amber-500/20 via-rose-500/10 to-transparent',
-      avatarBorder: 'from-amber-400 via-rose-500 to-purple-600',
-      badgeColor: 'bg-amber-500/10 text-amber-300 border-amber-500/20',
-      authorHandle: 'psychology.daily',
-    },
-    habits: {
-      label: 'Habits',
-      icon: Zap,
-      gradient: 'from-emerald-500/20 via-teal-500/10 to-transparent',
-      avatarBorder: 'from-emerald-400 via-teal-500 to-cyan-600',
-      badgeColor: 'bg-emerald-500/10 text-emerald-300 border-emerald-500/20',
-      authorHandle: 'atomic.habits',
-    },
-    mindset: {
-      label: 'Mindset',
-      icon: Flame,
-      gradient: 'from-purple-500/20 via-pink-500/10 to-transparent',
-      avatarBorder: 'from-purple-400 via-pink-500 to-rose-600',
-      badgeColor: 'bg-purple-500/10 text-purple-300 border-purple-500/20',
-      authorHandle: 'growth.mindset',
-    },
-    productivity: {
-      label: 'Productivity',
-      icon: Layers,
-      gradient: 'from-cyan-500/20 via-blue-500/10 to-transparent',
-      avatarBorder: 'from-cyan-400 via-blue-500 to-indigo-600',
-      badgeColor: 'bg-cyan-500/10 text-cyan-300 border-cyan-500/20',
-      authorHandle: 'deepwork.focus',
-    },
-    communication: {
-      label: 'Influence',
-      icon: Heart,
-      gradient: 'from-rose-500/20 via-orange-500/10 to-transparent',
-      avatarBorder: 'from-rose-400 via-orange-500 to-amber-600',
-      badgeColor: 'bg-rose-500/10 text-rose-300 border-rose-500/20',
-      authorHandle: 'tactical.empathy',
-    },
-    books: {
-      label: 'Book Insight',
-      icon: BookOpen,
-      gradient: 'from-amber-500/20 via-rose-500/10 to-transparent',
-      avatarBorder: 'from-amber-400 via-rose-500 to-pink-600',
-      badgeColor: 'bg-rose-500/10 text-rose-300 border-rose-500/20',
-      authorHandle: reel.source.authorOrTopic.toLowerCase().replace(/[^a-z0-9]/g, '_'),
-    },
-    programming: {
-      label: 'Mental Model',
-      icon: Brain,
-      gradient: 'from-cyan-500/20 via-blue-500/10 to-transparent',
-      avatarBorder: 'from-cyan-400 via-blue-500 to-indigo-600',
-      badgeColor: 'bg-cyan-500/10 text-cyan-300 border-cyan-500/20',
-      authorHandle: reel.source.authorOrTopic.toLowerCase().replace(/[^a-z0-9]/g, '_'),
-    },
-    'system-design': {
-      label: 'System Design',
-      icon: Layers,
-      gradient: 'from-emerald-500/20 via-teal-500/10 to-transparent',
-      avatarBorder: 'from-emerald-400 via-teal-500 to-cyan-600',
-      badgeColor: 'bg-emerald-500/10 text-emerald-300 border-emerald-500/20',
-      authorHandle: reel.source.authorOrTopic.toLowerCase().replace(/[^a-z0-9]/g, '_'),
-    },
-    'habits-mindset': {
-      label: 'Habits & Mindset',
-      icon: Flame,
-      gradient: 'from-purple-500/20 via-fuchsia-500/10 to-transparent',
-      avatarBorder: 'from-purple-400 via-fuchsia-500 to-pink-600',
-      badgeColor: 'bg-purple-500/10 text-purple-300 border-purple-500/20',
-      authorHandle: 'mindset.habits',
-    },
-    quran: {
-      label: 'Quran',
-      icon: BookOpen,
-      gradient: 'from-teal-950/70 via-emerald-950/40 to-neutral-950',
-      avatarBorder: 'from-amber-300 via-emerald-400 to-teal-500',
-      badgeColor: 'bg-amber-500/15 text-amber-200 border-amber-500/30',
-      authorHandle: 'quran.daily',
-    },
-  }[reel.category] || {
-    label: 'Psychology',
-    icon: Sparkles,
-    gradient: 'from-blue-500/20 via-cyan-500/10 to-transparent',
-    avatarBorder: 'from-blue-400 via-cyan-500 to-emerald-600',
-    badgeColor: 'bg-blue-500/10 text-blue-300 border-blue-500/20',
-    authorHandle: 'psychology.hq',
-  };
-
-  const CategoryIcon = categoryConfig.icon;
-  const simulatedLikes = 1420 + index * 137 + (isLiked ? 1 : 0);
-  const simulatedComments = 28 + index * 7;
+  const creator = getReelCreator(reel);
+  const CategoryIcon = creator.icon;
+  const likeCount = reel.likesCount + (isLiked ? 1 : 0);
+  const captionTags = reel.tags.slice(0, 4).map((t) => `#${t.replace(/[^\p{L}\p{N}]+/gu, '').toLowerCase()}`);
+  const openMusic = () => (onOpenMusicSelector ? onOpenMusicSelector() : onToggleMusic());
 
   return (
     <div
       id={`reel-card-${reel.id}`}
       onClick={handleCardTap}
-      className="relative w-full h-full glass-panel rounded-none sm:rounded-[32px] overflow-hidden flex flex-col justify-between select-none shadow-none sm:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85)] border-0 sm:border sm:border-white/15 transition-all"
+      className="relative w-full h-full bg-[#0b0b10] rounded-none md:rounded-lg overflow-hidden flex flex-col select-none"
     >
-      {/* Dynamic atmospheric background glow */}
+      {/* Background tint per channel */}
+      <div className={`absolute inset-0 bg-gradient-to-b ${creator.tint} to-[#0b0b10] pointer-events-none`} />
       <div
-        className={`absolute inset-0 bg-gradient-to-b ${categoryConfig.gradient} pointer-events-none opacity-80`}
+        className="absolute -top-24 -right-24 w-72 h-72 rounded-full blur-3xl opacity-25 pointer-events-none"
+        style={{ background: reel.accentColor || creator.accent }}
       />
-      <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-rose-500/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -top-20 -right-20 w-64 h-64 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Double tap heart animation pop */}
+      {/* Double-tap heart */}
       {showHeartAnim && (
-        <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none animate-in zoom-in-50 fade-in duration-200">
-          <Heart className="w-24 h-24 text-rose-500 fill-rose-500 drop-shadow-[0_0_25px_rgba(244,63,94,0.8)] animate-bounce" />
+        <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none">
+          <Heart className="w-28 h-28 text-white fill-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)] animate-heart-pop" />
         </div>
       )}
 
-      {/* TOP: Segmented Story / Reel Progress Bar */}
-      <div className="relative z-20 px-4 pt-14 sm:pt-3.5 pb-2">
-        <div className="flex items-center space-x-1.5 w-full">
-          {Array.from({ length: Math.min(totalReels, 8) }).map((_, barIdx) => {
-            const isCurrent = barIdx === index % 8;
-            const isPast = barIdx < index % 8;
-            return (
-              <div
-                key={barIdx}
-                className="h-1 flex-1 bg-white/20 rounded-full overflow-hidden backdrop-blur-sm"
-              >
-                <div
-                  className={`h-full transition-all duration-200 ${
-                    isPast ? 'bg-white w-full' : isCurrent ? 'bg-white' : 'w-0'
-                  }`}
-                  style={isCurrent ? { width: isAutoPlay ? `${autoPlayProgress}%` : '100%' } : undefined}
-                />
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Author / Creator Profile Row (Instagram Reels Style) */}
-        <div className="flex items-center justify-between mt-3">
-          <div className="flex items-center space-x-2.5">
-            {/* Instagram Story Gradient Ring Avatar */}
-            <div className={`p-[2px] rounded-full bg-gradient-to-tr ${categoryConfig.avatarBorder} shadow-md`}>
-              <div className="w-8 h-8 rounded-full bg-neutral-950 flex items-center justify-center text-white">
-                <CategoryIcon className="w-4 h-4 text-emerald-300" />
-              </div>
-            </div>
-
-            <div className="flex flex-col">
-              <div className="flex items-center space-x-1">
-                <span className="text-xs font-bold text-white tracking-tight">
-                  @{categoryConfig.authorHandle}
-                </span>
-                <CheckCircle2 className="w-3.5 h-3.5 text-sky-400 fill-sky-400" />
-                <span className="text-[10px] text-white/60 font-medium">• {reel.source.name}</span>
-              </div>
-              <span className="text-[10px] text-white/50 font-mono">
-                {reel.estimatedReadSeconds}s read • Reel #{index + 1}
-              </span>
-            </div>
-          </div>
-
-          {/* Quick Controls: Focus Music & Narration */}
-          <div className="flex items-center space-x-1.5">
-            {/* Focus Soundscape Selector / Toggle */}
-            <button
-              id="btn-reel-music-toggle"
-              onClick={(e) => {
-                e.stopPropagation();
-                if (onOpenMusicSelector) {
-                  onOpenMusicSelector();
-                } else {
-                  onToggleMusic();
-                }
-              }}
-              className={`p-2 rounded-full glass-pill text-xs transition-all ${
-                isMusicPlaying
-                  ? 'text-rose-400 border-rose-500/40 bg-rose-500/10'
-                  : 'text-white/60 hover:text-white'
-              }`}
-              title={isMusicPlaying ? 'Focus Music Playing (Click for Soundscapes)' : 'Play Focus Soundscape'}
-            >
-              {isMusicPlaying ? (
-                <div className="flex items-end space-x-0.5 h-3 w-3.5">
-                  <span className="w-0.5 bg-rose-400 animate-eq-1 rounded-full" />
-                  <span className="w-0.5 bg-rose-400 animate-eq-2 rounded-full" />
-                  <span className="w-0.5 bg-rose-400 animate-eq-3 rounded-full" />
-                  <span className="w-0.5 bg-rose-400 animate-eq-4 rounded-full" />
-                </div>
-              ) : (
-                <Music className="w-3.5 h-3.5" />
-              )}
-            </button>
-
-            {/* Narration voice */}
-            <button
-              id="btn-reel-tts-toggle"
-              onClick={(e) => {
-                e.stopPropagation();
-                onToggleSpeech(`${reel.title}. ${reel.coreIdea}. ${reel.takeaways.map((t) => t.point).join('. ')}`);
-              }}
-              className={`p-2 rounded-full glass-pill text-xs transition-all ${
-                isSpeechPlaying ? 'text-cyan-400 border-cyan-500/40 bg-cyan-500/10' : 'text-white/60 hover:text-white'
-              }`}
-              title="Read aloud with AI voice"
-            >
-              {isSpeechPlaying ? <Volume2 className="w-3.5 h-3.5 text-cyan-400" /> : <VolumeX className="w-3.5 h-3.5" />}
-            </button>
+      {/* Single-tap pause / play indicator */}
+      {pauseFlash && (
+        <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none">
+          <div className="w-16 h-16 rounded-full bg-black/50 flex items-center justify-center animate-heart-pop">
+            {pauseFlash === 'pause' ? <Pause className="w-7 h-7 text-white fill-white" /> : <Play className="w-7 h-7 text-white fill-white ml-1" />}
           </div>
         </div>
-      </div>
+      )}
+
+      {/* Room for the transparent feed tabs that overlay the top of the reel */}
+      <div className="h-14 shrink-0" />
 
       {/* CENTER: Main Instagram Visual Reel Content with Safe Margins from Floating Action Column */}
       <div className="relative z-10 flex-1 px-4 sm:px-6 md:px-8 pr-14 sm:pr-18 md:pr-20 flex flex-col justify-center items-center text-center my-auto w-full py-2 overflow-hidden">
@@ -470,157 +329,141 @@ export const ReelCard: React.FC<ReelCardProps> = ({
           )}
         </div>
 
-        {/* Clean "View Breakdown & Mental Model" Action Pill */}
-        <button
-          id="btn-expand-breakdown"
-          onClick={(e) => {
-            e.stopPropagation();
-            setShowDeepDive(true);
-          }}
-          className="mt-3.5 px-4 py-2 rounded-full glass-pill bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs sm:text-sm font-semibold flex items-center space-x-2 shadow-md hover:scale-105 active:scale-95 transition-all"
-        >
-          <Sparkles className="w-4 h-4 text-amber-300" />
-          <span>Deep Dive & Takeaways</span>
-          <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/20 font-mono">
-            {reel.takeaways.length}
-          </span>
-        </button>
       </div>
 
-      {/* RIGHT: Floating Instagram Action Column */}
-      <div className="absolute right-2.5 sm:right-4 bottom-14 sm:bottom-18 z-20 flex flex-col items-center space-y-2.5 sm:space-y-3.5">
-        {/* Like Button */}
-        <button
+      {/* RIGHT: Instagram action column (plain icons, counts underneath) */}
+      <div className="absolute right-2 bottom-24 z-20 flex flex-col items-center gap-4 text-white">
+        <ActionButton
           id={`btn-like-${reel.id}`}
-          onClick={(e) => {
-            e.stopPropagation();
-            onToggleLike(reel.id);
-          }}
-          className="flex flex-col items-center group touch-manipulation"
+          label={formatCount(likeCount)}
           title="Like (L)"
+          onClick={() => onToggleLike(reel.id)}
         >
-          <div
-            className={`w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full glass-pill flex items-center justify-center transition-transform active:scale-125 ${
-              isLiked ? 'text-rose-500 bg-rose-500/20 border-rose-500/40' : 'text-white hover:text-rose-400'
-            }`}
-          >
-            <Heart className={`w-5 h-5 sm:w-5.5 sm:h-5.5 transition-all ${isLiked ? 'fill-rose-500 text-rose-500' : ''}`} />
-          </div>
-          <span className="text-[10px] sm:text-[11px] font-bold text-white/80 mt-0.5 font-mono">{simulatedLikes}</span>
-        </button>
+          <Heart className={`w-7 h-7 transition-transform ${isLiked ? 'fill-rose-500 text-rose-500 scale-110' : ''}`} />
+        </ActionButton>
 
-        {/* Deep Dive / Details Button */}
-        <button
-          id={`btn-details-${reel.id}`}
-          onClick={(e) => {
-            e.stopPropagation();
-            setShowDeepDive(true);
-          }}
-          className="flex flex-col items-center group touch-manipulation"
-          title="View Takeaways & Code"
-        >
-          <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full glass-pill flex items-center justify-center text-white hover:text-cyan-400 transition-transform active:scale-110">
-            <MessageCircle className="w-5 h-5 sm:w-5.5 sm:h-5.5" />
-          </div>
-          <span className="text-[10px] sm:text-[11px] font-bold text-white/80 mt-0.5 font-mono">{simulatedComments}</span>
-        </button>
+        <ActionButton id={`btn-details-${reel.id}`} label="Learn" title="Takeaways & quiz" onClick={() => setShowDeepDive(true)}>
+          <MessageCircle className="w-7 h-7 -scale-x-100" />
+        </ActionButton>
 
-        {/* Bookmark Button */}
-        <button
+        <ActionButton id={`btn-share-${reel.id}`} label="Share" title="Share (S)" onClick={() => onOpenShareModal(reel)}>
+          <Send className="w-7 h-7" />
+        </ActionButton>
+
+        <ActionButton
           id={`btn-bookmark-${reel.id}`}
-          onClick={(e) => {
-            e.stopPropagation();
-            onToggleBookmark(reel.id);
-          }}
-          className="flex flex-col items-center group touch-manipulation"
-          title="Save to Vault (B)"
+          label={isBookmarked ? 'Saved' : 'Save'}
+          title="Save (B)"
+          onClick={() => onToggleBookmark(reel.id)}
         >
-          <div
-            className={`w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full glass-pill flex items-center justify-center transition-transform active:scale-110 ${
-              isBookmarked ? 'text-amber-400 bg-amber-500/20 border-amber-500/40' : 'text-white hover:text-amber-300'
-            }`}
-          >
-            <Bookmark className={`w-5 h-5 sm:w-5.5 sm:h-5.5 ${isBookmarked ? 'fill-amber-400' : ''}`} />
-          </div>
-          <span className="text-[10px] sm:text-[11px] font-bold text-white/80 mt-0.5 font-mono">Save</span>
-        </button>
+          <Bookmark className={`w-7 h-7 ${isBookmarked ? 'fill-white' : ''}`} />
+        </ActionButton>
 
-        {/* Share Button (Opens Instagram-Style Share Sheet Modal) */}
-        <button
-          id={`btn-share-${reel.id}`}
-          onClick={(e) => {
-            e.stopPropagation();
-            onOpenShareModal(reel);
-          }}
-          className="flex flex-col items-center group touch-manipulation"
-          title="Share Reel (S)"
+        <ActionButton
+          id="btn-reel-tts-toggle"
+          label={isSpeechPlaying ? 'Stop' : 'Listen'}
+          title="Read aloud"
+          onClick={() => onToggleSpeech(`${reel.title}. ${reel.coreIdea}. ${reel.takeaways.map((t) => t.point).join('. ')}`)}
         >
-          <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full glass-pill flex items-center justify-center text-white hover:text-emerald-400 transition-transform active:scale-110">
-            <Share2 className="w-5 h-5 sm:w-5.5 sm:h-5.5" />
-          </div>
-          <span className="text-[10px] sm:text-[11px] font-bold text-white/80 mt-0.5 font-mono">Share</span>
-        </button>
+          <Headphones className={`w-7 h-7 ${isSpeechPlaying ? 'text-sky-400' : ''}`} />
+        </ActionButton>
 
-        {/* Spinning Vinyl Record Disc (Click opens Soundscapes / Shuffle) */}
+        {/* Audio thumbnail (opens focus sounds) */}
         <button
           id="btn-spinning-disc"
+          type="button"
           onClick={(e) => {
             e.stopPropagation();
-            if (onOpenMusicSelector) {
-              onOpenMusicSelector();
-            } else {
-              onToggleMusic();
-            }
+            openMusic();
           }}
-          className="relative mt-0.5 flex flex-col items-center touch-manipulation"
-          title="Focus Soundscapes & Music (Click to Open/Shuffle)"
+          title="Focus sounds"
+          className={`mt-1 w-8 h-8 rounded-lg border-2 border-white overflow-hidden bg-gradient-to-tr ${creator.ring} flex items-center justify-center ${
+            isMusicPlaying ? 'animate-spin-slow rounded-full' : ''
+          }`}
         >
-          {isMusicPlaying && (
-            <div className="absolute -top-3 -left-2 text-rose-400 text-xs font-bold pointer-events-none animate-music-note">
-              ♪
-            </div>
-          )}
-
-          <div
-            className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-neutral-950 border-2 border-neutral-700 p-1 flex items-center justify-center shadow-lg transition-transform ${
-              isMusicPlaying ? 'animate-spin-slow border-rose-500/60' : 'opacity-80'
-            }`}
-          >
-            <div className="w-full h-full rounded-full bg-gradient-to-tr from-rose-500 to-purple-600 flex items-center justify-center">
-              <Disc3 className="w-4 h-4 text-white" />
-            </div>
-          </div>
+          <Music className="w-4 h-4 text-white" />
         </button>
       </div>
 
-      {/* BOTTOM: Instagram Caption & Scrolling Music Track Bar */}
-      <div className="relative z-10 px-4 sm:px-5 pb-safe pb-4 sm:pb-3 pt-2 bg-gradient-to-t from-neutral-950/95 via-neutral-950/50 to-transparent">
-        <div className="pr-14">
-          <p className="text-xs font-semibold text-white/90 line-clamp-1">
-            <span className="font-bold text-white mr-1.5">@{categoryConfig.authorHandle}</span>
-            {reel.subtitle}
-          </p>
+      {/* BOTTOM: creator row, caption, audio line */}
+      <div className="relative z-10 px-3 pb-4 pt-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+        <div className="pr-14 space-y-2">
+          <div className="flex items-center gap-2 min-w-0">
+            <div className={`p-[2px] rounded-full bg-gradient-to-tr ${creator.ring} shrink-0`}>
+              <div className="w-8 h-8 rounded-full bg-neutral-950 flex items-center justify-center">
+                <CategoryIcon className="w-4 h-4 text-white" />
+              </div>
+            </div>
+            <span className="text-sm font-bold text-white truncate">{creator.handle}</span>
+            {creator.isOfficial && <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-sky-400 fill-sky-400 [&>path]:stroke-white" />}
+            <button
+              id={`btn-follow-${reel.id}`}
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onToggleFollow(creator.handle);
+              }}
+              className={`shrink-0 h-7 px-3 rounded-lg text-[13px] font-semibold transition-colors ${
+                isFollowing ? 'bg-white/15 text-white' : 'border border-white/70 text-white hover:bg-white/10'
+              }`}
+            >
+              {isFollowing ? 'Following' : 'Follow'}
+            </button>
+          </div>
 
-          {/* Audio Ticker Marquee */}
-          <div
+          <button
+            type="button"
             onClick={(e) => {
               e.stopPropagation();
-              if (onOpenMusicSelector) {
-                onOpenMusicSelector();
-              } else {
-                onToggleMusic();
-              }
+              setCaptionExpanded((v) => !v);
             }}
-            className="flex items-center space-x-2 mt-1 text-[11px] text-white/75 cursor-pointer hover:text-white transition-colors"
+            className={`w-full text-left text-[13px] text-white/95 leading-snug ${captionExpanded ? 'block' : 'flex items-baseline gap-1'}`}
           >
-            <Music className="w-3 h-3 text-rose-400 shrink-0" />
-            <div className="overflow-hidden whitespace-nowrap">
-              <span className="font-mono text-[10px] tracking-wide inline-block">
-                ♫ {musicTrackName} • Focus Soundscape (Tap for tracks)
+            <span className={captionExpanded ? '' : 'truncate min-w-0'}>
+              <span className="font-semibold">{reel.title}</span> · {reel.subtitle}
+            </span>
+            {captionExpanded ? (
+              <>
+                <span className="block mt-1 text-white/85">{reel.coreIdea}</span>
+                <span className="block mt-1 text-sky-300">{captionTags.join(' ')}</span>
+              </>
+            ) : (
+              <span className="shrink-0 text-white/60">more</span>
+            )}
+          </button>
+
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowDeepDive(true);
+            }}
+            className="block text-[13px] text-white/60 hover:text-white/80"
+          >
+            View {reel.takeaways.length} takeaways, challenge & quiz
+          </button>
+
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              openMusic();
+            }}
+            className="flex items-center gap-1.5 text-[12px] text-white/90 max-w-full"
+          >
+            <Music className="w-3 h-3 shrink-0" />
+            <span className="overflow-hidden whitespace-nowrap max-w-[220px]">
+              <span className={`inline-block ${isMusicPlaying ? 'animate-marquee' : ''}`}>
+                {musicTrackName} · Focus sounds
               </span>
-            </div>
-          </div>
+            </span>
+          </button>
         </div>
+      </div>
+
+      {/* Thin playback progress line, like Instagram Reels */}
+      <div className="absolute inset-x-0 bottom-0 h-0.5 bg-white/15 z-20 pointer-events-none">
+        <div className="h-full bg-white/90 transition-[width] duration-100 ease-linear" style={{ width: `${autoPlayProgress}%` }} />
       </div>
 
       {/* SLIDE-UP INSTAGRAM GLASS BOTTOM SHEET: Deep Dive Breakdown */}
