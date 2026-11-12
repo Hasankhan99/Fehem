@@ -224,6 +224,14 @@ export const ReelCard: React.FC<ReelCardProps> = ({
       badgeColor: 'bg-purple-500/10 text-purple-300 border-purple-500/20',
       authorHandle: 'mindset.habits',
     },
+    quran: {
+      label: 'Quran',
+      icon: BookOpen,
+      gradient: 'from-teal-950/70 via-emerald-950/40 to-neutral-950',
+      avatarBorder: 'from-amber-300 via-emerald-400 to-teal-500',
+      badgeColor: 'bg-amber-500/15 text-amber-200 border-amber-500/30',
+      authorHandle: 'quran.daily',
+    },
   }[reel.category] || {
     label: 'Psychology',
     icon: Sparkles,
@@ -390,7 +398,7 @@ export const ReelCard: React.FC<ReelCardProps> = ({
         ) : (
           <div className="flex items-center space-x-1.5 px-3.5 py-1 rounded-full glass-pill border border-white/15 mb-2.5 shadow-sm text-[10px] sm:text-[11px] font-bold text-white/80">
             <Quote className="w-3 h-3 text-amber-400" />
-            <span>{reel.category === 'islamic' ? 'Hadith Wisdom' : 'Quote Reflection'}</span>
+            <span>{reel.category === 'quran' ? 'Quran Verse' : reel.category === 'islamic' ? 'Hadith Wisdom' : 'Quote Reflection'}</span>
           </div>
         )}
 
@@ -418,6 +426,7 @@ export const ReelCard: React.FC<ReelCardProps> = ({
               isAutoPlay={isAutoPlay}
               autoPlayProgress={autoPlayProgress}
               hadithReference={reel.hadithReference}
+              quranReference={reel.quranReference}
               arabicText={reel.arabicText}
               narrator={reel.narrator}
             />
@@ -428,7 +437,7 @@ export const ReelCard: React.FC<ReelCardProps> = ({
                 <Quote className="w-6 h-6 text-amber-400 shrink-0 mt-0.5" />
                 <div>
                   <span className="text-[10px] uppercase font-mono tracking-wider text-amber-300 font-bold block mb-1.5">
-                    {reel.hadithReference ? `Hadith Reference • ${reel.hadithReference}` : `Direct Insight • ${reel.source.name}`}
+                    {reel.quranReference ? `Quran • ${reel.quranReference}` : reel.hadithReference ? `Hadith Reference • ${reel.hadithReference}` : `Direct Insight • ${reel.source.name}`}
                   </span>
                   {reel.arabicText && (
                     <p className="text-base sm:text-lg md:text-xl font-serif text-emerald-300 mb-2 leading-relaxed font-medium" dir="rtl">
@@ -441,6 +450,7 @@ export const ReelCard: React.FC<ReelCardProps> = ({
                   <span className="text-[11px] text-white/60 font-mono block mt-2 font-medium">
                     — {reel.narrator ? `Narrated by ${reel.narrator}` : (reel.quoteAuthor || reel.source.authorOrTopic)}
                     {reel.hadithReference && ` (${reel.hadithReference})`}
+                    {reel.quranReference && ` • ${reel.quranReference}`}
                   </span>
                 </div>
               </div>

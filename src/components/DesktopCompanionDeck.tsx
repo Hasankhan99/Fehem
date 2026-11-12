@@ -340,7 +340,7 @@ export const DesktopCompanionDeck: React.FC<DesktopCompanionDeckProps> = ({
             {reel.arabicText && (
               <div className="p-3.5 rounded-2xl glass-pill bg-emerald-950/30 border border-emerald-500/20 space-y-2">
                 <span className="text-[10px] uppercase font-mono tracking-wider text-emerald-400 font-bold block">
-                  Original Reference • {reel.hadithReference}
+                  Original Reference • {reel.quranReference || reel.hadithReference}
                 </span>
                 <p className="text-base font-serif text-emerald-300 leading-relaxed" dir="rtl">
                   {reel.arabicText}
