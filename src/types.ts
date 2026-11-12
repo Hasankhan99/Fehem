@@ -102,6 +102,8 @@ export interface MicroReel {
   likesCount: number;
   audioScript: string;
   isUserGenerated?: boolean;
+  /** Background sound for this reel (a focus track id). Picked from the reel's topic when not set. */
+  soundtrackId?: string;
   accentColor?: string;
   visualConceptType?: ConceptVisualType;
   conceptAnimationLabel?: string;

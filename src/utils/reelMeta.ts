@@ -55,3 +55,27 @@ export function formatCount(n: number): string {
   if (n < 1_000_000) return `${(n / 1000).toFixed(n < 10_000 ? 1 : 0).replace(/\.0$/, '')}K`;
   return `${(n / 1_000_000).toFixed(1).replace(/\.0$/, '')}M`;
 }
+
+/**
+ * Each reel's own background sound, like the audio attached to an Instagram reel.
+ * Quran and Hadith reels use nature sounds with no instruments.
+ * Book reels pick from tracks that suit their topic; the reel id chooses between
+ * them so neighbouring reels don't all sound the same.
+ */
+const SOUNDTRACKS_BY_CATEGORY: Record<string, string[]> = {
+  quran: ['gentle-rain', 'ocean-waves'],
+  islamic: ['ocean-waves', 'gentle-rain'],
+  habits: ['lofi-rhodes', 'cyber-zen'],
+  productivity: ['alpha-432hz', 'lofi-rhodes'],
+  mindset: ['cyber-zen', 'ethereal-choir'],
+  psychology: ['lofi-rhodes', 'singing-bowl'],
+  communication: ['ethereal-choir', 'lofi-rhodes'],
+};
+
+export function getReelSoundtrack(reel: MicroReel): string {
+  if (reel.soundtrackId) return reel.soundtrackId;
+  const options = SOUNDTRACKS_BY_CATEGORY[reel.category] || ['lofi-rhodes', 'cyber-zen'];
+  let hash = 0;
+  for (let i = 0; i < reel.id.length; i++) hash = (hash * 31 + reel.id.charCodeAt(i)) >>> 0;
+  return options[hash % options.length];
+}

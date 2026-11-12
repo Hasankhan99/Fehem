@@ -68,6 +68,8 @@ interface ReelCardProps {
   onPrev: () => void;
   // Vocal / Focus background music
   isMusicPlaying: boolean;
+  /** Speaker setting: the listener has sound turned on. */
+  isSoundOn: boolean;
   onToggleMusic: () => void;
   onShuffleMusic?: () => void;
   onOpenMusicSelector?: () => void;
@@ -103,6 +105,7 @@ export const ReelCard: React.FC<ReelCardProps> = ({
   onNext,
   onPrev,
   isMusicPlaying,
+  isSoundOn,
   onToggleMusic,
   onShuffleMusic,
   onOpenMusicSelector,
@@ -216,6 +219,22 @@ export const ReelCard: React.FC<ReelCardProps> = ({
           </div>
         </div>
       )}
+
+      {/* Speaker button: sound on / off for every reel, like Instagram */}
+      <button
+        id="btn-reel-sound"
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation();
+          onToggleMusic();
+        }}
+        aria-label={isSoundOn ? 'Mute' : 'Turn sound on'}
+        title={isSoundOn ? 'Mute (M)' : 'Turn sound on (M)'}
+        className="absolute top-16 right-3 z-20 h-8 min-w-8 px-2 rounded-full bg-black/45 backdrop-blur-sm flex items-center justify-center gap-1.5 text-white active:scale-90 transition-transform"
+      >
+        {isSoundOn ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
+        {!isSoundOn && index === 0 && <span className="text-[12px] font-semibold pr-0.5">Tap for sound</span>}
+      </button>
 
       {/* Room for the transparent feed tabs that overlay the top of the reel */}
       <div className="h-14 shrink-0" />
@@ -451,10 +470,11 @@ export const ReelCard: React.FC<ReelCardProps> = ({
             }}
             className="flex items-center gap-1.5 text-[12px] text-white/90 max-w-full"
           >
-            <Music className="w-3 h-3 shrink-0" />
+            {isSoundOn ? <Music className="w-3 h-3 shrink-0" /> : <VolumeX className="w-3 h-3 shrink-0 text-white/60" />}
             <span className="overflow-hidden whitespace-nowrap max-w-[220px]">
               <span className={`inline-block ${isMusicPlaying ? 'animate-marquee' : ''}`}>
-                {musicTrackName} · Focus sounds
+                {musicTrackName}
+                <span className="text-white/60"> · {isSoundOn ? 'Reel audio' : 'Sound off'}</span>
               </span>
             </span>
           </button>

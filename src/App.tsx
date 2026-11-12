@@ -13,7 +13,7 @@ import { ExploreView } from './components/ExploreView';
 import { ProfileView, SavedView } from './components/ProfileView';
 import { useSpeech } from './utils/useSpeech';
 import { focusMusic } from './utils/focusMusicEngine';
-import { getReelCreator, isScriptureReel } from './utils/reelMeta';
+import { getReelCreator, getReelSoundtrack, isScriptureReel } from './utils/reelMeta';
 import { ChevronUp, ChevronDown, ChevronLeft, Music, Search, Users, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence, type Variants } from 'motion/react';
 
@@ -132,6 +132,7 @@ export default function App() {
   // Focus background music state (Web Audio API synthesis)
   const [isMusicPlaying, setIsMusicPlaying] = useState<boolean>(() => focusMusic.getIsPlaying());
   const [musicTrackName, setMusicTrackName] = useState<string>(() => focusMusic.getCurrentTrack().title);
+  const [isSoundOn, setIsSoundOn] = useState<boolean>(() => focusMusic.getSoundOn());
 
   // Auto-play state
   const [isAutoPlay, setIsAutoPlay] = useState(true);
@@ -149,6 +150,7 @@ export default function App() {
     const unsubscribe = focusMusic.subscribe((track, playing) => {
       setIsMusicPlaying(playing);
       setMusicTrackName(track.title);
+      setIsSoundOn(focusMusic.getSoundOn());
     });
     return () => {
       unsubscribe();
@@ -261,6 +263,16 @@ export default function App() {
   };
 
   const handleToggleMusic = () => focusMusic.toggle();
+
+  // Each reel brings its own background sound, like the audio on an Instagram reel.
+  useEffect(() => {
+    if (currentReel) focusMusic.playForReel(getReelSoundtrack(currentReel));
+  }, [currentReel]);
+
+  // Sound follows the video: it pauses with the reel and when you leave the Home tab.
+  useEffect(() => {
+    focusMusic.setHold(!(isFeedVisible && isAutoPlay && Boolean(currentReel)));
+  }, [isFeedVisible, isAutoPlay, currentReel]);
   const handleShuffleMusic = () => focusMusic.selectRandomTrack();
 
   // Auto-play timer: advances to the next reel when the progress line fills.
@@ -530,6 +542,7 @@ export default function App() {
                         onNext={handleNext}
                         onPrev={handlePrev}
                         isMusicPlaying={isMusicPlaying}
+                        isSoundOn={isSoundOn}
                         onToggleMusic={handleToggleMusic}
                         onShuffleMusic={handleShuffleMusic}
                         onOpenMusicSelector={() => setIsMusicSelectorOpen(true)}

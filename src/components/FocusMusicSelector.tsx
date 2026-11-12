@@ -31,6 +31,7 @@ export const FocusMusicSelector: React.FC<FocusMusicSelectorProps> = ({
   const [currentTrack, setCurrentTrack] = useState<FocusTrack>(focusMusic.getCurrentTrack());
   const [isPlaying, setIsPlaying] = useState<boolean>(focusMusic.getIsPlaying());
   const [volume, setVolume] = useState<number>(focusMusic.getVolume());
+  const [isAuto, setIsAuto] = useState<boolean>(focusMusic.isAutoMatch());
   const [activeTab, setActiveTab] = useState<'builtin' | 'custom'>('builtin');
   const [customTracks, setCustomTracks] = useState<FocusTrack[]>(focusMusic.getCustomTracks());
   const [isUploading, setIsUploading] = useState<boolean>(false);
@@ -43,6 +44,7 @@ export const FocusMusicSelector: React.FC<FocusMusicSelectorProps> = ({
     const unsub = focusMusic.subscribe((track, playing) => {
       setCurrentTrack(track);
       setIsPlaying(playing);
+      setIsAuto(focusMusic.isAutoMatch());
       setCustomTracks(focusMusic.getCustomTracks());
     });
     return () => {
@@ -57,17 +59,18 @@ export const FocusMusicSelector: React.FC<FocusMusicSelectorProps> = ({
   };
 
   const handleShuffleRandom = () => {
-    focusMusic.selectRandomTrack();
-    if (!focusMusic.getIsPlaying()) {
-      focusMusic.start();
-    }
+    const all = focusMusic.getAllTracks().filter((t) => t.id !== currentTrack.id);
+    if (all.length) focusMusic.pickTrack(all[Math.floor(Math.random() * all.length)].id);
   };
 
+  // Picking a track keeps it playing on every reel until Auto is chosen again.
   const handleSelectTrack = (trackId: string) => {
-    focusMusic.setTrack(trackId);
-    if (!focusMusic.getIsPlaying()) {
-      focusMusic.start();
-    }
+    focusMusic.pickTrack(trackId);
+  };
+
+  const handleChooseAuto = () => {
+    focusMusic.setAutoMatch();
+    focusMusic.start();
   };
 
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -147,7 +150,7 @@ export const FocusMusicSelector: React.FC<FocusMusicSelectorProps> = ({
               <Headphones className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-white">Focus Soundtracks</h3>
+              <h3 className="text-sm font-bold text-white">Reel Sounds</h3>
               <p className="text-[10px] text-white/60">Ambient Soundscapes & Custom User Audio</p>
             </div>
           </div>
@@ -248,8 +251,24 @@ export const FocusMusicSelector: React.FC<FocusMusicSelectorProps> = ({
         {/* TAB 1: BUILT-IN SOUNDSCAPES */}
         {activeTab === 'builtin' && (
           <div className="space-y-1.5 overflow-y-auto pr-1 flex-1">
+            <button
+              id="btn-sound-auto"
+              onClick={handleChooseAuto}
+              className={`w-full p-2.5 rounded-xl text-left flex items-center justify-between transition-all ${
+                isAuto ? 'bg-white/20 border border-white/30 text-white shadow-md' : 'glass-pill text-white/70 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              <div className="truncate pr-2">
+                <div className="flex items-center space-x-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-300 shrink-0" />
+                  <span className="text-xs font-bold truncate">Auto: match each reel</span>
+                </div>
+                <div className="text-[10px] text-white/50 truncate">Every reel plays its own sound. Quran and Hadith use nature sounds.</div>
+              </div>
+              {isAuto && <Check className="w-4 h-4 text-emerald-400 shrink-0" />}
+            </button>
             {FOCUS_TRACKS.map((track) => {
-              const isSelected = track.id === currentTrack.id;
+              const isSelected = !isAuto && track.id === currentTrack.id;
               return (
                 <button
                   key={track.id}

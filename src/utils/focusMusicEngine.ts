@@ -5,6 +5,22 @@ import { loadCustomTracks } from './customAudioStorage';
 
 export const FOCUS_TRACKS: FocusTrack[] = [
   {
+    id: 'gentle-rain',
+    title: 'Gentle Rain',
+    category: 'Nature Sounds',
+    bpm: 0,
+    description: 'Soft steady rainfall with light droplets. No instruments.',
+    mood: 'Calm Reflection',
+  },
+  {
+    id: 'ocean-waves',
+    title: 'Ocean Waves',
+    category: 'Nature Sounds',
+    bpm: 0,
+    description: 'Slow waves rolling in and out on a quiet shore. No instruments.',
+    mood: 'Peaceful Stillness',
+  },
+  {
     id: 'ethereal-choir',
     title: 'Ethereal Vocal Choirs',
     category: 'Vocal Ambience',
@@ -57,6 +73,16 @@ class FocusMusicEngine {
   private customAudioEl: HTMLAudioElement | null = null;
   private activeNodes: (AudioNode | number)[] = [];
   private listeners: Set<(track: FocusTrack, isPlaying: boolean) => void> = new Set();
+  /** The listener wants sound (speaker on). Off by default: browsers only allow audio after a tap. */
+  private soundOn = false;
+  /** The app holds sound while a reel is paused or another tab is open. */
+  private hold = false;
+  /** A track the listener picked by hand; it then plays on every reel instead of each reel's own. */
+  private pinnedTrackId: string | null = null;
+  /** The soundtrack of the reel on screen, so Auto can switch straight back to it. */
+  private reelTrackId: string | null = null;
+  private fadeToken = 0;
+  private noiseBuffer: AudioBuffer | null = null;
 
   constructor() {
     // Randomize initial focus track on launch
@@ -84,17 +110,14 @@ class FocusMusicEngine {
   public addCustomTrack(track: FocusTrack) {
     // Avoid duplicates
     this.customTracks = [track, ...this.customTracks.filter((t) => t.id !== track.id)];
-    this.setTrack(track.id);
-    if (!this.isPlaying) {
-      this.start();
-    }
-    this.notify();
+    this.pickTrack(track.id);
   }
 
   public removeCustomTrack(trackId: string) {
     this.customTracks = this.customTracks.filter((t) => t.id !== trackId);
+    if (this.pinnedTrackId === trackId) this.pinnedTrackId = null;
     if (this.currentTrackId === trackId) {
-      this.currentTrackId = FOCUS_TRACKS[0].id;
+      this.currentTrackId = this.reelTrackId || FOCUS_TRACKS[0].id;
       this.restartCurrentTrack();
     } else {
       this.notify();
@@ -153,14 +176,62 @@ class FocusMusicEngine {
     }
   }
 
+  /** Speaker button: turn sound on or off. */
   public toggle(): boolean {
-    if (this.isPlaying) {
-      this.stop();
-      return false;
-    } else {
-      this.start();
-      return true;
-    }
+    this.soundOn = !this.soundOn;
+    this.apply();
+    return this.soundOn;
+  }
+
+  public start() {
+    this.soundOn = true;
+    this.apply();
+  }
+
+  public stop() {
+    this.soundOn = false;
+    this.apply();
+  }
+
+  public getSoundOn(): boolean {
+    return this.soundOn;
+  }
+
+  /** Pause sound without changing the listener's speaker setting (reel paused, other tab open). */
+  public setHold(hold: boolean) {
+    if (this.hold === hold) return;
+    this.hold = hold;
+    this.apply();
+  }
+
+  private apply() {
+    if (this.soundOn && !this.hold) this.startOutput();
+    else this.stopOutput();
+    this.notify();
+  }
+
+  /** Called when a new reel comes on screen: switch to that reel's soundtrack unless one is pinned. */
+  public playForReel(trackId: string) {
+    this.reelTrackId = trackId;
+    if (!this.pinnedTrackId) this.setTrack(trackId);
+  }
+
+  /** Pick a track by hand from the soundtrack menu: it keeps playing on every reel. */
+  public pickTrack(trackId: string) {
+    this.pinnedTrackId = trackId;
+    this.setTrack(trackId);
+    this.start();
+  }
+
+  /** Go back to each reel playing its own soundtrack. */
+  public setAutoMatch() {
+    this.pinnedTrackId = null;
+    if (this.reelTrackId) this.setTrack(this.reelTrackId);
+    this.notify();
+  }
+
+  public isAutoMatch(): boolean {
+    return this.pinnedTrackId === null;
   }
 
   public selectRandomTrack(): FocusTrack {
@@ -200,13 +271,27 @@ class FocusMusicEngine {
 
   private restartCurrentTrack() {
     this.notify();
-    if (this.isPlaying) {
+    if (!this.isPlaying || !this.ctx || !this.masterGain) return;
+
+    // Crossfade like swiping between reels: fade out, swap, fade back in.
+    const token = ++this.fadeToken;
+    const gain = this.masterGain.gain;
+    const now = this.ctx.currentTime;
+    gain.cancelScheduledValues(now);
+    gain.setValueAtTime(gain.value, now);
+    gain.linearRampToValueAtTime(0, now + 0.3);
+    window.setTimeout(() => {
+      if (token !== this.fadeToken || !this.isPlaying || !this.ctx || !this.masterGain) return;
       this.stopCurrentAudio();
       this.playCurrentTrackStyle();
-    }
+      const t = this.ctx.currentTime;
+      this.masterGain.gain.cancelScheduledValues(t);
+      this.masterGain.gain.setValueAtTime(0, t);
+      this.masterGain.gain.linearRampToValueAtTime(this.volume, t + 0.6);
+    }, 330);
   }
 
-  public start() {
+  private startOutput() {
     this.initContext();
     if (!this.ctx) return;
     if (this.isPlaying) return;
@@ -223,20 +308,39 @@ class FocusMusicEngine {
     this.playCurrentTrackStyle();
   }
 
-  public stop() {
+  private stopOutput() {
     if (!this.isPlaying) return;
     this.isPlaying = false;
-    this.stopCurrentAudio();
-
-    if (this.masterGain && this.ctx) {
+    this.fadeToken++;
+    // Stop scheduling new notes now, but let the ones already sounding fade out.
+    if (this.loopTimer !== null) {
+      window.clearTimeout(this.loopTimer);
+      this.loopTimer = null;
+    }
+    if (this.customAudioEl) {
       try {
-        this.masterGain.gain.linearRampToValueAtTime(0, this.ctx.currentTime + 0.8);
-        setTimeout(() => {
-          this.masterGain?.disconnect();
-          this.masterGain = null;
-        }, 900);
+        this.customAudioEl.pause();
       } catch {
-        // cleanup fallback
+        // ignore
+      }
+    }
+    const fadingNodes = this.activeNodes;
+    this.activeNodes = [];
+    setTimeout(() => this.stopNodes(fadingNodes), 300);
+
+    // Detach this gain now so a quick resume builds a fresh one; the old one is
+    // disconnected after it fades, without touching whatever replaced it.
+    const oldGain = this.masterGain;
+    this.masterGain = null;
+    if (oldGain && this.ctx) {
+      try {
+        const now = this.ctx.currentTime;
+        oldGain.gain.cancelScheduledValues(now);
+        oldGain.gain.setValueAtTime(oldGain.gain.value, now);
+        oldGain.gain.linearRampToValueAtTime(0, now + 0.25);
+        setTimeout(() => oldGain.disconnect(), 300);
+      } catch {
+        oldGain.disconnect();
       }
     }
 
@@ -259,7 +363,12 @@ class FocusMusicEngine {
       window.clearTimeout(this.loopTimer);
       this.loopTimer = null;
     }
-    this.activeNodes.forEach((node) => {
+    this.stopNodes(this.activeNodes);
+    this.activeNodes = [];
+  }
+
+  private stopNodes(nodes: (AudioNode | number)[]) {
+    nodes.forEach((node) => {
       if (typeof node !== 'number') {
         try {
           if ('stop' in node && typeof (node as AudioScheduledSourceNode).stop === 'function') {
@@ -271,7 +380,6 @@ class FocusMusicEngine {
         }
       }
     });
-    this.activeNodes = [];
   }
 
   private playCurrentTrackStyle() {
@@ -285,6 +393,12 @@ class FocusMusicEngine {
 
     // Procedural synthesis tracks
     switch (track.id) {
+      case 'gentle-rain':
+        this.loopRain();
+        break;
+      case 'ocean-waves':
+        this.loopOcean();
+        break;
       case 'ethereal-choir':
         this.loopVocalChoir();
         break;
@@ -583,6 +697,101 @@ class FocusMusicEngine {
     };
 
     strikeBowl();
+  }
+
+  /** Two seconds of white noise, looped as the raw material for rain and waves. */
+  private getNoiseBuffer(): AudioBuffer | null {
+    if (!this.ctx) return null;
+    if (!this.noiseBuffer) {
+      const length = this.ctx.sampleRate * 2;
+      this.noiseBuffer = this.ctx.createBuffer(1, length, this.ctx.sampleRate);
+      const data = this.noiseBuffer.getChannelData(0);
+      for (let i = 0; i < length; i++) data[i] = Math.random() * 2 - 1;
+    }
+    return this.noiseBuffer;
+  }
+
+  private startNoiseLayer(filterType: BiquadFilterType, frequency: number, level: number) {
+    if (!this.ctx || !this.masterGain) return null;
+    const buffer = this.getNoiseBuffer();
+    if (!buffer) return null;
+    const src = this.ctx.createBufferSource();
+    src.buffer = buffer;
+    src.loop = true;
+    const filter = this.ctx.createBiquadFilter();
+    filter.type = filterType;
+    filter.frequency.setValueAtTime(frequency, this.ctx.currentTime);
+    const gain = this.ctx.createGain();
+    gain.gain.setValueAtTime(level, this.ctx.currentTime);
+    src.connect(filter);
+    filter.connect(gain);
+    gain.connect(this.masterGain);
+    src.start();
+    this.activeNodes.push(src, filter, gain);
+    return { src, filter, gain };
+  }
+
+  // 6. Gentle Rain: steady hiss, low rumble and scattered droplets
+  private loopRain() {
+    if (!this.isPlaying || !this.ctx || !this.masterGain) return;
+    this.startNoiseLayer('lowpass', 2800, 0.16);
+    this.startNoiseLayer('lowpass', 500, 0.22);
+
+    const droplet = () => {
+      if (!this.isPlaying || !this.ctx || !this.masterGain) return;
+      const buffer = this.getNoiseBuffer();
+      if (!buffer) return;
+      const now = this.ctx.currentTime;
+      const src = this.ctx.createBufferSource();
+      src.buffer = buffer;
+      const band = this.ctx.createBiquadFilter();
+      band.type = 'bandpass';
+      band.frequency.setValueAtTime(1800 + Math.random() * 3200, now);
+      band.Q.setValueAtTime(8, now);
+      const gain = this.ctx.createGain();
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.exponentialRampToValueAtTime(0.05 + Math.random() * 0.07, now + 0.005);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.06);
+      src.connect(band);
+      band.connect(gain);
+      gain.connect(this.masterGain);
+      src.start(now, Math.random() * 1.5, 0.08);
+      // Keep the node list small: droplets clean themselves up.
+      src.onended = () => {
+        src.disconnect();
+        band.disconnect();
+        gain.disconnect();
+      };
+      this.loopTimer = window.setTimeout(droplet, 40 + Math.random() * 160);
+    };
+    droplet();
+  }
+
+  // 7. Ocean Waves: filtered noise that swells and recedes about every 9 seconds
+  private loopOcean() {
+    if (!this.isPlaying || !this.ctx || !this.masterGain) return;
+    const layer = this.startNoiseLayer('lowpass', 650, 0.2);
+    if (!layer) return;
+    const now = this.ctx.currentTime;
+
+    const swell = this.ctx.createOscillator();
+    swell.type = 'sine';
+    swell.frequency.setValueAtTime(0.11, now);
+
+    const swellToGain = this.ctx.createGain();
+    swellToGain.gain.setValueAtTime(0.16, now);
+    const swellToFilter = this.ctx.createGain();
+    swellToFilter.gain.setValueAtTime(450, now);
+
+    swell.connect(swellToGain);
+    swellToGain.connect(layer.gain.gain);
+    swell.connect(swellToFilter);
+    swellToFilter.connect(layer.filter.frequency);
+    swell.start(now);
+
+    // Faint high wash for the foam
+    this.startNoiseLayer('highpass', 3000, 0.025);
+    this.activeNodes.push(swell, swellToGain, swellToFilter);
   }
 }
 
